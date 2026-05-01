@@ -1,0 +1,640 @@
+ 
+Magnetism & Electromagnetism 
+Question Paper 
+ 
+ 
+Level 
+O Level 
+Subject 
+Physics 
+Exam Board 
+Cambridge International Examinations 
+Unit 
+Electricity and Magnetism 
+Topic 
+Magnetism & Electromagnetism 
+Booklet 
+ 
+Question Paper  
+ 
+ 
+ 
+ 
+Time Allowed:   
+ 
+49 minutes 
+Score:  
+ 
+ 
+/41 
+Percentage: 
+ 
+ 
+/100 
+ 
+Grade Boundaries: 
+ 
+ 
+ 
+
+1  Four plotting compasses are placed near a bar magnet. You may ignore any effects of the Earth’s
+magnetic field. 
+One compass appears like this         . 
+What is a possible position for this compass? 
+N 
+B
+A
+C
+S
+D
+2  One end of a rod picks up the N-pole of a bar magnet when in position 1. 
+The same end of the rod picks up the S-pole of the bar magnet when in position 2. 
+P
+position 1
+position 2
+N
+S
+N
+S
+rod
+rod
+magnet
+magnet
+bench
+Which material is the rod made from and what is the pole at end P of the rod when in position 1? 
+Save My Exams! – The Home of Revision 
+For more awesome GCSE and A level resources, visit us at www.savemyexams.co.uk/ 
+
+3    A metal ring screens a piece of equipment from a magnetic field.
+metal ring
+magnetic
+field
+equipment
+Which metal should be used for the ring, and why? 
+etal
+reason
+metal
+A 
+copper 
+B 
+copper 
+C 
+iron 
+D 
+iron 
+the metal carries the field lines around the equipment 
+the metal is non-magnetic 
+the metal carries the field lines around the equipment 
+the metal is non-magnetic 
+4  The diagram shows the magnetic field pattern of a current in a solenoid.
+M
+L
+K
+solenoid
+When the current in the solenoid is increased, where is there an increase in the magnetic field 
+strength? 
+A 
+K, L and M 
+B 
+K and L only 
+C 
+M and L only 
+D 
+M only 
+Save My Exams! – The Home of Revision 
+For more awesome GCSE and A level resources, visit us at www.savemyexams.co.uk/ 
+
+5  What is a suitable metal for the core of an electromagnet?
+A 
+aluminium 
+B 
+copper 
+C 
+iron 
+D 
+steel 
+6  Which material can be picked up by a magnet?
+A 
+aluminium 
+B 
+copper 
+C 
+iron 
+D 
+plastic 
+7  A piece of electrical equipment is sensitive to magnetic fields and is screened from them. To do
+this, it is enclosed in a box. 
+Which material should be used to make the box? 
+A 
+copper 
+B 
+iron 
+C 
+plastic 
+D 
+steel 
+8  What always produces a permanent bar magnet?
+A 
+an iron bar in a coil carrying alternating current (a.c.) 
+B 
+an iron bar in a coil carrying direct current (d.c.) 
+C 
+a steel bar in a coil carrying alternating current (a.c.) 
+D 
+a steel bar in a coil carrying direct current (d.c.) 
+Save My Exams! – The Home of Revision 
+For more awesome GCSE and A level resources, visit us at www.savemyexams.co.uk/ 
+
+9  A metal bar PQ hangs from a thin thread and always comes to rest with end P pointing north.
+Another bar XY of the same metal settles in no definite direction. 
+What happens if the two bars are brought near one another? 
+A 
+End P and end Q both attract end X. 
+B 
+End P attracts end X but repels end Y. 
+C 
+End P neither attracts nor repels end X. 
+D 
+End P repels end X but attracts end Y. 
+10 The diagram shows a 12 V d.c. power supply connected across a coil with a metal core.
+12 V d.c.
+power supply
+metal core
+coil of wire
+The core becomes a magnet when the current is switched on. It remains a magnet after the 
+current is switched off. 
+From which metal is the core made? 
+A 
+aluminium 
+B 
+copper 
+C 
+soft iron 
+D 
+steel 
+Save My Exams! – The Home of Revision 
+For more awesome GCSE and A level resources, visit us at www.savemyexams.co.uk/ 
+
+11 A teacher sticks a magnet to the top surface of a match-box cover. The bottom surface is placed
+in a small tray of iron paperclips. As the match-box cover is lifted up, a large number of paperclips 
+are held on the bottom surface. 
+magnet
+match-box
+cover
+paperclips
+Sheets of metal are placed inside the match-box cover, between the magnet and the paperclips. 
+metal sheet
+When sheet X is placed inside, the paperclips stay attached. When sheet Y is placed inside, all 
+the paperclips fall off. 
+Which metals are the sheets made from? 
+Save My Exams! – The Home of Revision 
+For more awesome GCSE and A level resources, visit us at www.savemyexams.co.uk/ 
+
+12 The diagrams show a small compass close to a strong bar magnet.
+Which diagram shows the correct compass direction? 
+S
+N
+A
+S
+N
+B
+S
+N
+C
+S
+N
+D
+13 The magnetic field around two bar magnets is shown.
+Which diagram represents the correct arrangement of magnetic poles? 
+N
+A
+N
+S
+S
+N
+B
+S
+S
+N
+S
+C
+N
+N
+S
+S
+D
+N
+S
+N
+Save My Exams! – The Home of Revision 
+For more awesome GCSE and A level resources, visit us at www.savemyexams.co.uk/ 
+
+14 Which material is used to magnetically screen electrical equipment from unwanted magnetic
+fields? 
+A 
+aluminium 
+B 
+copper 
+C 
+iron 
+D 
+steel 
+15 The diagram shows the shape of the magnetic field lines near a current-carrying conductor.
+conductor
+P
+Q
+The current in the conductor is into the plane of the diagram. 
+Which row correctly states the direction of the field lines and compares the strengths of the field 
+at points P and Q? 
+Save My Exams! – The Home of Revision 
+For more awesome GCSE and A level resources, visit us at www.savemyexams.co.uk/ 
+
+16 A vertical wire passes at right angles through a piece of card. There is a large current in the wire
+in the direction shown. 
+direction of
+current in wire
+card
+plotting
+compass
+A plotting compass is placed on the card. 
+Which diagram shows the direction in which the needle of the plotting compass points? 
+A
+B
+C
+D
+17 A magnet is placed close to an iron bar.
+N
+S
+X
+iron
+Y
+magnet
+The iron bar becomes an induced magnet. 
+Which magnetic poles are formed at the ends X and Y of the bar? 
+Save My Exams! – The Home of Revision 
+For more awesome GCSE and A level resources, visit us at www.savemyexams.co.uk/ 
+
+18 Which list contains an example of a non-magnetic material, a magnetic material and a
+magnetised material? 
+A 
+copper, iron, a compass needle 
+B 
+copper, iron, polythene 
+C 
+iron, steel, a compass needle 
+D 
+iron, steel, polythene 
+19 The diagram shows an alarm system.
+iron core
+pivot
+iron armature
+bell
+battery P
+What happens when battery P is disconnected? 
+Save My Exams! – The Home of Revision 
+For more awesome GCSE and A level resources, visit us at www.savemyexams.co.uk/ 
+
+20 Which properties make materials suitable for use as a core in an electromagnet?
+A 
+difficult to magnetise and easy to demagnetise 
+B 
+difficult to magnetise and retains magnetic strength 
+C 
+easy to magnetise and retains magnetic strength 
+D 
+easy to magnetise and easy to demagnetise 
+21 An iron nail can be magnetised using a coil.
+How can the nail be demagnetised? 
+A 
+leaving the apparatus switched on for a long time 
+B 
+removing the nail from the coil while using an a.c. supply 
+C 
+using a coil with fewer turns 
+D 
+using more cells 
+22 Which row describes the ease with which iron or steel can be magnetised and demagnetised?
+Save My Exams! – The Home of Revision 
+For more awesome GCSE and A level resources, visit us at www.savemyexams.co.uk/ 
+
+23 The diagram shows how a steel bar can be magnetised.
+d.c. supply
++
+–
+steel bar
+A
+Which statement describes how the steel bar can be demagnetised? 
+A 
+Reverse the d.c. supply and gradually decrease the current in the circuit. 
+B 
+Reverse the d.c. supply and gradually increase the current in the circuit. 
+C 
+Use an a.c. supply and gradually decrease the current in the circuit. 
+D 
+Use an a.c. supply and gradually increase the current in the circuit. 
++
++
++
+–
++
+–
+–
+–
+24 Which diagram correctly shows the electric field lines between two point charges?
+A 
+B 
+C 
+D
+25 A piece of polythene is rubbed with a cloth duster. The polythene becomes negatively charged
+and the cloth becomes positively charged. 
+What happens to the polythene and to the cloth to cause this? 
+polythene
+olyth
+A 
+B 
+C 
+D 
+gains electrons 
+gains electrons 
+loses protons 
+loses protons 
+gains protons 
+loses electrons 
+gains protons 
+loses electrons 
+cloth
+Save My Exams! – The Home of Revision 
+For more awesome GCSE and A level resources, visit us at www.savemyexams.co.uk/ 
+
+26 Which graph shows how the current changes when the voltage across a fixed resistance is
+varied? 
+current
+voltage
+A
+00
+current
+voltage
+B
+00
+current
+voltage
+C
+00
+current
+voltage
+D
+00
+27 The diagram shows a brass rod and an iron rod beside each other at the bottom of a rectangular
+coil. 
+to d.c.
+supply
+brass
+rod
+iron
+rod
+rectangular
+coil
+What happens when a d.c. current passes through the coil? 
+A 
+Only the brass rod is magnetised. 
+B 
+Only the iron rod is magnetised. 
+C 
+The two rods attract each other. 
+D 
+The two rods repel each other. 
+Save My Exams! – The Home of Revision 
+For more awesome GCSE and A level resources, visit us at www.savemyexams.co.uk/ 
+
+28 Four metal rods are placed, in turn, inside a coil of copper wire.
+current in coil
+paper clips
+metal rod
+Each rod is used to pick up as many paper clips as possible. The current is then switched off. 
+The table gives the results of the experiment. 
+Which rod is the most suitable core for a coil in a circuit breaker? 
+Save My Exams! – The Home of Revision 
+For more awesome GCSE and A level resources, visit us at www.savemyexams.co.uk/ 
+
+29 The diagram shows a model railway signal.
+a.c. supply
+iron nail
+coil
+P
+What does the end P do when the switch is closed? 
+A 
+It goes down and stays down. 
+B 
+It goes up and stays up. 
+C 
+It goes down and then returns to its original position. 
+D 
+It goes up and then returns to its original position. 
+30 Which part of a video tape recording system does not rely on magnetic material for its operation?
+A 
+the drive motor 
+B 
+the power lead 
+C 
+the transformer 
+D 
+the video tape 
+Save My Exams! – The Home of Revision 
+For more awesome GCSE and A level resources, visit us at www.savemyexams.co.uk/ 
+
+31 The diagrams show an iron nail in four different situations.
+In which diagram will the nail become an induced magnet? 
+magnet
+iron bar
+B
+A
+C
+D
+switch open
+switch open
+32 The diagram shows parts of a loudspeaker.
+S
+S
+N
+cone
+magnet
+turns on the coil
+Which type of current is passed through the coil and why? 
+current passed through coil 
+reason why 
+A 
+alternating 
+B 
+alternating 
+C 
+direct 
+D 
+direct 
+to keep the magnetic field constant 
+to make the coil vibrate 
+to keep the magnetic field constant 
+to make the coil vibrate 
+Save My Exams! – The Home of Revision 
+For more awesome GCSE and A level resources, visit us at www.savemyexams.co.uk/ 
+
+33 A current in a solenoid creates a magnetic field.
+P
+What is the effect on the magnetic field at the point P of using a larger current in the opposite 
+direction? 
+34 The diagram shows a patient having her eyes tested. A chart with letters on it is placed behind
+her and she sees the chart reflected in a plane mirror. 
+plane mirror
+patient
+chart
+ m
+3
+2 m
+How far away from the patient is the image of the chart? 
+A 
+2 m 
+B 
+4 m 
+C 
+5 m 
+D 
+7 m 
+Save My Exams! – The Home of Revision 
+For more awesome GCSE and A level resources, visit us at www.savemyexams.co.uk/ 
+
+35 In which diagram is the path of the light ray not correct?
+air
+water
+A
+B
+D
+C
+air
+air
+air
+air
+air
+glass
+glass
+perspex
+36 A student tries to magnetise a short steel rod.
+Which of these tests will show that he has been successful? 
+A 
+both ends of a permanent magnet attract the rod 
+B 
+one end of a permanent magnet repels the rod 
+C 
+the rod picks up a small piece of paper 
+D 
+when freely suspended, the rod points in any direction 
+37 End X of a metal rod attracts the N-pole of a compass needle.
+What does this show about the rod? 
+A 
+It could be made of copper but is not permanently magnetised. 
+B 
+It could be made of copper with a S-pole at X. 
+C 
+It could be made of steel but is not permanently magnetised. 
+D 
+It could be made of steel with a N-pole at X. 
+Save My Exams! – The Home of Revision 
+For more awesome GCSE and A level resources, visit us at www.savemyexams.co.uk/ 
+
+38 Four different substances are tested by using each as the core of an electromagnet.
+The number of paper clips each holds is recorded when there is a current in the electromagnet 
+and when the current is switched off. 
+core
+paper clips
+Which substance is the best for making the core of a transformer? 
+A 
+B 
+C 
+D 
+number of paper clips held 
+when current is switched off 
+4
+0
+1
+0
+number of paper clips held 
+when there is a current in 
+the electromagnet 
+8
+6
+5
+4
+Save My Exams! – The Home of Revision 
+For more awesome GCSE and A level resources, visit us at www.savemyexams.co.uk/ 
+
+39   A bar magnet is broken into three parts X, Y and Z.
+N
+S
+X
+Y
+Z
+Which diagram shows the poles in X, Y and Z? 
+X
+Y
+Z
+A
+B
+C
+D
+N
+N
+N
+N
+N
+N
+S
+S
+S
+S
+S
+S
+N
+S
+N
+S
+N
+S
+Save My Exams! – The Home of Revision 
+For more awesome GCSE and A level resources, visit us at www.savemyexams.co.uk/ 
+
+40 The diagram shows part of a magnetic relay. M is part of the core of the magnet. L is part of the
+armature which is attracted to the core when a current flows through the coil. S is a stud which
+stops the armature being attracted too strongly.
+M
+S
+coil
+Which line of the table gives the best materials for M, L and S?
+L
+M
+L
+S
+A
+iron
+iron
+iron
+B
+iron
+iron
+copper
+C
+iron
+copper
+copper
+D
+copper
+copper
+copper
+41 Which of the following will prove that a metal bar is a permanent magnet?
+A
+it attracts another magnet
+B
+it attracts both ends of a compass needle
+C
+it conducts electricity
+D
+it repels another magnet
+Save My Exams! – The Home of Revision 
+For more awesome GCSE and A level resources, visit us at www.savemyexams.co.uk/ 
