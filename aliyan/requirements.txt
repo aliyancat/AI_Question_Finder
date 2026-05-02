@@ -3,3 +3,4 @@ groq
 google-genai>=0.1.1
 colorama
 pyfiglet
+reportlab

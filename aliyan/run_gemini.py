@@ -28,10 +28,11 @@ except ImportError:
         BRIGHT=DIM=RESET_ALL=""
 
 try:
-    import pyfiglet
-    HAS_FIG = True
+    from reportlab.lib.pagesizes import letter
+    from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer
+    from reportlab.lib.styles import getSampleStyleSheet
 except ImportError:
-    HAS_FIG = False
+    sys.exit("Missing dependency: pip install reportlab")
 
 PAPERS_DIR = Path("past_papers")
 OUTPUT_DIR = Path("output")
@@ -198,13 +199,13 @@ If the question is about a different subject or context than the syllabus, it is
 
 Output requirements:
 If NO questions strictly match the syllabus, output EXACTLY: "No questions match the syllabus."
-If there are matches, format them strictly as:
-[lowercase pdf name] - Q[numbers] - [Exact syllabus point number and text]
+If there are matches, list the matching questions in the following format:
 
-CRITICAL RULES:
-1. ONLY include questions that are 100% relevant to the syllabus context.
-2. DO NOT output the question text or answers. Output the exact syllabus point it matches.
-3. Keep the output extremely concise."""
+From [lowercase pdf name]:
+- Q[number]: [Exact question text]
+
+Only include the question text, not answers.
+Keep the output concise."""
 
     # Call Gemini
     print()
@@ -229,6 +230,26 @@ CRITICAL RULES:
     out = OUTPUT_DIR / f"report_{ts}.txt"
     out.write_text(result, encoding="utf-8")
     ok(f"Report saved → {out}")
+
+    # Generate PDF if there are questions
+    if "No questions match" not in result:
+        pdf_out = OUTPUT_DIR / f"questions_{ts}.pdf"
+        doc = SimpleDocTemplate(str(pdf_out), pagesize=letter)
+        styles = getSampleStyleSheet()
+        story = []
+        current_source = ""
+        for line in result.splitlines():
+            line = line.strip()
+            if line.startswith("From "):
+                current_source = line
+                story.append(Paragraph(current_source, styles['Heading2']))
+                story.append(Spacer(1, 12))
+            elif line.startswith("- Q"):
+                question = line[2:]  # Remove the "- "
+                story.append(Paragraph(question, styles['Normal']))
+                story.append(Spacer(1, 12))
+        doc.build(story)
+        ok(f"Questions PDF saved → {pdf_out}")
 
     print()
     divider()
