@@ -28,6 +28,12 @@ except ImportError:
         BRIGHT=DIM=RESET_ALL=""
 
 try:
+    import pyfiglet
+    HAS_FIG = True
+except ImportError:
+    HAS_FIG = False
+
+try:
     from reportlab.lib.pagesizes import letter
     from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer
     from reportlab.lib.styles import getSampleStyleSheet
