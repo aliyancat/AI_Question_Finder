@@ -86,12 +86,12 @@ def print_info_box():
 def print_tips():
     if HAS_COLOR:
         print(f"  {Style.BRIGHT}Tips for getting started:{Style.RESET_ALL}")
-        print(f"  {Fore.WHITE}1. Enter the path to your past papers folder when prompted.{Style.RESET_ALL}")
+        print(f"  {Fore.WHITE}1. Select your past papers folder from the list when prompted.{Style.RESET_ALL}")
         print(f"  {Fore.WHITE}2. Paste your syllabus when prompted — be as detailed as possible.{Style.RESET_ALL}")
         print(f"  {Fore.WHITE}3. Your report will be saved to  output/  when done.{Style.RESET_ALL}")
     else:
         print("  Tips for getting started:")
-        print("  1. Enter the path to your past papers folder when prompted.")
+        print("  1. Select your past papers folder from the list when prompted.")
         print("  2. Paste your syllabus when prompted — be as detailed as possible.")
         print("  3. Your report will be saved to  output/  when done.")
     print()
@@ -143,17 +143,36 @@ def main():
 
     ok("API key loaded")
 
-    # Prompt for past papers folder
+    # Select past papers folder
     divider()
     if HAS_COLOR:
-        print(f"\n  {Style.BRIGHT}Enter the path to your past papers folder.{Style.RESET_ALL}  {Fore.WHITE}{Style.DIM}Press Enter for default 'past_papers'.{Style.RESET_ALL}\n")
+        print(f"\n  {Style.BRIGHT}Select your past papers folder from the list below:{Style.RESET_ALL}\n")
     else:
-        print("\n  Enter the path to your past papers folder. Press Enter for default 'past_papers'.\n")
+        print("\n  Select your past papers folder from the list below:\n")
 
-    papers_dir_input = input("    ").strip()
-    if not papers_dir_input:
-        papers_dir_input = "past_papers"
-    papers_dir = Path(papers_dir_input)
+    current_dir = Path.cwd()
+    dirs = [d for d in current_dir.iterdir() if d.is_dir()]
+    if not dirs:
+        err("No folders found in the current directory.")
+
+    for i, d in enumerate(dirs, 1):
+        print(f"  {i}. {d.name}")
+
+    print()
+    while True:
+        try:
+            choice = int(input("Enter the number of the folder: ").strip())
+            if 1 <= choice <= len(dirs):
+                selected_dir = dirs[choice - 1]
+                break
+            else:
+                print("Invalid number. Please try again.")
+        except ValueError:
+            print("Please enter a valid number.")
+
+    papers_dir = selected_dir
+    print()
+    ok(f"Selected folder: {papers_dir.name}")
 
     pdfs = sorted(papers_dir.glob("*.pdf")) if papers_dir.exists() else []
     if not pdfs:
