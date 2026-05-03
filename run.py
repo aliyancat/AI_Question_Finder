@@ -34,7 +34,14 @@ except ImportError:
     HAS_FIG = False
 
 PAPERS_DIR = Path("past_papers")
-OUTPUT_DIR = Path("output")
+OUTPUT_DIR_PDFS = Path("output_pdfs")
+OUTPUT_DIR_HTML = Path("output_html")
+OUTPUT_DIR_REPORTS = Path("output_reports")
+
+# Create output directories
+OUTPUT_DIR_PDFS.mkdir(exist_ok=True)
+OUTPUT_DIR_HTML.mkdir(exist_ok=True)
+OUTPUT_DIR_REPORTS.mkdir(exist_ok=True)
 
 CORAL  = "\033[38;2;210;100;80m"
 CORAL2 = "\033[38;2;240;140;110m"
@@ -102,7 +109,7 @@ def ok(msg):
     rst = Style.RESET_ALL if HAS_COLOR else ""
     print(f"  {col}✔ {msg}{rst}")
 
-def generate_html_report(result, pdfs, output_dir, timestamp):
+def generate_html_report(result, pdfs, output_dir, timestamp, syllabus):
     """Generate an interactive HTML report with clickable PDF links."""
     
     html_content = """<!DOCTYPE html>
@@ -184,7 +191,9 @@ def generate_html_report(result, pdfs, output_dir, timestamp):
 </html>
 """
     
-    html_path = output_dir / f"questions_{timestamp}.html"
+    # Save HTML file with syllabus-based name
+    filename = sanitize_filename(syllabus) + ".html"
+    html_path = output_dir / filename
     html_path.write_text(html_content, encoding="utf-8")
     return html_path
 
@@ -193,6 +202,22 @@ def err(msg):
     rst = Style.RESET_ALL if HAS_COLOR else ""
     print(f"  {col}✘ {msg}{rst}")
     sys.exit(1)
+
+def sanitize_filename(text, max_length=100):
+    """Extract first sentence and sanitize it for use as a filename."""
+    import re
+    # Get first sentence (up to period, question mark, or exclamation)
+    match = re.match(r'([^.!?]*[.!?])', text.strip())
+    if match:
+        first_sentence = match.group(1).strip()
+    else:
+        first_sentence = text.strip()[:max_length]
+    
+    # Remove invalid filename characters
+    filename = re.sub(r'[<>:"/\\|?*]', '', first_sentence)
+    filename = re.sub(r'\s+', '_', filename)  # Replace spaces with underscores
+    filename = filename[:max_length]
+    return filename
 
 def footer(pdf_count):
     col = (Fore.WHITE + Style.DIM) if HAS_COLOR else ""

@@ -41,7 +41,14 @@ except ImportError:
     sys.exit("Missing dependency: pip install reportlab")
 
 PAPERS_DIR = Path("past_papers")
-OUTPUT_DIR = Path("output")
+OUTPUT_DIR_PDFS = Path("output_pdfs")
+OUTPUT_DIR_HTML = Path("output_html")
+OUTPUT_DIR_REPORTS = Path("output_reports")
+
+# Create output directories
+OUTPUT_DIR_PDFS.mkdir(exist_ok=True)
+OUTPUT_DIR_HTML.mkdir(exist_ok=True)
+OUTPUT_DIR_REPORTS.mkdir(exist_ok=True)
 
 CORAL  = "\033[38;2;210;100;80m"
 CORAL2 = "\033[38;2;240;140;110m"
@@ -109,7 +116,7 @@ def ok(msg):
     rst = Style.RESET_ALL if HAS_COLOR else ""
     print(f"  {col}✔ {msg}{rst}")
 
-def generate_html_report(result, pdfs, output_dir, timestamp, papers_dir):
+def generate_html_report(result, pdfs, output_dir, timestamp, papers_dir, syllabus):
     """Generate an interactive HTML report with clickable PDF links."""
     
     html_content = """<!DOCTYPE html>
@@ -319,8 +326,9 @@ def generate_html_report(result, pdfs, output_dir, timestamp, papers_dir):
 </html>
 """
     
-    # Save HTML file
-    html_path = output_dir / f"questions_{timestamp}.html"
+    # Save HTML file with syllabus-based name
+    filename = sanitize_filename(syllabus) + ".html"
+    html_path = output_dir / filename
     html_path.write_text(html_content, encoding="utf-8")
     return html_path
 
@@ -329,6 +337,22 @@ def err(msg):
     rst = Style.RESET_ALL if HAS_COLOR else ""
     print(f"  {col}✘ {msg}{rst}")
     sys.exit(1)
+
+def sanitize_filename(text, max_length=100):
+    """Extract first sentence and sanitize it for use as a filename."""
+    import re
+    # Get first sentence (up to period, question mark, or exclamation)
+    match = re.match(r'([^.!?]*[.!?])', text.strip())
+    if match:
+        first_sentence = match.group(1).strip()
+    else:
+        first_sentence = text.strip()[:max_length]
+    
+    # Remove invalid filename characters
+    filename = re.sub(r'[<>:"/\\|?*]', '', first_sentence)
+    filename = re.sub(r'\s+', '_', filename)  # Replace spaces with underscores
+    filename = filename[:max_length]
+    return filename
 
 def footer(pdf_count):
     col = (Fore.WHITE + Style.DIM) if HAS_COLOR else ""
@@ -480,15 +504,14 @@ Keep the output concise."""
     except Exception as e:
         err(f"Failed to generate content: {e}")
 
-    OUTPUT_DIR.mkdir(exist_ok=True)
     ts  = datetime.now().strftime("%Y%m%d_%H%M%S")
-    out = OUTPUT_DIR / f"report_{ts}.txt"
+    out = OUTPUT_DIR_REPORTS / f"report_{ts}.txt"
     out.write_text(result, encoding="utf-8")
     ok(f"Report saved → {out}")
 
     # Generate PDF if there are questions
     if "No questions match" not in result:
-        pdf_out = OUTPUT_DIR / f"questions_{ts}.pdf"
+        pdf_out = OUTPUT_DIR_PDFS / f"questions_{ts}.pdf"
         doc = SimpleDocTemplate(str(pdf_out), pagesize=letter)
         styles = getSampleStyleSheet()
         story = []
@@ -508,7 +531,7 @@ Keep the output concise."""
     
     # Generate interactive HTML report
     print()
-    html_path = generate_html_report(result, pdfs, OUTPUT_DIR, ts, papers_dir)
+    html_path = generate_html_report(result, pdfs, OUTPUT_DIR_HTML, ts, papers_dir, syllabus)
     ok(f"Interactive HTML saved → {html_path}")
     if HAS_COLOR:
         print(f"  {Fore.CYAN}→ Open this file in your browser to view clickable links{Style.RESET_ALL}")
