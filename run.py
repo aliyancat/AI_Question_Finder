@@ -364,15 +364,14 @@ CRITICAL RULES:
     )
     result = completion.choices[0].message.content
 
-    OUTPUT_DIR.mkdir(exist_ok=True)
     ts  = datetime.now().strftime("%Y%m%d_%H%M%S")
-    out = OUTPUT_DIR / f"report_{ts}.txt"
+    out = OUTPUT_DIR_REPORTS / f"report_{ts}.txt"
     out.write_text(result, encoding="utf-8")
     ok(f"Report saved → {out}")
 
     # Generate interactive HTML report
     print()
-    html_path = generate_html_report(result, pdfs, OUTPUT_DIR, ts)
+    html_path = generate_html_report(result, pdfs, OUTPUT_DIR_HTML, ts, syllabus)
     ok(f"Interactive HTML saved → {html_path}")
     if HAS_COLOR:
         print(f"  {Fore.CYAN}→ Open this file in your browser to view clickable links{Style.RESET_ALL}")
