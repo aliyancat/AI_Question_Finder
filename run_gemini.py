@@ -86,12 +86,12 @@ def print_info_box():
 def print_tips():
     if HAS_COLOR:
         print(f"  {Style.BRIGHT}Tips for getting started:{Style.RESET_ALL}")
-        print(f"  {Fore.WHITE}1. Drop your PDF past papers into the  past_papers/  folder.{Style.RESET_ALL}")
+        print(f"  {Fore.WHITE}1. Enter the path to your past papers folder when prompted.{Style.RESET_ALL}")
         print(f"  {Fore.WHITE}2. Paste your syllabus when prompted — be as detailed as possible.{Style.RESET_ALL}")
         print(f"  {Fore.WHITE}3. Your report will be saved to  output/  when done.{Style.RESET_ALL}")
     else:
         print("  Tips for getting started:")
-        print("  1. Drop your PDF past papers into the  past_papers/  folder.")
+        print("  1. Enter the path to your past papers folder when prompted.")
         print("  2. Paste your syllabus when prompted — be as detailed as possible.")
         print("  3. Your report will be saved to  output/  when done.")
     print()
@@ -143,11 +143,23 @@ def main():
 
     ok("API key loaded")
 
-    pdfs = sorted(PAPERS_DIR.glob("*.pdf")) if PAPERS_DIR.exists() else []
-    if not pdfs:
-        err(f"No PDFs found in '{PAPERS_DIR}/'. Add your past papers there and retry.")
+    # Prompt for past papers folder
+    divider()
+    if HAS_COLOR:
+        print(f"\n  {Style.BRIGHT}Enter the path to your past papers folder.{Style.RESET_ALL}  {Fore.WHITE}{Style.DIM}Press Enter for default 'past_papers'.{Style.RESET_ALL}\n")
+    else:
+        print("\n  Enter the path to your past papers folder. Press Enter for default 'past_papers'.\n")
 
-    ok(f"Found {len(pdfs)} past paper(s) in {PAPERS_DIR}/")
+    papers_dir_input = input("    ").strip()
+    if not papers_dir_input:
+        papers_dir_input = "past_papers"
+    papers_dir = Path(papers_dir_input)
+
+    pdfs = sorted(papers_dir.glob("*.pdf")) if papers_dir.exists() else []
+    if not pdfs:
+        err(f"No PDFs found in '{papers_dir}/'. Add your past papers there and retry.")
+
+    ok(f"Found {len(pdfs)} past paper(s) in {papers_dir}/")
     print()
 
     # Syllabus
