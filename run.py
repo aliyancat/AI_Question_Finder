@@ -222,11 +222,42 @@ def main():
 
     ok("API key loaded")
 
-    pdfs = sorted(PAPERS_DIR.glob("*.pdf")) if PAPERS_DIR.exists() else []
-    if not pdfs:
-        err(f"No PDFs found in '{PAPERS_DIR}/'. Add your past papers there and retry.")
+    # Select past papers folder
+    divider()
+    if HAS_COLOR:
+        print(f"\n  {Style.BRIGHT}Select your past papers folder from the list below:{Style.RESET_ALL}\n")
+    else:
+        print("\n  Select your past papers folder from the list below:\n")
 
-    ok(f"Found {len(pdfs)} past paper(s) in {PAPERS_DIR}/")
+    current_dir = Path.cwd()
+    dirs = [d for d in current_dir.iterdir() if d.is_dir()]
+    if not dirs:
+        err("No folders found in the current directory.")
+
+    for i, d in enumerate(dirs, 1):
+        print(f"  {i}. {d.name}")
+
+    print()
+    while True:
+        try:
+            choice = int(input("Enter the number of the folder: ").strip())
+            if 1 <= choice <= len(dirs):
+                selected_dir = dirs[choice - 1]
+                break
+            else:
+                print("Invalid number. Please try again.")
+        except ValueError:
+            print("Please enter a valid number.")
+
+    papers_dir = selected_dir
+    print()
+    ok(f"Selected folder: {papers_dir.name}")
+
+    pdfs = sorted(papers_dir.glob("*.pdf")) if papers_dir.exists() else []
+    if not pdfs:
+        err(f"No PDFs found in '{papers_dir}/'. Add your past papers there and retry.")
+
+    ok(f"Found {len(pdfs)} past paper(s) in {papers_dir}/")
     print()
 
     # Syllabus
@@ -264,9 +295,11 @@ def main():
         rst = Style.RESET_ALL if HAS_COLOR else ""
         print(f"    {col}↳ {pdf.name}{rst}")
         doc  = fitz.open(str(pdf))
-        text = "\n".join(page.get_text() for page in doc)
+        papers_text += f"\n\n=== {pdf.stem} ===\n"
+        for page_num, page in enumerate(doc, 1):
+            text = page.get_text()
+            papers_text += f"\n[PAGE {page_num}]\n{text}"
         doc.close()
-        papers_text += f"\n\n=== {pdf.stem} ===\n{text}"
 
     print()
     ok(f"Text extracted from {len(pdfs)} file(s)")
@@ -311,6 +344,13 @@ CRITICAL RULES:
     out = OUTPUT_DIR / f"report_{ts}.txt"
     out.write_text(result, encoding="utf-8")
     ok(f"Report saved → {out}")
+
+    # Generate interactive HTML report
+    print()
+    html_path = generate_html_report(result, pdfs, OUTPUT_DIR, ts)
+    ok(f"Interactive HTML saved → {html_path}")
+    if HAS_COLOR:
+        print(f"  {Fore.CYAN}→ Open this file in your browser to view clickable links{Style.RESET_ALL}")
 
     print()
     divider()
