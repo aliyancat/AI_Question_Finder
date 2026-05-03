@@ -116,7 +116,7 @@ def ok(msg):
     rst = Style.RESET_ALL if HAS_COLOR else ""
     print(f"  {col}✔ {msg}{rst}")
 
-def generate_html_report(result, pdfs, output_dir, timestamp, papers_dir, syllabus):
+def generate_html_report(result, question_pdfs, all_pdfs, output_dir, timestamp, syllabus):
     """Generate an interactive HTML report with clickable PDF links."""
     
     html_content = """<!DOCTYPE html>
@@ -187,37 +187,69 @@ def generate_html_report(result, pdfs, output_dir, timestamp, papers_dir, syllab
         .question-item {
             background: #ffffff;
             border: 1px solid #e0e0e0;
-            border-radius: 8px;
-            padding: 15px 20px;
-            margin-bottom: 12px;
-            transition: all 0.3s ease;
-            cursor: pointer;
+            border-radius: 12px;
+            padding: 22px 24px;
+            margin-bottom: 18px;
+            transition: all 0.25s ease;
         }
         
         .question-item:hover {
             border-color: #667eea;
-            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.15);
+            box-shadow: 0 8px 26px rgba(102, 126, 234, 0.12);
             transform: translateY(-2px);
         }
         
-        .question-item a {
-            text-decoration: none;
-            color: inherit;
-            display: block;
-        }
-        
         .question-text {
-            color: #333;
+            color: #212121;
             font-size: 1em;
-            line-height: 1.6;
-            word-wrap: break-word;
+            line-height: 1.7;
+            word-break: break-word;
         }
         
         .question-meta {
-            font-size: 0.9em;
+            font-size: 0.95em;
             color: #667eea;
-            margin-top: 8px;
-            font-weight: 500;
+            margin-top: 10px;
+            font-weight: 600;
+        }
+        
+        .button-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 18px;
+        }
+        
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 18px;
+            border-radius: 999px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        
+        .button-primary {
+            background: #667eea;
+            color: white;
+        }
+        
+        .button-secondary {
+            background: #f5f7ff;
+            color: #333;
+            border: 1px solid #dbe3ff;
+        }
+        
+        .button:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 8px 22px rgba(102, 126, 234, 0.15);
+        }
+        
+        .disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
         }
         
         .no-match {
@@ -251,12 +283,24 @@ def generate_html_report(result, pdfs, output_dir, timestamp, papers_dir, syllab
     <div class="container">
         <div class="header">
             <h1>📄 Past Paper Questions</h1>
-            <p>Click any question to open the PDF directly to that page</p>
+            <p>Click a question to open the PDF; use the second button for marking schemes.</p>
         </div>
         
         <div class="content">
 """
     
+    def find_marking_scheme(question_pdf):
+        candidates = [
+            f"{question_pdf.stem} ms",
+            f"{question_pdf.stem}-ms",
+            f"{question_pdf.stem}_ms",
+            f"{question_pdf.stem}ms"
+        ]
+        for pdf in all_pdfs:
+            if pdf.stem.lower() in [candidate.lower() for candidate in candidates]:
+                return pdf
+        return None
+
     if "No questions match" in result:
         html_content += '<div class="no-match">No questions match the syllabus.</div>'
     else:
@@ -271,39 +315,41 @@ def generate_html_report(result, pdfs, output_dir, timestamp, papers_dir, syllab
                 html_content += f'<div class="section"><div class="source-title">{line}</div>'
             
             elif line.startswith("- Q"):
-                # Parse: - Q[number]: [text]
                 parts = line[2:].split(":", 1)
                 if len(parts) >= 2:
                     q_num = parts[0].strip()
                     q_text = parts[1].strip()
                     
-                    # Extract PDF filename and page number from source_title
                     if current_section:
-                        # Format: From [pdf_name] | Page [number]:
                         import re
                         match = re.search(r'From\s+([^\|]+)\s*\|\s*Page\s+(\d+)', current_section)
                         if match:
                             pdf_name = match.group(1).strip()
                             page_num = match.group(2)
                             
-                            # Find the actual PDF file
                             pdf_path = None
-                            for pdf in pdfs:
+                            for pdf in question_pdfs:
                                 if pdf.stem.lower() == pdf_name.lower():
                                     pdf_path = pdf
                                     break
                             
                             if pdf_path:
-                                # Create file:// link with page anchor
-                                file_link = f"file:///{pdf_path.absolute()}#page={page_num}"
+                                paper_link = pdf_path.resolve().as_uri() + f"#page={page_num}"
+                                ms_path = find_marking_scheme(pdf_path)
+                                ms_link = ms_path.resolve().as_uri() + f"#page={page_num}" if ms_path else None
+                                
                                 html_content += f'''
                 <div class="question-item">
-                    <a href="{file_link}" title="Open {pdf_path.name} at page {page_num}">
-                        <div class="question-text">{q_num}: {q_text}</div>
-                        <div class="question-meta">📍 {pdf_path.name} — Page {page_num}</div>
-                    </a>
-                </div>
-                '''
+                    <div class="question-text">{q_num}: {q_text}</div>
+                    <div class="question-meta">📍 {pdf_path.name} — Page {page_num}</div>
+                    <div class="button-row">
+                        <a class="button button-primary" href="{paper_link}" target="_blank">Open question paper</a>
+                        '''
+                                if ms_link:
+                                    html_content += f'<a class="button button-secondary" href="{ms_link}" target="_blank">Open marking scheme</a>'
+                                else:
+                                    html_content += '<span class="button button-secondary disabled">No marking scheme found</span>'
+                                html_content += "\n                    </div>\n                </div>\n"
                             else:
                                 html_content += f'''
                 <div class="question-item" style="opacity: 0.6;">
@@ -319,7 +365,7 @@ def generate_html_report(result, pdfs, output_dir, timestamp, papers_dir, syllab
         </div>
         
         <div class="footer">
-            Generated by PaperCode | Open questions in your default PDF viewer
+            Generated by PaperCode | Open questions and marking schemes locally
         </div>
     </div>
 </body>
@@ -413,11 +459,18 @@ def main():
     print()
     ok(f"Selected folder: {papers_dir.name}")
 
-    pdfs = sorted(papers_dir.glob("*.pdf")) if papers_dir.exists() else []
-    if not pdfs:
+    all_pdfs = sorted(papers_dir.glob("*.pdf")) if papers_dir.exists() else []
+    if not all_pdfs:
         err(f"No PDFs found in '{papers_dir}/'. Add your past papers there and retry.")
 
-    ok(f"Found {len(pdfs)} past paper(s) in {papers_dir}/")
+    question_pdfs = [pdf for pdf in all_pdfs if not is_marking_scheme(pdf)]
+    scheme_pdfs = [pdf for pdf in all_pdfs if is_marking_scheme(pdf)]
+    if not question_pdfs:
+        err(f"No question paper PDFs found in '{papers_dir}/'. Make sure your question papers are not marked as marking schemes.")
+
+    ok(f"Found {len(question_pdfs)} question paper(s) in {papers_dir}/")
+    if scheme_pdfs:
+        step(f"Detected {len(scheme_pdfs)} marking scheme(s) in {papers_dir}/")
     print()
 
     # Syllabus
@@ -531,7 +584,7 @@ Keep the output concise."""
     
     # Generate interactive HTML report
     print()
-    html_path = generate_html_report(result, pdfs, OUTPUT_DIR_HTML, ts, papers_dir, syllabus)
+    html_path = generate_html_report(result, question_pdfs, all_pdfs, OUTPUT_DIR_HTML, ts, syllabus)
     ok(f"Interactive HTML saved → {html_path}")
     if HAS_COLOR:
         print(f"  {Fore.CYAN}→ Open this file in your browser to view clickable links{Style.RESET_ALL}")
