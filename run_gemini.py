@@ -58,6 +58,11 @@ RESET  = "\033[0m"
 def clear():
     os.system("cls" if os.name == "nt" else "clear")
 
+def is_marking_scheme(pdf_path):
+    name = pdf_path.stem.lower()
+    return name.endswith(" ms") or name.endswith("-ms") or name.endswith("_ms") or name.endswith("ms")
+
+
 def print_banner():
     if HAS_FIG:
         code  = pyfiglet.figlet_format("ALIYAN CODE",  font="larry3d")
@@ -301,6 +306,37 @@ def generate_html_report(result, question_pdfs, all_pdfs, output_dir, timestamp,
                 return pdf
         return None
 
+    def find_page_in_ms(ms_path, q_num):
+        try:
+            import re
+            import fitz
+            doc = fitz.open(ms_path)
+            
+            clean_q = q_num.lower().replace("q", "").strip()
+            match = re.search(r'\d+', clean_q)
+            base_q = match.group(0) if match else clean_q
+            
+            best_page = 1
+            found_base = False
+            
+            for page_num, page in enumerate(doc, 1):
+                text = page.get_text().lower()
+                
+                if clean_q and clean_q in text:
+                    doc.close()
+                    return page_num
+                
+                if not found_base and base_q:
+                    pattern = rf"(?m)^(question\s*{base_q}|{base_q}[\s\(])"
+                    if re.search(pattern, text):
+                        best_page = page_num
+                        found_base = True
+            
+            doc.close()
+            return best_page
+        except Exception:
+            return 1
+
     if "No questions match" in result:
         html_content += '<div class="no-match">No questions match the syllabus.</div>'
     else:
@@ -336,7 +372,12 @@ def generate_html_report(result, question_pdfs, all_pdfs, output_dir, timestamp,
                             if pdf_path:
                                 paper_link = pdf_path.resolve().as_uri() + f"#page={page_num}"
                                 ms_path = find_marking_scheme(pdf_path)
-                                ms_link = ms_path.resolve().as_uri() + f"#page={page_num}" if ms_path else None
+                                
+                                if ms_path:
+                                    ms_page = find_page_in_ms(ms_path, q_num)
+                                    ms_link = ms_path.resolve().as_uri() + f"#page={ms_page}"
+                                else:
+                                    ms_link = None
                                 
                                 html_content += f'''
                 <div class="question-item">
