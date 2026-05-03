@@ -1,0 +1,73 @@
+From jun-2022 | Page 4:
+- Q2(a)(i): Calculate the resistance of the lamp.
+
+From jun-2022 | Page 6:
+- Q2(c): Draw a diagram of the circuit that the student should use.
+
+From jun-2022 | Page 24:
+- Q8(a): Which of these shows the correct circuit symbol for a thermistor?
+
+From jun-2022 | Page 25:
+- Q8(b)(i): Describe how the resistance of this thermistor varies with temperature.
+- Q8(b)(ii): Draw the tangent to the curve at a temperature of 30 °C, to find the rate of change of resistance with temperature at 30 °C.
+
+From jun-2022 | Page 26:
+- Q8(c)(i): Explain one improvement in measurement that the student could make in the investigation.
+
+From jun-2022 | Page 27:
+- Q8(c)(ii): Explain why method 2 gives more precise results than method 1.
+
+From jun-2023 | Page 4:
+- Q2(a): Add connecting wires, a voltmeter and an ammeter to complete the circuit in Figure 3 so that the students can determine the resistance of the piece of iron wire.
+
+From jun-2023 | Page 5:
+- Q2(b)(i): Give the name of one additional piece of apparatus the students would need.
+- Q2(b)(ii): Draw a straight line of best fit on Figure 4.
+- Q2(b)(iii): Use Figure 4 to estimate the resistance of a 100 cm length of the iron wire.
+- Q2(b)(iv): Explain how the variable resistor is used to prevent the iron wire from becoming too hot.
+
+From jun-2023 | Page 6:
+- Q2(c): Calculate the resistance of this piece of wire.
+
+From june-2024 | Page 6:
+- Q2(b)(i): On Figure 5, draw a voltmeter connected to measure the voltage (p.d.) across the resistors.
+
+From june-2024 | Page 7:
+- Q2(b)(ii): Using data from the table in Figure 6, predict the current from the power supply when there are 4 resistors in the circuit.
+- Q2(b)(iii): Using data from the table in Figure 6, calculate the resistance of only 1 resistor.
+- Q2(b)(iv): Using data from the table in Figure 6, explain what happens to the total resistance of the circuit as the number of resistors in parallel decreases.
+
+From june-2024 | Page 25:
+- Q8(a): Complete the circuit diagram needed for this investigation.
+
+From june-2024 | Page 26:
+- Q8(b)(i): Suggest one advantage of using a data logger instead of meters in this investigation.
+- Q8(b)(ii): Describe how current varies with potential difference in the graph in Figure 20.
+
+From june-2024 | Page 27:
+- Q8(b)(iii): Use data from the graph in Figure 20 to show how the resistance changes with potential difference for the filament lamp.
+
+From nov-2021 | Page 6:
+- Q2(a)(i): Describe the relationship between the current and the voltage as shown in the graph in Figure 4.
+
+From nov-2021 | Page 7:
+- Q2(a)(ii): Use the values of the voltage and current at point P and at point Q on the graph in Figure 4 to complete the table in Figure 5.
+- Q2(a)(iii): Calculate the resistance of the filament lamp when the voltage is 4.5 V and the current is 51 mA.
+- Q2(a)(iv): Explain why the resistance of the filament lamp changes as the voltage across it increases.
+
+From nov-2021 | Page 23:
+- Q8(a)(i): Draw on Figure 17 to show how the circuit should be completed so that the current in the circuit and voltage across the device can be measured.
+
+From nov-2021 | Page 25:
+- Q8(b)(ii): State how the overall resistance of the circuit changes when any one of the devices is switched off.
+
+From specimen | Page 8:
+- Q3(a): Give three modifications the student should make to the circuit so that the circuit works correctly.
+
+From specimen | Page 9:
+- Q3(b)(i): Give one reason for using the water bath.
+- Q3(b)(ii): State one way the student could develop this experimental procedure to investigate temperatures outside this range.
+
+From specimen | Page 11:
+- Q3(c)(i): Compare and contrast how the resistances of component A and component B vary with temperature.
+- Q3(c)(ii): Which of these is the current in component A when the temperature is 80°C?
