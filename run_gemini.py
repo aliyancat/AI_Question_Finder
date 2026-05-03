@@ -542,9 +542,9 @@ def main():
     print()
     divider()
     print()
-    step(f"Reading {len(pdfs)} PDF(s)...\n")
+    step(f"Reading {len(question_pdfs)} PDF(s)...\n")
     papers_text = ""
-    for pdf in pdfs:
+    for pdf in question_pdfs:
         col = (Fore.CYAN + Style.DIM) if HAS_COLOR else ""
         rst = Style.RESET_ALL if HAS_COLOR else ""
         print(f"    {col}↳ {pdf.name}{rst}")
@@ -556,7 +556,7 @@ def main():
         doc.close()
 
     print()
-    ok(f"Text extracted from {len(pdfs)} file(s)")
+    ok(f"Text extracted from {len(question_pdfs)} file(s)")
 
     prompt_text = f"""You are a strict examiner mapping past paper questions to a specific syllabus.
 Here is the syllabus:
@@ -646,7 +646,7 @@ Keep the output concise."""
         else:
             print()
 
-    footer(len(pdfs))
+    footer(len(question_pdfs))
     print()
 
 if __name__ == "__main__":
