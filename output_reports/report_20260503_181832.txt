@@ -1,0 +1,10 @@
+From jun-2022 | Page 24:
+- Q8(a): Which of these shows the correct circuit symbol for a thermistor?
+From jun-2022 | Page 25:
+- Q8(b): A student investigates how the resistance of a thermistor varies with temperature.
+From jun-2022 | Page 26:
+- Q8(c): Figure 17 shows the apparatus used for this investigation.
+From specimen | Page 8:
+- Q3(a): The student sets up the circuit shown in Figure 5 to measure current and voltage. He finds that it does not work. Give three modifications the student should make to the circuit so that the circuit works correctly.
+From specimen | Page 9:
+- Q3(b): The student uses the equipment shown in Figure 6 to measure the temperature of the thermistor.
