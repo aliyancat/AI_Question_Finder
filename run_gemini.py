@@ -109,6 +109,221 @@ def ok(msg):
     rst = Style.RESET_ALL if HAS_COLOR else ""
     print(f"  {col}✔ {msg}{rst}")
 
+def generate_html_report(result, pdfs, output_dir, timestamp, papers_dir):
+    """Generate an interactive HTML report with clickable PDF links."""
+    
+    html_content = """<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Past Paper Questions</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+        
+        .content {
+            padding: 40px 30px;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+        }
+        
+        .source-title {
+            background: #f8f9ff;
+            border-left: 4px solid #667eea;
+            padding: 15px 20px;
+            margin-bottom: 15px;
+            border-radius: 4px;
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .question-item {
+            background: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 15px 20px;
+            margin-bottom: 12px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .question-item:hover {
+            border-color: #667eea;
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.15);
+            transform: translateY(-2px);
+        }
+        
+        .question-item a {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        
+        .question-text {
+            color: #333;
+            font-size: 1em;
+            line-height: 1.6;
+            word-wrap: break-word;
+        }
+        
+        .question-meta {
+            font-size: 0.9em;
+            color: #667eea;
+            margin-top: 8px;
+            font-weight: 500;
+        }
+        
+        .no-match {
+            text-align: center;
+            padding: 60px 30px;
+            color: #999;
+            font-size: 1.2em;
+        }
+        
+        .footer {
+            background: #f8f9ff;
+            padding: 20px 30px;
+            text-align: center;
+            color: #666;
+            font-size: 0.95em;
+            border-top: 1px solid #e0e0e0;
+        }
+        
+        @media (max-width: 600px) {
+            .header h1 {
+                font-size: 1.8em;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📄 Past Paper Questions</h1>
+            <p>Click any question to open the PDF directly to that page</p>
+        </div>
+        
+        <div class="content">
+"""
+    
+    if "No questions match" in result:
+        html_content += '<div class="no-match">No questions match the syllabus.</div>'
+    else:
+        current_section = None
+        for line in result.splitlines():
+            line = line.strip()
+            
+            if line.startswith("From "):
+                if current_section:
+                    html_content += '</div>'
+                current_section = line
+                html_content += f'<div class="section"><div class="source-title">{line}</div>'
+            
+            elif line.startswith("- Q"):
+                # Parse: - Q[number]: [text]
+                parts = line[2:].split(":", 1)
+                if len(parts) >= 2:
+                    q_num = parts[0].strip()
+                    q_text = parts[1].strip()
+                    
+                    # Extract PDF filename and page number from source_title
+                    if current_section:
+                        # Format: From [pdf_name] | Page [number]:
+                        import re
+                        match = re.search(r'From\s+([^\|]+)\s*\|\s*Page\s+(\d+)', current_section)
+                        if match:
+                            pdf_name = match.group(1).strip()
+                            page_num = match.group(2)
+                            
+                            # Find the actual PDF file
+                            pdf_path = None
+                            for pdf in pdfs:
+                                if pdf.stem.lower() == pdf_name.lower():
+                                    pdf_path = pdf
+                                    break
+                            
+                            if pdf_path:
+                                # Create file:// link with page anchor
+                                file_link = f"file:///{pdf_path.absolute()}#page={page_num}"
+                                html_content += f'''
+                <div class="question-item">
+                    <a href="{file_link}" title="Open {pdf_path.name} at page {page_num}">
+                        <div class="question-text">{q_num}: {q_text}</div>
+                        <div class="question-meta">📍 {pdf_path.name} — Page {page_num}</div>
+                    </a>
+                </div>
+                '''
+                            else:
+                                html_content += f'''
+                <div class="question-item" style="opacity: 0.6;">
+                    <div class="question-text">{q_num}: {q_text}</div>
+                    <div class="question-meta">⚠️ PDF not found: {pdf_name}</div>
+                </div>
+                '''
+        
+        if current_section:
+            html_content += '</div>'
+    
+    html_content += """
+        </div>
+        
+        <div class="footer">
+            Generated by PaperCode | Open questions in your default PDF viewer
+        </div>
+    </div>
+</body>
+</html>
+"""
+    
+    # Save HTML file
+    html_path = output_dir / f"questions_{timestamp}.html"
+    html_path.write_text(html_content, encoding="utf-8")
+    return html_path
+
 def err(msg):
     col = (Fore.RED + Style.BRIGHT) if HAS_COLOR else ""
     rst = Style.RESET_ALL if HAS_COLOR else ""
@@ -216,9 +431,11 @@ def main():
         rst = Style.RESET_ALL if HAS_COLOR else ""
         print(f"    {col}↳ {pdf.name}{rst}")
         doc  = fitz.open(str(pdf))
-        text = "\n".join(page.get_text() for page in doc)
+        papers_text += f"\n\n=== {pdf.stem} ===\n"
+        for page_num, page in enumerate(doc, 1):
+            text = page.get_text()
+            papers_text += f"\n[PAGE {page_num}]\n{text}"
         doc.close()
-        papers_text += f"\n\n=== {pdf.stem} ===\n{text}"
 
     print()
     ok(f"Text extracted from {len(pdfs)} file(s)")
@@ -227,7 +444,7 @@ def main():
 Here is the syllabus:
 {syllabus}
 
-Here are the past paper questions:
+Here are the past paper questions (with page numbers marked as [PAGE N]):
 {papers_text}
 
 Analyze EACH past paper question and determine if it is EXPLICITLY covered by the syllabus.
@@ -238,9 +455,10 @@ Output requirements:
 If NO questions strictly match the syllabus, output EXACTLY: "No questions match the syllabus."
 If there are matches, list the matching questions in the following format:
 
-From [lowercase pdf name]:
+From [lowercase pdf name] | Page [page number]:
 - Q[number]: [Exact question text]
 
+IMPORTANT: Include the page number where each question appears.
 Only include the question text, not answers.
 Keep the output concise."""
 
@@ -287,6 +505,14 @@ Keep the output concise."""
                 story.append(Spacer(1, 12))
         doc.build(story)
         ok(f"Questions PDF saved → {pdf_out}")
+    
+    # Generate interactive HTML report
+    print()
+    html_path = generate_html_report(result, pdfs, OUTPUT_DIR, ts, papers_dir)
+    ok(f"Interactive HTML saved → {html_path}")
+    if HAS_COLOR:
+        print(f"  {Fore.CYAN}→ Open this file in your browser to view clickable links{Style.RESET_ALL}")
+    print()
 
     print()
     divider()
