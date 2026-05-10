@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Past Paper Questions</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+        
+        .content {
+            padding: 40px 30px;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+        }
+        
+        .source-title {
+            background: #f8f9ff;
+            border-left: 4px solid #667eea;
+            padding: 15px 20px;
+            margin-bottom: 15px;
+            border-radius: 4px;
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .question-item {
+            background: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 12px;
+            padding: 22px 24px;
+            margin-bottom: 18px;
+            transition: all 0.25s ease;
+        }
+        
+        .question-item:hover {
+            border-color: #667eea;
+            box-shadow: 0 8px 26px rgba(102, 126, 234, 0.12);
+            transform: translateY(-2px);
+        }
+        
+        .question-text {
+            color: #212121;
+            font-size: 1em;
+            line-height: 1.7;
+            word-break: break-word;
+        }
+        
+        .question-meta {
+            font-size: 0.95em;
+            color: #667eea;
+            margin-top: 10px;
+            font-weight: 600;
+        }
+        
+        .button-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 18px;
+        }
+        
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 18px;
+            border-radius: 999px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        
+        .button-primary {
+            background: #667eea;
+            color: white;
+        }
+        
+        .button-secondary {
+            background: #f5f7ff;
+            color: #333;
+            border: 1px solid #dbe3ff;
+        }
+        
+        .button:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 8px 22px rgba(102, 126, 234, 0.15);
+        }
+        
+        .disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        
+        .no-match {
+            text-align: center;
+            padding: 60px 30px;
+            color: #999;
+            font-size: 1.2em;
+        }
+        
+        .footer {
+            background: #f8f9ff;
+            padding: 20px 30px;
+            text-align: center;
+            color: #666;
+            font-size: 0.95em;
+            border-top: 1px solid #e0e0e0;
+        }
+        
+        @media (max-width: 600px) {
+            .header h1 {
+                font-size: 1.8em;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📄 Past Paper Questions</h1>
+            <p>Click a question to open the PDF; use the second button for marking schemes.</p>
+        </div>
+        
+        <div class="content">
+<div class="section"><div class="source-title">From june-2019 | Page 4:</div>
+                <div class="question-item">
+                    <div class="question-text">Q1(c)(i): Give one example of a solid state device.</div>
+                    <div class="question-meta">📍 June-2019.pdf — Page 4</div>
+                    <div class="button-row">
+                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers/June-2019.pdf#page=4" target="_blank">Open question paper</a>
+                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers/June-2019-ms.pdf#page=6" target="_blank">Open marking scheme</a>
+                    </div>
+                </div>
+
+                <div class="question-item">
+                    <div class="question-text">Q1(c)(ii): Identify whether the device given in part (c)(i) is an example of primary or secondary memory.</div>
+                    <div class="question-meta">📍 June-2019.pdf — Page 4</div>
+                    <div class="button-row">
+                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers/June-2019.pdf#page=4" target="_blank">Open question paper</a>
+                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers/June-2019-ms.pdf#page=6" target="_blank">Open marking scheme</a>
+                    </div>
+                </div>
+</div><div class="section"><div class="source-title">From june-2019 | Page 5:</div>
+                <div class="question-item">
+                    <div class="question-text">Q1(c)(iii)*: Kerry was originally going to use an optical storage device to transfer her files. Discuss whether an optical or solid state device is the most appropriate media to transfer these files. You may want to consider the following characteristics in your answer: • portability • robustness • capacity • cost</div>
+                    <div class="question-meta">📍 June-2019.pdf — Page 5</div>
+                    <div class="button-row">
+                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers/June-2019.pdf#page=5" target="_blank">Open question paper</a>
+                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers/June-2019-ms.pdf#page=6" target="_blank">Open marking scheme</a>
+                    </div>
+                </div>
+</div><div class="section"><div class="source-title">From june-2022 | Page 12:</div>
+                <div class="question-item">
+                    <div class="question-text">Q7(b)(i): State, using an example, why the smart television needs secondary storage.</div>
+                    <div class="question-meta">📍 June-2022.pdf — Page 12</div>
+                    <div class="button-row">
+                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers/June-2022.pdf#page=12" target="_blank">Open question paper</a>
+                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers/June-2022-ms.pdf#page=10" target="_blank">Open marking scheme</a>
+                    </div>
+                </div>
+
+                <div class="question-item">
+                    <div class="question-text">Q7(b)(ii): Identify one appropriate type of secondary storage for the smart television. Justify your choice.</div>
+                    <div class="question-meta">📍 June-2022.pdf — Page 12</div>
+                    <div class="button-row">
+                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers/June-2022.pdf#page=12" target="_blank">Open question paper</a>
+                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers/June-2022-ms.pdf#page=10" target="_blank">Open marking scheme</a>
+                    </div>
+                </div>
+</div><div class="section"><div class="source-title">From june-2023 | Page 10:</div>
+                <div class="question-item">
+                    <div class="question-text">Q5(a)(i): Explain why a computer needs both primary and secondary storage.</div>
+                    <div class="question-meta">📍 June-2023.pdf — Page 10</div>
+                    <div class="button-row">
+                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers/June-2023.pdf#page=10" target="_blank">Open question paper</a>
+                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers/June-2023-ms.pdf#page=12" target="_blank">Open marking scheme</a>
+                    </div>
+                </div>
+
+                <div class="question-item">
+                    <div class="question-text">Q5(a)(ii): Give one example of a secondary storage device that the artist’s computer will have and an example of the data that will be stored on it.</div>
+                    <div class="question-meta">📍 June-2023.pdf — Page 10</div>
+                    <div class="button-row">
+                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers/June-2023.pdf#page=10" target="_blank">Open question paper</a>
+                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers/June-2023-ms.pdf#page=12" target="_blank">Open marking scheme</a>
+                    </div>
+                </div>
+
+                <div class="question-item">
+                    <div class="question-text">Q5(a)(iii): The computer has Virtual Memory (VM). The table has four statements about VM. Not all of the statements are correct. Tick (3) the True column for the statements that are correct. Re-write any statement that is incorrect in the False column by changing the statement to make it true.</div>
+                    <div class="question-meta">📍 June-2023.pdf — Page 10</div>
+                    <div class="button-row">
+                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers/June-2023.pdf#page=10" target="_blank">Open question paper</a>
+                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers/June-2023-ms.pdf#page=12" target="_blank">Open marking scheme</a>
+                    </div>
+                </div>
+</div><div class="section"><div class="source-title">From june-2024 | Page 6:</div>
+                <div class="question-item">
+                    <div class="question-text">Q3(b): Complete the description of utility system software using the words provided in the box. Not all words are used.</div>
+                    <div class="question-meta">📍 June-2024.pdf — Page 6</div>
+                    <div class="button-row">
+                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers/June-2024.pdf#page=6" target="_blank">Open question paper</a>
+                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers/June-2024-ms.pdf#page=4" target="_blank">Open marking scheme</a>
+                    </div>
+                </div>
+</div><div class="section"><div class="source-title">From june-2024 | Page 10:</div>
+                <div class="question-item">
+                    <div class="question-text">Q5(b)(i): Identify whether the musician should buy a magnetic secondary storage device or a solid state secondary storage device for their computer. Justify your choice.</div>
+                    <div class="question-meta">📍 June-2024.pdf — Page 10</div>
+                    <div class="button-row">
+                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers/June-2024.pdf#page=10" target="_blank">Open question paper</a>
+                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers/June-2024-ms.pdf#page=6" target="_blank">Open marking scheme</a>
+                    </div>
+                </div>
+
+                <div class="question-item">
+                    <div class="question-text">Q5(b)(ii): Identify one other type of secondary storage.</div>
+                    <div class="question-meta">📍 June-2024.pdf — Page 10</div>
+                    <div class="button-row">
+                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers/June-2024.pdf#page=10" target="_blank">Open question paper</a>
+                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers/June-2024-ms.pdf#page=6" target="_blank">Open marking scheme</a>
+                    </div>
+                </div>
+
+                <div class="question-item">
+                    <div class="question-text">Q5(b)(iii): Tick (✓) one box to identify the smallest secondary storage capacity.</div>
+                    <div class="question-meta">📍 June-2024.pdf — Page 10</div>
+                    <div class="button-row">
+                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers/June-2024.pdf#page=10" target="_blank">Open question paper</a>
+                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers/June-2024-ms.pdf#page=6" target="_blank">Open marking scheme</a>
+                    </div>
+                </div>
+
+                <div class="question-item">
+                    <div class="question-text">Q5(b)(iv): The musician’s recordings have an average (mean) file size of 3 MB. The musician has 1000 recordings. Calculate an estimate of the storage space in GB that the 1000 files will require, assuming they are each 3 MB in size. Show your working out.</div>
+                    <div class="question-meta">📍 June-2024.pdf — Page 10</div>
+                    <div class="button-row">
+                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers/June-2024.pdf#page=10" target="_blank">Open question paper</a>
+                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers/June-2024-ms.pdf#page=6" target="_blank">Open marking scheme</a>
+                    </div>
+                </div>
+</div><div class="section"><div class="source-title">From nov-2019 | Page 4:</div>
+                <div class="question-item">
+                    <div class="question-text">Q1(c)(i): Give one example of a solid state device.</div>
+                    <div class="question-meta">📍 Nov-2019.pdf — Page 4</div>
+                    <div class="button-row">
+                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers/Nov-2019.pdf#page=4" target="_blank">Open question paper</a>
+                        <span class="button button-secondary disabled">No marking scheme found</span>
+                    </div>
+                </div>
+
+                <div class="question-item">
+                    <div class="question-text">Q1(c)(ii): Identify whether the device given in part (c)(i) is an example of primary or secondary memory.</div>
+                    <div class="question-meta">📍 Nov-2019.pdf — Page 4</div>
+                    <div class="button-row">
+                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers/Nov-2019.pdf#page=4" target="_blank">Open question paper</a>
+                        <span class="button button-secondary disabled">No marking scheme found</span>
+                    </div>
+                </div>
+</div><div class="section"><div class="source-title">From nov-2019 | Page 5:</div>
+                <div class="question-item">
+                    <div class="question-text">Q1(c)(iii)*: Kerry was originally going to use an optical storage device to transfer her files. Discuss whether an optical or solid state device is the most appropriate media to transfer these files. You may want to consider the following characteristics in your answer: • portability • robustness • capacity • cost</div>
+                    <div class="question-meta">📍 Nov-2019.pdf — Page 5</div>
+                    <div class="button-row">
+                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers/Nov-2019.pdf#page=5" target="_blank">Open question paper</a>
+                        <span class="button button-secondary disabled">No marking scheme found</span>
+                    </div>
+                </div>
+</div><div class="section"><div class="source-title">From nov-2020 | Page 5:</div>
+                <div class="question-item">
+                    <div class="question-text">Q2(e): Some of Hope’s files are stored on the cloud. Describe the benefits and drawbacks to Hope of storing her files on the cloud.</div>
+                    <div class="question-meta">📍 Nov-2020.pdf — Page 5</div>
+                    <div class="button-row">
+                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers/Nov-2020.pdf#page=5" target="_blank">Open question paper</a>
+                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers/Nov-2020-ms.pdf#page=3" target="_blank">Open marking scheme</a>
+                    </div>
+                </div>
+</div><div class="section"><div class="source-title">From nov-2020 | Page 10:</div>
+                <div class="question-item">
+                    <div class="question-text">Q5(b)(i): Explain how defragmentation will change how the files and free space are arranged on Ali’s hard disk.</div>
+                    <div class="question-meta">📍 Nov-2020.pdf — Page 10</div>
+                    <div class="button-row">
+                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers/Nov-2020.pdf#page=10" target="_blank">Open question paper</a>
+                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers/Nov-2020-ms.pdf#page=6" target="_blank">Open marking scheme</a>
+                    </div>
+                </div>
+
+                <div class="question-item">
+                    <div class="question-text">Q5(b)(ii): After defragmentation, Ali’s computer is able to access files faster. Explain why Ali’s computer can access the files faster after defragmentation.</div>
+                    <div class="question-meta">📍 Nov-2020.pdf — Page 10</div>
+                    <div class="button-row">
+                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers/Nov-2020.pdf#page=10" target="_blank">Open question paper</a>
+                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers/Nov-2020-ms.pdf#page=6" target="_blank">Open marking scheme</a>
+                    </div>
+                </div>
+</div><div class="section"><div class="source-title">From nov-2020 | Page 11:</div>
+                <div class="question-item">
+                    <div class="question-text">Q5(c): Ali’s computer uses virtual memory. Ali has written two procedures to help himself understand how virtual memory works. storeData() describes how data is stored in RAM. accessData() describes how data is read from RAM. Write the letter of the missing statements from the table in the correct place to complete the algorithms. Not all statements are used, and some statements might be used more than once.</div>
+                    <div class="question-meta">📍 Nov-2020.pdf — Page 11</div>
+                    <div class="button-row">
+                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers/Nov-2020.pdf#page=11" target="_blank">Open question paper</a>
+                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers/Nov-2020-ms.pdf#page=6" target="_blank">Open marking scheme</a>
+                    </div>
+                </div>
+</div><div class="section"><div class="source-title">From nov-2020 | Page 12:</div>
+                <div class="question-item">
+                    <div class="question-text">Q5(f): Ali’s tablet computer has 100 GB of secondary storage. There is currently 80 GB available. Ali wants to transfer a series of video clips onto his tablet. Each video is, on average, 200 000 kilobytes. Calculate an estimate of the number of video clips Ali can fit onto his tablet. Show your working.</div>
+                    <div class="question-meta">📍 Nov-2020.pdf — Page 12</div>
+                    <div class="button-row">
+                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers/Nov-2020.pdf#page=12" target="_blank">Open question paper</a>
+                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers/Nov-2020-ms.pdf#page=6" target="_blank">Open marking scheme</a>
+                    </div>
+                </div>
+</div><div class="section"><div class="source-title">From nov-2021 | Page 6:</div>
+                <div class="question-item">
+                    <div class="question-text">Q5: A program is being created to convert the data capacity of a storage device into a different measure. The function, calculate(), takes the measurement (e.g. gigabytes) and the number (e.g. 2) as two parameters. It then returns the value in bits. The function returns –1 if an invalid measurement was entered. Complete the function calculate</div>
+                    <div class="question-meta">📍 Nov-2021.pdf — Page 6</div>
+                    <div class="button-row">
+                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers/Nov-2021.pdf#page=6" target="_blank">Open question paper</a>
+                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers/Nov-2021-ms.pdf#page=5" target="_blank">Open marking scheme</a>
+                    </div>
+                </div>
+</div><div class="section"><div class="source-title">From nov-2021 | Page 7:</div>
+                <div class="question-item">
+                    <div class="question-text">Q6(a): Describe what the internal secondary storage device will store.</div>
+                    <div class="question-meta">📍 Nov-2021.pdf — Page 7</div>
+                    <div class="button-row">
+                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers/Nov-2021.pdf#page=7" target="_blank">Open question paper</a>
+                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers/Nov-2021-ms.pdf#page=6" target="_blank">Open marking scheme</a>
+                    </div>
+                </div>
+
+                <div class="question-item">
+                    <div class="question-text">Q6(b)(i): Give three benefits of the tablet having a solid state device instead of a magnetic device.</div>
+                    <div class="question-meta">📍 Nov-2021.pdf — Page 7</div>
+                    <div class="button-row">
+                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers/Nov-2021.pdf#page=7" target="_blank">Open question paper</a>
+                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers/Nov-2021-ms.pdf#page=6" target="_blank">Open marking scheme</a>
+                    </div>
+                </div>
+
+                <div class="question-item">
+                    <div class="question-text">Q6(b)(ii): Give two drawbacks of the tablet having a solid state device instead of a magnetic device.</div>
+                    <div class="question-meta">📍 Nov-2021.pdf — Page 7</div>
+                    <div class="button-row">
+                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers/Nov-2021.pdf#page=7" target="_blank">Open question paper</a>
+                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers/Nov-2021-ms.pdf#page=6" target="_blank">Open marking scheme</a>
+                    </div>
+                </div>
+</div><div class="section"><div class="source-title">From sample-paper | Page 3:</div>
+                <div class="question-item">
+                    <div class="question-text">Q2(a): Define what is meant by ‘secondary storage’.</div>
+                    <div class="question-meta">📍 sample-paper.pdf — Page 3</div>
+                    <div class="button-row">
+                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers/sample-paper.pdf#page=3" target="_blank">Open question paper</a>
+                        <span class="button button-secondary disabled">No marking scheme found</span>
+                    </div>
+                </div>
+
+                <div class="question-item">
+                    <div class="question-text">Q2(b): Identify the three common types of storage Nina can choose from.</div>
+                    <div class="question-meta">📍 sample-paper.pdf — Page 3</div>
+                    <div class="button-row">
+                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers/sample-paper.pdf#page=3" target="_blank">Open question paper</a>
+                        <span class="button button-secondary disabled">No marking scheme found</span>
+                    </div>
+                </div>
+
+                <div class="question-item">
+                    <div class="question-text">Q2(c): State four characteristics of secondary storage devices that Nina should consider when choosing a device.</div>
+                    <div class="question-meta">📍 sample-paper.pdf — Page 3</div>
+                    <div class="button-row">
+                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers/sample-paper.pdf#page=3" target="_blank">Open question paper</a>
+                        <span class="button button-secondary disabled">No marking scheme found</span>
+                    </div>
+                </div>
+</div><div class="section"><div class="source-title">From sample-paper | Page 9:</div>
+                <div class="question-item">
+                    <div class="question-text">Q9(a): Explain how the restaurant’s hard disc could have become fragmented.</div>
+                    <div class="question-meta">📍 sample-paper.pdf — Page 9</div>
+                    <div class="button-row">
+                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers/sample-paper.pdf#page=9" target="_blank">Open question paper</a>
+                        <span class="button button-secondary disabled">No marking scheme found</span>
+                    </div>
+                </div>
+
+                <div class="question-item">
+                    <div class="question-text">Q9(b): Explain how defragmentation software could overcome the issue of the slow computer system.</div>
+                    <div class="question-meta">📍 sample-paper.pdf — Page 9</div>
+                    <div class="button-row">
+                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers/sample-paper.pdf#page=9" target="_blank">Open question paper</a>
+                        <span class="button button-secondary disabled">No marking scheme found</span>
+                    </div>
+                </div>
+</div><div class="section"><div class="source-title">From sample-paper | Page 10:</div>
+                <div class="question-item">
+                    <div class="question-text">Q10(b): Explain two advantages to the law company of storing their data in the Cloud.</div>
+                    <div class="question-meta">📍 sample-paper.pdf — Page 10</div>
+                    <div class="button-row">
+                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers/sample-paper.pdf#page=10" target="_blank">Open question paper</a>
+                        <span class="button button-secondary disabled">No marking scheme found</span>
+                    </div>
+                </div>
+
+                <div class="question-item">
+                    <div class="question-text">Q10(c): Explain two disadvantages to the law company of storing their data in the Cloud.</div>
+                    <div class="question-meta">📍 sample-paper.pdf — Page 10</div>
+                    <div class="button-row">
+                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers/sample-paper.pdf#page=10" target="_blank">Open question paper</a>
+                        <span class="button button-secondary disabled">No marking scheme found</span>
+                    </div>
+                </div>
+</div>
+        </div>
+        
+        <div class="footer">
+            Generated by PaperCode | Open questions and marking schemes locally
+        </div>
+    </div>
+</body>
+</html>

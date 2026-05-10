@@ -1,0 +1,13 @@
+From june-2019 | Page 9:
+- Q3(a)(i): Describe the problems that can arise from unauthorised access to his laptop and confidential documents.
+
+From june-2023 | Page 9:
+- Q4(b): Name and describe one threat to a computer system that is not given in question 4(a).
+
+From nov-2020 | Page 2:
+- Q1(a): The table has four potential threats to data. Write one prevention method for each threat in the table. Each prevention method must be different. Threat: Unauthorised access to computer, Virus, Phishing, Data interception
+- Q1(b): Name two other threats to the data in a computer system and give a method of preventing each.
+
+From nov-2021 | Page 10:
+- Q7(d)(i): Describe the threat malware can pose to the university’s network and give a prevention method that the university can use.
+- Q7(d)(ii): Describe the threat a brute force attack can pose to the university’s network and give a prevention method that the university can use.

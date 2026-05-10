@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Past Paper Questions</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+        
+        .content {
+            padding: 40px 30px;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+        }
+        
+        .source-title {
+            background: #f8f9ff;
+            border-left: 4px solid #667eea;
+            padding: 15px 20px;
+            margin-bottom: 15px;
+            border-radius: 4px;
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .question-item {
+            background: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 12px;
+            padding: 22px 24px;
+            margin-bottom: 18px;
+            transition: all 0.25s ease;
+        }
+        
+        .question-item:hover {
+            border-color: #667eea;
+            box-shadow: 0 8px 26px rgba(102, 126, 234, 0.12);
+            transform: translateY(-2px);
+        }
+        
+        .question-text {
+            color: #212121;
+            font-size: 1em;
+            line-height: 1.7;
+            word-break: break-word;
+        }
+        
+        .question-meta {
+            font-size: 0.95em;
+            color: #667eea;
+            margin-top: 10px;
+            font-weight: 600;
+        }
+        
+        .button-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 18px;
+        }
+        
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 18px;
+            border-radius: 999px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        
+        .button-primary {
+            background: #667eea;
+            color: white;
+        }
+        
+        .button-secondary {
+            background: #f5f7ff;
+            color: #333;
+            border: 1px solid #dbe3ff;
+        }
+        
+        .button:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 8px 22px rgba(102, 126, 234, 0.15);
+        }
+        
+        .disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        
+        .no-match {
+            text-align: center;
+            padding: 60px 30px;
+            color: #999;
+            font-size: 1.2em;
+        }
+        
+        .footer {
+            background: #f8f9ff;
+            padding: 20px 30px;
+            text-align: center;
+            color: #666;
+            font-size: 0.95em;
+            border-top: 1px solid #e0e0e0;
+        }
+        
+        @media (max-width: 600px) {
+            .header h1 {
+                font-size: 1.8em;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📄 Past Paper Questions</h1>
+            <p>Click a question to open the PDF; use the second button for marking schemes.</p>
+        </div>
+        
+        <div class="content">
+<div class="section"><div class="source-title">From june-2019 | Page 15:</div>
+                <div class="question-item">
+                    <div class="question-text">Q5(a)(i): Complete the table to show the output for each cargo item.</div>
+                    <div class="question-meta">📍 june-2019.pdf — Page 15</div>
+                    <div class="button-row">
+                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_paper1/june-2019.pdf#page=15" target="_blank">Open question paper</a>
+                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_paper1/june-2019-ms.pdf#page=15" target="_blank">Open marking scheme</a>
+                    </div>
+                </div>
+
+                <div class="question-item">
+                    <div class="question-text">Q5(a)(ii): State the purpose of the algorithm in Figure 2.</div>
+                    <div class="question-meta">📍 june-2019.pdf — Page 15</div>
+                    <div class="button-row">
+                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_paper1/june-2019.pdf#page=15" target="_blank">Open question paper</a>
+                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_paper1/june-2019-ms.pdf#page=15" target="_blank">Open marking scheme</a>
+                    </div>
+                </div>
+</div><div class="section"><div class="source-title">From june-2019 | Page 16:</div>
+                <div class="question-item">
+                    <div class="question-text">Q5(b): Complete the algorithm in the space provided in Figure 3.</div>
+                    <div class="question-meta">📍 june-2019.pdf — Page 16</div>
+                    <div class="button-row">
+                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_paper1/june-2019.pdf#page=16" target="_blank">Open question paper</a>
+                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_paper1/june-2019-ms.pdf#page=16" target="_blank">Open marking scheme</a>
+                    </div>
+                </div>
+</div><div class="section"><div class="source-title">From june-2019 | Page 19:</div>
+                <div class="question-item">
+                    <div class="question-text">Q5(c)(i): Complete the trace table for an input of 50500 to show what happens due to the error on line 9 in the pseudocode in Figure 4.</div>
+                    <div class="question-meta">📍 june-2019.pdf — Page 19</div>
+                    <div class="button-row">
+                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_paper1/june-2019.pdf#page=19" target="_blank">Open question paper</a>
+                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_paper1/june-2019-ms.pdf#page=17" target="_blank">Open marking scheme</a>
+                    </div>
+                </div>
+
+                <div class="question-item">
+                    <div class="question-text">Q5(c)(ii): Construct a single line of pseudocode to correct line 9.</div>
+                    <div class="question-meta">📍 june-2019.pdf — Page 19</div>
+                    <div class="button-row">
+                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_paper1/june-2019.pdf#page=19" target="_blank">Open question paper</a>
+                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_paper1/june-2019-ms.pdf#page=17" target="_blank">Open marking scheme</a>
+                    </div>
+                </div>
+</div><div class="section"><div class="source-title">From june-2020 | Page 17:</div>
+                <div class="question-item">
+                    <div class="question-text">Q6(a): Draw your flowchart here.</div>
+                    <div class="question-meta">📍 june-2020.pdf — Page 17</div>
+                    <div class="button-row">
+                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_paper1/june-2020.pdf#page=17" target="_blank">Open question paper</a>
+                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_paper1/june-2020-ms.pdf#page=17" target="_blank">Open marking scheme</a>
+                    </div>
+                </div>
+</div><div class="section"><div class="source-title">From june-2020 | Page 18:</div>
+                <div class="question-item">
+                    <div class="question-text">Q6(b)(i): Give the output produced by the algorithm.</div>
+                    <div class="question-meta">📍 june-2020.pdf — Page 18</div>
+                    <div class="button-row">
+                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_paper1/june-2020.pdf#page=18" target="_blank">Open question paper</a>
+                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_paper1/june-2020-ms.pdf#page=19" target="_blank">Open marking scheme</a>
+                    </div>
+                </div>
+
+                <div class="question-item">
+                    <div class="question-text">Q6(b)(ii): Give the number of the line in the algorithm that would need to be amended to allow for any number of flavours.</div>
+                    <div class="question-meta">📍 june-2020.pdf — Page 18</div>
+                    <div class="button-row">
+                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_paper1/june-2020.pdf#page=18" target="_blank">Open question paper</a>
+                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_paper1/june-2020-ms.pdf#page=19" target="_blank">Open marking scheme</a>
+                    </div>
+                </div>
+</div><div class="section"><div class="source-title">From june-2020 | Page 19:</div>
+                <div class="question-item">
+                    <div class="question-text">Q6(b)(iii): State how the pseudocode needs to be changed to make this amendment.</div>
+                    <div class="question-meta">📍 june-2020.pdf — Page 19</div>
+                    <div class="button-row">
+                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_paper1/june-2020.pdf#page=19" target="_blank">Open question paper</a>
+                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_paper1/june-2020-ms.pdf#page=19" target="_blank">Open marking scheme</a>
+                    </div>
+                </div>
+</div><div class="section"><div class="source-title">From june-2021 | Page 13:</div>
+                <div class="question-item">
+                    <div class="question-text">Q5(a)(i): Complete the trace table. You may not need to use all of the rows.</div>
+                    <div class="question-meta">📍 june-2021.pdf — Page 13</div>
+                    <div class="button-row">
+                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_paper1/june-2021.pdf#page=13" target="_blank">Open question paper</a>
+                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_paper1/june-2021-ms.pdf#page=13" target="_blank">Open marking scheme</a>
+                    </div>
+                </div>
+
+                <div class="question-item">
+                    <div class="question-text">Q5(a)(ii): Give the purpose of the algorithm.</div>
+                    <div class="question-meta">📍 june-2021.pdf — Page 13</div>
+                    <div class="button-row">
+                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_paper1/june-2021.pdf#page=13" target="_blank">Open question paper</a>
+                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_paper1/june-2021-ms.pdf#page=13" target="_blank">Open marking scheme</a>
+                    </div>
+                </div>
+
+                <div class="question-item">
+                    <div class="question-text">Q5(a)(iii): Explain why the variable Temp is needed.</div>
+                    <div class="question-meta">📍 june-2021.pdf — Page 13</div>
+                    <div class="button-row">
+                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_paper1/june-2021.pdf#page=13" target="_blank">Open question paper</a>
+                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_paper1/june-2021-ms.pdf#page=13" target="_blank">Open marking scheme</a>
+                    </div>
+                </div>
+</div><div class="section"><div class="source-title">From june-2021 | Page 14:</div>
+                <div class="question-item">
+                    <div class="question-text">Q5(b)(i): Explain why the Actual result is not the same as the Expected result.</div>
+                    <div class="question-meta">📍 june-2021.pdf — Page 14</div>
+                    <div class="button-row">
+                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_paper1/june-2021.pdf#page=14" target="_blank">Open question paper</a>
+                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_paper1/june-2021-ms.pdf#page=14" target="_blank">Open marking scheme</a>
+                    </div>
+                </div>
+
+                <div class="question-item">
+                    <div class="question-text">Q5(b)(ii): Give the number of the line that contains the error.</div>
+                    <div class="question-meta">📍 june-2021.pdf — Page 14</div>
+                    <div class="button-row">
+                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_paper1/june-2021.pdf#page=14" target="_blank">Open question paper</a>
+                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_paper1/june-2021-ms.pdf#page=14" target="_blank">Open marking scheme</a>
+                    </div>
+                </div>
+
+                <div class="question-item">
+                    <div class="question-text">Q5(b)(iii): Amend a single line of pseudocode to correct the error.</div>
+                    <div class="question-meta">📍 june-2021.pdf — Page 14</div>
+                    <div class="button-row">
+                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_paper1/june-2021.pdf#page=14" target="_blank">Open question paper</a>
+                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_paper1/june-2021-ms.pdf#page=14" target="_blank">Open marking scheme</a>
+                    </div>
+                </div>
+</div><div class="section"><div class="source-title">From june-2022 | Page 11:</div>
+                <div class="question-item">
+                    <div class="question-text">Q4(a)(i): Draw your flowchart here.</div>
+                    <div class="question-meta">📍 june-2022.pdf — Page 11</div>
+                    <div class="button-row">
+                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_paper1/june-2022.pdf#page=11" target="_blank">Open question paper</a>
+                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_paper1/june-2022-ms.pdf#page=12" target="_blank">Open marking scheme</a>
+                    </div>
+                </div>
+</div><div class="section"><div class="source-title">From june-2022 | Page 12:</div>
+                <div class="question-item">
+                    <div class="question-text">Q4(a)(ii): Identify an alternative method for writing the algorithm.</div>
+                    <div class="question-meta">📍 june-2022.pdf — Page 12</div>
+                    <div class="button-row">
+                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_paper1/june-2022.pdf#page=12" target="_blank">Open question paper</a>
+                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_paper1/june-2022-ms.pdf#page=12" target="_blank">Open marking scheme</a>
+                    </div>
+                </div>
+
+                <div class="question-item">
+                    <div class="question-text">Q4(b)(i): Give the letter of the step that initialises a variable.</div>
+                    <div class="question-meta">📍 june-2022.pdf — Page 12</div>
+                    <div class="button-row">
+                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_paper1/june-2022.pdf#page=12" target="_blank">Open question paper</a>
+                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_paper1/june-2022-ms.pdf#page=13" target="_blank">Open marking scheme</a>
+                    </div>
+                </div>
+
+                <div class="question-item">
+                    <div class="question-text">Q4(b)(ii): Give the letter of the step that inputs a value.</div>
+                    <div class="question-meta">📍 june-2022.pdf — Page 12</div>
+                    <div class="button-row">
+                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_paper1/june-2022.pdf#page=12" target="_blank">Open question paper</a>
+                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_paper1/june-2022-ms.pdf#page=13" target="_blank">Open marking scheme</a>
+                    </div>
+                </div>
+</div><div class="section"><div class="source-title">From june-2022 | Page 15:</div>
+                <div class="question-item">
+                    <div class="question-text">Q4(c)(i): Complete the trace table to show the outputs.</div>
+                    <div class="question-meta">📍 june-2022.pdf — Page 15</div>
+                    <div class="button-row">
+                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_paper1/june-2022.pdf#page=15" target="_blank">Open question paper</a>
+                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_paper1/june-2022-ms.pdf#page=13" target="_blank">Open marking scheme</a>
+                    </div>
+                </div>
+
+                <div class="question-item">
+                    <div class="question-text">Q4(c)(ii): Give the line number of the pseudocode that contains the error.</div>
+                    <div class="question-meta">📍 june-2022.pdf — Page 15</div>
+                    <div class="button-row">
+                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_paper1/june-2022.pdf#page=15" target="_blank">Open question paper</a>
+                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_paper1/june-2022-ms.pdf#page=13" target="_blank">Open marking scheme</a>
+                    </div>
+                </div>
+
+                <div class="question-item">
+                    <div class="question-text">Q4(c)(iii): Write a replacement line of pseudocode to correct the error.</div>
+                    <div class="question-meta">📍 june-2022.pdf — Page 15</div>
+                    <div class="button-row">
+                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_paper1/june-2022.pdf#page=15" target="_blank">Open question paper</a>
+                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_paper1/june-2022-ms.pdf#page=14" target="_blank">Open marking scheme</a>
+                    </div>
+                </div>
+</div><div class="section"><div class="source-title">From june-2023 | Page 14:</div>
+                <div class="question-item">
+                    <div class="question-text">Q5(a): Complete the table to show one input and one output required to move the bee.</div>
+                    <div class="question-meta">📍 june-2023.pdf — Page 14</div>
+                    <div class="button-row">
+                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_paper1/june-2023.pdf#page=14" target="_blank">Open question paper</a>
+                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_paper1/june-2023-ms.pdf#page=18" target="_blank">Open marking scheme</a>
+                    </div>
+                </div>
+</div><div class="section"><div class="source-title">From june-2023 | Page 20:</div>
+                <div class="question-item">
+                    <div class="question-text">Q6(a): State an appropriate method for writing the algorithm. Justify your answer.</div>
+                    <div class="question-meta">📍 june-2023.pdf — Page 20</div>
+                    <div class="button-row">
+                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_paper1/june-2023.pdf#page=20" target="_blank">Open question paper</a>
+                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_paper1/june-2023-ms.pdf#page=25" target="_blank">Open marking scheme</a>
+                    </div>
+                </div>
+
+                <div class="question-item">
+                    <div class="question-text">Q6(b): Give one reason why the selection statement on line 7 is not required.</div>
+                    <div class="question-meta">📍 june-2023.pdf — Page 20</div>
+                    <div class="button-row">
+                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_paper1/june-2023.pdf#page=20" target="_blank">Open question paper</a>
+                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_paper1/june-2023-ms.pdf#page=26" target="_blank">Open marking scheme</a>
+                    </div>
+                </div>
+</div><div class="section"><div class="source-title">From june-2023 | Page 21:</div>
+                <div class="question-item">
+                    <div class="question-text">Q6(c)(i): Describe what happens to the variable oldIndex when line 5 is executed.</div>
+                    <div class="question-meta">📍 june-2023.pdf — Page 21</div>
+                    <div class="button-row">
+                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_paper1/june-2023.pdf#page=21" target="_blank">Open question paper</a>
+                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_paper1/june-2023-ms.pdf#page=26" target="_blank">Open marking scheme</a>
+                    </div>
+                </div>
+
+                <div class="question-item">
+                    <div class="question-text">Q6(c)(ii): State the purpose of the algorithm in Figure 2.</div>
+                    <div class="question-meta">📍 june-2023.pdf — Page 21</div>
+                    <div class="button-row">
+                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_paper1/june-2023.pdf#page=21" target="_blank">Open question paper</a>
+                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_paper1/june-2023-ms.pdf#page=26" target="_blank">Open marking scheme</a>
+                    </div>
+                </div>
+</div><div class="section"><div class="source-title">From june-2024 | Page 22:</div>
+                <div class="question-item">
+                    <div class="question-text">Q6(a): Identify the type of iteration construct used in Figure 2.</div>
+                    <div class="question-meta">📍 june-2024.pdf — Page 22</div>
+                    <div class="button-row">
+                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_paper1/june-2024.pdf#page=22" target="_blank">Open question paper</a>
+                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_paper1/june-2024-ms.pdf#page=19" target="_blank">Open marking scheme</a>
+                    </div>
+                </div>
+</div><div class="section"><div class="source-title">From june-2024 | Page 23:</div>
+                <div class="question-item">
+                    <div class="question-text">Q6(b)(i): Line 08</div>
+                    <div class="question-meta">📍 june-2024.pdf — Page 23</div>
+                    <div class="button-row">
+                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_paper1/june-2024.pdf#page=23" target="_blank">Open question paper</a>
+                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_paper1/june-2024-ms.pdf#page=19" target="_blank">Open marking scheme</a>
+                    </div>
+                </div>
+
+                <div class="question-item">
+                    <div class="question-text">Q6(b)(ii): Line 10</div>
+                    <div class="question-meta">📍 june-2024.pdf — Page 23</div>
+                    <div class="button-row">
+                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_paper1/june-2024.pdf#page=23" target="_blank">Open question paper</a>
+                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_paper1/june-2024-ms.pdf#page=19" target="_blank">Open marking scheme</a>
+                    </div>
+                </div>
+
+                <div class="question-item">
+                    <div class="question-text">Q6(b)(iii): Line 11</div>
+                    <div class="question-meta">📍 june-2024.pdf — Page 23</div>
+                    <div class="button-row">
+                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_paper1/june-2024.pdf#page=23" target="_blank">Open question paper</a>
+                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_paper1/june-2024-ms.pdf#page=19" target="_blank">Open marking scheme</a>
+                    </div>
+                </div>
+
+                <div class="question-item">
+                    <div class="question-text">Q6(b)(iv): Line 23</div>
+                    <div class="question-meta">📍 june-2024.pdf — Page 23</div>
+                    <div class="button-row">
+                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_paper1/june-2024.pdf#page=23" target="_blank">Open question paper</a>
+                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_paper1/june-2024-ms.pdf#page=20" target="_blank">Open marking scheme</a>
+                    </div>
+                </div>
+
+                <div class="question-item">
+                    <div class="question-text">Q6(c): Give one reason for the variable index being incremented in line 18.</div>
+                    <div class="question-meta">📍 june-2024.pdf — Page 23</div>
+                    <div class="button-row">
+                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_paper1/june-2024.pdf#page=23" target="_blank">Open question paper</a>
+                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_paper1/june-2024-ms.pdf#page=20" target="_blank">Open marking scheme</a>
+                    </div>
+                </div>
+</div><div class="section"><div class="source-title">From june-2024 | Page 25:</div>
+                <div class="question-item">
+                    <div class="question-text">Q6(d): Draw your flowchart here.</div>
+                    <div class="question-meta">📍 june-2024.pdf — Page 25</div>
+                    <div class="button-row">
+                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_paper1/june-2024.pdf#page=25" target="_blank">Open question paper</a>
+                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_paper1/june-2024-ms.pdf#page=21" target="_blank">Open marking scheme</a>
+                    </div>
+                </div>
+</div><div class="section"><div class="source-title">From nov-2021 | Page 12:</div>
+                <div class="question-item">
+                    <div class="question-text">Q4(a): State what is meant by the term algorithm.</div>
+                    <div class="question-meta">📍 nov-2021.pdf — Page 12</div>
+                    <div class="button-row">
+                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_paper1/nov-2021.pdf#page=12" target="_blank">Open question paper</a>
+                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_paper1/nov-2021-ms.pdf#page=14" target="_blank">Open marking scheme</a>
+                    </div>
+                </div>
+</div><div class="section"><div class="source-title">From nov-2021 | Page 13:</div>
+                <div class="question-item">
+                    <div class="question-text">Q4(b)(i): Complete this trace table for the algorithm.</div>
+                    <div class="question-meta">📍 nov-2021.pdf — Page 13</div>
+                    <div class="button-row">
+                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_paper1/nov-2021.pdf#page=13" target="_blank">Open question paper</a>
+                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_paper1/nov-2021-ms.pdf#page=14" target="_blank">Open marking scheme</a>
+                    </div>
+                </div>
+
+                <div class="question-item">
+                    <div class="question-text">Q4(b)(ii): Give one other benefit of using a trace table to test an algorithm.</div>
+                    <div class="question-meta">📍 nov-2021.pdf — Page 13</div>
+                    <div class="button-row">
+                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_paper1/nov-2021.pdf#page=13" target="_blank">Open question paper</a>
+                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_paper1/nov-2021-ms.pdf#page=15" target="_blank">Open marking scheme</a>
+                    </div>
+                </div>
+</div><div class="section"><div class="source-title">From nov-2021 | Page 14:</div>
+                <div class="question-item">
+                    <div class="question-text">Q4(c): Complete the algorithm in the spaces provided.</div>
+                    <div class="question-meta">📍 nov-2021.pdf — Page 14</div>
+                    <div class="button-row">
+                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_paper1/nov-2021.pdf#page=14" target="_blank">Open question paper</a>
+                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_paper1/nov-2021-ms.pdf#page=15" target="_blank">Open marking scheme</a>
+                    </div>
+                </div>
+</div>
+        </div>
+        
+        <div class="footer">
+            Generated by PaperCode | Open questions and marking schemes locally
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+From jun-2018 | Page 27:
+- Q8(c): Deduce how the resistors have been arranged inside the cardboard tube.
+From jun-2018 | Page 32:
+- Q10(a)(i): Calculate the potential difference across each lamp.
+From jun-2020 | Page 26:
+- Q8(a)(i): Add to Figure 19:  a voltmeter to find the potential difference across resistor R  another resistor in parallel with resistor R.
+- Q8(a)(ii): State the measurements that the student must take to find the overall resistance of the resistors in parallel.
+From jun-2020 | Page 27:
+- Q8(a)(iii): State the resistance of a single resistor.
+- Q8(a)(iv): Comment on the relationship between the overall resistance of the circuit and the number of resistors in parallel. Use information from Figure 20 to support your answer.
+- Q8(b)(i): Calculate the potential difference across the 15 Ω resistor.
+- Q8(b)(ii): Calculate the total power dissipated when there is a current of 0.20 A in the two resistors.
+From jun-2022 | Page 5:
+- Q2(b): State and explain the difference between the brightness of the lamp in Figure 3 and the brightness of a lamp in Figure 4.
+From june-2024 | Page 5:
+- Q2(a): The current at P is
+From june-2024 | Page 6:
+- Q2(b)(i): On Figure 5, draw a voltmeter connected to measure the voltage (p.d.) across the resistors.
+- Q2(b)(ii): Using data from the table in Figure 6, predict the current from the power supply when there are 4 resistors in the circuit.
+From june-2024 | Page 7:
+- Q2(b)(iii): Using data from the table in Figure 6, calculate the resistance of only 1 resistor.
+- Q2(b)(iv): Using data from the table in Figure 6, explain what happens to the total resistance of the circuit as the number of resistors in parallel decreases.
+From nov-2021 | Page 25:
+- Q8(b)(i): Calculate the current in the wires to the battery when all the devices are switched on.
+- Q8(b)(ii): State how the overall resistance of the circuit changes when any one of the devices is switched off.
+- Q8(b)(iv): Explain why the wires to the battery in a car are thicker than the wires that connect each device to its switch and its fuse.

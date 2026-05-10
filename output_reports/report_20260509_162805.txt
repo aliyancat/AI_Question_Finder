@@ -1,0 +1,56 @@
+From june-2019 | Page 4:
+- Q1(c)(i): Give one example of a solid state device.
+- Q1(c)(ii): Identify whether the device given in part (c)(i) is an example of primary or secondary memory.
+From june-2019 | Page 5:
+- Q1(c)(iii)*: Kerry was originally going to use an optical storage device to transfer her files. Discuss whether an optical or solid state device is the most appropriate media to transfer these files. You may want to consider the following characteristics in your answer: • portability • robustness • capacity • cost
+
+From june-2022 | Page 12:
+- Q7(b)(i): State, using an example, why the smart television needs secondary storage.
+- Q7(b)(ii): Identify one appropriate type of secondary storage for the smart television. Justify your choice.
+
+From june-2023 | Page 10:
+- Q5(a)(i): Explain why a computer needs both primary and secondary storage.
+- Q5(a)(ii): Give one example of a secondary storage device that the artist’s computer will have and an example of the data that will be stored on it.
+- Q5(a)(iii): The computer has Virtual Memory (VM). The table has four statements about VM. Not all of the statements are correct. Tick (3) the True column for the statements that are correct. Re-write any statement that is incorrect in the False column by changing the statement to make it true.
+
+From june-2024 | Page 6:
+- Q3(b): Complete the description of utility system software using the words provided in the box. Not all words are used.
+From june-2024 | Page 10:
+- Q5(b)(i): Identify whether the musician should buy a magnetic secondary storage device or a solid state secondary storage device for their computer. Justify your choice.
+- Q5(b)(ii): Identify one other type of secondary storage.
+- Q5(b)(iii): Tick (✓) one box to identify the smallest secondary storage capacity.
+- Q5(b)(iv): The musician’s recordings have an average (mean) file size of 3 MB. The musician has 1000 recordings. Calculate an estimate of the storage space in GB that the 1000 files will require, assuming they are each 3 MB in size. Show your working out.
+
+From nov-2019 | Page 4:
+- Q1(c)(i): Give one example of a solid state device.
+- Q1(c)(ii): Identify whether the device given in part (c)(i) is an example of primary or secondary memory.
+From nov-2019 | Page 5:
+- Q1(c)(iii)*: Kerry was originally going to use an optical storage device to transfer her files. Discuss whether an optical or solid state device is the most appropriate media to transfer these files. You may want to consider the following characteristics in your answer: • portability • robustness • capacity • cost
+
+From nov-2020 | Page 5:
+- Q2(e): Some of Hope’s files are stored on the cloud. Describe the benefits and drawbacks to Hope of storing her files on the cloud.
+From nov-2020 | Page 10:
+- Q5(b)(i): Explain how defragmentation will change how the files and free space are arranged on Ali’s hard disk.
+- Q5(b)(ii): After defragmentation, Ali’s computer is able to access files faster. Explain why Ali’s computer can access the files faster after defragmentation.
+From nov-2020 | Page 11:
+- Q5(c): Ali’s computer uses virtual memory. Ali has written two procedures to help himself understand how virtual memory works. storeData() describes how data is stored in RAM. accessData() describes how data is read from RAM. Write the letter of the missing statements from the table in the correct place to complete the algorithms. Not all statements are used, and some statements might be used more than once.
+From nov-2020 | Page 12:
+- Q5(f): Ali’s tablet computer has 100 GB of secondary storage. There is currently 80 GB available. Ali wants to transfer a series of video clips onto his tablet. Each video is, on average, 200 000 kilobytes. Calculate an estimate of the number of video clips Ali can fit onto his tablet. Show your working.
+
+From nov-2021 | Page 6:
+- Q5: A program is being created to convert the data capacity of a storage device into a different measure. The function, calculate(), takes the measurement (e.g. gigabytes) and the number (e.g. 2) as two parameters. It then returns the value in bits. The function returns –1 if an invalid measurement was entered. Complete the function calculate
+From nov-2021 | Page 7:
+- Q6(a): Describe what the internal secondary storage device will store.
+- Q6(b)(i): Give three benefits of the tablet having a solid state device instead of a magnetic device.
+- Q6(b)(ii): Give two drawbacks of the tablet having a solid state device instead of a magnetic device.
+
+From sample-paper | Page 3:
+- Q2(a): Define what is meant by ‘secondary storage’.
+- Q2(b): Identify the three common types of storage Nina can choose from.
+- Q2(c): State four characteristics of secondary storage devices that Nina should consider when choosing a device.
+From sample-paper | Page 9:
+- Q9(a): Explain how the restaurant’s hard disc could have become fragmented.
+- Q9(b): Explain how defragmentation software could overcome the issue of the slow computer system.
+From sample-paper | Page 10:
+- Q10(b): Explain two advantages to the law company of storing their data in the Cloud.
+- Q10(c): Explain two disadvantages to the law company of storing their data in the Cloud.

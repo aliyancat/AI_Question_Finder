@@ -1,0 +1,8 @@
+From jun-2018 | Page 30:
+- Q9(c): *High voltage transmission cables and transformers are used in the national grid. Explain how using high voltage transmission cables and transformers allows the distribution of electrical power around the United Kingdom to be as efficient as possible. Refer to the following equations in your answer. P = I2 × R; Vp × Ip = Vs × Is
+
+From nov-2021 | Page 25:
+- Q8(b)(iv): Explain why the wires to the battery in a car are thicker than the wires that connect each device to its switch and its fuse.
+
+From jun-2022 | Page 32:
+- Q10(c): *Figure 22 shows how electricity is delivered efficiently from a power station (P) to homes (T). Using Figure 22, explain the stages in the process of delivering electricity efficiently from P to T. Your answer should include details of the effects that Q, R and S have on efficiency.

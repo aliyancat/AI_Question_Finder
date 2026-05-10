@@ -1,0 +1,30 @@
+From June-2019 | Page 9:
+- Q3(a)(i): Describe the problems that can arise from unauthorised access to his laptop and confidential documents.
+- Q3(a)(ii): Describe two ways Hamish can help prevent unauthorised access to his laptop.
+From June-2019 | Page 10:
+- Q3(b)(i): Explain how encryption helps to protect Hamish’s documents.
+
+From June-2022 | Page 5:
+- Q3(e): Give two reasons why the library should use encryption.
+From June-2022 | Page 8:
+- Q5(a): Identify two methods of physical security that the company could use to protect their computer systems.
+- Q5(b): Identify and describe two software-based security methods that the company can use to protect their computer systems and data.
+
+From June-2023 | Page 9:
+- Q4(a): Tick (3) one or more boxes on each row to identify all of the methods that can help to prevent each threat.
+- Q4(b): Name and describe one threat to a computer system that is not given in question 4(a).
+
+From June-2024 | Page 6:
+- Q3(b): Complete the description of utility system software using the words provided in the box. Not all words are used.
+
+From Nov-2020 | Page 2:
+- Q1(a): The table has four potential threats to data. Write one prevention method for each threat in the table. Each prevention method must be different.
+- Q1(b): Name two other threats to the data in a computer system and give a method of preventing each.
+
+From Nov-2021 | Page 10:
+- Q7(d)(i): Describe the threat malware can pose to the university’s network and give a prevention method that the university can use.
+- Q7(d)(ii): Describe the threat a brute force attack can pose to the university’s network and give a prevention method that the university can use.
+
+From sample-paper | Page 8:
+- Q8(a): Staff already use strong passwords to protect systems. Explain, with reference to system security, three other ways that the hospital could protect the network system.
+- Q8(b): Identify three errors that the hospital staff could make that may endanger the security of the network. Outline a procedure that could be put in place to prevent each error.

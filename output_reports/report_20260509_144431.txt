@@ -1,0 +1,23 @@
+From june-2019 | Page 8:
+- Q2(c)(i): Tick (3) one box to show whether the smart watch or the laptop is an example of an embedded system.
+- Q2(c)(ii): Justify your choice to part (i).
+
+From june-2023 | Page 14:
+- Q7: Identify one other embedded system that could be found in a car and explain why this is an embedded system.
+
+From june-2024 | Page 13:
+- Q7(a): Explain the reasons why the ‘Follow Me’ system is an example of an embedded system.
+- Q7(b)(i): State two items that will be stored in the ROM for the ‘Follow Me’ system.
+- Q7(b)(ii): The RAM will store currently running data and instructions. State three items of data that will be stored in the RAM for the ‘Follow Me’ system.
+- Q7(b)(iii): Explain why the ‘Follow Me’ system does not need virtual memory.
+
+From nov-2019 | Page 8:
+- Q2(c)(i): Tick (3) one box to show whether the smart watch or the laptop is an example of an embedded system.
+- Q2(c)(ii): Justify your choice to part (i).
+
+From nov-2020 | Page 12:
+- Q5(e): Ali thinks his tablet is an embedded system. State whether Ali is correct or incorrect, justifying your choice.
+
+From sample-paper | Page 4:
+- Q3(b): The Sat Nav contains an embedded system. Define what is meant by an ‘embedded system’.
+- Q3(c): Identify three devices, other than a Sat Nav, which contain embedded systems.

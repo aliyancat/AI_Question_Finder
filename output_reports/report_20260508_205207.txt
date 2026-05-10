@@ -1,0 +1,40 @@
+From jun-2018 | Page 9:
+- Q3(d): Explain what the displays show about the average power of the athlete in each of these two sessions.
+From jun-2018 | Page 24:
+- Q7(b)(i): Calculate the power output of the engine.
+From jun-2018 | Page 26:
+- Q8(a)(iii): Calculate the total energy transferred by the 6.0 V power supply when a charge of 42 C flows through the resistor.
+From jun-2018 | Page 30:
+- Q9(c): Explain how using high voltage transmission cables and transformers allows the distribution of electrical power around the United Kingdom to be as efficient as possible.
+From jun-2019 | Page 20:
+- Q8(a)(i): Calculate the useful power output of the athlete when stretching the spring.
+From jun-2020 | Page 9:
+- Q3(b)(iii): Calculate the useful power developed by the blades in this time of 4s.
+From jun-2020 | Page 28:
+- Q8(b)(ii): Calculate the total power dissipated when there is a current of 0.20 A in the two resistors.
+From nov-2021 | Page 10:
+- Q4(b): Calculate the time needed to refuel the aircraft.
+From nov-2021 | Page 23:
+- Q8(a)(ii): Calculate the power supplied to the headlamp.
+From nov-2021 | Page 24:
+- Q8(a)(iii): Calculate the energy transferred to the interior light in 7 minutes.
+From jun-2022 | Page 4:
+- Q2(a)(ii): Calculate the power supplied to the lamp.
+From jun-2022 | Page 23:
+- Q7(b)(i): Show that the solar panels can provide 2.16 MJ of energy in 30 minutes.
+From jun-2022 | Page 31:
+- Q10(b): Calculate the current in the primary coil.
+From jun-2022 | Page 32:
+- Q10(c): Using Figure 22, explain the stages in the process of delivering electricity efficiently from P to T.
+From jun-2023 | Page 22:
+- Q8(a)(ii): Calculate the time taken for the battery to become discharged on this journey.
+From jun-2023 | Page 24:
+- Q8(b)(i): Comment on this claim.
+From june-2024 | Page 27:
+- Q8(c): Which of these equations is correct?
+From specimen | Page 13:
+- Q4(b): Calculate the time needed to refuel the aircraft.
+From specimen | Page 29:
+- Q8(b): Calculate the average charging current.
+From specimen | Page 37:
+- Q10(a)(ii): Show that it takes the heater about 90 s to raise the temperature of 1 kg of water from 18°C to 95°C.

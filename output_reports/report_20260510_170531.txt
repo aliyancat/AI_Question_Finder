@@ -1,0 +1,25 @@
+From june-2019 | Page 16:
+- Q5(a): When https://www.ocr.org.uk is entered into a browser, the website homepage is loaded. Describe the relationship between the website URL (https://www.ocr.org.uk), the IP address and the webserver.
+
+From june-2022 | Page 4:
+- Q3(b): Complete the description of accessing websites using the given list of terms. Not all terms will be used. A website is hosted on a ..................................................................... . The computers that access the websites are called ..................................................................... . The user enters the ..................................................................... into a web browser. The web browser sends a request to the ..................................................................... for the matching IP (Internet Protocol) address. If found the IP address is returned. A request is then sent to this IP address. An IPv4 address is made of 4 groups of digits. Each group can be between the denary values ..................... and ..................... . The groups of digits are separated by a ..................................................................... .
+
+From june-2023 | Page 11:
+- Q5(c)(i): The artist uploads images to be displayed on a website. This is a client-server relationship. Identify the computer that is acting as the client in this scenario and justify your choice.
+- Q5(c)(ii): Identify the computer that is acting as the server in this scenario and justify your choice.
+
+From nov-2019 | Page 16:
+- Q5(a): When https://www.ocr.org.uk is entered into a browser, the website homepage is loaded. Describe the relationship between the website URL (https://www.ocr.org.uk), the IP address and the webserver.
+
+From nov-2020 | Page 4:
+- Q2(d): Explain why Hope’s network uses a peer-to-peer model and not a client-server model.
+
+From nov-2020 | Page 5:
+- Q2(e): Some of Hope’s files are stored on the cloud. Describe the benefits and drawbacks to Hope of storing her files on the cloud.
+
+From nov-2020 | Page 14:
+- Q6(c)(i): Computer 1 enters the URL www.ocr.org.uk into a web browser. This is then converted into the IP address of the webserver that hosts the website. Explain how the URL www.ocr.org.uk is converted into the IP address.
+
+From sample-paper | Page 10:
+- Q10(b): Explain two advantages to the law company of storing their data in the Cloud.
+- Q10(c): Explain two disadvantages to the law company of storing their data in the Cloud.

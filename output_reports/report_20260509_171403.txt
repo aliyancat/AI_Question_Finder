@@ -1,0 +1,34 @@
+From june-2019 | Page 6:
+- Q1(c)(iv): The filesizes of Kerry’s files are usually displayed in megabytes (MB) or gigabytes (GB). Calculate how many MB are in 5GB. Show your working.
+
+From june-2022 | Page 2:
+- Q1(a): Tick (3) one box in each row to identify the binary unit equivalent of each of the given file sizes.
+
+From june-2022 | Page 10:
+- Q6(a)(ii): Tick (3) one or more boxes on each row to identify the effect(s) that each change will have on the sound file.
+
+From june-2023 | Page 3:
+- Q1(c): Tick (3) one box to identify the largest file size.
+- Q1(d): Tick (3) two boxes to identify the two file sizes that are equal to each other.
+
+From june-2023 | Page 7:
+- Q3(b)(iv): The colour depth is increased to 2 bytes. State two effects that this change can have on the image.
+
+From june-2024 | Page 2:
+- Q1(b): Complete the table by writing the answer to each statement.
+
+From june-2024 | Page 10:
+- Q5(a)(ii): Explain how changing the bit depth will affect the sound file.
+
+From june-2024 | Page 11:
+- Q5(b)(iii): Tick (✓) one box to identify the smallest secondary storage capacity.
+- Q5(b)(iv): The musician’s recordings have an average (mean) file size of 3 MB. The musician has 1000 recordings. Calculate an estimate of the storage space in GB that the 1000 files will require, assuming they are each 3 MB in size. Show your working out.
+
+From nov-2019 | Page 6:
+- Q1(c)(iv): The filesizes of Kerry’s files are usually displayed in megabytes (MB) or gigabytes (GB). Calculate how many MB are in 5GB. Show your working.
+
+From nov-2020 | Page 12:
+- Q5(f): Ali’s tablet computer has 100 GB of secondary storage. There is currently 80 GB available. Ali wants to transfer a series of video clips onto his tablet. Each video is, on average, 200 000 kilobytes. Calculate an estimate of the number of video clips Ali can fit onto his tablet. Show your working.
+
+From nov-2021 | Page 6:
+- Q5: The function, calculate(), takes the measurement (e.g. gigabytes) and the number (e.g. 2) as two parameters. It then returns the value in bits. The function returns –1 if an invalid measurement was entered. Complete the function calculate

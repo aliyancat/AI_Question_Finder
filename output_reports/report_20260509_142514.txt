@@ -1,0 +1,27 @@
+From june-2019 | Page 2:
+- Q1(a)(i): The following sentences describe the purpose of a CPU. Complete the sentences by filling in the missing words. CPU stands for ................................................................................................................ . It is the part of the computer that fetches and executes the ............................................... that are stored in .............................................................. . The CPU contains the Arithmetic .............................................................. Unit (ALU) and the .............................................................. Unit (CU).
+From june-2019 | Page 3:
+- Q1(a)(iii): Explain how the cache size can affect the performance of the CPU.
+
+From june-2022 | Page 3:
+- Q2: Complete the table by writing the missing definition or name of each of the common CPU components and registers.
+
+From june-2024 | Page 12:
+- Q6(a): Describe what happens during the fetch-execute cycle.
+- Q6(b): Complete the table by writing the name of two registers used in the fetch-execute cycle and the purpose of each register.
+
+From nov-2019 | Page 2:
+- Q1(a)(i): The following sentences describe the purpose of a CPU. Complete the sentences by filling in the missing words. CPU stands for ................................................................................................................ . It is the part of the computer that fetches and executes the ............................................... that are stored in .............................................................. . The CPU contains the Arithmetic .............................................................. Unit (ALU) and the .............................................................. Unit (CU).
+From nov-2019 | Page 3:
+- Q1(a)(iii): One computer has 64 kilobytes of cache and the other has 512 kilobytes of cache. Explain how the cache size can affect the performance of the CPU.
+
+From nov-2020 | Page 6:
+- Q3: Draw one line from each part of the processor to its correct definition.
+
+From nov-2021 | Page 2:
+- Q1(b)(i): State the purpose of a CPU.
+- Q1(c): Identify two registers used in Von Neumann architecture.
+
+From sample-paper | Page 2:
+- Q1(c): Explain one reason why the cache size affects the performance of the CPU.
+- Q1(d): Identify two events that take place during the fetch-execute cycle.

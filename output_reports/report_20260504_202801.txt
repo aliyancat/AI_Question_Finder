@@ -1,0 +1,64 @@
+From june-2019 | Page 15:
+- Q5(a)(i): Complete the table to show the output for each cargo item.
+- Q5(a)(ii): State the purpose of the algorithm in Figure 2.
+From june-2019 | Page 16:
+- Q5(b): Complete the algorithm in the space provided in Figure 3.
+From june-2019 | Page 19:
+- Q5(c)(i): Complete the trace table for an input of 50500 to show what happens due to the error on line 9 in the pseudocode in Figure 4.
+- Q5(c)(ii): Construct a single line of pseudocode to correct line 9.
+
+From june-2020 | Page 17:
+- Q6(a): Draw your flowchart here.
+From june-2020 | Page 18:
+- Q6(b)(i): Give the output produced by the algorithm.
+- Q6(b)(ii): Give the number of the line in the algorithm that would need to be amended to allow for any number of flavours.
+From june-2020 | Page 19:
+- Q6(b)(iii): State how the pseudocode needs to be changed to make this amendment.
+
+From june-2021 | Page 13:
+- Q5(a)(i): Complete the trace table. You may not need to use all of the rows.
+- Q5(a)(ii): Give the purpose of the algorithm.
+- Q5(a)(iii): Explain why the variable Temp is needed.
+From june-2021 | Page 14:
+- Q5(b)(i): Explain why the Actual result is not the same as the Expected result.
+- Q5(b)(ii): Give the number of the line that contains the error.
+- Q5(b)(iii): Amend a single line of pseudocode to correct the error.
+
+From june-2022 | Page 11:
+- Q4(a)(i): Draw your flowchart here.
+From june-2022 | Page 12:
+- Q4(a)(ii): Identify an alternative method for writing the algorithm.
+- Q4(b)(i): Give the letter of the step that initialises a variable.
+- Q4(b)(ii): Give the letter of the step that inputs a value.
+From june-2022 | Page 15:
+- Q4(c)(i): Complete the trace table to show the outputs.
+- Q4(c)(ii): Give the line number of the pseudocode that contains the error.
+- Q4(c)(iii): Write a replacement line of pseudocode to correct the error.
+
+From june-2023 | Page 14:
+- Q5(a): Complete the table to show one input and one output required to move the bee.
+From june-2023 | Page 20:
+- Q6(a): State an appropriate method for writing the algorithm. Justify your answer.
+- Q6(b): Give one reason why the selection statement on line 7 is not required.
+From june-2023 | Page 21:
+- Q6(c)(i): Describe what happens to the variable oldIndex when line 5 is executed.
+- Q6(c)(ii): State the purpose of the algorithm in Figure 2.
+
+From june-2024 | Page 22:
+- Q6(a): Identify the type of iteration construct used in Figure 2.
+From june-2024 | Page 23:
+- Q6(b)(i): Line 08
+- Q6(b)(ii): Line 10
+- Q6(b)(iii): Line 11
+- Q6(b)(iv): Line 23
+- Q6(c): Give one reason for the variable index being incremented in line 18.
+From june-2024 | Page 25:
+- Q6(d): Draw your flowchart here.
+
+From nov-2021 | Page 12:
+- Q4(a): State what is meant by the term algorithm.
+From nov-2021 | Page 13:
+- Q4(b)(i): Complete this trace table for the algorithm.
+- Q4(b)(ii): Give one other benefit of using a trace table to test an algorithm.
+From nov-2021 | Page 14:
+- Q4(c): Complete the algorithm in the spaces provided.

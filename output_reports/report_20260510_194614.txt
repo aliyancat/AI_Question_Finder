@@ -1,0 +1,40 @@
+From june-2019 | Page 7:
+- Q2(b)(i): Explain how the compression software will compress the image file.
+- Q2(b)(ii): Give the name of two other types of utility system software.
+From june-2019 | Page 10:
+- Q3(b)(i): Explain how encryption helps to protect Hamish’s documents.
+
+From june-2022 | Page 11:
+- Q6(d)(i): Give two benefits of compressing the data before it is emailed.
+- Q6(d)(ii): Explain why lossy compression may not be appropriate to compress all of the student’s files.
+
+From june-2023 | Page 8:
+- Q3(c)(i): Identify the most suitable type of compression for the text document. Justify your choice.
+- Q3(c)(ii): Identify the most suitable type of compression for the image file. Justify your choice.
+From june-2023 | Page 11:
+- Q5(b): State the need for utility software in a computer.
+
+From june-2024 | Page 6:
+- Q3(b): Complete the description of utility system software using the words provided in the box. Not all words are used.
+access amount apart compression consecutive defragmentation deleted encryption key lock quantity separate speed understood
+................................................ software changes data using a ............................................... . If the changed data is intercepted, it cannot be ............................................... . This software does not stop the data from being intercepted.
+............................................... software analyses the data on a disk to find files that have been split and stored in separate locations. The split files are moved to be ............................................... in storage and the free space is moved together. This does not provide more storage space on the disk, instead it makes the ............................................... of the data faster because the read head does not have to move as far to access the next part of the file.
+
+From nov-2019 | Page 7:
+- Q2(b)(i): Explain how the compression software will compress the image file.
+- Q2(b)(ii): Give the name of two other types of utility system software.
+From nov-2019 | Page 10:
+- Q3(b)(i): Explain how encryption helps to protect Hamish’s documents.
+
+From nov-2020 | Page 10:
+- Q5(b)(i): Explain how defragmentation will change how the files and free space are arranged on Ali’s hard disk.
+- Q5(b)(ii): After defragmentation, Ali’s computer is able to access files faster. Explain why Ali’s computer can access the files faster after defragmentation.
+- Q5(b)(iii): Give three additional examples of utility programs.
+
+From nov-2021 | Page 3:
+- Q2(b)(i): State the purpose of utility system software.
+- Q2(b)(ii): Layla uses a backup utility. She performs both full and incremental backups. Explain the reasons why Layla performs both full and incremental backups.
+
+From sample-paper | Page 9:
+- Q9(a): Explain how the restaurant’s hard disc could have become fragmented.
+- Q9(b): Explain how defragmentation software could overcome the issue of the slow computer system.

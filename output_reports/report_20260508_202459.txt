@@ -1,0 +1,5 @@
+From jun-2018 | Page 33:
+- Q10(b): Explain, with the aid of a circuit diagram, the method a student could use to investigate how the resistance of a single lamp changes with the potential difference across the lamp.
+
+From jun-2024 | Page 25:
+- Q8(a): A student investigates how current varies with potential difference across a filament lamp. The student uses a power supply, a variable resistor, the filament lamp and two meters. Part of the circuit diagram is shown in Figure 19. Complete the circuit diagram needed for this investigation.

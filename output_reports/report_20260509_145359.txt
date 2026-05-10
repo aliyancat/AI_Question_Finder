@@ -1,0 +1,35 @@
+From june-2019 | Page 3:
+- Q1 (a) (iii): Explain how the cache size can affect the performance of the CPU.
+- Q1 (b) (i): The table has five statements describing RAM and/or ROM. Tick (3) one or more boxes in each row to identify if that statement describes RAM and/or ROM.
+
+From june-2022 | Page 12:
+- Q7 (a) (i): State the difference between RAM and ROM.
+- Q7 (a) (ii): Give two examples of data that the smart television could store in RAM.
+
+From june-2023 | Page 10:
+- Q5 (a) (i): Explain why a computer needs both primary and secondary storage.
+- Q5 (a) (iii): The table has four statements about VM. Not all of the statements are correct. Tick (3) the True column for the statements that are correct. Re-write any statement that is incorrect in the False column by changing the statement to make it true.
+
+From june-2024 | Page 13:
+- Q7 (b) (i): State two items that will be stored in the ROM for the ‘Follow Me’ system.
+- Q7 (b) (ii): State three items of data that will be stored in the RAM for the ‘Follow Me’ system.
+- Q7 (b) (iii): Explain why the ‘Follow Me’ system does not need virtual memory.
+
+From nov-2019 | Page 3:
+- Q1 (a) (iii): Explain how the cache size can affect the performance of the CPU.
+- Q1 (b) (i): The table has five statements describing RAM and/or ROM. Tick (3) one or more boxes in each row to identify if that statement describes RAM and/or ROM.
+
+From nov-2020 | Page 6:
+- Q3: Draw one line from each part of the processor to its correct definition.
+From nov-2020 | Page 11:
+- Q5 (c): Write the letter of the missing statements from the table in the correct place to complete the algorithms.
+From nov-2020 | Page 12:
+- Q5 (d): Describe the purpose of ROM in Ali’s tablet computer.
+
+From nov-2021 | Page 2:
+- Q1 (a): Complete the paragraph about memory by writing the missing terms in the spaces, using the words provided.
+
+From sample-paper | Page 2:
+- Q1 (c): Explain one reason why the cache size affects the performance of the CPU.
+From sample-paper | Page 4:
+- Q3 (a): Tick () one box in each row to show whether each of the statements is true for the RAM or ROM in a Sat Nav.

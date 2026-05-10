@@ -1,0 +1,35 @@
+From june-2019 | Page 3:
+- Q1 (a) (iii): One computer has 64 kilobytes of cache and the other has 512 kilobytes of cache. Explain how the cache size can affect the performance of the CPU.
+- Q1 (b) (i): The table has five statements describing RAM and/or ROM. Tick (3) one or more boxes in each row to identify if that statement describes RAM and/or ROM. Stores data, The memory is volatile, Data will not be lost when the computer is turned off, Data is read-only, cannot be changed, Stores currently running data and instructions
+
+From june-2022 | Page 12:
+- Q7 (a) (i): State the difference between RAM and ROM.
+- Q7 (a) (ii): Give two examples of data that the smart television could store in RAM.
+
+From june-2023 | Page 10:
+- Q5 (a) (i): Explain why a computer needs both primary and secondary storage.
+- Q5 (a) (iii): The table has four statements about VM. Not all of the statements are correct. Tick (3) the True column for the statements that are correct. Re-write any statement that is incorrect in the False column by changing the statement to make it true. A section of primary storage is partitioned to act as virtual memory, Data from ROM is transferred into VM, VM is needed when RAM is full, or nearly full, Data from VM is transferred back to secondary storage when needed
+
+From june-2024 | Page 13:
+- Q7 (b) (i): State two items that will be stored in the ROM for the ‘Follow Me’ system.
+- Q7 (b) (ii): The RAM will store currently running data and instructions. State three items of data that will be stored in the RAM for the ‘Follow Me’ system.
+- Q7 (b) (iii): Explain why the ‘Follow Me’ system does not need virtual memory.
+
+From nov-2019 | Page 3:
+- Q1 (a) (iii): One computer has 64 kilobytes of cache and the other has 512 kilobytes of cache. Explain how the cache size can affect the performance of the CPU.
+- Q1 (b) (i): The table has five statements describing RAM and/or ROM. Tick (3) one or more boxes in each row to identify if that statement describes RAM and/or ROM. Stores data, The memory is volatile, Data will not be lost when the computer is turned off, Data is read-only, cannot be changed, Stores currently running data and instructions
+
+From nov-2020 | Page 6:
+- Q3: Draw one line from each part of the processor to its correct definition. Part of the processor: Arithmetic Logic Unit (ALU), Register, Cache, Control Unit (CU). Definition: Performs mathematical operations, Sends signals to direct the operations, Keeps the clock in sync, A small piece of memory inside the processor that can hold one instruction or address, High speed memory inside the processor that stores recently used instructions
+From nov-2020 | Page 11:
+- Q5 (c): Ali’s computer uses virtual memory. Ali has written two procedures to help himself understand how virtual memory works. storeData() describes how data is stored in RAM. accessData() describes how data is read from RAM. Write the letter of the missing statements from the table in the correct place to complete the algorithms. Not all statements are used, and some statements might be used more than once.
+From nov-2020 | Page 12:
+- Q5 (d): Ali’s tablet computer also has ROM (read only memory). Describe the purpose of ROM in Ali’s tablet computer.
+
+From nov-2021 | Page 2:
+- Q1 (a): Complete the paragraph about memory by writing the missing terms in the spaces, using the words provided. cache, data, hard drive, instructions, changed, closing, operator, primary, random, read, secondary, start-up, translator, memory stick, virtual, write. ROM stands for ................................. only memory. This stores the ................................. instructions for a computer and cannot be ................................. . RAM stands for ................................. access memory. This stores the instructions and ................................. that are currently being used. If the computer does not have enough RAM to run a process it can make use of ................................. memory. RAM and ROM are both examples of ................................. memory. Memory located close to the processor that allows faster access than from RAM is called ................................. memory.
+
+From sample-paper | Page 3:
+- Q1 (c): Explain one reason why the cache size affects the performance of the CPU.
+From sample-paper | Page 4:
+- Q3 (a): Tick () one box in each row to show whether each of the statements is true for the RAM or ROM in a Sat Nav. Stores the boot up sequence of the Sat Nav. The contents are lost when the Sat Nav is turned off. Holds copies of open maps and routes.

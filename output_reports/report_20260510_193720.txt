@@ -1,0 +1,37 @@
+From june-2019 | Page 7:
+- Q2 (a): The operating system provides file management. Identify three ways that Xander can make use of the file management facility.
+
+From june-2022 | Page 10:
+- Q5 (a) (iii): The computer has Virtual Memory (VM). The table has four statements about VM. Not all of the statements are correct. Tick (3) the True column for the statements that are correct. Re-write any statement that is incorrect in the False column by changing the statement to make it true.
+
+From june-2023 | Page 10:
+- Q5 (a) (iii): The computer has Virtual Memory (VM). The table has four statements about VM. Not all of the statements are correct. Tick (3) the True column for the statements that are correct. Re-write any statement that is incorrect in the False column by changing the statement to make it true.
+
+From june-2024 | Page 6:
+- Q3 (a): The table contains operating system functions and a task that each function performs. Complete the table by writing the two missing function names and a task performed by the two given functions.
+From june-2024 | Page 13:
+- Q7 (b) (iii): Explain why the ‘Follow Me’ system does not need virtual memory.
+
+From nov-2019 | Page 7:
+- Q2 (a): The operating system provides file management. Identify three ways that Xander can make use of the file management facility.
+
+From nov-2020 | Page 9:
+- Q5 (a): Complete the following description of the functions of an operating system by selecting the appropriate missing words from those in the box.
+From nov-2020 | Page 10:
+- Q5 (b) (i): Explain how defragmentation will change how the files and free space are arranged on Ali’s hard disk.
+- Q5 (b) (ii): After defragmentation, Ali’s computer is able to access files faster. Explain why Ali’s computer can access the files faster after defragmentation.
+From nov-2020 | Page 11:
+- Q5 (c): Ali’s computer uses virtual memory. Ali has written two procedures to help himself understand how virtual memory works. Write the letter of the missing statements from the table in the correct place to complete the algorithms.
+From nov-2020 | Page 12:
+- Q5 (d): Ali’s tablet computer also has ROM (read only memory). Describe the purpose of ROM in Ali’s tablet computer.
+
+From nov-2021 | Page 2:
+- Q1 (a): Complete the paragraph about memory by writing the missing terms in the spaces, using the words provided.
+From nov-2021 | Page 3:
+- Q2 (a): One type of system software is the operating system. Identify and describe two functions of an operating system.
+
+From sample-paper | Page 4:
+- Q3 (a): Tick () one box in each row to show whether each of the statements is true for the RAM or ROM in a Sat Nav.
+From sample-paper | Page 9:
+- Q9 (a): Explain how the restaurant’s hard disc could have become fragmented.
+- Q9 (b): Explain how defragmentation software could overcome the issue of the slow computer system.

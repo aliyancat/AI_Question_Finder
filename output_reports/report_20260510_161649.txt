@@ -1,0 +1,72 @@
+From june-2019 | Page 9:
+- Q3 (a)(i): Describe the problems that can arise from unauthorised access to his laptop and confidential documents.
+From june-2019 | Page 10:
+- Q3 (b)(i): Explain how encryption helps to protect Hamish’s documents.
+From june-2019 | Page 15:
+- Q4 (b)(i): Describe how introducing wireless access could have slowed down the network.
+From june-2019 | Page 16:
+- Q5 (a): When https://www.ocr.org.uk is entered into a browser, the website homepage is loaded. Describe the relationship between the website URL (https://www.ocr.org.uk), the IP address and the webserver.
+From june-2019 | Page 17:
+- Q5 (b)(i): The TCP/IP model uses layers including the application layer and transport layer. Explain why the TCP/IP model uses layers.
+From june-2019 | Page 17:
+- Q5 (b)(ii): TCP/IP is one example of a protocol. Give the name of one appropriate protocol for each task in the table.
+From june-2022 | Page 4:
+- Q3 (b): Complete the description of accessing websites using the given list of terms. Not all terms will be used. ... An IPv4 address is made of 4 groups of digits. Each group can be between the denary values ..................... and ..................... . The groups of digits are separated by a ..................................................................... .
+From june-2022 | Page 5:
+- Q3 (c): The wired connection is an Ethernet connection. Ethernet is considered a standard. Explain why Ethernet is a standard.
+From june-2022 | Page 5:
+- Q3 (e): The library does not use encryption when data is transmitted through the network. Give two reasons why the library should use encryption.
+From june-2022 | Page 5:
+- Q3 (f): Protocols are used to transmit data through the network and over the internet. Identify one protocol that can be used to perform each of the following tasks:
+From june-2023 | Page 4:
+- Q2 (a)(i): Complete the table by identifying the most appropriate protocol for each of the tasks the student is performing.
+From june-2023 | Page 4:
+- Q2 (a)(ii): Some protocols have layers. Give two reasons why protocols have layers.
+From june-2023 | Page 5:
+- Q2 (b)(ii): Describe the benefits of the student changing their home LAN to include wireless connections.
+From june-2023 | Page 5:
+- Q2 (b)(iii): State two drawbacks of changing their home LAN to include wireless connections.
+From june-2023 | Page 9:
+- Q4 (a): Tick (3) one or more boxes on each row to identify all of the methods that can help to prevent each threat.
+From june-2024 | Page 3:
+- Q2 (a)(i): Give one valid example of an IPv4 address and one valid example of an IPv6 address.
+From june-2024 | Page 4:
+- Q2 (a)(ii): Describe the format of a MAC address.
+From june-2024 | Page 4:
+- Q2 (b)(i): Describe two benefits to the airport of using wired connections in their network.
+From june-2024 | Page 4:
+- Q2 (b)(ii): Explain the reasons why the airport should also allow the network to be accessed using a wireless connection.
+From june-2024 | Page 6:
+- Q3 (b): Complete the description of utility system software using the words provided in the box. Not all words are used.
+From nov-2019 | Page 9:
+- Q3 (a)(i): Describe the problems that can arise from unauthorised access to his laptop and confidential documents.
+From nov-2019 | Page 10:
+- Q3 (b)(i): Explain how encryption helps to protect Hamish’s documents.
+From nov-2019 | Page 15:
+- Q4 (b)(i): Describe how introducing wireless access could have slowed down the network.
+From nov-2019 | Page 16:
+- Q5 (a): When https://www.ocr.org.uk is entered into a browser, the website homepage is loaded. Describe the relationship between the website URL (https://www.ocr.org.uk), the IP address and the webserver.
+From nov-2019 | Page 17:
+- Q5 (b)(i): The TCP/IP model uses layers including the application layer and transport layer. Explain why the TCP/IP model uses layers.
+From nov-2019 | Page 17:
+- Q5 (b)(ii): TCP/IP is one example of a protocol. Give the name of one appropriate protocol for each task in the table.
+From nov-2020 | Page 2:
+- Q1 (a): The table has four potential threats to data. Write one prevention method for each threat in the table. Each prevention method must be different.
+From nov-2020 | Page 4:
+- Q2 (c)(i): When the laptop is in the kitchen, it has better network performance. Explain why the laptop’s network performance is lower in the bedroom.
+From nov-2020 | Page 4:
+- Q2 (c)(ii): State two ways Hope could improve the wireless network performance in the bedroom.
+From nov-2020 | Page 13:
+- Q6 (b): Ethernet cables are used within the office building. Tick one box in each row to identify if the statement about Ethernet is True or False.
+From nov-2020 | Page 14:
+- Q6 (c)(i): Explain how the URL www.ocr.org.uk is converted into the IP address.
+From nov-2021 | Page 9:
+- Q7 (c)(i): Explain how each of the following can contribute to the performance of a network.
+From nov-2021 | Page 10:
+- Q7 (e): Data transmitted over the network uses different protocols. Tick one box in each row to identify whether the protocol is related to email, transferring files or accessing websites.
+From sample-paper | Page 7:
+- Q7 (a): Define what is meant by a ‘network protocol’.
+From sample-paper | Page 7:
+- Q7 (b)(i): With regards to network protocols, define what is meant by a ‘layer’.
+From sample-paper | Page 7:
+- Q7 (b)(ii): Describe one advantage of using layers to construct network protocols.

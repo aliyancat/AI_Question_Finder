@@ -1,0 +1,95 @@
+From jun-2018 | Page 26:
+- Q8(a)(ii): Calculate, in minutes, the time taken for this amount of charge to flow through the resistor.
+- Q8(a)(iii): Calculate the total energy transferred by the 6.0 V power supply when a charge of 42 C flows through the resistor.
+From jun-2018 | Page 27:
+- Q8(b): Explain why the resistor becomes warm.
+- Q8(c): Deduce how the resistors have been arranged inside the cardboard tube.
+From jun-2018 | Page 32:
+- Q10(a)(i): Calculate the potential difference across each lamp.
+- Q10(a)(ii): Calculate the resistance of each lamp.
+From jun-2018 | Page 33:
+- Q10(b): Explain, with the aid of a circuit diagram, the method a student could use to investigate how the resistance of a single lamp changes with the potential difference across the lamp.
+
+From jun-2019 | Page 6:
+- Q3(b)(i): Calculate the value of resistance that is missing from the table.
+From jun-2019 | Page 7:
+- Q3(b)(ii): The student writes this conclusion: ‘The resistance of the lamp is directly proportional to the potential difference.’ Comment on the student’s conclusion. Use information from Figure 5 in your answer.
+- Q3(b)(iii): Describe how the student could add a component to the circuit that would provide a continuously variable voltage across the lamp.
+From jun-2019 | Page 28:
+- Q10(a)(i): Calculate the resistance of the immersion heater.
+
+From jun-2020 | Page 26:
+- Q8(a)(i): Add to Figure 19:  a voltmeter to find the potential difference across resistor R  another resistor in parallel with resistor R.
+- Q8(a)(ii): State the measurements that the student must take to find the overall resistance of the resistors in parallel.
+From jun-2020 | Page 27:
+- Q8(a)(iii): State the resistance of a single resistor.
+- Q8(a)(iv): Comment on the relationship between the overall resistance of the circuit and the number of resistors in parallel. Use information from Figure 20 to support your answer.
+- Q8(b)(i): Calculate the potential difference across the 15 Ω resistor.
+
+From jun-2022 | Page 4:
+- Q2(a)(i): Calculate the resistance of the lamp.
+From jun-2022 | Page 5:
+- Q2(b): State and explain the difference between the brightness of the lamp in Figure 3 and the brightness of a lamp in Figure 4.
+From jun-2022 | Page 6:
+- Q2(c): Draw a diagram of the circuit that the student should use.
+From jun-2022 | Page 25:
+- Q8(b)(i): Describe how the resistance of this thermistor varies with temperature.
+- Q8(b)(ii): Draw the tangent to the curve at a temperature of 30 °C, to find the rate of change of resistance with temperature at 30 °C.
+From jun-2022 | Page 26:
+- Q8(c)(i): Explain one improvement in measurement that the student could make in the investigation.
+From jun-2022 | Page 27:
+- Q8(c)(ii): Explain why method 2 gives more precise results than method 1.
+
+From jun-2023 | Page 4:
+- Q2(a): Add connecting wires, a voltmeter and an ammeter to complete the circuit in Figure 3 so that the students can determine the resistance of the piece of iron wire.
+From jun-2023 | Page 5:
+- Q2(b)(i): Give the name of one additional piece of apparatus the students would need.
+- Q2(b)(ii): Draw a straight line of best fit on Figure 4.
+- Q2(b)(iii): Use Figure 4 to estimate the resistance of a 100 cm length of the iron wire.
+- Q2(b)(iv): Explain how the variable resistor is used to prevent the iron wire from becoming too hot.
+From jun-2023 | Page 6:
+- Q2(c): Calculate the resistance of this piece of wire.
+From jun-2023 | Page 24:
+- Q8(b)(i): Comment on this claim. Use this equation to support your answer t = E / (V × I)
+- Q8(b)(ii): Calculate the total charge that moves into the battery while it is being recharged. Use the equation E = Q × V
+
+From june-2024 | Page 5:
+- Q2(a): The current at P is
+From june-2024 | Page 6:
+- Q2(b)(i): On Figure 5, draw a voltmeter connected to measure the voltage (p.d.) across the resistors.
+From june-2024 | Page 7:
+- Q2(b)(ii): Using data from the table in Figure 6, predict the current from the power supply when there are 4 resistors in the circuit.
+- Q2(b)(iii): Using data from the table in Figure 6, calculate the resistance of only 1 resistor.
+- Q2(b)(iv): Using data from the table in Figure 6, explain what happens to the total resistance of the circuit as the number of resistors in parallel decreases.
+From june-2024 | Page 25:
+- Q8(a): Complete the circuit diagram needed for this investigation.
+From june-2024 | Page 26:
+- Q8(b)(i): Suggest one advantage of using a data logger instead of meters in this investigation.
+- Q8(b)(ii): Describe how current varies with potential difference in the graph in Figure 20.
+From june-2024 | Page 27:
+- Q8(b)(iii): Use data from the graph in Figure 20 to show how the resistance changes with potential difference for the filament lamp.
+- Q8(d): Explain how, starting with the meaning of potential difference, we may obtain an equivalent unit of potential difference.
+
+From nov-2021 | Page 6:
+- Q2(a)(i): Describe the relationship between the current and the voltage as shown in the graph in Figure 4.
+From nov-2021 | Page 7:
+- Q2(a)(ii): Use the values of the voltage and current at point P and at point Q on the graph in Figure 4 to complete the table in Figure 5.
+- Q2(a)(iii): Calculate the resistance of the filament lamp when the voltage is 4.5 V and the current is 51 mA.
+- Q2(a)(iv): Explain why the resistance of the filament lamp changes as the voltage across it increases.
+From nov-2021 | Page 23:
+- Q8(a)(i): Draw on Figure 17 to show how the circuit should be completed so that the current in the circuit and voltage across the device can be measured.
+From nov-2021 | Page 24:
+- Q8(a)(iii): Calculate the energy transferred to the interior light in 7 minutes.
+From nov-2021 | Page 25:
+- Q8(b)(i): Calculate the current in the wires to the battery when all the devices are switched on.
+- Q8(b)(ii): State how the overall resistance of the circuit changes when any one of the devices is switched off.
+- Q8(b)(iv): Explain why the wires to the battery in a car are thicker than the wires that connect each device to its switch and its fuse.
+
+From specimen | Page 8:
+- Q3(a): Give three modifications the student should make to the circuit so that the circuit works correctly.
+From specimen | Page 9:
+- Q3(b)(i): Give one reason for using the water bath.
+- Q3(b)(ii): State one way the student could develop this experimental procedure to investigate temperatures outside this range.
+From specimen | Page 11:
+- Q3(c)(i): Compare and contrast how the resistances of component A and component B vary with temperature.
+- Q3(c)(ii): Which of these is the current in component A when the temperature is 80°C?
