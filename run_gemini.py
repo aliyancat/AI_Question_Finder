@@ -374,7 +374,7 @@ def generate_html_report(result, question_pdfs, all_pdfs, output_dir, timestamp,
                                 ms_path = find_marking_scheme(pdf_path)
                                 
                                 if ms_path:
-                                    ms_page = find_page_in_ms(ms_path, q_num, q_text, int(page_num))
+                                    ms_page = find_page_in_ms(ms_path, q_num)
                                     ms_link = ms_path.resolve().as_uri() + f"#page={ms_page}"
                                 else:
                                     ms_link = None
