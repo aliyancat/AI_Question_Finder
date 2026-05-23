@@ -1,0 +1,22 @@
+From jun-2018 | Page 15:
+- Q5 (a): A student has a bar magnet, a piece of iron the same size as the magnet, and some paper clips. Describe how the student could use these items to demonstrate temporary induced magnetism.
+
+From nov-2021 | Page 14:
+- Q5 (a) (i): Draw two rectangles on Figure 13 to show the positions of the two bar magnets. Label the N-pole and the S-pole of each magnet.
+
+From nov-2021 | Page 16:
+- Q5 (b) (i): The magnets are 4.0 cm apart. The force between the magnets is 1.2 N. Calculate the value of K. State the unit.
+- Q5 (b) (ii): The magnets are held the same distance apart but with the N-pole of one magnet now facing the S-pole of the other magnet. The value of K does not change. State how the force would compare with the force in part (i).
+
+From specimen | Page 20:
+- Q6 (a): Wooden trucks on a toy railway have permanent magnets that hold the train together. The magnets are arranged so that an N-pole touches an S-pole between each truck, as shown in Figure 15. Truck Y is removed from the train, turned through 180° and is then replaced between truck X and Z. How does this affect the train?
+
+From specimen | Page 22:
+- Q6 (c) (i): Explain why the train acts in this way by considering the forces involved.
+
+From specimen | Page 23:
+- Q6 (c) (ii): Devise an experiment to investigate the horizontal force needed to separate the trucks from the engine.
+
+From jun-2023 | Page 13:
+- Q5 (a): On Figure 8, draw the shape and direction of the magnetic field between the two magnets.
+- Q5 (b): Describe the forces acting on the upper magnet. Use the idea of magnetic fields in your answer.

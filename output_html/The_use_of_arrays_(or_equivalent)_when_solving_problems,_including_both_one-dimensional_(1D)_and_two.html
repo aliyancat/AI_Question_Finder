@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Past Paper Questions</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+        
+        .content {
+            padding: 40px 30px;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+        }
+        
+        .source-title {
+            background: #f8f9ff;
+            border-left: 4px solid #667eea;
+            padding: 15px 20px;
+            margin-bottom: 15px;
+            border-radius: 4px;
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .question-item {
+            background: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 12px;
+            padding: 22px 24px;
+            margin-bottom: 18px;
+            transition: all 0.25s ease;
+        }
+        
+        .question-item:hover {
+            border-color: #667eea;
+            box-shadow: 0 8px 26px rgba(102, 126, 234, 0.12);
+            transform: translateY(-2px);
+        }
+        
+        .question-text {
+            color: #212121;
+            font-size: 1em;
+            line-height: 1.7;
+            word-break: break-word;
+        }
+        
+        .question-meta {
+            font-size: 0.95em;
+            color: #667eea;
+            margin-top: 10px;
+            font-weight: 600;
+        }
+        
+        .button-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 18px;
+        }
+        
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 18px;
+            border-radius: 999px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        
+        .button-primary {
+            background: #667eea;
+            color: white;
+        }
+        
+        .button-secondary {
+            background: #f5f7ff;
+            color: #333;
+            border: 1px solid #dbe3ff;
+        }
+        
+        .button:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 8px 22px rgba(102, 126, 234, 0.15);
+        }
+        
+        .disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        
+        .no-match {
+            text-align: center;
+            padding: 60px 30px;
+            color: #999;
+            font-size: 1.2em;
+        }
+        
+        .footer {
+            background: #f8f9ff;
+            padding: 20px 30px;
+            text-align: center;
+            color: #666;
+            font-size: 0.95em;
+            border-top: 1px solid #e0e0e0;
+        }
+        
+        @media (max-width: 600px) {
+            .header h1 {
+                font-size: 1.8em;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📄 Past Paper Questions</h1>
+            <p>Click a question to open the PDF; use the second button for marking schemes.</p>
+        </div>
+        
+        <div class="content">
+<div class="section"><div class="source-title">From june-2020 | Page 16:</div>
+                <div class="question-item">
+                    <div class="question-text">Q6(a): The following names of students are stored in an array with the identifier studentnames. studentnames = ["Rob", "Anna", "Huw", "Emma", "Patrice", "Iqbal"] (a) Describe the steps that a linear search would take to find Anna in studentnames</div>
+                    <div class="question-meta">📍 June-2020.pdf — Page 16</div>
+                    <div class="button-row">
+                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_sarah_p2/June-2020.pdf#page=16" target="_blank">Open question paper</a>
+                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_sarah_p2/June-2020-ms.pdf#page=11" target="_blank">Open marking scheme</a>
+                    </div>
+                </div>
+</div><div class="section"><div class="source-title">From june-2020 | Page 17:</div>
+                <div class="question-item">
+                    <div class="question-text">Q6(b): The names of students are sorted into ascending alphabetical order using an insertion sort. Complete the following diagram to show the stages an insertion sort would take to complete this task. Each row represents one pass of the insertion sort algorithm. Rob Anna Huw Emma Patrice Iqbal</div>
+                    <div class="question-meta">📍 June-2020.pdf — Page 17</div>
+                    <div class="button-row">
+                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_sarah_p2/June-2020.pdf#page=17" target="_blank">Open question paper</a>
+                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_sarah_p2/June-2020-ms.pdf#page=11" target="_blank">Open marking scheme</a>
+                    </div>
+                </div>
+</div><div class="section"><div class="source-title">From june-2020 | Page 18:</div>
+                <div class="question-item">
+                    <div class="question-text">Q6(c): A school uses the array to call an attendance register every morning. Write an algorithm using iteration to: • display the name of each student one at a time from studentnames • take as input whether that student is present or absent • display the total number of present students and number of absent students in a suitable message, after all student names have been displayed.</div>
+                    <div class="question-meta">📍 June-2020.pdf — Page 18</div>
+                    <div class="button-row">
+                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_sarah_p2/June-2020.pdf#page=18" target="_blank">Open question paper</a>
+                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_sarah_p2/June-2020-ms.pdf#page=11" target="_blank">Open marking scheme</a>
+                    </div>
+                </div>
+</div><div class="section"><div class="source-title">From june-2021 | Page 12:</div>
+                <div class="question-item">
+                    <div class="question-text">Q6: OCRBlocks is a game played on a 5 × 5 grid. Players take it in turns to place blocks on the board. The board is stored as a two-dimensional (2D) array with the identifier gamegrid Fig. 6.1 shows that players A and B have placed three blocks each so far. The function checkblock() checks whether a square on the board has been filled. When checkblock(4,2) is called, the value "A" is returned. function checkblock(r,c) if gamegrid[r,c] == "A" or gamegrid[r,c] == "B" then outcome = gamegrid[r,c] else outcome = "FREE" endif return outcome endfunction</div>
+                    <div class="question-meta">📍 June-2021.pdf — Page 12</div>
+                    <div class="button-row">
+                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_sarah_p2/June-2021.pdf#page=12" target="_blank">Open question paper</a>
+                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_sarah_p2/June-2021-ms.pdf#page=1" target="_blank">Open marking scheme</a>
+                    </div>
+                </div>
+</div><div class="section"><div class="source-title">From june-2021 | Page 13:</div>
+                <div class="question-item">
+                    <div class="question-text">Q6(a): Give the returned value when the following statements are called. Function call Returned value checkblock(2,1) checkblock(3,0) checkblock(2,3)</div>
+                    <div class="question-meta">📍 June-2021.pdf — Page 13</div>
+                    <div class="button-row">
+                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_sarah_p2/June-2021.pdf#page=13" target="_blank">Open question paper</a>
+                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_sarah_p2/June-2021-ms.pdf#page=7" target="_blank">Open marking scheme</a>
+                    </div>
+                </div>
+</div><div class="section"><div class="source-title">From june-2021 | Page 14:</div>
+                <div class="question-item">
+                    <div class="question-text">Q6(d): Write an algorithm to allow player A to select a position for their next block on the game board. The algorithm must: • ask the player for the position of their block on the board • use the checkblock() function to check if this position is free • if the position is free, add the letter "A" to the position chosen in the gamegrid array • if the position is not free, repeat the above steps until a free position is chosen.</div>
+                    <div class="question-meta">📍 June-2021.pdf — Page 14</div>
+                    <div class="button-row">
+                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_sarah_p2/June-2021.pdf#page=14" target="_blank">Open question paper</a>
+                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_sarah_p2/June-2021-ms.pdf#page=7" target="_blank">Open marking scheme</a>
+                    </div>
+                </div>
+</div><div class="section"><div class="source-title">From june-2022 | Page 7:</div>
+                <div class="question-item">
+                    <div class="question-text">Q3(a): A program stores the following list of positive and negative numbers. The numbers need sorting into ascending order using a merge sort. 45 12 –99 100 –13 0 17 –27 The first step is to divide the list into individual lists of one number each. This has been done for you. Complete the merge sort of the data by showing each step of the process.</div>
+                    <div class="question-meta">📍 June-2022.pdf — Page 7</div>
+                    <div class="button-row">
+                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_sarah_p2/June-2022.pdf#page=7" target="_blank">Open question paper</a>
+                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_sarah_p2/June-2022-ms.pdf#page=8" target="_blank">Open marking scheme</a>
+                    </div>
+                </div>
+</div><div class="section"><div class="source-title">From june-2022 | Page 8:</div>
+                <div class="question-item">
+                    <div class="question-text">Q3(b): Once the numbers are in order, a binary search can be run on the data. Describe the steps a binary search will follow to look for a number in a sorted list.</div>
+                    <div class="question-meta">📍 June-2022.pdf — Page 8</div>
+                    <div class="button-row">
+                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_sarah_p2/June-2022.pdf#page=8" target="_blank">Open question paper</a>
+                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_sarah_p2/June-2022-ms.pdf#page=8" target="_blank">Open marking scheme</a>
+                    </div>
+                </div>
+
+                <div class="question-item">
+                    <div class="question-text">Q3(c): A linear search could be used instead of a binary search. Describe the steps a linear search would follow when searching for a number that is not in the given list.</div>
+                    <div class="question-meta">📍 June-2022.pdf — Page 8</div>
+                    <div class="button-row">
+                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_sarah_p2/June-2022.pdf#page=8" target="_blank">Open question paper</a>
+                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_sarah_p2/June-2022-ms.pdf#page=8" target="_blank">Open marking scheme</a>
+                    </div>
+                </div>
+</div><div class="section"><div class="source-title">From june-2022 | Page 17:</div>
+                <div class="question-item">
+                    <div class="question-text">Q5(d): The hotel has nine rooms that are numbered from room 0 to room 8. The number of people currently staying in each room is stored in an array with the identifier room. The index of room represents the room number. Array room Index 0 1 2 3 4 5 6 7 8 Data 2 1 3 2 1 0 0 4 1 The following program counts how many people are currently staying in the hotel. for count = 1 to 8 total = 0 total = total + room[count] next count print(total) When tested, the program is found to contain two logic errors. Describe how the program can be refined to remove these logic errors.</div>
+                    <div class="question-meta">📍 June-2022.pdf — Page 17</div>
+                    <div class="button-row">
+                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_sarah_p2/June-2022.pdf#page=17" target="_blank">Open question paper</a>
+                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_sarah_p2/June-2022-ms.pdf#page=9" target="_blank">Open marking scheme</a>
+                    </div>
+                </div>
+</div><div class="section"><div class="source-title">From june-2023 | Page 4:</div>
+                <div class="question-item">
+                    <div class="question-text">Q2: This pseudocode algorithm totals all the numbers in the 0-indexed array scores The function length returns the number of elements in the array. The algorithm contains several errors. Two types of errors in a program are syntax and logic errors.</div>
+                    <div class="question-meta">📍 June-2023.pdf — Page 4</div>
+                    <div class="button-row">
+                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_sarah_p2/June-2023.pdf#page=4" target="_blank">Open question paper</a>
+                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_sarah_p2/June-2023-ms.pdf#page=1" target="_blank">Open marking scheme</a>
+                    </div>
+                </div>
+</div><div class="section"><div class="source-title">From june-2023 | Page 5:</div>
+                <div class="question-item">
+                    <div class="question-text">Q3: An insertion sort is one type of sorting algorithm. A student has written a pseudocode algorithm to perform an insertion sort on a 1D array names. names = ["Kareem", "Sarah", "Zac", "Sundip", "Anika"] for count = 1 to names.length – 1 pos = count while (pos > 0 and names[pos] < names[pos – 1]) temp = names[pos] names[pos] = names[pos – 1] names[pos – 1] = temp pos = pos – 1 endwhile next count</div>
+                    <div class="question-meta">📍 June-2023.pdf — Page 5</div>
+                    <div class="button-row">
+                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_sarah_p2/June-2023.pdf#page=5" target="_blank">Open question paper</a>
+                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_sarah_p2/June-2023-ms.pdf#page=1" target="_blank">Open marking scheme</a>
+                    </div>
+                </div>
+
+                <div class="question-item">
+                    <div class="question-text">Q3(a): Describe the purpose of the variable temp in the insertion sort pseudocode algorithm.</div>
+                    <div class="question-meta">📍 June-2023.pdf — Page 5</div>
+                    <div class="button-row">
+                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_sarah_p2/June-2023.pdf#page=5" target="_blank">Open question paper</a>
+                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_sarah_p2/June-2023-ms.pdf#page=4" target="_blank">Open marking scheme</a>
+                    </div>
+                </div>
+
+                <div class="question-item">
+                    <div class="question-text">Q3(b): An insertion sort contains a nested loop; a loop within a loop. In this pseudocode algorithm the outer loop is a count-controlled loop and the inner loop is a condition-controlled loop. Explain why the inner loop needs to be a condition-controlled loop.</div>
+                    <div class="question-meta">📍 June-2023.pdf — Page 5</div>
+                    <div class="button-row">
+                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_sarah_p2/June-2023.pdf#page=5" target="_blank">Open question paper</a>
+                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_sarah_p2/June-2023-ms.pdf#page=4" target="_blank">Open marking scheme</a>
+                    </div>
+                </div>
+</div><div class="section"><div class="source-title">From june-2023 | Page 17:</div>
+                <div class="question-item">
+                    <div class="question-text">Q6(f): OCR Security Services need to identify the total number of seconds the sensors have been activated on a specific date. The data from the database table events is imported into the program written in a high-level programming language. The program stores the data in a two-dimensional (2D) string array with the identifier arrayEvents The data to be stored is shown in the table. Date SensorID SensorType Length 05/02/2023 WS2 Window 38 05/02/2023 MS1 Motion 2 06/02/2023 DS3 Door 1 06/02/2023 MS2 Motion 3 06/02/2023 MS1 Motion 2 07/02/2023 WS1 Window 24 07/02/2023 DS1 Door 1 In this table, the value of events[1, 1] contains "MS1".</div>
+                    <div class="question-meta">📍 June-2023.pdf — Page 17</div>
+                    <div class="button-row">
+                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_sarah_p2/June-2023.pdf#page=17" target="_blank">Open question paper</a>
+                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_sarah_p2/June-2023-ms.pdf#page=7" target="_blank">Open marking scheme</a>
+                    </div>
+                </div>
+
+                <div class="question-item">
+                    <div class="question-text">Q6(f)(i): An array can only store data of one data type. Any non-string data must be converted to a string before storing in the array. Identify the process that converts integer data to string data.</div>
+                    <div class="question-meta">📍 June-2023.pdf — Page 17</div>
+                    <div class="button-row">
+                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_sarah_p2/June-2023.pdf#page=17" target="_blank">Open question paper</a>
+                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_sarah_p2/June-2023-ms.pdf#page=7" target="_blank">Open marking scheme</a>
+                    </div>
+                </div>
+</div><div class="section"><div class="source-title">From june-2023 | Page 18:</div>
+                <div class="question-item">
+                    <div class="question-text">Q6(f)(ii): Write a program that: • asks the user to input a date • totals the number of seconds sensors have been activated on the date input • outputs the calculated total in an appropriate message including the date, for example: Sensors were activated for 40 seconds on 05/02/2023 You must use either: • OCR Exam Reference Language, or • A high-level programming language that you have studied.</div>
+                    <div class="question-meta">📍 June-2023.pdf — Page 18</div>
+                    <div class="button-row">
+                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_sarah_p2/June-2023.pdf#page=18" target="_blank">Open question paper</a>
+                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_sarah_p2/June-2023-ms.pdf#page=7" target="_blank">Open marking scheme</a>
+                    </div>
+                </div>
+</div><div class="section"><div class="source-title">From june-2024 | Page 4:</div>
+                <div class="question-item">
+                    <div class="question-text">Q3(c)(i): Show how a binary search will be used to find the number 10 in the following data set: 1 2 5 6 7 10 20</div>
+                    <div class="question-meta">📍 June-2024.pdf — Page 4</div>
+                    <div class="button-row">
+                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_sarah_p2/June-2024.pdf#page=4" target="_blank">Open question paper</a>
+                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_sarah_p2/June-2024-ms.pdf#page=4" target="_blank">Open marking scheme</a>
+                    </div>
+                </div>
+
+                <div class="question-item">
+                    <div class="question-text">Q3(c)(ii): State one pre-requisite for a binary search algorithm.</div>
+                    <div class="question-meta">📍 June-2024.pdf — Page 4</div>
+                    <div class="button-row">
+                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_sarah_p2/June-2024.pdf#page=4" target="_blank">Open question paper</a>
+                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_sarah_p2/June-2024-ms.pdf#page=4" target="_blank">Open marking scheme</a>
+                    </div>
+                </div>
+
+                <div class="question-item">
+                    <div class="question-text">Q3(c)(iii): Tick (✓) one box to identify the name of the sorting algorithm that splits data into individual items before recombining in order. Bubble sort Insertion sort Merge sort</div>
+                    <div class="question-meta">📍 June-2024.pdf — Page 4</div>
+                    <div class="button-row">
+                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_sarah_p2/June-2024.pdf#page=4" target="_blank">Open question paper</a>
+                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_sarah_p2/June-2024-ms.pdf#page=4" target="_blank">Open marking scheme</a>
+                    </div>
+                </div>
+</div><div class="section"><div class="source-title">From june-2024 | Page 12:</div>
+                <div class="question-item">
+                    <div class="question-text">Q9(a)(ii): The student names for a team are stored in an array with the identifier theTeam An example of the data in this array is shown: Index 0 1 2 3 4 5 Data Ali Eve Ling Nina Sarah Tom theTeam A linear search function is used to find whether a student is in the team. The function: • takes a student name as a parameter • returns True if the student name is in the array • returns False if the student name is not in the array. Complete the design of an algorithm for the linear search function.</div>
+                    <div class="question-meta">📍 June-2024.pdf — Page 12</div>
+                    <div class="button-row">
+                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_sarah_p2/June-2024.pdf#page=12" target="_blank">Open question paper</a>
+                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_sarah_p2/June-2024-ms.pdf#page=10" target="_blank">Open marking scheme</a>
+                    </div>
+                </div>
+</div><div class="section"><div class="source-title">From specimen | Page 9:</div>
+                <div class="question-item">
+                    <div class="question-text">Q6(a): A program uses a file to store a list of words that can be used in a game. A sample of this data is shown in Fig. 3. crime bait fright victory nibble loose Show the stages of a bubble sort when applied to data shown in Fig. 3.</div>
+                    <div class="question-meta">📍 Specimen.pdf — Page 9</div>
+                    <div class="button-row">
+                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_sarah_p2/Specimen.pdf#page=9" target="_blank">Open question paper</a>
+                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_sarah_p2/Specimen-ms.pdf#page=43" target="_blank">Open marking scheme</a>
+                    </div>
+                </div>
+
+                <div class="question-item">
+                    <div class="question-text">Q6(b): A second sample of data is shown in Fig. 4. amber house kick moose orange range tent wind zebra Show the stages of a binary search to find the word zebra using the data shown in Fig. 4.</div>
+                    <div class="question-meta">📍 Specimen.pdf — Page 9</div>
+                    <div class="button-row">
+                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_sarah_p2/Specimen.pdf#page=9" target="_blank">Open question paper</a>
+                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_sarah_p2/Specimen-ms.pdf#page=43" target="_blank">Open marking scheme</a>
+                    </div>
+                </div>
+</div><div class="section"><div class="source-title">From specimen | Page 14:</div>
+                <div class="question-item">
+                    <div class="question-text">Q8(c): Data for one week (Monday to Friday) is stored in a 2D array with the identifier minsPlayed. The following table shows part of this array, containing 4 students. Students Stuart Wes Victoria Dan Days of the week Mon 0 60 30 45 0 Tue 1 180 60 0 60 Wed 2 200 30 0 20 Thu 3 60 10 15 15 Fri 4 100 35 30 45 The teacher wants to output the number of minutes Dan (column index 3) played computer games on Wednesday (row index 2). The following code is written: print(minsPlayed[3,2]) Write a line of code to output the number of minutes that Stuart played computer games on Friday.</div>
+                    <div class="question-meta">📍 Specimen.pdf — Page 14</div>
+                    <div class="button-row">
+                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_sarah_p2/Specimen.pdf#page=14" target="_blank">Open question paper</a>
+                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_sarah_p2/Specimen-ms.pdf#page=42" target="_blank">Open marking scheme</a>
+                    </div>
+                </div>
+</div><div class="section"><div class="source-title">From specimen | Page 15:</div>
+                <div class="question-item">
+                    <div class="question-text">Q8(d): The teacher writes a program to add up and print out the total number of minutes student 2 played computer games over 5 days (Monday to Friday). total = 0 total = total + minsPlayed[2,0] total = total + minsPlayed[2,1] total = total + minsPlayed[2,2] total = total + minsPlayed[2,3] total = total + minsPlayed[2,4] print(total) Refine the program to be more efficient. Write the refined version of the algorithm.</div>
+                    <div class="question-meta">📍 Specimen.pdf — Page 15</div>
+                    <div class="button-row">
+                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_sarah_p2/Specimen.pdf#page=15" target="_blank">Open question paper</a>
+                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_sarah_p2/Specimen-ms.pdf#page=43" target="_blank">Open marking scheme</a>
+                    </div>
+                </div>
+</div>
+        </div>
+        
+        <div class="footer">
+            Generated by PaperCode | Open questions and marking schemes locally
+        </div>
+    </div>
+</body>
+</html>

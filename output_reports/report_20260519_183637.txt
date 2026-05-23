@@ -1,0 +1,42 @@
+From june-2021-dec | Page 4:
+- Q1(e): A program is needed to calculate and print a multiplication table for a number that is input by the user.
+
+From june-2021-dec | Page 10:
+- Q4(a): A program is needed to convert an 8-bit binary number into denary.
+
+From june-2021-dec | Page 12:
+- Q5: Ann likes to create programs.
+
+From june-2022 | Page 5:
+- Q2(a)(ii): Identify the line number where iteration starts.
+- Q2(b): Write a program to implement the logic in the pseudocode.
+
+From june-2022 | Page 10:
+- Q5(a): She wants a program to check passwords stored in a file.
+
+From june-2022 | Page 14:
+- Q6: Carlos wants you to create a guess the animal game.
+
+From june-2023 | Page 8:
+- Q3(c): A program is required to calculate the result of raising one integer (the base) to the power of another (the exponent).
+
+From june-2023 | Page 10:
+- Q4(b): A program is needed to create a key for a database.
+
+From june-2023 | Page 12:
+- Q5(b): There is an error in the loop between line 9 and line 16.
+
+From june-2023 | Page 13:
+- Q5(c): The scientist is collecting and storing data about tuna.
+
+From june-2023 | Page 14:
+- Q6: An agricultural college has a herd of dairy cows.
+
+From june-2024 | Page 6:
+- Q3(b): Figure 2 shows the intended output from a program that displays every other name in an array of star names.
+
+From june-2024 | Page 14:
+- Q5(c): A program is required to calculate and display: a subtotal for each line of sales a grand total for all the sales in the file.
+
+From june-2024 | Page 15:
+- Q6: A program stores pairs of words in a two‑dimensional array.

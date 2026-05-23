@@ -1,0 +1,43 @@
+From june-2020 | Page 16:
+- Q6(a): The following names of students are stored in an array with the identifier studentnames. studentnames = ["Rob", "Anna", "Huw", "Emma", "Patrice", "Iqbal"] (a) Describe the steps that a linear search would take to find Anna in studentnames
+From june-2020 | Page 17:
+- Q6(b): The names of students are sorted into ascending alphabetical order using an insertion sort. Complete the following diagram to show the stages an insertion sort would take to complete this task. Each row represents one pass of the insertion sort algorithm. Rob Anna Huw Emma Patrice Iqbal
+From june-2020 | Page 18:
+- Q6(c): A school uses the array to call an attendance register every morning. Write an algorithm using iteration to: • display the name of each student one at a time from studentnames • take as input whether that student is present or absent • display the total number of present students and number of absent students in a suitable message, after all student names have been displayed.
+From june-2021 | Page 12:
+- Q6: OCRBlocks is a game played on a 5 × 5 grid. Players take it in turns to place blocks on the board. The board is stored as a two-dimensional (2D) array with the identifier gamegrid Fig. 6.1 shows that players A and B have placed three blocks each so far. The function checkblock() checks whether a square on the board has been filled. When checkblock(4,2) is called, the value "A" is returned. function checkblock(r,c) if gamegrid[r,c] == "A" or gamegrid[r,c] == "B" then outcome = gamegrid[r,c] else outcome = "FREE" endif return outcome endfunction
+From june-2021 | Page 13:
+- Q6(a): Give the returned value when the following statements are called. Function call Returned value checkblock(2,1) checkblock(3,0) checkblock(2,3)
+From june-2021 | Page 14:
+- Q6(d): Write an algorithm to allow player A to select a position for their next block on the game board. The algorithm must: • ask the player for the position of their block on the board • use the checkblock() function to check if this position is free • if the position is free, add the letter "A" to the position chosen in the gamegrid array • if the position is not free, repeat the above steps until a free position is chosen.
+From june-2022 | Page 7:
+- Q3(a): A program stores the following list of positive and negative numbers. The numbers need sorting into ascending order using a merge sort. 45 12 –99 100 –13 0 17 –27 The first step is to divide the list into individual lists of one number each. This has been done for you. Complete the merge sort of the data by showing each step of the process.
+From june-2022 | Page 8:
+- Q3(b): Once the numbers are in order, a binary search can be run on the data. Describe the steps a binary search will follow to look for a number in a sorted list.
+- Q3(c): A linear search could be used instead of a binary search. Describe the steps a linear search would follow when searching for a number that is not in the given list.
+From june-2022 | Page 17:
+- Q5(d): The hotel has nine rooms that are numbered from room 0 to room 8. The number of people currently staying in each room is stored in an array with the identifier room. The index of room represents the room number. Array room Index 0 1 2 3 4 5 6 7 8 Data 2 1 3 2 1 0 0 4 1 The following program counts how many people are currently staying in the hotel. for count = 1 to 8 total = 0 total = total + room[count] next count print(total) When tested, the program is found to contain two logic errors. Describe how the program can be refined to remove these logic errors.
+From june-2023 | Page 4:
+- Q2: This pseudocode algorithm totals all the numbers in the 0-indexed array scores The function length returns the number of elements in the array. The algorithm contains several errors. Two types of errors in a program are syntax and logic errors.
+From june-2023 | Page 5:
+- Q3: An insertion sort is one type of sorting algorithm. A student has written a pseudocode algorithm to perform an insertion sort on a 1D array names. names = ["Kareem", "Sarah", "Zac", "Sundip", "Anika"] for count = 1 to names.length – 1 pos = count while (pos > 0 and names[pos] < names[pos – 1]) temp = names[pos] names[pos] = names[pos – 1] names[pos – 1] = temp pos = pos – 1 endwhile next count
+- Q3(a): Describe the purpose of the variable temp in the insertion sort pseudocode algorithm.
+- Q3(b): An insertion sort contains a nested loop; a loop within a loop. In this pseudocode algorithm the outer loop is a count-controlled loop and the inner loop is a condition-controlled loop. Explain why the inner loop needs to be a condition-controlled loop.
+From june-2023 | Page 17:
+- Q6(f): OCR Security Services need to identify the total number of seconds the sensors have been activated on a specific date. The data from the database table events is imported into the program written in a high-level programming language. The program stores the data in a two-dimensional (2D) string array with the identifier arrayEvents The data to be stored is shown in the table. Date SensorID SensorType Length 05/02/2023 WS2 Window 38 05/02/2023 MS1 Motion 2 06/02/2023 DS3 Door 1 06/02/2023 MS2 Motion 3 06/02/2023 MS1 Motion 2 07/02/2023 WS1 Window 24 07/02/2023 DS1 Door 1 In this table, the value of events[1, 1] contains "MS1".
+- Q6(f)(i): An array can only store data of one data type. Any non-string data must be converted to a string before storing in the array. Identify the process that converts integer data to string data.
+From june-2023 | Page 18:
+- Q6(f)(ii): Write a program that: • asks the user to input a date • totals the number of seconds sensors have been activated on the date input • outputs the calculated total in an appropriate message including the date, for example: Sensors were activated for 40 seconds on 05/02/2023 You must use either: • OCR Exam Reference Language, or • A high-level programming language that you have studied.
+From june-2024 | Page 4:
+- Q3(c)(i): Show how a binary search will be used to find the number 10 in the following data set: 1 2 5 6 7 10 20
+- Q3(c)(ii): State one pre-requisite for a binary search algorithm.
+- Q3(c)(iii): Tick (✓) one box to identify the name of the sorting algorithm that splits data into individual items before recombining in order. Bubble sort Insertion sort Merge sort
+From june-2024 | Page 12:
+- Q9(a)(ii): The student names for a team are stored in an array with the identifier theTeam An example of the data in this array is shown: Index 0 1 2 3 4 5 Data Ali Eve Ling Nina Sarah Tom theTeam A linear search function is used to find whether a student is in the team. The function: • takes a student name as a parameter • returns True if the student name is in the array • returns False if the student name is not in the array. Complete the design of an algorithm for the linear search function.
+From specimen | Page 9:
+- Q6(a): A program uses a file to store a list of words that can be used in a game. A sample of this data is shown in Fig. 3. crime bait fright victory nibble loose Show the stages of a bubble sort when applied to data shown in Fig. 3.
+- Q6(b): A second sample of data is shown in Fig. 4. amber house kick moose orange range tent wind zebra Show the stages of a binary search to find the word zebra using the data shown in Fig. 4.
+From specimen | Page 14:
+- Q8(c): Data for one week (Monday to Friday) is stored in a 2D array with the identifier minsPlayed. The following table shows part of this array, containing 4 students. Students Stuart Wes Victoria Dan Days of the week Mon 0 60 30 45 0 Tue 1 180 60 0 60 Wed 2 200 30 0 20 Thu 3 60 10 15 15 Fri 4 100 35 30 45 The teacher wants to output the number of minutes Dan (column index 3) played computer games on Wednesday (row index 2). The following code is written: print(minsPlayed[3,2]) Write a line of code to output the number of minutes that Stuart played computer games on Friday.
+From specimen | Page 15:
+- Q8(d): The teacher writes a program to add up and print out the total number of minutes student 2 played computer games over 5 days (Monday to Friday). total = 0 total = total + minsPlayed[2,0] total = total + minsPlayed[2,1] total = total + minsPlayed[2,2] total = total + minsPlayed[2,3] total = total + minsPlayed[2,4] print(total) Refine the program to be more efficient. Write the refined version of the algorithm.

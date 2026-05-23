@@ -1,0 +1,32 @@
+From june-2021-dec | Page 5:
+- Q2(a): Open file Q02a in the code editor. Amend the code to complete the program.
+From june-2021-dec | Page 9:
+- Q3(c): A program is needed that will accept the input of a year and output whether it is a leap year or not. Open Q03c in the code editor. Write the program.
+From june-2022 | Page 3:
+- Q1(g): A program is needed that will accept the input of a letter and compare it with a stored letter. It will check whether the letter comes earlier in the alphabet, later in the alphabet or is the same letter as the stored letter. It will output the letter and the stored letter with an appropriate message. Open Q01g in the code editor. Amend the code to complete the if statement used to produce the output.
+From june-2022 | Page 5:
+- Q2(b): Write a program to implement the logic in the pseudocode. Open Q02b in the code editor. Write the program.
+From june-2022 | Page 6:
+- Q3: Manjit sells copies of a science textbook to schools. She needs a program to process textbook orders. It must: • accept the input of the number of textbooks required • generate the price per textbook • generate the total cost of the order • display the price per textbook and the total cost of the order. The price of one textbook depends on the number ordered: Quantity 1–5 £20.00, 6–9 £15.00, 10 or more £12.00. Open Q03 in the code editor. Write the program.
+From june-2022 | Page 10:
+- Q5(a): She wants a program to check passwords stored in a file. The file passwords.txt contains the list of passwords. The program must: • check each password to ensure that: • the first character is an uppercase letter • if it is, that it also includes at least one digit (0–9) • if a password does not meet these requirements: • display the password • increment the number of incorrect passwords • display the total number of incorrect passwords after all the passwords have been checked. Open Q05a in the code editor. Write the program.
+From june-2022 | Page 14:
+- Q6: Carlos wants you to create a guess the animal game. Open Q06 in the code editor. The code contains an array of animals. It also contains a function that randomly selects an animal from the array. This is the secret word the user needs to guess. Carlos wants the program to: • generate the number of attempts the user has to guess the secret word. The maximum number of attempts is the length of the secret word +3. For example, the user has 8 attempts to guess when the secret word is tiger • keep track of letters from incorrect attempts that are in the secret word and those that are not. There should be no duplicated letters • display a message telling the user: • the number of letters in the secret word • how many attempts they have left • force the user to input a word that is the same length as the secret word • check whether the input word matches the secret word: • if the words match then a message that includes the secret word and the number of attempts taken to guess it is displayed • if the words do not match then: • letters from the attempt that appear in the secret word should be added to the correct letters store • letters from the attempt that do not appear in the secret word should be added to the wrong letters store • the contents of the correct and wrong letter stores are displayed • allow the user another attempt until they have guessed the word or have run out of attempts • display a message telling the user the game is over including the random word if the maximum attempts have been taken and the word has not been guessed.
+From june-2023 | Page 3:
+- Q1(b)(ii): Identify a logical operator used in this program.
+From june-2023 | Page 6:
+- Q3(b): An algorithm has been written to validate numbers entered by the user. Figure 2 shows the pseudocode for the algorithm. Complete the table to show the output for each set of inputs.
+From june-2023 | Page 8:
+- Q3(c): A program is required to calculate the result of raising one integer (the base) to the power of another (the exponent). Figure 3 shows a flowchart for the algorithm. Open Q03c in the code editor. Write a program to implement the logic in the flowchart.
+From june-2024 | Page 2:
+- Q1(b): Open Q01b in the code editor. A user enters a name and an age when the program executes. The program should display a welcome message when the user is less than 30 years of age. Amend the code to complete the program.
+From june-2024 | Page 3:
+- Q1(c)(iv): Give the logical operator used in the code.
+From june-2024 | Page 6:
+- Q3(a): The truth table shows the initial values for A and B. Complete the truth table to show the results of each operation.
+From june-2024 | Page 7:
+- Q3(c): A program validates a number input by the user. Figure 3 shows the output messages based on the inputted number. Open Q03c in the code editor. Amend the code to ensure the messages are generated correctly.
+From june-2024 | Page 13:
+- Q5(b): A binary search is used to check whether the number 11 is in the list. The midpoint is calculated by adding the high index to the low index and integer dividing by 2. Complete the table to show the values for the high index, the low index and the midpoint on each pass of a binary search.
+From june-2024 | Page 15:
+- Q6: A program stores pairs of words in a two‑dimensional array. Each word in a pair starts with a different letter. Each pair of words should be in alphabetical order, but some are not. The last pair in the array is an empty pair. The program must: • replace the final blank pair of words with the variables word1 and word2 • display the pair number of each pair, followed by each word in the pair, without punctuation • display the longer word in the pair, indented • display any pair found to be not in alphabetical order, in alphabetical order, indented, without punctuation. Open the file Q06 in the code editor. Write a program to produce the intended output.
