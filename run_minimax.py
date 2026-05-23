@@ -1,6 +1,7 @@
 import os
 import sys
 import time
+import re
 from pathlib import Path
 from datetime import datetime
 
@@ -40,41 +41,108 @@ try:
 except ImportError:
     sys.exit("Missing dependency: pip install reportlab")
 
-PAPERS_DIR = Path("past_papers")
-OUTPUT_DIR_PDFS = Path("output_pdfs")
-OUTPUT_DIR_HTML = Path("output_html")
+OUTPUT_DIR_PDFS    = Path("output_pdfs")
+OUTPUT_DIR_HTML    = Path("output_html")
 OUTPUT_DIR_REPORTS = Path("output_reports")
 
-# Create output directories
 OUTPUT_DIR_PDFS.mkdir(exist_ok=True)
 OUTPUT_DIR_HTML.mkdir(exist_ok=True)
 OUTPUT_DIR_REPORTS.mkdir(exist_ok=True)
 
-CORAL  = "\033[38;2;210;100;80m"
-CORAL2 = "\033[38;2;240;140;110m"
-DARK   = "\033[38;2;80;40;30m"
-RESET  = "\033[0m"
+CORAL = "\033[38;2;210;100;80m"
+DARK  = "\033[38;2;80;40;30m"
+RESET = "\033[0m"
+
+
+# ── helpers ──────────────────────────────────────────────────────────────────
 
 def clear():
     os.system("cls" if os.name == "nt" else "clear")
+
+def divider():
+    line = "  " + "─" * 62
+    print((Fore.WHITE + Style.DIM + line + Style.RESET_ALL) if HAS_COLOR else line)
+
+def step(msg):
+    sym = (CORAL + "◆ " + RESET) if HAS_COLOR else "* "
+    print(f"  {sym}{msg}")
+
+def ok(msg):
+    col = (Fore.GREEN + Style.BRIGHT) if HAS_COLOR else ""
+    rst = Style.RESET_ALL if HAS_COLOR else ""
+    print(f"  {col}✔ {msg}{rst}")
+
+def err(msg):
+    col = (Fore.RED + Style.BRIGHT) if HAS_COLOR else ""
+    rst = Style.RESET_ALL if HAS_COLOR else ""
+    print(f"  {col}✘ {msg}{rst}")
+    sys.exit(1)
+
+def footer(pdf_count):
+    col = (Fore.WHITE + Style.DIM)  if HAS_COLOR else ""
+    hi  = (Fore.CYAN + Style.BRIGHT) if HAS_COLOR else ""
+    rst = Style.RESET_ALL if HAS_COLOR else ""
+    print()
+    divider()
+    print(f"  {col}papers/{rst}  {hi}{pdf_count} PDF(s){rst}   {col}model/{rst}  {hi}MiniMax-M2.7{rst}")
+    divider()
+
+def sanitize_filename(text, max_length=100):
+    match = re.match(r'([^.!?]*[.!?])', text.strip())
+    first_sentence = match.group(1).strip() if match else text.strip()[:max_length]
+    filename = re.sub(r'[<>:"/\\|?*]', '', first_sentence)
+    filename = re.sub(r'\s+', '_', filename)
+    return filename[:max_length]
 
 def is_marking_scheme(pdf_path):
     name = pdf_path.stem.lower()
     return name.endswith(" ms") or name.endswith("-ms") or name.endswith("_ms") or name.endswith("ms")
 
+def find_marking_scheme(question_pdf, all_pdfs):
+    candidates = [
+        f"{question_pdf.stem} ms",
+        f"{question_pdf.stem}-ms",
+        f"{question_pdf.stem}_ms",
+        f"{question_pdf.stem}ms",
+    ]
+    for pdf in all_pdfs:
+        if pdf.stem.lower() in [c.lower() for c in candidates]:
+            return pdf
+    return None
+
+def find_page_in_ms(ms_path, q_num):
+    try:
+        doc = fitz.open(ms_path)
+        clean_q = q_num.lower().replace("q", "").strip()
+        m = re.search(r'\d+', clean_q)
+        base_q = m.group(0) if m else clean_q
+        best_page = 1
+        found_base = False
+        for page_num, page in enumerate(doc, 1):
+            text = page.get_text().lower()
+            if clean_q and clean_q in text:
+                doc.close()
+                return page_num
+            if not found_base and base_q:
+                if re.search(rf"(?m)^(question\s*{base_q}|{base_q}[\s\(])", text):
+                    best_page = page_num
+                    found_base = True
+        doc.close()
+        return best_page
+    except Exception:
+        return 1
+
+
+# ── banner / UI ───────────────────────────────────────────────────────────────
 
 def print_banner():
-    if HAS_FIG:
-        code  = pyfiglet.figlet_format("ALIYAN CODE",  font="larry3d")
-    else:
-        code  = "  ALIYAN CODE\n"
+    code = pyfiglet.figlet_format("ALIYAN CODE", font="larry3d") if HAS_FIG else "  ALIYAN CODE\n"
 
     def render_3d(text):
         lines = text.splitlines()
         for line in lines:
             print(DARK + "   " + line + RESET)
-        rows = len(lines)
-        print(f"\033[{rows}A", end="")
+        print(f"\033[{len(lines)}A", end="")
         for line in lines:
             print(CORAL + line + RESET)
 
@@ -108,51 +176,142 @@ def print_tips():
         print("  3. Your report will be saved to  output/  when done.")
     print()
 
-def divider():
-    line = "  " + "─" * 62
-    print((Fore.WHITE + Style.DIM + line + Style.RESET_ALL) if HAS_COLOR else line)
 
-def step(msg):
-    sym = (CORAL + "◆ " + RESET) if HAS_COLOR else "* "
-    print(f"  {sym}{msg}")
+# ── HTML report ───────────────────────────────────────────────────────────────
 
-def ok(msg):
-    col = (Fore.GREEN + Style.BRIGHT) if HAS_COLOR else ""
-    rst = Style.RESET_ALL if HAS_COLOR else ""
-    print(f"  {col}✔ {msg}{rst}")
+def generate_html_report(result, question_pdfs, all_pdfs, output_dir, timestamp, syllabus):
+    html_content = """<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Past Paper Questions</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+               background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+               min-height: 100vh; padding: 40px 20px; }
+        .container { max-width: 900px; margin: 0 auto; background: white; border-radius: 12px;
+                     box-shadow: 0 20px 60px rgba(0,0,0,0.3); overflow: hidden; }
+        .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;
+                  padding: 40px 30px; text-align: center; }
+        .header h1 { font-size: 2.5em; margin-bottom: 10px; }
+        .content { padding: 40px 30px; }
+        .section { margin-bottom: 40px; }
+        .source-title { background: #f8f9ff; border-left: 4px solid #667eea; padding: 15px 20px;
+                        margin-bottom: 15px; border-radius: 4px; font-weight: 600; color: #333; }
+        .question-item { background: #fff; border: 1px solid #e0e0e0; border-radius: 12px;
+                         padding: 22px 24px; margin-bottom: 18px; transition: all 0.25s ease; }
+        .question-item:hover { border-color: #667eea; box-shadow: 0 8px 26px rgba(102,126,234,0.12);
+                               transform: translateY(-2px); }
+        .question-text { color: #212121; font-size: 1em; line-height: 1.7; word-break: break-word; }
+        .question-meta { font-size: 0.95em; color: #667eea; margin-top: 10px; font-weight: 600; }
+        .button-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 18px; }
+        .button { display: inline-flex; align-items: center; justify-content: center;
+                  padding: 12px 18px; border-radius: 999px; font-weight: 700; text-decoration: none;
+                  transition: transform 0.2s ease, box-shadow 0.2s ease; }
+        .button-primary { background: #667eea; color: white; }
+        .button-secondary { background: #f5f7ff; color: #333; border: 1px solid #dbe3ff; }
+        .button:hover { transform: translateY(-1px); box-shadow: 0 8px 22px rgba(102,126,234,0.15); }
+        .disabled { opacity: 0.5; cursor: not-allowed; }
+        .no-match { text-align: center; padding: 60px 30px; color: #999; font-size: 1.2em; }
+        .footer { background: #f8f9ff; padding: 20px 30px; text-align: center; color: #666;
+                  font-size: 0.95em; border-top: 1px solid #e0e0e0; }
+        @media (max-width: 600px) { .header h1 { font-size: 1.8em; } .content { padding: 20px; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📄 Past Paper Questions</h1>
+            <p>Click a question to open the PDF; use the second button for marking schemes.</p>
+        </div>
+        <div class="content">
+"""
 
-def extract_pdf_info(line, question_pdfs):\n    \"\"\"Extract PDF name and page number from various output formats.\"\"\"\n    import re\n    \n    # Clean the line - remove markdown bold/italic markers\n    clean_line = re.sub(r'\\*+', '', line)\n    \n    # Try format 1: \"From pdfname | Page X:\"\n    match = re.search(r'From\\s+([A-Za-z0-9_\\-]+)\\s*\\|\\s*Page\\s+(\\d+)', clean_line, re.IGNORECASE)\n    if match:\n        return match.group(1).lower(), match.group(2)\n    \n    # Try format 2: \"pdfname | Page X\" (no \"From\")\n    match = re.search(r'^([A-Za-z0-9_\\-]+)\\s*\\|\\s*Page\\s+(\\d+)', clean_line, re.IGNORECASE)\n    if match:\n        return match.group(1).lower(), match.group(2)\n    \n    # Try format 3: Extract \"From Jun-2019\" style\n    match = re.search(r'[Ff]rom\\s+([A-Za-z0-9_\\-]+)', clean_line)\n    if match:\n        pdf_name = match.group(1).lower()\n        # Try to find page number nearby\n        page_match = re.search(r'[Pp]age\\s*(\\d+)', clean_line)\n        page = page_match.group(1) if page_match else \"1\"\n        return pdf_name, page\n    \n    # Try format 4: Match question number and try to find PDF from list\n    # e.g. \"Q6(a)(ii)\" or \"Q10(a)\"\n    q_match = re.search(r'Q(\\d+)', line)\n    if q_match:\n        q_num = q_match.group(1)\n        # Try each PDF to see which one has this question\n        for pdf in question_pdfs:\n            pdf_path = Path(pdf)\n            try:\n                doc = fitz.open(str(pdf_path))\n                text = \"\"\n                for page in doc:\n                    text += page.get_text().lower()\n                doc.close()\n                if f\"question {q_num}\" in text or f\"q{q_num}\" in text:\n                    return pdf.stem.lower(), \"1\"\n            except:\n                pass\n    \n    return None, None\n\n\ndef find_marking_scheme(question_pdf):\n    candidates = [\n        f\"{question_pdf.stem} ms\",\n        f\"{question_pdf.stem}-ms\",\n        f\"{question_pdf.stem}_ms\",\n        f\"{question_pdf.stem}ms\"\n    ]\n    for pdf in all_pdfs:\n        if pdf.stem.lower() in [candidate.lower() for candidate in candidates]:\n            return pdf\n    return None\n\n\ndef find_page_in_ms(ms_path, q_num):\n    try:\n        import re\n        import fitz\n        doc = fitz.open(ms_path)\n        \n        clean_q = q_num.lower().replace(\"q\", \"\").strip()\n        match = re.search(r'\\d+', clean_q)\n        base_q = match.group(0) if match else clean_q\n        \n        best_page = 1\n        found_base = False\n        \n        for page_num, page in enumerate(doc, 1):\n            text = page.get_text().lower()\n            \n            if clean_q and clean_q in text:\n                doc.close()\n                return page_num\n            \n            if not found_base and base_q:\n                pattern = rf\"(?m)^(question\\s*{base_q}|{base_q}[\\s\\(])\"\n                if re.search(pattern, text):\n                    best_page = page_num\n                    found_base = True\n        \n        doc.close()\n        return best_page\n    except Exception:\n        return 1\n\n\ndef generate_html_report(result, question_pdfs, all_pdfs, output_dir, timestamp, syllabus):\n    \"\"\"Generate an interactive HTML report with clickable PDF links.\"\"\"\n    \n    html_content = \"\"\"<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Past Paper Questions</title>\n    <style>\n        * { margin: 0; padding: 0; box-sizing: border-box; }\n        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; \n               background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);\n               min-height: 100vh; padding: 40px 20px; }\n        .container { max-width: 900px; margin: 0 auto; background: white; border-radius: 12px;\n                     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3); overflow: hidden; }\n        .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;\n                  padding: 40px 30px; text-align: center; }\n        .header h1 { font-size: 2.5em; margin-bottom: 10px; }\n        .content { padding: 40px 30px; }\n        .question-item { background: #ffffff; border: 1px solid #e0e0e0; border-radius: 12px;\n                        padding: 20px 24px; margin-bottom: 16px; transition: all 0.3s ease; }\n        .question-item:hover { border-color: #667eea; box-shadow: 0 8px 25px rgba(102, 126, 234, 0.15); \n                              transform: translateY(-2px); }\n        .question-source { background: #f0f4ff; border-left: 4px solid #667eea; padding: 12px 16px;\n                          margin-bottom: 14px; border-radius: 6px; font-weight: 600; color: #333; }\n        .question-text { color: #333; font-size: 1em; line-height: 1.6; margin-bottom: 14px; }\n        .question-meta { font-size: 0.9em; color: #667eea; margin-bottom: 12px; font-weight: 600; }\n        .button-row { display: flex; flex-wrap: wrap; gap: 10px; }\n        .button { display: inline-flex; align-items: center; justify-content: center;\n                  padding: 10px 18px; border-radius: 999px; font-weight: 700; text-decoration: none;\n                  transition: transform 0.2s ease, box-shadow 0.2s ease; }\n        .button-primary { background: #667eea; color: white; }\n        .button-secondary { background: #f5f7ff; color: #333; border: 1px solid #dbe3ff; }\n        .button:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(102, 126, 234, 0.2); }\n        .no-match { text-align: center; padding: 60px 30px; color: #999; font-size: 1.2em; }\n        .footer { background: #f8f9ff; padding: 20px 30px; text-align: center; color: #666; font-size: 0.9em; }\n        .warning { background: #fff3cd; border: 1px solid #ffc107; padding: 15px; border-radius: 8px; margin-bottom: 15px; }\n        @media (max-width: 600px) { .header h1 { font-size: 1.8em; } .content { padding: 20px; } }\n    </style>\n</head>\n<body>\n    <div class=\"container\">\n        <div class=\"header\">\n            <h1>📄 Past Paper Questions</h1>\n            <p>Click to open PDFs with marking scheme links</p>\n        </div>\n        <div class=\"content\">\n\"\"\"\n    \n    if \"No questions match\" in result:\n        html_content += '<div class=\"no-match\">No questions match the syllabus.</div>'\n    else:\n        # Group questions by their source (every few lines that talk about same paper)\n        questions = []\n        for line in result.splitlines():\n            line = line.strip()\n            if not line:\n                continue\n            \n            # Check if line contains \"From\" or a question reference\n            if re.search(r'[Ff]rom\\s+|---\\s*Q\\d+', line) or re.search(r'Q\\d+[a-z]?\\(', line):\n                pdf_name, page_num = extract_pdf_info(line, question_pdfs)\n                \n                if pdf_name:\n                    # Find the actual PDF\n                    pdf_path = None\n                    for pdf in question_pdfs:\n                        if pdf.stem.lower() == pdf_name.lower():\n                            pdf_path = pdf\n                            break\n                    \n                    if pdf_path:\n                        # Extract question number from line\n                        q_match = re.search(r'Q(\\d+[a-z]?\\([a-z]?\\))', line, re.IGNORECASE)\n                        if not q_match:\n                            q_match = re.search(r'Q(\\d+)', line, re.IGNORECASE)\n                        q_num = q_match.group(1) if q_match else \"?\"\n                        \n                        # Try to find page in line\n                        page_match = re.search(r'[Pp]age\\s*(\\d+)', line)\n                        page = page_match.group(1) if page_match else \"1\"\n                        \n                        # Try to extract the actual question text\n                        # Look for quoted text or text after colon\n                        text_match = re.search(r'[\"\'](.+?)[\"\']', line)\n                        if text_match:\n                            q_text = text_match.group(1)\n                        else:\n                            # Use the whole line as description\n                            q_text = line[:200] + \"...\" if len(line) > 200 else line\n                        \n                        questions.append({\n                            'pdf_name': pdf_name,\n                            'pdf_path': pdf_path,\n                            'page': page,\n                            'q_num': q_num,\n                            'q_text': q_text,\n                            'line': line\n                        })\n        \n        # Deduplicate questions by (pdf_name, q_num)\n        seen = set()\n        for q in questions:\n            key = (q['pdf_name'], q['q_num'])\n            if key not in seen:\n                seen.add(key)\n                \n                # Create HTML for this question\n                paper_link = q['pdf_path'].resolve().as_uri() + f\"#page={q['page']}\"\n                ms_path = find_marking_scheme(q['pdf_path'])\n                \n                html_content += f'''<div class=\"question-item\">\n                    <div class=\"question-source\">From {q['pdf_name']}</div>\n                    <div class=\"question-text\">{q['line']}</div>\n                    <div class=\"question-meta\">📍 {q['pdf_path'].name} — Page {q['page']}</div>\n                    <div class=\"button-row\">\n                        <a class=\"button button-primary\" href=\"{paper_link}\" target=\"_blank\">Open question paper</a>\n                '''\n                \n                if ms_path:\n                    ms_page = find_page_in_ms(ms_path, q['q_num'])\n                    ms_link = ms_path.resolve().as_uri() + f\"#page={ms_page}\"\n                    html_content += f'<a class=\"button button-secondary\" href=\"{ms_link}\" target=\"_blank\">Open marking scheme</a>'\n                else:\n                    html_content += '<span class=\"button button-secondary\" style=\"opacity:0.5;\">No marking scheme</span>'\n                \n                html_content += \"\\n                    </div>\\n                </div>\\n\"\n    \n    html_content += \"\"\"\"        </div>\n        <div class=\"footer\">\n            Generated by PaperCode | Open questions and marking schemes locally\n        </div>\n    </div>\n</body>\n</html>\n\"\"\"\n    \n    filename = sanitize_filename(syllabus) + \".html\"\n    html_path = output_dir / filename\n    html_path.write_text(html_content, encoding=\"utf-8\")\n    return html_path"
-
-def err(msg):
-    col = (Fore.RED + Style.BRIGHT) if HAS_COLOR else ""
-    rst = Style.RESET_ALL if HAS_COLOR else ""
-    print(f"  {col}✘ {msg}{rst}")
-    sys.exit(1)
-
-def sanitize_filename(text, max_length=100):
-    """Extract first sentence and sanitize it for use as a filename."""
-    import re
-    # Get first sentence (up to period, question mark, or exclamation)
-    match = re.match(r'([^.!?]*[.!?])', text.strip())
-    if match:
-        first_sentence = match.group(1).strip()
+    if "No questions match" in result:
+        html_content += '<div class="no-match">No questions match the syllabus.</div>'
     else:
-        first_sentence = text.strip()[:max_length]
-    
-    # Remove invalid filename characters
-    filename = re.sub(r'[<>:"/\\|?*]', '', first_sentence)
-    filename = re.sub(r'\s+', '_', filename)  # Replace spaces with underscores
-    filename = filename[:max_length]
-    return filename
+        current_section = None
+        for line in result.splitlines():
+            line = line.strip()
+            if not line:
+                continue
 
-def footer(pdf_count):
-    col = (Fore.WHITE + Style.DIM) if HAS_COLOR else ""
-    hi  = (Fore.CYAN + Style.BRIGHT) if HAS_COLOR else ""
-    rst = Style.RESET_ALL if HAS_COLOR else ""
-    print()
-    divider()
-    print(f"  {col}papers/{rst}  {hi}{pdf_count} PDF(s){rst}   {col}model/{rst}  {hi}MiniMax-M2.7{rst}")
-    divider()
+            if line.startswith("From "):
+                if current_section:
+                    html_content += '</div>'
+                current_section = line
+                html_content += f'<div class="section"><div class="source-title">{line}</div>'
+
+            elif line.startswith("- Q"):
+                parts = line[2:].split(":", 1)
+                if len(parts) < 2:
+                    continue
+                q_num = parts[0].strip()
+                q_text = parts[1].strip()
+
+                if not current_section:
+                    continue
+
+                m = re.search(r'From\s+([^\|]+)\s*\|\s*Page\s+(\d+)', current_section)
+                if not m:
+                    continue
+                pdf_name = m.group(1).strip()
+                page_num = m.group(2)
+
+                pdf_path = next((p for p in question_pdfs if p.stem.lower() == pdf_name.lower()), None)
+
+                if pdf_path:
+                    paper_link = pdf_path.resolve().as_uri() + f"#page={page_num}"
+                    ms_path    = find_marking_scheme(pdf_path, all_pdfs)
+
+                    if ms_path:
+                        ms_page = find_page_in_ms(ms_path, q_num)
+                        ms_link = ms_path.resolve().as_uri() + f"#page={ms_page}"
+                    else:
+                        ms_link = None
+
+                    html_content += f'''
+            <div class="question-item">
+                <div class="question-text">{q_num}: {q_text}</div>
+                <div class="question-meta">📍 {pdf_path.name} — Page {page_num}</div>
+                <div class="button-row">
+                    <a class="button button-primary" href="{paper_link}" target="_blank">Open question paper</a>
+'''
+                    if ms_link:
+                        html_content += f'                    <a class="button button-secondary" href="{ms_link}" target="_blank">Open marking scheme</a>\n'
+                    else:
+                        html_content += '                    <span class="button button-secondary disabled">No marking scheme found</span>\n'
+                    html_content += "                </div>\n            </div>\n"
+                else:
+                    html_content += f'''
+            <div class="question-item" style="opacity:0.6;">
+                <div class="question-text">{q_num}: {q_text}</div>
+                <div class="question-meta">⚠️ PDF not found: {pdf_name}</div>
+            </div>
+'''
+
+        if current_section:
+            html_content += '</div>'
+
+    html_content += """
+        </div>
+        <div class="footer">
+            Generated by PaperCode | Open questions and marking schemes locally
+        </div>
+    </div>
+</body>
+</html>
+"""
+
+    filename  = sanitize_filename(syllabus) + ".html"
+    html_path = output_dir / filename
+    html_path.write_text(html_content, encoding="utf-8")
+    return html_path
+
+
+# ── main ──────────────────────────────────────────────────────────────────────
 
 def main():
     clear()
@@ -162,7 +321,7 @@ def main():
     divider()
     print()
 
-    # API key - MiniMax uses MINIMAX_API_KEY
+    # API key
     key = os.environ.get("MINIMAX_API_KEY", "")
     if not key and Path(".env").exists():
         for line in Path(".env").read_text().splitlines():
@@ -173,7 +332,7 @@ def main():
 
     ok("API key loaded")
 
-    # Select past papers folder
+    # Select folder
     divider()
     if HAS_COLOR:
         print(f"\n  {Style.BRIGHT}Select your past papers folder from the list below:{Style.RESET_ALL}\n")
@@ -208,10 +367,10 @@ def main():
     if not all_pdfs:
         err(f"No PDFs found in '{papers_dir}/'. Add your past papers there and retry.")
 
-    question_pdfs = [pdf for pdf in all_pdfs if not is_marking_scheme(pdf)]
-    scheme_pdfs = [pdf for pdf in all_pdfs if is_marking_scheme(pdf)]
+    question_pdfs = [p for p in all_pdfs if not is_marking_scheme(p)]
+    scheme_pdfs   = [p for p in all_pdfs if is_marking_scheme(p)]
     if not question_pdfs:
-        err(f"No question paper PDFs found in '{papers_dir}/'. Make sure your question papers are not marked as marking schemes.")
+        err(f"No question paper PDFs found in '{papers_dir}/'.")
 
     ok(f"Found {len(question_pdfs)} question paper(s) in {papers_dir}/")
     if scheme_pdfs:
@@ -252,11 +411,10 @@ def main():
         col = (Fore.CYAN + Style.DIM) if HAS_COLOR else ""
         rst = Style.RESET_ALL if HAS_COLOR else ""
         print(f"    {col}↳ {pdf.name}{rst}")
-        doc  = fitz.open(str(pdf))
+        doc = fitz.open(str(pdf))
         papers_text += f"\n\n=== {pdf.stem} ===\n"
         for page_num, page in enumerate(doc, 1):
-            text = page.get_text()
-            papers_text += f"\n[PAGE {page_num}]\n{text}"
+            papers_text += f"\n[PAGE {page_num}]\n{page.get_text()}"
         doc.close()
 
     print()
@@ -295,16 +453,11 @@ Keep the output concise."""
         api_key=key,
         base_url="https://api.minimax.io/v1"
     )
-    
+
     try:
         response = client.chat.completions.create(
             model="MiniMax-M2.7",
-            messages=[
-                {
-                    "role": "user", 
-                    "content": prompt_text
-                }
-            ]
+            messages=[{"role": "user", "content": prompt_text}]
         )
         result = response.choices[0].message.content
     except Exception as e:
@@ -315,27 +468,24 @@ Keep the output concise."""
     out.write_text(result, encoding="utf-8")
     ok(f"Report saved → {out}")
 
-    # Generate PDF if there are questions
+    # PDF report
     if "No questions match" not in result:
         pdf_out = OUTPUT_DIR_PDFS / f"questions_{ts}.pdf"
-        doc = SimpleDocTemplate(str(pdf_out), pagesize=letter)
-        styles = getSampleStyleSheet()
-        story = []
-        current_source = ""
+        doc     = SimpleDocTemplate(str(pdf_out), pagesize=letter)
+        styles  = getSampleStyleSheet()
+        story   = []
         for line in result.splitlines():
             line = line.strip()
             if line.startswith("From "):
-                current_source = line
-                story.append(Paragraph(current_source, styles['Heading2']))
+                story.append(Paragraph(line, styles['Heading2']))
                 story.append(Spacer(1, 12))
             elif line.startswith("- Q"):
-                question = line[2:]  # Remove the "- "
-                story.append(Paragraph(question, styles['Normal']))
+                story.append(Paragraph(line[2:], styles['Normal']))
                 story.append(Spacer(1, 12))
         doc.build(story)
         ok(f"Questions PDF saved → {pdf_out}")
-    
-    # Generate interactive HTML report
+
+    # HTML report
     print()
     html_path = generate_html_report(result, question_pdfs, all_pdfs, OUTPUT_DIR_HTML, ts, syllabus)
     ok(f"Interactive HTML saved → {html_path}")
@@ -343,6 +493,7 @@ Keep the output concise."""
         print(f"  {Fore.CYAN}→ Open this file in your browser to view clickable links{Style.RESET_ALL}")
     print()
 
+    # Print results
     print()
     divider()
     if HAS_COLOR:
@@ -360,6 +511,7 @@ Keep the output concise."""
 
     footer(len(question_pdfs))
     print()
+
 
 if __name__ == "__main__":
     main()
