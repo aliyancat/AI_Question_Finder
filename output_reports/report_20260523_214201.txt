@@ -1,0 +1,32 @@
+From jun-2018 | Page 28:
+- Q9(a): Which of these could be the output for a dynamo?
+
+From jun-2019 | Page 16:
+- Q6(a)(i): Draw a diagram to show how the teacher should arrange the apparatus.
+- Q6(a)(ii): Explain how the teacher could use this apparatus to demonstrate the factors affecting the size and direction of the induced potential difference.
+
+From jun-2020 | Page 22:
+- Q7(a)(i): Which row of the table shows the deflection on the milliammeter for the three stages in Figure 15?
+- Q7(a)(ii): Give two ways of increasing the deflections on the milliammeter shown in Figure 16.
+
+From jun-2022 | Page 30:
+- Q10(a): Explain what will be observed on the meter when the magnet is pushed in and pulled out of the coil, repeatedly.
+
+From jun-2023 | Page 23:
+- Q8(a)(iii): The electrical device is used as a motor when the car accelerates and as a dynamo when the car decelerates. Explain how using the device can help to increase the time that the car can be driven before the battery becomes discharged.
+From jun-2023 | Page 31:
+- Q10(a)(i): Which row of the table shows how the rotation of the handle has changed between (a) and (b)?
+- Q10(a)(ii): It is now more difficult for the teacher to rotate the handle. Explain why it is more difficult to turn the dynamo when it is connected to a lamp.
+From jun-2023 | Page 33:
+- Q10(c): Compare how the device operates when used as a loudspeaker with how the device operates when used as a microphone.
+
+From june-2024 | Page 32:
+- Q10(a)(i): Explain why the voltmeter shows a reading as the magnet passes through the coil.
+- Q10(a)(ii): Describe how the student could use the arrangement in Figure 23 to do this investigation.
+From june-2024 | Page 34:
+- Q10(b): A transformer converts a voltage of 11 000 V to 230 V. Explain how the design of this transformer enables the voltage to be converted from 11 000 V to 230 V. Your answer should include • details of the structure of a transformer • how a transformer works, using ideas of electromagnetic induction • how the design of this transformer enables this exact voltage of 230 V to be obtained.
+
+From nov-2021 | Page 26:
+- Q9(a)(ii): Explain how an alternating current in the primary coil causes an alternating current in the secondary coil of the transformer.
+From nov-2021 | Page 28:
+- Q9(c): Explain why the current changes in the way shown by the graph in Figure 20. Your answer should include details of the position of the coil relative to the magnet at each of the times labelled P, Q, R, S and T.
