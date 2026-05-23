@@ -5,45 +5,260 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Past Paper Questions</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; 
-               background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-               min-height: 100vh; padding: 40px 20px; }
-        .container { max-width: 900px; margin: 0 auto; background: white; border-radius: 12px;
-                     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3); overflow: hidden; }
-        .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;
-                  padding: 40px 30px; text-align: center; }
-        .header h1 { font-size: 2.5em; margin-bottom: 10px; }
-        .content { padding: 40px 30px; }
-        .question-item { background: #ffffff; border: 1px solid #e0e0e0; border-radius: 12px;
-                        padding: 20px 24px; margin-bottom: 16px; transition: all 0.3s ease; }
-        .question-item:hover { border-color: #667eea; box-shadow: 0 8px 25px rgba(102, 126, 234, 0.15); 
-                              transform: translateY(-2px); }
-        .question-source { background: #f0f4ff; border-left: 4px solid #667eea; padding: 12px 16px;
-                          margin-bottom: 14px; border-radius: 6px; font-weight: 600; color: #333; }
-        .question-text { color: #333; font-size: 1em; line-height: 1.6; margin-bottom: 14px; }
-        .question-meta { font-size: 0.9em; color: #667eea; margin-bottom: 12px; font-weight: 600; }
-        .button-row { display: flex; flex-wrap: wrap; gap: 10px; }
-        .button { display: inline-flex; align-items: center; justify-content: center;
-                  padding: 10px 18px; border-radius: 999px; font-weight: 700; text-decoration: none;
-                  transition: transform 0.2s ease, box-shadow 0.2s ease; }
-        .button-primary { background: #667eea; color: white; }
-        .button-secondary { background: #f5f7ff; color: #333; border: 1px solid #dbe3ff; }
-        .button:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(102, 126, 234, 0.2); }
-        .no-match { text-align: center; padding: 60px 30px; color: #999; font-size: 1.2em; }
-        .footer { background: #f8f9ff; padding: 20px 30px; text-align: center; color: #666; font-size: 0.9em; }
-        @media (max-width: 600px) { .header h1 { font-size: 1.8em; } .content { padding: 20px; } }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+        
+        .content {
+            padding: 40px 30px;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+        }
+        
+        .source-title {
+            background: #f8f9ff;
+            border-left: 4px solid #667eea;
+            padding: 15px 20px;
+            margin-bottom: 15px;
+            border-radius: 4px;
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .question-item {
+            background: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 12px;
+            padding: 22px 24px;
+            margin-bottom: 18px;
+            transition: all 0.25s ease;
+        }
+        
+        .question-item:hover {
+            border-color: #667eea;
+            box-shadow: 0 8px 26px rgba(102, 126, 234, 0.12);
+            transform: translateY(-2px);
+        }
+        
+        .question-text {
+            color: #212121;
+            font-size: 1em;
+            line-height: 1.7;
+            word-break: break-word;
+        }
+        
+        .question-meta {
+            font-size: 0.95em;
+            color: #667eea;
+            margin-top: 10px;
+            font-weight: 600;
+        }
+        
+        .button-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 18px;
+        }
+        
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 18px;
+            border-radius: 999px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        
+        .button-primary {
+            background: #667eea;
+            color: white;
+        }
+        
+        .button-secondary {
+            background: #f5f7ff;
+            color: #333;
+            border: 1px solid #dbe3ff;
+        }
+        
+        .button:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 8px 22px rgba(102, 126, 234, 0.15);
+        }
+        
+        .disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        
+        .no-match {
+            text-align: center;
+            padding: 60px 30px;
+            color: #999;
+            font-size: 1.2em;
+        }
+        
+        .footer {
+            background: #f8f9ff;
+            padding: 20px 30px;
+            text-align: center;
+            color: #666;
+            font-size: 0.95em;
+            border-top: 1px solid #e0e0e0;
+        }
+        
+        @media (max-width: 600px) {
+            .header h1 {
+                font-size: 1.8em;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <h1>Past Paper Questions</h1>
-            <p>Click to open PDFs with marking scheme links</p>
+            <h1>📄 Past Paper Questions</h1>
+            <p>Click a question to open the PDF; use the second button for marking schemes.</p>
         </div>
+        
         <div class="content">
-<div class="no-match">No questions match the syllabus.</div>
+<div class="section"><div class="source-title">From jun-2018 | Page 28:</div>
+                <div class="question-item">
+                    <div class="question-text">Q9(a): Which of these could be the output for a dynamo?</div>
+                    <div class="question-meta">📍 jun-2018.pdf — Page 28</div>
+                    <div class="button-row">
+                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_mariya/jun-2018.pdf#page=28" target="_blank">Open question paper</a>
+                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_mariya/jun-2018-ms.pdf#page=30" target="_blank">Open marking scheme</a>
+                    </div>
+                </div>
+</div><div class="section"><div class="source-title">From jun-2020 | Page 22:</div>
+                <div class="question-item">
+                    <div class="question-text">Q7(a)(i): Which row of the table shows the deflection on the milliammeter for the three stages in Figure 15?</div>
+                    <div class="question-meta">📍 jun-2020.pdf — Page 22</div>
+                    <div class="button-row">
+                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_mariya/jun-2020.pdf#page=22" target="_blank">Open question paper</a>
+                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_mariya/jun-2020-ms.pdf#page=16" target="_blank">Open marking scheme</a>
+                    </div>
+                </div>
+
+                <div class="question-item">
+                    <div class="question-text">Q7(a)(ii): Give two ways of increasing the deflections on the milliammeter shown in Figure 16.</div>
+                    <div class="question-meta">📍 jun-2020.pdf — Page 22</div>
+                    <div class="button-row">
+                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_mariya/jun-2020.pdf#page=22" target="_blank">Open question paper</a>
+                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_mariya/jun-2020-ms.pdf#page=16" target="_blank">Open marking scheme</a>
+                    </div>
+                </div>
+</div><div class="section"><div class="source-title">From jun-2022 | Page 30:</div>
+                <div class="question-item">
+                    <div class="question-text">Q10(a): Explain what will be observed on the meter when the magnet is pushed in and pulled out of the coil, repeatedly.</div>
+                    <div class="question-meta">📍 jun-2022.pdf — Page 30</div>
+                    <div class="button-row">
+                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_mariya/jun-2022.pdf#page=30" target="_blank">Open question paper</a>
+                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_mariya/jun-2022-ms.pdf#page=27" target="_blank">Open marking scheme</a>
+                    </div>
+                </div>
+</div><div class="section"><div class="source-title">From jun-2023 | Page 23:</div>
+                <div class="question-item">
+                    <div class="question-text">Q8(a)(iii): The electrical device is used as a motor when the car accelerates and as a dynamo when the car decelerates. Explain how using the device can help to increase the time that the car can be driven before the battery becomes discharged.</div>
+                    <div class="question-meta">📍 jun-2023.pdf — Page 23</div>
+                    <div class="button-row">
+                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_mariya/jun-2023.pdf#page=23" target="_blank">Open question paper</a>
+                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_mariya/jun-2023-ms.pdf#page=28" target="_blank">Open marking scheme</a>
+                    </div>
+                </div>
+</div><div class="section"><div class="source-title">From jun-2023 | Page 30:</div>
+                <div class="question-item">
+                    <div class="question-text">Q10(a)(i): Which row of the table shows how the rotation of the handle has changed between (a) and (b)?</div>
+                    <div class="question-meta">📍 jun-2023.pdf — Page 30</div>
+                    <div class="button-row">
+                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_mariya/jun-2023.pdf#page=30" target="_blank">Open question paper</a>
+                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_mariya/jun-2023-ms.pdf#page=11" target="_blank">Open marking scheme</a>
+                    </div>
+                </div>
+
+                <div class="question-item">
+                    <div class="question-text">Q10(a)(ii): The teacher connects the dynamo to a lamp. It is now more difficult for the teacher to rotate the handle. Explain why it is more difficult to turn the dynamo when it is connected to a lamp.</div>
+                    <div class="question-meta">📍 jun-2023.pdf — Page 30</div>
+                    <div class="button-row">
+                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_mariya/jun-2023.pdf#page=30" target="_blank">Open question paper</a>
+                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_mariya/jun-2023-ms.pdf#page=11" target="_blank">Open marking scheme</a>
+                    </div>
+                </div>
+</div><div class="section"><div class="source-title">From june-2024 | Page 32:</div>
+                <div class="question-item">
+                    <div class="question-text">Q10(a)(i): Explain why the voltmeter shows a reading as the magnet passes through the coil.</div>
+                    <div class="question-meta">📍 june-2024.pdf — Page 32</div>
+                    <div class="button-row">
+                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_mariya/june-2024.pdf#page=32" target="_blank">Open question paper</a>
+                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_mariya/june-2024-ms.pdf#page=30" target="_blank">Open marking scheme</a>
+                    </div>
+                </div>
+
+                <div class="question-item">
+                    <div class="question-text">Q10(a)(ii): A student develops this investigation to find out how the reading on the voltmeter depends on the height the magnet is dropped from. Describe how the student could use the arrangement in Figure 23 to do this investigation.</div>
+                    <div class="question-meta">📍 june-2024.pdf — Page 32</div>
+                    <div class="button-row">
+                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_mariya/june-2024.pdf#page=32" target="_blank">Open question paper</a>
+                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_mariya/june-2024-ms.pdf#page=30" target="_blank">Open marking scheme</a>
+                    </div>
+                </div>
+</div><div class="section"><div class="source-title">From nov-2021 | Page 28:</div>
+                <div class="question-item">
+                    <div class="question-text">Q9(c): Explain why the current changes in the way shown by the graph in Figure 20. Your answer should include details of the position of the coil relative to the magnet at each of the times labelled P, Q, R, S and T.</div>
+                    <div class="question-meta">📍 nov-2021.pdf — Page 28</div>
+                    <div class="button-row">
+                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_mariya/nov-2021.pdf#page=28" target="_blank">Open question paper</a>
+                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_mariya/nov-2021-ms.pdf#page=10" target="_blank">Open marking scheme</a>
+                    </div>
+                </div>
+</div>
         </div>
+        
         <div class="footer">
             Generated by PaperCode | Open questions and marking schemes locally
         </div>

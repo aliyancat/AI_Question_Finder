@@ -472,7 +472,12 @@ Keep the output concise."""
                     "role": "user", 
                     "content": prompt_text
                 }
-            ]
+            ],
+            extra_body={
+                "thinking": {
+                    "type": "off"
+                }
+            }
         )
         result = response.choices[0].message.content
     except Exception as e:
