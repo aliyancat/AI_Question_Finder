@@ -463,6 +463,16 @@ Keep the output concise."""
     except Exception as e:
         err(f"Failed to generate content: {e}")
 
+    # MiniMax reasoning models wrap their thinking in <think>...</think>.
+    # Strip it so only the actual answer remains.
+    result = re.sub(r'<think>.*?</think>', '', result, flags=re.DOTALL).strip()
+
+    # The model sometimes appends a stray "No questions match the syllabus." even
+    # after listing real results.  Remove it when real From/Q lines are present.
+    has_real_results = bool(re.search(r'^From\s+\S+.*\|\s*Page\s*\d+', result, re.MULTILINE))
+    if has_real_results:
+        result = re.sub(r'\n*No questions match the syllabus\.?\s*$', '', result).strip()
+
     ts  = datetime.now().strftime("%Y%m%d_%H%M%S")
     out = OUTPUT_DIR_REPORTS / f"report_{ts}.txt"
     out.write_text(result, encoding="utf-8")
