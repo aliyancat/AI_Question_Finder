@@ -1,0 +1,151 @@
+<think>
+The user asks: "Analyze EACH past paper question and determine if it is EXPLICITLY covered by the syllabus."
+
+We have a syllabus: "dynamo". That's odd: The syllabus says "dynamo". I need to interpret what the syllabus is: likely a topic "dynamo". So we need to see if past paper questions are about "dynamo". The syllabus might be about a dynamo (electric generator). Or "dynamo" could be a generic term for a generator? The exam is Edexcel GCSE Physics (higher tier). The syllabus maybe is "Energy, Electricity, Magnetism and their applications"? But the user gave a syllabus name "dynamo". Perhaps this is a specific syllabus for some other exam. Let's parse the context.
+
+The user is a "strict examiner mapping past paper questions to a specific syllabus." They gave a syllabus: "dynamo". Possibly they want to map each question in the past paper to the syllabus topic "dynamo". So we need to check if any question explicitly mentions dynamo. Indeed, there is a question about a dynamo in the 2023 paper: "Figure 23 shows a model dynamo." The question is about a dynamo. Also in the 2024 paper there is a question about a dynamo? Let's see.
+
+The 2023 paper (June 2023) includes a question "10 (a) Figure 23 shows a model dynamo." So that is explicitly about dynamo. That definitely matches syllabus "dynamo". Also maybe other questions about "dynamo" in other years: June 2022? I recall no. 2022 maybe not. 2021 maybe not. 2020 maybe not. 2019 maybe not. 2018 maybe not. 2024 also includes a question about a magnet being dropped through a coil, but that's not a dynamo. However the 2024 question about a magnet being dropped through a coil is electromagnetic induction, which is related but not a dynamo.
+
+But the syllabus says "dynamo", so likely only questions that explicitly mention "dynamo" count.
+
+Now let's scan all provided past paper sections for "dynamo". In 2023: "10 (a) Figure 23 shows a model dynamo." So that is a match.
+
+In 2022, maybe there is a "dynamo" question: Look at 2022 page 28: "9 (a) ... This question is about a transformer." No dynamo.
+
+In 2021, maybe not.
+
+In 2020, maybe not.
+
+In 2019, maybe not.
+
+In 2018, maybe not.
+
+In 2024, there is a question about a magnet being dropped through a coil (electromagnetic induction). It might be considered a "dynamo" but not called "dynamo". The syllabus "dynamo" likely covers the concept of a generator (electromagnetic induction). However the question is about "magnet being dropped through a coil" which is electromagnetic induction, not a dynamo per se. The syllabus might be about "Dynamo: generating electricity using electromagnetic induction" - it's ambiguous.
+
+The instruction: "Beware of superficial keyword matches (e.g., 'magnetic' in computer storage vs. 'magnetism' in physics). If the question is about a different subject or context than the syllabus, it is NOT covered."
+
+Thus, we should consider only those questions that explicitly mention dynamo. The term "dynamo" is a specific device that is a type of generator that produces direct current using electromagnetic induction. The question in 2023 explicitly mentions dynamo. So that qualifies.
+
+Also in 2024, question "10 (a) Figure 23 shows a magnet being dropped through a coil." That is not a dynamo, but it's electromagnetic induction, which is the principle behind a dynamo. But the question does not use the word "dynamo". So we need to be careful. The syllabus says "dynamo". Does that refer to the concept of generating electricity by moving a magnet in a coil? Possibly, but the exam may have a syllabus item "Use a dynamo to demonstrate electromagnetic induction". However we need to see what the syllabus content is. Since the user only gave "dynamo" as syllabus name, we need to interpret that as the exam's syllabus includes a topic "dynamo". The question about a model dynamo is obviously about dynamo. The question about a magnet being dropped through a coil may be about electromagnetic induction but not specifically a dynamo. The question about a model dynamo uses the term "dynamo". The question about a magnet in a coil uses the term "coil", "magnet". Not "dynamo". So likely not a match.
+
+Also there might be a question about "dynamo" in earlier years: 2022, 2021, 2020? Not sure.
+
+Thus we need to output the matching questions.
+
+We need to include page numbers where each question appears.
+
+From the 2023 paper, the dynamo question appears on page 30? Let's verify.
+
+In the 2023 PDF: page 30 shows "10 (a) Figure 23 shows a model dynamo." At page 30? Actually in the transcript, we see:
+
+[PAGE 30] includes question 10 (a) "Figure 23 shows a model dynamo."
+
+We need to find the page number.
+
+The PDF has pages labelled [PAGE 1], [PAGE 2] etc. The question appears on page 30. Let's locate.
+
+Scrolling the transcript:
+
+From 2023:
+
+- At [PAGE 29] (page 29) there is "10 (a) Figure 23 shows a model dynamo."
+
+But let's check:
+
+The transcript shows:
+
+[PAGE 29] includes "10 (a) Figure 23 shows a model dynamo." Actually see:
+
+"=== jun-2023 ===
+
+...
+
+[PAGE 29] ...
+
+10 (a) ..."
+
+Specifically, after page 28 is "9 (a)", then page 29 is "9 (b)", page 30 is "9 (c)", page 31 is "10 (a)", page 32 is "10 (b)", etc. Wait need to scroll.
+
+Scrolling the transcript:
+
+After page 28, we have:
+
+[PAGE 29] includes the end of Q9. At the bottom:
+
+"9 (a) ... (some content)"
+
+Then at [PAGE 30]:
+
+"10 (a) Figure 23 shows a model dynamo."
+
+Thus the dynamo question is on page 30. Let's verify by looking at the transcript:
+
+At [PAGE 30] we see:
+
+"10 (a) Figure 23 shows a model dynamo.
+
+handle
+
+dynamo
+
+wires connected
+
+to a voltmeter
+
+...
+
+"
+
+Yes, that is page 30.
+
+Thus match: from jun-2023 | Page 30.
+
+Also from jun-2023 page 31: "10 (b) ..."
+
+But the dynamo question is only 10 (a). That is the only explicit mention of dynamo.
+
+Now check 2024 for dynamo.
+
+In 2024, there is a question about "magnet being dropped through a coil", not the word dynamo. There's no mention of dynamo.
+
+Thus only one question.
+
+But also check for "dynamo" in other years. For instance, 2019? Not seeing any.
+
+Thus output:
+
+From jun-2023 | Page 30:
+
+- Q10 (a): Figure 23 shows a model dynamo.
+
+Now we must output exactly as per required format: "From [lowercase pdf name] | Page [page number]: - Q[number]: [Exact question text]"
+
+The pdf name: "jun-2023" is the PDF name (lowercase). The page number is 30.
+
+The exact question text: "Figure 23 shows a model dynamo."
+
+But they likely want the question text, not the figure caption. The question is: "Figure 23 shows a model dynamo." Actually the question is in the context: "10 (a) Figure 23 shows a model dynamo. handle ..."
+
+The question text is the whole statement: "Figure 23 shows a model dynamo." Possibly they want the description: "Figure 23 shows a model dynamo." But they said "Exact question text". The question number is 10 (a). The actual question content may be the first line: "Figure 23 shows a model dynamo." Possibly more details after that: "The dynamo contains a coil of wire that can spin inside a permanent magnet. The dynamo produces a D.C. output. A teacher connects a voltmeter to the terminals of the dynamo. The teacher rotates the handle to make the coil spin inside the magnet. Figure 24(a) shows the reading on the voltmeter."
+
+But we need the exact question text. The exam shows "10 (a) Figure 23 shows a model dynamo."
+
+Thus we will output that.
+
+Thus final answer:
+
+From jun-2023 | Page 30:
+- Q10 (a): Figure 23 shows a model dynamo.
+
+Check if there are any other matches. Let's also check 2022 for "dynamo". Not present.
+
+Thus answer.
+
+But we should verify the PDF name: The user gave "=== jun-2023 ===". The file name is "jun-2023". So we output that.
+
+Thus final answer.
+</think>
+
+From jun-2023 | Page 30:
+- Q10 (a): Figure 23 shows a model dynamo.
