@@ -361,6 +361,8 @@ def generate_html_report(result, question_pdfs, all_pdfs, output_dir, timestamp,
                         match = re.search(r'From\s+([^\|]+)\s*\|\s*Page\s+(\d+)', current_section)
                         if match:
                             pdf_name = match.group(1).strip()
+                            # Remove markdown bold markers like **text** or *text*
+                            pdf_name = re.sub(r'\*+', '', pdf_name).strip()
                             page_num = match.group(2)
                             
                             pdf_path = None
