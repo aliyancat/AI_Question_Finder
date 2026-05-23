@@ -1,0 +1,171 @@
+<think>
+Let me analyze the syllabus and each past paper question carefully.
+
+The syllabus is about:
+1. Producing electric current by relative movement of magnet and conductor (electromagnetic induction)
+   a. On a small scale in the laboratory
+   b. In large-scale generation of electrical energy
+2. Factors affecting size and direction of induced potential difference, and how magnetic field produced opposes the original change
+3. Electromagnetic induction in alternators (a.c.) and dynamos (d.c.)
+
+Now let me go through each past paper question to find ones that match this specific syllabus about electromagnetic induction.
+
+Looking at the questions, I need to find questions that are about:
+- Electromagnetic induction (moving magnet and coil to produce current)
+- Alternators and dynamos (a.c. vs d.c. generation)
+- Factors affecting induced EMF (speed of movement, number of turns, strength of magnet)
+
+Let me scan through each paper:
+
+**jun-2018:**
+Looking through the questions, I see Question 9 is about dynamos and alternators:
+- 9(a): "Which of these could be the output for a dynamo?" - This matches the syllabus about dynamos
+- 9(b)(i): Explains why transformer won't work with battery (direct current) - related to induction
+- 9(b)(ii): Transformer calculation
+- 9(c)*: High voltage transmission using transformers - related to electrical generation
+
+**jun-2019:**
+Question 6 is about electromagnetic induction:
+- 6(a)(i): Draw apparatus with bar magnet, coil, sensitive voltmeter - matches syllabus .1P a
+- 6(a)(ii): Explain factors affecting size and direction of induced potential difference - matches syllabus 13.2
+- 6(b)(i): Cause of changing magnetic field in transformer core - related to electromagnetic induction
+
+**jun-2020:**
+Question 7 is about electromagnetic induction:
+- 7(a): Shows a magnet moving into and out of a coil with milliammeter - matches syllabus .1P a
+
+
+- 7(b): Loudspeaker explanation - related to electromagnetic principles
+- 7(c): Transformer calculation
+
+**jun-2022:**
+Question 10 covers electromagnetic induction and transformers:
+- 10(a): Magnet and coil with centre-zero ammeter, explains what happens when magnet is pushed in and pulled out - matches syllabus .1P a
+- 10(b): Transformer calculation
+- 10(c)*: Electricity delivery from power station to homes, explaining transformers and high voltage transmission - matches syllabus .1b
+
+**jun-2023:**
+Question 10 addresses dynamo and transformer concepts:
+- 10(a): Model dynamo with coil spinning inside permanent magnet, produces D.C. output - matches syllabus .3P (dynamos to generate direct current)
+- 10(b): Transformer calculation
+- 10(c)*: Loudspeaker/microphone comparison - related to electromagnetic principles
+
+**jun-2024:**
+Question 10 covers electromagnetic induction:
+- 10(a)(i): Magnet dropped through coil connected to voltmeter, explains why voltmeter shows a reading - matches syllabus .1P a
+- 10(a)(ii): Describes investigation to find how voltmeter reading depends on height magnet is dropped from
+- 10(b)*: Transformer explanation - related to electromagnetic induction
+
+**nov-2021:**
+Question 9 addresses transformer and generator concepts:
+- 9(a)(i): Multiple choice about potential difference in transformer
+- 9(a)(ii): Explains how alternating current in primary coil causes alternating current in secondary coil - matches syllabus about electromagnetic induction
+- 9(b): Transformer calculation
+- 9(c)*: Coil of wire rotating between poles of a magnet, explains how current changes - matches syllabus .3P (alternators generating a.c.)
+
+**specimen:**
+Question 7 addresses electromagnetic principles:
+- 7(a): Straight wire in magnetic field, calculating current
+- 7(b): Investigation of relationship between magnetic flux density and electromagnetic force
+- 7(c): Explains which voltages cause a.c. current
+- 7(d): Power transmission wire at right angles to Earth's magnetic field, explains changing force - related to electromagnetic induction
+
+Let me compile the matching questions:
+
+From **jun-2018** | Page 28:
+- Q9(a): "Which of these could be the output for a dynamo?"
+
+From **jun-2019** | Page 16-17:
+- Q6(a)(i): "Draw a diagram to show how the teacher should arrange the apparatus [bar magnet, coil of wire, sensitive voltmeter]"
+- Q6(a)(ii): "Explain how the teacher could use this apparatus to demonstrate the factors affecting the size and direction of the induced potential difference"
+
+From **jun-2020** | Page 22:
+- Q7(a): "Which row of the table shows the deflection on the milliammeter for the three stages in Figure 15?" [magnet moving into coil, stationary, moving out]
+- Q7(a)(ii): "Give two ways of increasing the deflections on the milliammeter"
+
+From **jun-2022** | Page 30-31:
+- Q10(a): "Explain what will be observed on the meter when the magnet is pushed in and pulled out of the coil, repeatedly"
+
+From **jun-2023** | Page 30-31:
+- Q10(a): "The dynamo contains a coil of wire that can spin inside a permanent magnet. The dynamo produces a D.C. output... Explain what will be observed on the meter when the magnet is pushed in and pulled out of the coil, repeatedly."
+- Q10(c): Comparison of loudspeaker and microphone
+
+From **jun-2024** | Page 32:
+- Q10(a)(i): "Explain why the voltmeter shows a reading as the magnet passes through the coil"
+- Q10(a)(ii): "Describe how the student could use the arrangement in Figure 23 to do this investigation" [how reading depends on height magnet dropped from]
+- Q10(b)*: Transformer explanation
+
+From **nov-2021** | Page 26-29:
+- Q9(a)(ii): "Explain how an alternating current in the primary coil causes an alternating current in the secondary coil of the transformer"
+- Q9(c)*: "Explain why the current changes in the way shown by the graph in Figure 20" [coil rotating between magnets - alternators]
+
+From **specimen** | Page 26:
+- Q7(c): "Explain which of the voltages in Figures 21 and 22 cause an a.c. current in the wire"
+
+I'm filtering for only those questions that directly align with the specified syllabus sections—particularly .1P (generating current through magnet/conductor movement), 13.2 (induced p.d. factors), and .3P (alternators and dynamos). Questions covering transformers and a.c./d.c. concepts also fit within this scope.
+
+From jun-2018 | Page 28:
+- Q9(a): "Which of these could be the output for a dynamo?"
+
+From jun-2019 | Page 16-17:
+- Q6(a)(i): "Draw a diagram to show how the teacher should arrange the apparatus [bar magnet, coil of wire, sensitive voltmeter]"
+- Q6(a)(ii): "Explain how the teacher could use this apparatus to demonstrate the factors affecting the size and direction of the induced potential difference"
+
+From jun-2020 | Page 22:
+- Q7(a): "Which row of the table shows the deflection on the milliammeter for the three stages in Figure 15?"
+- Q7(a)(ii): "Give two ways of increasing the deflection on the milliammeter"
+
+From jun-2022 | Page 30-31:
+- Q10(a): "Explain what will be observed on the meter when the magnet is pushed in and pulled out of the coil, repeatedly"
+
+From jun-2023 | Page 30-31:
+- Q10(a): Dynamo question with different rotation speeds
+- Q10(c)*: "Compare how the device operates when used as a loudspeaker with how the device operates when used as a microphone"
+
+From jun-2024 | Page 32-33:
+- Q10(a)(i): "Explain why the voltmeter shows a reading as the magnet passes through the coil"
+- Q10(a)(ii): "Describe how the student could use the arrangement in Figure 23 to do this investigation"
+- Q10(b)*: Transformer explanation
+
+From nov-2021 | Page 26-29:
+- Q9(a)(ii): "Explain how an alternating current in the primary coil causes an alternating current in the secondary coil of the transformer"
+- Q9(c)*: "Explain why the current changes in the way shown by the graph in Figure 20" [coil rotating between magnets - this is about alternators, directly matching syllabus .3P]
+
+From specimen | Page 26:
+- Q7(c): "Explain which of the voltages in Figures 21 and 22 cause an a.c. current in the wire"
+
+I should verify the jun-2018 Q9(a) matches the dynamo specification in syllabus .3P, and jun-2022 Q10(a) aligns with the "relative movement of a magnet and a conductor" requirement. The questions cover the three core areas: generating current through magnet/conductor interaction, factors affecting induced potential difference, and the dynamo/alternator distinction.
+
+</think>
+
+Based on my analysis of the syllabus and past paper questions, here are the questions that explicitly match the syllabus on electromagnetic induction:
+
+From **jun-2018** | Page 28:
+- Q9(a): "Which of these could be the output for a dynamo?"
+
+From **jun-2019** | Page 16-17:
+- Q6(a)(i): "Draw a diagram to show how the teacher should arrange the apparatus [bar magnet, coil of wire, sensitive voltmeter]"
+- Q6(a)(ii): "Explain how the teacher could use this apparatus to demonstrate the factors affecting the size and direction of the induced potential difference"
+
+From **jun-2020** | Page 22:
+- Q7(a): "Which row of the table shows the deflection on the milliammeter for the three stages in Figure 15?" [magnet moving into coil, stationary, moving out]
+- Q7(a)(ii): "Give two ways of increasing the deflections on the milliammeter shown in Figure 16"
+
+From **jun-2022** | Page 30:
+- Q10(a): "Explain what will be observed on the meter when the magnet is pushed in and pulled out of the coil, repeatedly"
+
+From **jun-2023** | Page 30-31:
+- Q10(a): "The dynamo produces a D.C. output... Which row of the table shows how the rotation of the handle has changed between (a) and (b)?"
+
+From **jun-2024** | Page 32:
+- Q10(a)(i): "Explain why the voltmeter shows a reading as the magnet passes through the coil"
+- Q10(a)(ii): "Describe how the student could use the arrangement in Figure 23 to do this investigation"
+
+From **nov-2021** | Page 26:
+- Q9(a)(ii): "Explain how an alternating current in the primary coil causes an alternating current in the secondary coil of the transformer"
+
+From **nov-2021** | Page 28-29:
+- Q9(c): "Explain why the current changes in the way shown by the graph in Figure 20" [coil rotating between poles of magnet - alternators]
+
+From **specimen** | Page 26:
+- Q7(c): "Explain which of the voltages in Figures 21 and 22 cause an a.c. current in the wire"
