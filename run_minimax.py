@@ -447,7 +447,7 @@ def footer(pdf_count):
     rst = Style.RESET_ALL if HAS_COLOR else ""
     print()
     divider()
-    print(f"  {col}papers/{rst}  {hi}{pdf_count} PDF(s){rst}   {col}model/{rst}  {hi}MiniMax-ABAB6.5S{rst}")
+    print(f"  {col}papers/{rst}  {hi}{pdf_count} PDF(s){rst}   {col}model/{rst}  {hi}MiniMax-M2.7{rst}")
     divider()
 
 def main():
@@ -584,17 +584,17 @@ Keep the output concise."""
     print()
     divider()
     print()
-    step("Sending to MiniMax (abab6.5s-chat)...")
+    step("Sending to MiniMax (MiniMax-M2.7)...")
     print()
 
     client = OpenAI(
         api_key=key,
-        base_url="https://api.minimax.chat/v1"
+        base_url="https://api.minimax.io/v1"
     )
     
     try:
         response = client.chat.completions.create(
-            model="abab6.5s-chat",
+            model="MiniMax-M2.7",
             messages=[
                 {
                     "role": "user", 
