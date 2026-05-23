@@ -1,0 +1,106 @@
+<think>
+The user wants me to analyze each past paper question from the provided PDFs and determine if it is explicitly covered by the syllabus. The syllabus is about:
+
+13.1P Explain how to produce an electric current by the relative movement of a magnet and a conductor
+a on a small scale in the laboratory
+b in the large-scale generation of electrical energy
+
+13.2 Recall the factors that affect the size and direction of an induced potential difference, and describe how the magnetic field produced opposes the original change
+
+13.3P Explain how electromagnetic induction is used in alternators to generate current which alternates in direction (a.c.)
+
+This is specifically about electromagnetic induction, generators, alternators, and factors affecting induced potential difference.
+
+Let me go through each question in the PDFs:
+
+**Jun-2018:**
+Looking at questions about electromagnetic induction... I see:
+- Q9(a) asks "Which of these could be the output for a dynamo?" - This is about generators/dynamos
+- Q9(b)(i) asks about transformer not working with DC input
+- Q9(b)(ii) transformer calculation
+- Q9(c) about high voltage transmission using transformers
+
+These are related to electromagnetic induction but Q9(c) specifically mentions "Vp × Ip = Vs × Is" which relates to transformers.
+
+**Jun-2019:**
+- Q5 has questions about magnetic fields and electromagnetic forces on wires
+- Q6 about electromagnetic induction with bar magnet, coil, and voltmeter
+- Q6(a)(i) "Draw a diagram to show how the teacher should arrange the apparatus" for electromagnetic induction
+- Q6(a)(ii) "Explain how the teacher could use this apparatus to demonstrate the factors affecting the size and direction of the induced potential difference" - This directly matches 13.2!
+- Q6(b) about transformers
+
+**Jun-2020:**
+- Q7 has questions about electromagnetic induction with magnet and coil
+- Q7(a)(i) asks about deflection on milliammeter when magnet moves into/out of coil - directly relates to 13.1 and 13.2
+
+
+- Q7(a)(ii) asks about ways to increase deflections - relates to factors in 13.2
+
+**Jun-2022:**
+- Q10(a) about magnet and coil with sensitive centre-zero ammeter - directly relates to 13.1
+- Q10(a) "Explain what will be observed on the meter when the magnet is pushed in and pulled out of the coil, repeatedly" - This matches 13.1P and 13.2!
+- Q10(b) about transformer calculations
+- Q10(c) about electricity delivery from power station to homes
+
+**Jun-2023:**
+- Q10 has questions about a model - still checking
+
+**Jun-2024:**
+- Q10(a) "Explain why the voltmeter shows a reading as the magnet passes through the coil" - This matches 13.1P and 13.2!
+- Q10(b) transformer explanation
+- Q10(a)(ii) describes how to investigate how the reading depends on height the magnet is dropped from - relates to 13.1 and 13.2
+
+**Nov-2021:**
+- Q9(c) about coil rotating between poles of magnet and how current changes - this is about a.c. generators/alternators, matching 13.3P!
+- Q9(a) about transformer currents
+- Q9(c) asks to "Explain why the current changes in the way shown by the graph... include details of the position of the coil relative to the magnet at each of the times labelled P, Q, R, S and T" - This relates to alternators generating a.c. (13.3P)
+
+I need to focus on questions that explicitly address:
+1. Producing electric current by relative movement of magnet and conductor
+2. Factors affecting size and direction of induced potential difference
+3. How electromagnetic induction is used in alternators to generate a.c.
+
+Let me be careful to distinguish between questions that merely mention magnetic fields or transformers versus those that specifically address electromagnetic induction principles.
+
+From **Jun-2019**, Q6(a)(ii) explicitly asks about "factors affecting the size and direction of the induced potential difference" - this directly matches 13.2.
+
+From **Jun-2020**, Q7(a)(ii) asks about increasing deflections on the milliammeter, relating to factors in 13.2.
+
+From **Jun-2022**, Q10(a) about observing meter readings when magnet is pushed in and out directly matches 13.1P and 13.2.
+
+From **Jun-2024**, Q10(a) explains why voltmeter shows reading as magnet passes through coil, matching 13.1P and 13.2.
+
+From **Nov-2021**, Q9(c) about coil rotating between magnet poles and how current changes relates to alternators and a.c. generation (13.3P), though it doesn't explicitly mention "alternator."
+
+I should focus on questions where the content is explicitly about electromagnetic induction principles, not just incidental mentions of magnetic effects. Questions that clearly address how relative motion between magnet and conductor produces current, the factors determining induced potential difference, or how alternators function would be the best matches.
+
+Looking at the papers systematically, most questions center on transformers or magnetic forces on wires, which fall outside the core electromagnetic induction topic. The most direct alignments with the syllabus are questions demonstrating the basic induction principle—when magnets move relative to coils—and those asking about factors that affect the induced voltage. I should identify only those questions where electromagnetic induction is the explicit focus, not just a peripheral detail. The remaining papers—specimen, Jun-2022, Jun-2023, Jun-2024, and Nov-2021—also lack matching questions based on this criteria. I'm identifying the key electromagnetic induction questions across these papers: the Jun-2019 paper has Q6(a)(ii) about demonstrating factors affecting induced potential difference, Jun-2020 includes Q7(a)(i) asking about deflection when a magnet enters a coil, and Nov-2021 contains Q9(c) which describes how current changes as a coil rotates relative to a magnet. Now I'm verifying the exact question text for each match to ensure accuracy.
+
+For Jun-2019 Q6(a)(ii), the wording is "Explain how the teacher could use this apparatus to demonstrate the factors affecting the size and direction of the induced potential difference." Jun-2020 Q7(a)(i) asks which table row shows deflection on the milliammeter for the three stages, with the magnet moving into the coil, stationary inside, and moving out. The Nov-2021 Q9(c) requires explaining why current changes as shown in the graph, including details about coil position relative to the magnet at times P, Q, R, S and T, which connects to how alternators generate alternating current.
+
+I should reconsider Q10(a) from Jun-2022 and Q10(a) from Jun-2024 as well. The Jun-2022 version asks what to observe on the meter when the magnet is repeatedly pushed in and pulled out of the coil, while Jun-2024 asks why the voltmeter shows a reading as the magnet passes through. Both directly address the relationship between magnetic motion and induced current, which relates to the core concept of electromagnetic induction and Faraday's law.
+
+For Nov-2021 Q9(c), the question about why current changes as a coil rotates between magnet poles aligns with alternators generating alternating current. This confirms my earlier assessment.
+
+So my final matches are: Jun-2019 Q6(a)(ii) on factors affecting induced potential difference, Jun-2020 Q7(a)(i) on deflection during magnet motion, and Jun-2022 Q10(a) on observations when the magnet moves in and out of the coil. Jun-2024 Q10(a) also fits this pattern of explaining the voltmeter reading as the magnet passes through the coil.
+
+For Jun-2019, I need to add the page number where this question appears. The question on electromagnetic induction with the bar magnet, coil of wire, and sensitive voltmeter is in Jun-2019 on page 16. Jun-2020 Q7(a)(i) is on page 22, and Jun-2022 Q10(a) is on page 30.
+
+</think>
+
+Based on my analysis of the past paper questions against the syllabus for electromagnetic induction, I have identified the following questions that are explicitly covered:
+
+From jun-2019 | Page 16:
+- Q6(a)(ii): "Explain how the teacher could use this apparatus to demonstrate the factors affecting the size and direction of the induced potential difference."
+
+From jun-2020 | Page 22:
+- Q7(a)(i): "Which row of the table shows the deflection on the milliammeter for the three stages in Figure 15?" (magnet moving into coil, stationary inside, magnet moving out)
+
+From jun-2022 | Page 30:
+- Q10(a): "Explain what will be observed on the meter when the magnet is pushed in and pulled out of the coil, repeatedly."
+
+From jun-2024 | Page 32:
+- Q10(a): "Explain why the voltmeter shows a reading as the magnet passes through the coil."
+
+From nov-2021 | Page 28:
+- Q9(c): "Explain why the current changes in the way shown by the graph in Figure 20. Your answer should include details of the position of the coil relative to the magnet at each of the times labelled P, Q, R, S and T."
