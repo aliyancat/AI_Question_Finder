@@ -1,0 +1,44 @@
+<think>
+Let me analyze each past paper question against the syllabus "solenoid".
+
+Looking through the past paper questions, I need to find questions that are explicitly about solenoids. A solenoid is a coil of wire that produces a magnetic field when an electric current passes through it.
+
+Let me go through each paper:
+
+1. **jun-2018**: Looking for solenoid questions
+   - Q5(b)(i) mentions "solenoid" - describes apparatus with a solenoid and iron nail. This is about investigating how the size of the current in the solenoid affects the force of attraction between the solenoid and the iron nail. This is EXPLICITLY about solenoids.
+
+2. **jun-2019**: Looking for solenoid questions
+   - Q5 mentions "wire" and magnetic fields but no explicit solenoid questions
+
+3. **jun-2020**: Looking for solenoid questions
+   - Q5(c) mentions "metal rods" but not solenoid
+   - Q7 mentions "coil" but in context of electromagnetic induction, not solenoid specifically
+
+4. **jun-2022**: Looking for solenoid questions
+   - No explicit solenoid mentions
+
+5. **jun-2023**: Looking for solenoid questions
+   - No explicit solenoid mentions
+
+6. **june-2024**: Looking for solenoid questions
+   - No explicit solenoid mentions
+
+7. **nov-2021**: Looking for solenoid questions
+   - No explicit solenoid mentions
+
+8. **specimen**: Looking for solenoid questions
+   - No explicit solenoid mentions
+
+So the only explicit solenoid question is from jun-2018:
+
+From jun-2018 | Page 16 (which shows pages 15-17, and this is from Q5 part b):
+- Q5(b)(i): "When the current in the solenoid is switched on, the solenoid attracts the iron nail. Describe how the student could use this apparatus to investigate how the size of the current in the solenoid affects the force of attraction between the solenoid and the iron nail."
+
+
+I found the specific question on page 16 of the jun-2018 paper. I'll carefully cross-reference the exact location to ensure accuracy of my findings.
+
+</think>
+
+From jun-2018 | Page 16:
+- Q5(b)(i): "When the current in the solenoid is switched on, the solenoid attracts the iron nail. Describe how the student could use this apparatus to investigate how the size of the current in the solenoid affects the force of attraction between the solenoid and the iron nail."
