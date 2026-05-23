@@ -1,0 +1,12 @@
+From jun-2018 | Page 28:
+- Q9(a): Which of these could be the output for a dynamo?
+
+From jun-2023 | Page 23:
+- Q8(a)(iii): The electrical device is used as a motor when the car accelerates and as a dynamo when the car decelerates. Explain how using the device can help to increase the time that the car can be driven before the battery becomes discharged.
+
+From jun-2023 | Page 30:
+- Q10(a): Figure 23 shows a model dynamo. The dynamo contains a coil of wire that can spin inside a permanent magnet. The dynamo produces a D.C. output. A teacher connects a voltmeter to the terminals of the dynamo. The teacher rotates the handle to make the coil spin inside the magnet. Figure 24(a) shows the reading on the voltmeter. The teacher then rotates the handle differently. Figure 24(b) shows the new reading on the voltmeter.
+
+From jun-2023 | Page 31:
+- Q10(a)(i): Which row of the table shows how the rotation of the handle has changed between (a) and (b)?
+- Q10(a)(ii): The teacher connects the dynamo to a lamp. It is now more difficult for the teacher to rotate the handle. Explain why it is more difficult to turn the dynamo when it is connected to a lamp.
