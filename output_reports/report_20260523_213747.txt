@@ -1,0 +1,159 @@
+<think>
+The user wants me to analyze each past paper question and determine if it is explicitly covered by the syllabus provided.
+
+Let me look at the syllabus:
+
+**13.1P** Explain how to produce an electric current by the relative movement of a magnet and a conductor
+a) on a small scale in the laboratory
+b) in the large-scale generation of electrical energy
+
+**13.2** Recall the factors that affect the size and direction of an induced potential difference, and describe how the magnetic field produced opposes the original change
+
+**13.3P** Explain how electromagnetic induction is used in alternators to generate current which alternates in direction (a.c.) and in dynamos to generate direct current (d.c.)
+
+These are the only syllabus items provided. So I need to find questions that match these specific topics:
+
+1. Producing electric current by relative movement of magnet and conductor (lab scale and large-scale generation)
+2. Factors affecting size and direction of induced potential difference, Lenz's law
+3. Electromagnetic induction in alternators (AC) and dynamos (DC)
+
+Let me go through each past paper and identify questions that match these syllabus items.
+
+Looking through the papers:
+
+**jun-2018:**
+- Q9 (PAGE 28-30): Mentions dynamo output, transformer, national grid transmission. Specifically Q9(a) asks "Which of these could be the output for a dynamo?" - This relates to 13.3P (dynamos). Page 28 has Q9(a).
+- Q9(c) (PAGE 30): About high voltage transmission and transformers for efficient power distribution - relates to large-scale generation in 13.1P.
+
+**jun-2019:**
+- Q6 (PAGE 16-17): About electromagnetic induction demonstration with bar magnet, coil, and voltmeter. Q6(a)(i) asks to draw apparatus, Q6(a)(ii) explains factors affecting size and direction of induced potential difference - directly matches 13.1P and 13.2.
+
+
+- Q7(b)(i) (PAGE 17-18): Asks about cause of changing magnetic field in transformer core, Q7(b)(ii) calculates turns - relates to electromagnetic induction principles. Q9(c) (PAGE 29): Asks to explain high voltage transmission and transformers for efficient power distribution - relates to large-scale generation in 13.1P.
+
+**jun-2020:**
+- Q7 (PAGE 22-24): Shows magnet moving into and out of a coil with milliammeter, Q7(a)(i) asks about deflection, Q7(a)(ii) asks for ways to increase deflections - directly matches 13.1P (producing current by relative movement) and 13.2 (factors affecting induced potential difference).
+- Q7(b) (PAGE 23-24): Asks to explain how sound is produced in a loudspeaker using alternating current - while this involves electromagnetic principles, it's more about application than the core concept.
+- Q7(c) (PAGE 24-25): Transformer with input/output voltages - relates to electromagnetic induction.
+
+**jun-2022:**
+- Q10 (PAGE 30-32): Explains observation when magnet is pushed in and pulled out of coil repeatedly - matches 13.1P. Q10(b) (PAGE 31) and Q10(c) (PAGE 32) about transformer and efficiently delivering electricity from power station to homes - relates to large-scale generation and transmission in 13.1P.
+
+**jun-2023:**
+- Q10 (PAGE 30-33): Dynamo model with coil spinning in permanent magnet producing D.C. output - directly matches 13.3P (dynamos generate direct current). Q10(a)(i) asks about rotation changes, Q10(a)(ii) explains why it gets harder to turn when connected to lamp, Q10(b) calculates transformer voltage, Q10(c) compares loudspeaker and microphone operation.
+
+**jun-2024:**
+- Q10 (PAGE 32-35): Magnet dropped through coil connected to voltmeter - matches 13.1P. Q10(a)(i) explains voltmeter reading as magnet passes through coil, Q10(a)(ii) describes investigation of how voltmeter reading depends on drop height, Q10(b) explains transformer design converting voltage from 11,000V to 230V using electromagnetic induction principles.
+
+**nov-2021:**
+- Q9 (PAGE 26-29): Coil rotating between magnet poles, with current changing during rotation - matches 13.3P (alternators generate alternating current). Q9(a)(i) about potential difference across secondary coil, Q9(a)(ii) explains how alternating current in primary coil causes current in secondary coil, Q9(b) calculates turns, Q9(c) asks to explain current changes for a coil rotating in magnetic field.
+
+**specimen:**
+- Q7 (PAGE 24-27): Straight wire in uniform magnetic field, force on wire - this is about force on current-carrying conductor in magnetic field, not electromagnetic induction, so doesn't match 13.1P-13.3P.
+- Q7(c) (PAGE 26-27): Asks which voltages cause AC current in wire - relates to AC/DC concepts.
+- Q7(d) (PAGE 27): Power transmission wire at right angles to Earth's magnetic field, changing force - relates to electromagnetic induction principles.
+
+Let me refine my selection to questions that EXPLICITLY match the syllabus:
+
+**13.1P** - producing current by relative movement of magnet and conductor:
+- jun-2018: Q9(c) (large-scale generation)
+- jun-2019: Q6(a) (laboratory demonstration)
+- jun-2020: Q7 (magnet moving through coil)
+- jun-2022: Q10(a)
+- jun-2023: Q10(a)
+- jun-2024: Q10(a)(i) and (ii)
+- nov-2021: Q9(c)
+
+**13.2** - factors affecting size/direction of induced p.d. and Lenz's law:
+- jun-2019: Q6(a)(ii)
+- jun-2020: Q7(a)(ii)
+
+**13.3P** - alternators (AC) and dynamos (DC):
+- jun-2018: Q9(a) and Q9(c)
+- jun-2023: Q10
+- nov-2021: Q9(c)
+
+Now I'll format the output with page references:
+
+From jun-2018 | Page 28:
+- Q9(a): Which of these could be the output for a dynamo?
+
+From jun-2018 | Page 30:
+- Q9(c): High voltage transmission cables and transformers are used in the national grid. Explain how using high voltage transmission cables and transformers allows the distribution of electrical power around the United Kingdom to be as efficient as possible.
+
+From jun-2019 | Page 16:
+- Q6(a)(i): Draw a diagram to show how the teacher should arrange the apparatus.
+
+From jun-2019 | Page 17:
+- Q6(a)(ii): Explain how the teacher could use this apparatus to demonstrate the factors affecting the size and direction of the induced potential difference.
+
+From jun-2020 | Page 22:
+- Q7(a)(i): Which row of the table shows the deflection on the milliammeter for the three stages in Figure 15?
+
+From jun-2020 | Page 23:
+- Q7(a)(ii): Give two ways of increasing the deflections on the milliammeter shown in Figure 16.
+
+From jun-2022 | Page 30:
+- Q10(a): Explain what will be observed on the meter when the magnet is pushed in and pulled out of the coil, repeatedly.
+
+From jun-2022 | Page 32:
+- Q10(c): Using Figure 22, explain the stages in the process of delivering electricity efficiently from P to T.
+
+From jun-2023 | Page 30:
+- Q10(a): The dynamo produces a D.C. output... Explain what will be observed on the meter when the magnet is pushed in and pulled out of the coil, repeatedly.
+
+From jun-2023 | Page 31:
+- Q10(a)(ii): The teacher connects the dynamo to a lamp. It is now more difficult for the teacher to rotate the handle. Explain why it is more difficult to turn the dynamo when it is connected to a lamp.
+
+From jun-2024 | Page 32:
+- Q10(a)(i): Explain why the voltmeter shows a reading as the magnet passes through the coil.
+
+From jun-2024 | Page 33:
+- Q10(a)(ii): Describe how the student could use the arrangement in Figure 23 to do this investigation.
+
+From nov-2021 | Page 29:
+- Q9(c): Explain why the current changes in the way shown by the graph in Figure 20. Your answer should include details of the position of the coil relative to the magnet at each of the times labelled P, Q, R, S and T.
+
+I should verify I'm not missing any questions that might relate to alternators or dynamos in the other papers.
+
+Looking back at jun-2018, Q9(a) clearly asks about dynamo output, which matches the syllabus. In jun-2020, Q7(b) involves a loudspeaker with alternating current, which touches on electromagnetic principles but focuses more on audio application rather than generator construction. The nov-2021 question specifically addresses how a coil rotating in a magnetic field produces current changes, directly relating to generator operation. For the specimen paper, Q7(d) discusses power transmission with changing force, which involves electromagnetic concepts but doesn't explicitly cover the specified topics.
+
+Checking back through jun-2020, Q7(c) does involve a transformer with specific turn counts and input voltage calculations, which relates to electromagnetic induction principles. However, I notice I should double-check whether I've identified all relevant questions, particularly in the nov-2021 paper where Q9(c) appears to directly address how current varies as a coil rotates relative to a magnet—a key concept in understanding electromagnetic induction in generators. Q9(a)(ii): Explain how an alternating current in the primary coil causes an alternating current in the secondary coil of the transformer.
+Q9(b): The primary coil of a different transformer is connected to the 230 V mains supply. The voltage across the secondary coil is 15 V. The primary coil has 600 turns. Calculate the number of turns on the secondary coil.
+Q9(c): Figure 19 shows a coil of wire that is being rotated between the poles of a magnet. Figure 20 shows how the current in the coil changes during one complete rotation of the coil. Explain why the current changes in the way shown by the graph in Figure 20.
+
+Q9 directly addresses electromagnetic induction through transformers and rotating coils in magnetic fields. The questions build from explaining the underlying mechanism to calculating turns and analyzing current behavior during rotation, which connects to how dynamos and alternators function.
+
+</think>
+
+Based on my analysis of the past papers against the provided syllabus (13.1P, 13.2, and 13.3P), here are the questions that explicitly match the syllabus:
+
+From jun-2018 | Page 28:
+- Q9(a): Which of these could be the output for a dynamo?
+
+From jun-2019 | Page 16:
+- Q6(a)(i): Draw a diagram to show how the teacher should arrange the apparatus.
+- Q6(a)(ii): Explain how the teacher could use this apparatus to demonstrate the factors affecting the size and direction of the induced potential difference.
+
+From jun-2020 | Page 22:
+- Q7(a)(i): Which row of the table shows the deflection on the milliammeter for the three stages in Figure 15?
+- Q7(a)(ii): Give two ways of increasing the deflections on the milliammeter shown in Figure 16.
+
+From jun-2022 | Page 30:
+- Q10(a): Explain what will be observed on the meter when the magnet is pushed in and pulled out of the coil, repeatedly.
+
+From jun-2023 | Page 30:
+- Q10(a): The dynamo produces a D.C. output... Explain what will be observed on the meter when the magnet is pushed in and pulled out of the coil, repeatedly.
+- Q10(a)(ii): The teacher connects the dynamo to a lamp. It is now more difficult for the teacher to rotate the handle. Explain why it is more difficult to turn the dynamo when it is connected to a lamp.
+
+From jun-2024 | Page 32:
+- Q10(a)(i): Explain why the voltmeter shows a reading as the magnet passes through the coil.
+- Q10(a)(ii): Describe how the student could use the arrangement in Figure 23 to do this investigation.
+
+From nov-2021 | Page 26:
+- Q9(a)(i): The size of the potential difference (voltage) across the secondary coil is...
+- Q9(a)(ii): Explain how an alternating current in the primary coil causes an alternating current in the secondary coil of the transformer.
+- Q9(b): The primary coil of a different transformer is connected to the 230 V mains supply. The voltage across the secondary coil is 15 V. The primary coil has 600 turns. Calculate the number of turns on the secondary coil.
+
+From nov-2021 | Page 28:
+- Q9(c): Figure 19 shows a coil of wire that is being rotated between the poles of a magnet. Figure 20 shows how the current in the coil changes during one complete rotation of the coil. Explain why the current changes in the way shown by the graph in Figure 20. Your answer should include details of the position of the coil relative to the magnet at each of the times labelled P, Q, R, S and T.
