@@ -1,0 +1,10 @@
+From jun-2018 | Page 30:
+- Q9(c): *High voltage transmission cables and transformers are used in the national grid. Explain how using high voltage transmission cables and transformers allows the distribution of electrical power around the United Kingdom to be as efficient as possible. Refer to the following equations in your answer. P = I2 × R Vp × Ip = Vs × Is
+
+From jun-2022 | Page 31:
+- Q10(b): This question is about a transformer. primary coil 700 turns of wire secondary coil 400 turns of wire iron core primary voltage = 230 V secondary current = 1.75 A Calculate the current in the primary coil. Use the information given in Figure 21 and equations selected from the list of equations at the end of this paper. The transformer is 100% efficient.
+From jun-2022 | Page 32:
+- Q10(c): *Figure 22 shows how electricity is delivered efficiently from a power station (P) to homes (T). Using Figure 22, explain the stages in the process of delivering electricity efficiently from P to T. Your answer should include details of the effects that Q, R and S have on efficiency.
+
+From nov-2021 | Page 26:
+- Q9(a)(i): There is an alternating current of 3 A in the primary coil of a transformer. There is an alternating current of 6 A in the secondary coil of the transformer. The transformer is 100% efficient. The size of the potential difference (voltage) across the secondary coil is

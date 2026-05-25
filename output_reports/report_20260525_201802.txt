@@ -1,0 +1,4 @@
+From jun-2020 | Page 23:
+- Q7(b): Figure 17 is a diagram representing a loudspeaker. Explain how sound is produced when an alternating current is supplied to the coil of the loudspeaker.
+From jun-2023 | Page 33:
+- Q10(c): Figure 26 shows a picture of an electrical device and a simplified drawing of the important parts. The device can be used as a loudspeaker or it can be used as a microphone. Compare how the device operates when used as a loudspeaker with how the device operates when used as a microphone.
