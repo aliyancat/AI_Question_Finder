@@ -415,7 +415,7 @@ def generate_html_report(result, question_pdfs, all_pdfs, output_dir, timestamp,
     
     # Save HTML file with syllabus-based name
     filename = sanitize_filename(syllabus) + ".html"
-    html_path = output_dir / filename
+    html_path = get_unique_filename(output_dir, filename)
     html_path.write_text(html_content, encoding="utf-8")
     return html_path
 
@@ -440,6 +440,26 @@ def sanitize_filename(text, max_length=100):
     filename = re.sub(r'\s+', '_', filename)  # Replace spaces with underscores
     filename = filename[:max_length]
     return filename
+
+
+def get_unique_filename(output_dir, base_name):
+    """Check if file exists and return a unique name with (2), (3), etc."""
+    stem = Path(base_name).stem
+    suffix = Path(base_name).suffix
+    candidate = output_dir / base_name
+    counter_part = stem
+    
+    if not candidate.exists():
+        return candidate
+    
+    # File exists, increment counter
+    counter = 2
+    while True:
+        new_name = f"{stem}({counter}){suffix}"
+        candidate = output_dir / new_name
+        if not candidate.exists():
+            return candidate
+        counter += 1
 
 def footer(pdf_count):
     col = (Fore.WHITE + Style.DIM) if HAS_COLOR else ""
@@ -599,13 +619,13 @@ Keep the output concise."""
         err(f"Failed to generate content: {e}")
 
     ts  = datetime.now().strftime("%Y%m%d_%H%M%S")
-    out = OUTPUT_DIR_REPORTS / f"report_{ts}.txt"
+    out = get_unique_filename(OUTPUT_DIR_REPORTS, f"report_{ts}.txt")
     out.write_text(result, encoding="utf-8")
     ok(f"Report saved → {out}")
 
     # Generate PDF if there are questions
     if "No questions match" not in result:
-        pdf_out = OUTPUT_DIR_PDFS / f"questions_{ts}.pdf"
+        pdf_out = get_unique_filename(OUTPUT_DIR_PDFS, f"questions_{ts}.pdf")
         doc = SimpleDocTemplate(str(pdf_out), pagesize=letter)
         styles = getSampleStyleSheet()
         story = []
