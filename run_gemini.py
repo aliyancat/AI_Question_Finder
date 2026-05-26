@@ -618,8 +618,10 @@ Keep the output concise."""
     except Exception as e:
         err(f"Failed to generate content: {e}")
 
+    # Use syllabus-based filename for all outputs
     ts  = datetime.now().strftime("%Y%m%d_%H%M%S")
-    out = get_unique_filename(OUTPUT_DIR_REPORTS, f"report_{ts}.txt")
+    base_name = sanitize_filename(syllabus)
+    out = get_unique_filename(OUTPUT_DIR_REPORTS, f"{base_name}_report.txt")
     out.write_text(result, encoding="utf-8")
     ok(f"Report saved → {out}")
 
