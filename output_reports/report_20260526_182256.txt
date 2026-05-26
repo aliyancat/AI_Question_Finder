@@ -1,0 +1,71 @@
+From june-2021-dec | Page 5:
+- Q2 (a): Amend the code to complete the program.
+
+From june-2021-dec | Page 6:
+- Q2 (b): Explain why a binary search algorithm would not find 'Juan' in the array.
+
+From june-2021-dec | Page 7:
+- Q2 (c): Complete the merge sort using the space provided.
+
+From june-2021-dec | Page 8:
+- Q3 (a) (ii): Identify the name of a data structure.
+
+From june-2021-dec | Page 10:
+- Q4 (a): Write a program to implement these requirements.
+
+From june-2021-dec | Page 12:
+- Q5: Write the code for the program.
+
+From june-2022 | Page 3:
+- Q1 (g): Amend the code to complete the if statement used to produce the output.
+
+From june-2022 | Page 10:
+- Q5 (a): Write the program.
+
+From june-2022 | Page 11:
+- Q5 (b) (i): Complete the table to show how the bubble sort algorithm will sort the scores.
+- Q5 (b) (ii): Explain one reason why a bubble sort is very efficient in terms of memory usage.
+
+From june-2022 | Page 12:
+- Q5 (c): Describe the steps a linear search algorithm takes to find a search item.
+
+From june-2022 | Page 14:
+- Q6: Write a program to:
+
+From june-2023 | Page 9:
+- Q4 (a) (i): Complete the table to show the result of applying a Caesar cipher.
+- Q4 (a) (ii): Compare the ciphertexts produced for the plaintext GOLD by:
+- Q4 (a) (iii): Explain the error.
+
+From june-2023 | Page 10:
+- Q4 (b): Write the program.
+
+From june-2023 | Page 11:
+- Q5 (a): Complete the merge sort using the space provided.
+
+From june-2023 | Page 12:
+- Q5 (b): Complete the table to give the line number with an error and a corrected line of pseudocode.
+
+From june-2023 | Page 13:
+- Q5 (c): Write the program.
+
+From june-2023 | Page 14:
+- Q6: Write a program to:
+
+From june-2024 | Page 3:
+- Q1 (d): Identify the data that must be stored in a record rather than an array.
+
+From june-2024 | Page 6:
+- Q3 (b): Amend the code to display every other name in the array of star names.
+
+From june-2024 | Page 10:
+- Q4 (c): Amend the code to:
+
+From june-2024 | Page 13:
+- Q5 (b): Complete the table to show the values for the high index, the low index and the midpoint on each pass of a binary search.
+
+From june-2024 | Page 14:
+- Q5 (c): Amend the code to produce the intended output.
+
+From june-2024 | Page 15:
+- Q6: Write a program to produce the intended output.
