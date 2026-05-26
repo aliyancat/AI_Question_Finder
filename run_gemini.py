@@ -627,7 +627,7 @@ Keep the output concise."""
 
     # Generate PDF if there are questions
     if "No questions match" not in result:
-        pdf_out = get_unique_filename(OUTPUT_DIR_PDFS, f"questions_{ts}.pdf")
+        pdf_out = get_unique_filename(OUTPUT_DIR_PDFS, f"{base_name}.pdf")
         doc = SimpleDocTemplate(str(pdf_out), pagesize=letter)
         styles = getSampleStyleSheet()
         story = []
