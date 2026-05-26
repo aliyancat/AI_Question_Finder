@@ -1,3 +1,12 @@
 .env
 *.env
 output/
+
+# Ignore PDFs
+*.pdf
+output_pdfs/
+past_papers/
+past_papers_ella_compsci_p2/
+past_papers_ella_paper1/
+past_papers_mariya/
+past_papers_sarah_p2/
