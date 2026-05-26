@@ -646,7 +646,7 @@ Keep the output concise."""
     
     # Generate interactive HTML report
     print()
-    html_path = generate_html_report(result, question_pdfs, all_pdfs, OUTPUT_DIR_HTML, ts, syllabus)
+    html_path = generate_html_report(result, question_pdfs, all_pdfs, OUTPUT_DIR_HTML, base_name)
     ok(f"Interactive HTML saved → {html_path}")
     if HAS_COLOR:
         print(f"  {Fore.CYAN}→ Open this file in your browser to view clickable links{Style.RESET_ALL}")
