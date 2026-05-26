@@ -121,7 +121,7 @@ def ok(msg):
     rst = Style.RESET_ALL if HAS_COLOR else ""
     print(f"  {col}✔ {msg}{rst}")
 
-def generate_html_report(result, question_pdfs, all_pdfs, output_dir, timestamp, syllabus):
+def generate_html_report(result, question_pdfs, all_pdfs, output_dir, base_name):
     """Generate an interactive HTML report with clickable PDF links."""
     
     html_content = """<!DOCTYPE html>
@@ -414,8 +414,7 @@ def generate_html_report(result, question_pdfs, all_pdfs, output_dir, timestamp,
 """
     
     # Save HTML file with syllabus-based name
-    filename = sanitize_filename(syllabus) + ".html"
-    html_path = get_unique_filename(output_dir, filename)
+    html_path = get_unique_filename(output_dir, f"{base_name}.html")
     html_path.write_text(html_content, encoding="utf-8")
     return html_path
 

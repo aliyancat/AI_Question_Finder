@@ -1,3 +1,4 @@
 {
-    "autoGitCopilot.enabled": true
+    "autoGitCopilot.enabled": true,
+    "vscode-autoGit.enabled": true
 }
