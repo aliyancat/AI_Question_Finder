@@ -1,0 +1,15 @@
+From june-2019 | Page 8:
+- Q4 (a) (i): Which lens is a converging lens with the greatest power?
+- Q4 (a) (ii): The equation that relates the power of a lens to the focal length of the lens is power (in dioptres) = 1 / focal length (in metres). The power of a lens is 5 dioptres. Use the equation to calculate the focal length of the lens in cm.
+
+From june-2022 | Page 3:
+- Q1 (b) (i): Using information from Figure 1, determine the magnification of the virtual image. Use the equation magnification = height of image / height of object.
+
+From june-2022 | Page 4:
+- Q1 (b) (ii): Describe one way the magnification of the image could be increased.
+
+From june-2022 | Page 5:
+- Q1 (c): Figure 2 shows a converging lens used to produce a real image on a screen. The apparatus is used to find the focal length, f, of the lens. The screen is moved to give a clear image of the object. The distance from the object to the lens, a = 20 cm. The distance from the image to the lens, b = 40 cm. Calculate the focal length, f, of the lens. Use the equation 1/f = 1/a + 1/b.
+
+From june-2024 | Page 19:
+- Q6 (c): Figure 10 shows a ray diagram of the virtual image produced by a diverging lens. State what is meant by the term virtual image.

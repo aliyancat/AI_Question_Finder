@@ -1,0 +1,34 @@
+From june-2020 | Page 21:
+- Q9 (a) (i): The rocket has a mass of 5.5×10^5 kg and is travelling to the right at 14 km/s. Which of these is a correct calculation of the momentum of the rocket in kg m/s? Use the equation p = m×v
+From june-2020 | Page 21:
+- Q9 (a) (ii): The asteroid has a momentum of 7.5×10^10 kg m/s and a mass of 8.0 × 10^6 kg. Calculate the speed of the asteroid.
+From june-2020 | Page 22:
+- Q9 (b): A student investigates the effect of a crumple zone on the force exerted during a collision. The student has one trolley with a spring at the front and another trolley without a spring. The student uses the arrangement in Figure 13. After a trolley is released, it accelerates down a slope and bounces off a rigid wall. The speed of a trolley can be measured just before a collision with the wall and just after a collision with the wall. The silver foils are connected to a millisecond timer. The silver foils make contact with each other during the collision, so the time they are in contact can be read from the millisecond timer. Explain how the student could investigate the effect of a crumple zone on the average force exerted during the collision. Your explanation should include: • how to determine the force (you may wish to refer to an equation from the list of equations at the end of this paper) • how the effect of crumple zones may be shown in the investigation • precautions that may be necessary to achieve accurate results.
+From june-2020 | Page 24:
+- Q9 (c): Newton’s third law, when applied to the collision of the rocket and the asteroid as shown in Figure 12, can be stated as follows: The force exerted by the rocket on the asteroid is equal and opposite to the force exerted by the asteroid on the rocket. Explain how this statement links to the conservation of momentum in the collision.
+From june-2021 | Page 24:
+- Q7 (c) (i): The momentum of the box just before it hits the floor is 8.7 kg m/s. The box comes to rest 0.35 s after it first hits the floor. Calculate the magnitude of the force exerted by the floor on the box. Use an equation selected from the list of equations at the end of this paper.
+From june-2021 | Page 24:
+- Q7 (c) (ii): State the magnitude and direction of the force exerted by the box on the floor.
+From june-2021 | Page 25:
+- Q7 (d): At S the momentum of the ball is 0.40 kg m/s. Calculate the mass of the ball. Acceleration due to gravity, g, = 10 m / s2
+From june-2022 | Page 21:
+- Q7 (a): Which of these is a unit of momentum?
+From june-2022 | Page 21:
+- Q7 (b) (i): Describe an investigation the students could carry out to show that momentum is conserved when these two trolleys collide. You may add to the diagram to help with your answer.
+From june-2022 | Page 22:
+- Q7 (b) (ii): Give a reason for the runway being at a slope.
+From june-2022 | Page 22:
+- Q7 (c) (i): Calculate the average force exerted by the ball on the racket. Use the equation F = (mv - mu)/t
+From june-2022 | Page 23:
+- Q7 (c) (ii): Describe how Newton’s Third Law of Motion applies to the collision between the racket and the ball.
+From june-2023 | Page 24:
+- Q9 (a): An atom of mass 6.6 × 10^–26 kg is moving with a velocity of 480 m / s. Calculate the momentum of the atom.
+From june-2023 | Page 24:
+- Q9 (b): Before the collision, the momentum of the ball is 0.80 kg m / s. After the collision, the momentum of the ball is 0.60 kg m / s in the opposite direction. The ball is in contact with the wall for a time of 70 ms during the collision. Calculate the force exerted on the ball by the wall. Use an equation selected from the list of equations at the end of the paper.
+From june-2024 | Page 10:
+- Q3 (c): A car collides with a barrier on a road. The time of the collision is very short. Explain one factor, other than the time of the collision, that would affect the force on the car in the collision. Your explanation should refer to an equation in the Equation Booklet.
+From june-2024 | Page 28:
+- Q9 (b): The gymnast has a mass of 53 kg. The gymnast lands on the mat with a velocity of 4.0 m/s. The average force exerted by the mat on the gymnast is 3500 N. Calculate the time taken for the gymnast to come to rest. Give your answer to an appropriate number of significant figures. Use the equation force = change in momentum / time
+From june-2024 | Page 29:
+- Q9 (c): Figure 15 shows two trolleys, P and Q, moving at the same speed, v, directly towards each other. The trolleys have the same mass. When the trolleys collide, they stick together and stop. Explain how momentum and energy are both conserved in this collision.
