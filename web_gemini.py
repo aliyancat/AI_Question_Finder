@@ -237,6 +237,19 @@ def generate_html_report(result, question_pdfs, all_pdfs, output_dir, base_name)
     return html_path
 
 
+def load_api_key():
+    """Load GEMINI_API_KEY from env, .env file, or provided value."""
+    key = os.environ.get("GEMINI_API_KEY", "")
+    if not key:
+        env_file = BASE_DIR / ".env"
+        if env_file.exists():
+            for line in env_file.read_text().splitlines():
+                if line.startswith("GEMINI_API_KEY="):
+                    key = line.split("=", 1)[1].strip().strip('"\'')
+                    break
+    return key
+
+
 def process_papers(folder_name, syllabus_text, api_key):
     """Core processing: extract PDF text, call Gemini, save reports.
     Returns (success, result_dict)."""
@@ -350,7 +363,7 @@ def index():
 def run():
     folder_name = request.form.get("folder", "").strip()
     syllabus_text = request.form.get("syllabus", "").strip()
-    api_key = request.form.get("api_key", "").strip() or os.environ.get("GEMINI_API_KEY", "")
+    api_key = request.form.get("api_key", "").strip() or load_api_key()
 
     if not folder_name:
         flash("Please select a past papers folder.", "danger")
