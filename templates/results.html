@@ -224,25 +224,25 @@
                 <div class="file-item">
                     <span class="icon">📄</span>
                     <span class="name">Interactive HTML Report</span>
-                    <a href="file:///{{ BASE_DIR }}/{{ data.html_path }}" target="_blank">Open →</a>
+                    <a href="{{ url_for('serve_output', filepath=data.html_path) }}" target="_blank">Open →</a>
                 </div>
                 <div class="file-item">
                     <span class="icon">📝</span>
                     <span class="name">Text Report</span>
-                    <a href="file:///{{ BASE_DIR }}/{{ data.report_path }}" target="_blank">Open →</a>
+                    <a href="{{ url_for('serve_output', filepath=data.report_path) }}" target="_blank">Open →</a>
                 </div>
                 {% if data.pdf_path %}
                 <div class="file-item">
                     <span class="icon">📕</span>
                     <span class="name">PDF Report</span>
-                    <a href="file:///{{ BASE_DIR }}/{{ data.pdf_path }}" target="_blank">Open →</a>
+                    <a href="{{ url_for('serve_output', filepath=data.pdf_path) }}" target="_blank">Open →</a>
                 </div>
                 {% endif %}
             </div>
 
             <div class="btn-row">
                 <a href="{{ url_for('index') }}" class="btn btn-primary">🔄 Run Again</a>
-                <a href="file:///{{ BASE_DIR }}/{{ data.html_path }}" target="_blank" class="btn btn-success">📄 Open HTML Report</a>
+                <a href="{{ url_for('serve_output', filepath=data.html_path) }}" target="_blank" class="btn btn-success">📄 Open HTML Report</a>
             </div>
         </div>
     </div>
