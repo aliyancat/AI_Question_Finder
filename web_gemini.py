@@ -385,22 +385,16 @@ def run():
         flash(data.get("error", "Unknown error"), "danger")
         return redirect(url_for("index"))
 
-    return render_template("results.html", data=data, BASE_DIR=BASE_DIR)
+    return render_template("results.html", data=data)
 
 
 @app.route("/output/<path:filepath>")
 def serve_output(filepath):
     """Serve generated output files (HTML, text, PDF) via HTTP."""
-    # Look in each output directory in order
-    for out_dir in (OUTPUT_DIR_HTML, OUTPUT_DIR_REPORTS, OUTPUT_DIR_PDFS):
-        target = out_dir / filepath
-        if target.exists() and target.is_file():
-            from flask import send_file
-            return send_file(str(target))
-    # If not found in output dirs, try the BASE_DIR
+    from flask import send_file
+    # filepath is relative to BASE_DIR (e.g. "output_html/file.html")
     target = BASE_DIR / filepath
     if target.exists() and target.is_file():
-        from flask import send_file
         return send_file(str(target))
     flash(f"File not found: {filepath}", "danger")
     return redirect(url_for("index"))
