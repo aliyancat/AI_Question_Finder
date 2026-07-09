@@ -31,7 +31,7 @@ OUTPUT_DIR_REPORTS.mkdir(exist_ok=True)
 
 # ── Globals ──────────────────────────────────────────────────────────────────
 ALL_FOLDERS = sorted(
-    [d for d in BASE_DIR.iterdir() if d.is_dir() and not d.name.startswith(("output", "templates", "__pycache__", ".git", "PP_Downloader"))],
+    [d for d in BASE_DIR.iterdir() if d.is_dir() and not d.name.startswith(("output", "templates", "__pycache__", ".git", "PP_Downloader", ".venv", ".vscode", "."))],
     key=lambda d: d.name.lower()
 )
 
