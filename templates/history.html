@@ -135,9 +135,9 @@
                         <span class="icon">📄</span>
                         <div class="info">
                             <div class="name">{{ f.name }}</div>
-                            <div class="date">{{ f.stat().st_mtime | datetimeformat }}</div>
+                            <div class="date">{{ f.mtime | datetimeformat }}</div>
                         </div>
-                        <a href="file:///{{ f.resolve() }}" target="_blank" class="open-link">Open</a>
+                        <a href="{{ url_for('serve_output', filepath=f.rel_path) }}" target="_blank" class="open-link">Open</a>
                     </div>
                     {% endfor %}
                 {% else %}
@@ -153,9 +153,9 @@
                         <span class="icon">📝</span>
                         <div class="info">
                             <div class="name">{{ f.name }}</div>
-                            <div class="date">{{ f.stat().st_mtime | datetimeformat }}</div>
+                            <div class="date">{{ f.mtime | datetimeformat }}</div>
                         </div>
-                        <a href="file:///{{ f.resolve() }}" target="_blank" class="open-link">Open</a>
+                        <a href="{{ url_for('serve_output', filepath=f.rel_path) }}" target="_blank" class="open-link">Open</a>
                     </div>
                     {% endfor %}
                 {% else %}
@@ -171,9 +171,9 @@
                         <span class="icon">📕</span>
                         <div class="info">
                             <div class="name">{{ f.name }}</div>
-                            <div class="date">{{ f.stat().st_mtime | datetimeformat }}</div>
+                            <div class="date">{{ f.mtime | datetimeformat }}</div>
                         </div>
-                        <a href="file:///{{ f.resolve() }}" target="_blank" class="open-link">Open</a>
+                        <a href="{{ url_for('serve_output', filepath=f.rel_path) }}" target="_blank" class="open-link">Open</a>
                     </div>
                     {% endfor %}
                 {% else %}
