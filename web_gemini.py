@@ -198,11 +198,14 @@ def generate_html_report(result, question_pdfs, all_pdfs, output_dir, base_name)
                             page_num = match.group(2)
                             pdf_path = next((p for p in question_pdfs if p.stem.lower() == pdf_name.lower()), None)
                             if pdf_path:
-                                paper_link = pdf_path.resolve().as_uri() + f"#page={page_num}"
+                                # Use Flask route to serve PDFs instead of file:/// URIs
+                                pdf_rel = pdf_path.relative_to(BASE_DIR).as_posix()
+                                paper_link = f"/view/{pdf_rel}#page={page_num}"
                                 ms_path = find_marking_scheme(pdf_path, all_pdfs)
                                 if ms_path:
                                     ms_page = find_page_in_ms(ms_path, q_num)
-                                    ms_link = ms_path.resolve().as_uri() + f"#page={ms_page}"
+                                    ms_rel = ms_path.relative_to(BASE_DIR).as_posix()
+                                    ms_link = f"/view/{ms_rel}#page={ms_page}"
                                 else:
                                     ms_link = None
                                 html_content += f'''
@@ -393,6 +396,20 @@ def serve_output(filepath):
     """Serve generated output files (HTML, text, PDF) via HTTP."""
     from flask import send_file
     # filepath is relative to BASE_DIR (e.g. "output_html/file.html")
+    target = BASE_DIR / filepath
+    if target.exists() and target.is_file():
+        return send_file(str(target))
+    flash(f"File not found: {filepath}", "danger")
+    return redirect(url_for("index"))
+
+
+@app.route("/view/<path:filepath>")
+def serve_file(filepath):
+    """Serve any file from the project directory (PDFs, etc.) via HTTP.
+    Used by the generated HTML reports for "Open question paper" and "Open marking scheme" buttons.
+    """
+    from flask import send_file
+    # filepath is relative to BASE_DIR (e.g. "past_papers_ella_compsci_p2/June-2022.pdf")
     target = BASE_DIR / filepath
     if target.exists() and target.is_file():
         return send_file(str(target))
