@@ -412,6 +412,7 @@ def history():
                 "mtime": f.stat().st_mtime,
             })
         return result
+        return result
 
     html_files = get_file_info(list(OUTPUT_DIR_HTML.glob("*.html")), "output_html")
     reports    = get_file_info(list(OUTPUT_DIR_REPORTS.glob("*.txt")), "output_reports")
