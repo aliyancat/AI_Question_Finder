@@ -342,9 +342,9 @@ Keep the output concise."""
 
     return True, {
         "result": result,
-        "report_path": str(report_path.relative_to(BASE_DIR)),
-        "html_path": str(html_path.relative_to(BASE_DIR)),
-        "pdf_path": str(pdf_report_path.relative_to(BASE_DIR)) if pdf_report_path else None,
+        "report_path": str(report_path.relative_to(BASE_DIR)).replace("\\", "/"),
+        "html_path": str(html_path.relative_to(BASE_DIR)).replace("\\", "/"),
+        "pdf_path": str(pdf_report_path.relative_to(BASE_DIR)).replace("\\", "/") if pdf_report_path else None,
         "question_count": len(question_pdfs),
         "scheme_count": len(scheme_pdfs),
         "folder_name": folder_name,
