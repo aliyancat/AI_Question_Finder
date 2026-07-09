@@ -409,9 +409,19 @@ def serve_output(filepath):
 @app.route("/history")
 def history():
     """Show past reports."""
-    reports = sorted(OUTPUT_DIR_REPORTS.glob("*.txt"), key=lambda p: p.stat().st_mtime, reverse=True)
-    html_files = sorted(OUTPUT_DIR_HTML.glob("*.html"), key=lambda p: p.stat().st_mtime, reverse=True)
-    pdf_files = sorted(OUTPUT_DIR_PDFS.glob("*.pdf"), key=lambda p: p.stat().st_mtime, reverse=True)
+    def get_file_info(files, subdir):
+        result = []
+        for f in sorted(files, key=lambda p: p.stat().st_mtime, reverse=True):
+            result.append({
+                "name": f.name,
+                "rel_path": f"{subdir}/{f.name}",
+                "mtime": f.stat().st_mtime,
+            })
+        return result
+
+    html_files = get_file_info(list(OUTPUT_DIR_HTML.glob("*.html")), "output_html")
+    reports    = get_file_info(list(OUTPUT_DIR_REPORTS.glob("*.txt")), "output_reports")
+    pdf_files  = get_file_info(list(OUTPUT_DIR_PDFS.glob("*.pdf")), "output_pdfs")
     return render_template("history.html", reports=reports[:50], html_files=html_files[:50], pdf_files=pdf_files[:50])
 
 
