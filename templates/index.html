@@ -279,11 +279,11 @@
 <body>
     <div class="container">
         <div class="nav-bar">
-            <a href="{{ url_for('history') }}">📋 View History</a>
+            <a href="{{ url_for('history') }}">📋 History</a>
         </div>
         <div class="header">
-            <h1>📄 PaperCode</h1>
-            <p>Map past paper questions to your syllabus using Gemini AI</p>
+            <h1>PaperCode</h1>
+            <p>Map past paper questions to your syllabus with AI</p>
         </div>
         <div class="content">
             {% with messages = get_flashed_messages(with_categories=true) %}
@@ -296,30 +296,30 @@
 
             <form id="mainForm" action="{{ url_for('run') }}" method="POST">
                 <div class="form-group">
-                    <label>📁 Select Past Papers Folder</label>
+                    <label><span>📁</span> Select Past Papers Folder</label>
                     {% if folders %}
                         {% for folder in folders %}
                             <div class="folder-card" onclick="selectFolder(this, '{{ folder.name }}')">
                                 <input type="radio" name="folder" value="{{ folder.name }}" id="folder_{{ loop.index }}">
                                 <label for="folder_{{ loop.index }}">
                                     <span class="folder-name">{{ folder.name }}</span>
-                                    <span class="folder-count">{{ folder.pdf_count }} PDF(s)</span>
+                                    <span class="folder-count">{{ folder.pdf_count }} PDFs</span>
                                 </label>
                             </div>
                         {% endfor %}
                     {% else %}
-                        <p style="color:#999;">No paper folders found. Create a folder with PDFs in the project directory.</p>
+                        <div class="empty-msg">No paper folders found. Create a folder with PDFs in the project directory.</div>
                     {% endif %}
                 </div>
 
                 <div class="form-group">
-                    <label for="syllabus">📝 Paste Your Syllabus</label>
+                    <label for="syllabus"><span>📝</span> Paste Your Syllabus</label>
                     <textarea id="syllabus" name="syllabus" placeholder="Paste your syllabus here... Be as detailed as possible. Include topic headings, sub-topics, and key points."></textarea>
                     <div class="form-hint">Press Enter twice on a blank line to finish (or just paste everything at once).</div>
                 </div>
 
                 <div class="form-group">
-                    <label for="api_key">🔑 Gemini API Key</label>
+                    <label for="api_key"><span>🔑</span> Gemini API Key</label>
                     <input type="password" id="api_key" name="api_key" placeholder="Leave blank if GEMINI_API_KEY is set in environment" autocomplete="off">
                     <div class="form-hint">Optional if you have <code>GEMINI_API_KEY</code> set in your environment or <code>.env</code> file.</div>
                 </div>
@@ -352,7 +352,7 @@
                 return;
             }
             document.getElementById('submitBtn').disabled = true;
-            document.getElementById('submitBtn').textContent = '⏳ Processing...';
+            document.getElementById('submitBtn').innerHTML = '⏳ Processing...';
             document.getElementById('spinner').classList.add('active');
         });
     </script>
