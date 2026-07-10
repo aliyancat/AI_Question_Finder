@@ -190,13 +190,16 @@ def generate_html_report(result, question_pdfs, all_pdfs, output_dir, base_name)
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Past Paper Questions</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>{css}</style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <h1>📄 Past Paper Questions</h1>
-            <p>Click a question to open the PDF; use the second button for marking schemes.</p>
+            <h1>Past Paper Questions</h1>
+            <p>Click a question to open the PDF, then check the marking scheme</p>
         </div>
         <div class="content">
 """
