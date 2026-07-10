@@ -125,37 +125,63 @@ def generate_html_report(result, question_pdfs, all_pdfs, output_dir, base_name)
     """Generate an interactive HTML report with clickable PDF links."""
     css = """
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-               background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-               min-height: 100vh; padding: 40px 20px; }
-        .container { max-width: 900px; margin: 0 auto; background: white; border-radius: 12px;
-                     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3); overflow: hidden; }
-        .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;
-                  padding: 40px 30px; text-align: center; }
-        .header h1 { font-size: 2.5em; margin-bottom: 10px; font-weight: 700; }
-        .header p { font-size: 1.1em; opacity: 0.9; }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+               background: #0a0a1a; min-height: 100vh; padding: 40px 20px;
+               position: relative; overflow-x: hidden; }
+        body::before { content: ''; position: fixed; top: -50%; left: -50%; width: 200%; height: 200%;
+               background: radial-gradient(ellipse at 20% 50%, rgba(102,126,234,0.12) 0%, transparent 50%),
+                           radial-gradient(ellipse at 80% 20%, rgba(118,75,162,0.10) 0%, transparent 50%),
+                           radial-gradient(ellipse at 50% 80%, rgba(102,126,234,0.06) 0%, transparent 50%);
+               pointer-events: none; z-index: 0;
+               animation: ambientGlow 15s ease-in-out infinite alternate; }
+        @keyframes ambientGlow { 0% { transform: translate(0,0) rotate(0deg); } 100% { transform: translate(2%,1%) rotate(3deg); } }
+        .container { max-width: 900px; margin: 0 auto;
+               background: rgba(255,255,255,0.05); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
+               border-radius: 20px; box-shadow: 0 8px 32px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.08);
+               overflow: hidden; border: 1px solid rgba(255,255,255,0.06);
+               position: relative; z-index: 1;
+               animation: fadeSlideUp 0.6s ease-out; }
+        @keyframes fadeSlideUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        .header { background: linear-gradient(135deg, rgba(102,126,234,0.25) 0%, rgba(118,75,162,0.25) 100%);
+                  color: white; padding: 48px 36px; text-align: center;
+                  border-bottom: 1px solid rgba(255,255,255,0.06); }
+        .header h1 { font-size: 2.4em; font-weight: 800; letter-spacing: -0.03em; margin-bottom: 10px;
+                     background: linear-gradient(135deg, #fff 0%, #c4b5fd 100%); -webkit-background-clip: text;
+                     -webkit-text-fill-color: transparent; background-clip: text; }
+        .header p { opacity: 0.7; font-size: 1.05em; font-weight: 400; color: #c4b5fd; }
         .content { padding: 40px 30px; }
         .section { margin-bottom: 40px; }
-        .source-title { background: #f8f9ff; border-left: 4px solid #667eea; padding: 15px 20px;
-                        margin-bottom: 15px; border-radius: 4px; font-weight: 600; color: #333; }
-        .question-item { background: #ffffff; border: 1px solid #e0e0e0; border-radius: 12px;
-                         padding: 22px 24px; margin-bottom: 18px; transition: all 0.25s ease; }
-        .question-item:hover { border-color: #667eea; box-shadow: 0 8px 26px rgba(102,126,234,0.12);
-                               transform: translateY(-2px); }
-        .question-text { color: #212121; font-size: 1em; line-height: 1.7; word-break: break-word; }
-        .question-meta { font-size: 0.95em; color: #667eea; margin-top: 10px; font-weight: 600; }
-        .button-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 18px; }
-        .button { display: inline-flex; align-items: center; justify-content: center;
-                  padding: 12px 18px; border-radius: 999px; font-weight: 700; text-decoration: none;
-                  transition: transform 0.2s ease, box-shadow 0.2s ease; }
-        .button-primary { background: #667eea; color: white; }
-        .button-secondary { background: #f5f7ff; color: #333; border: 1px solid #dbe3ff; }
-        .button:hover { transform: translateY(-1px); box-shadow: 0 8px 22px rgba(102,126,234,0.15); }
-        .disabled { opacity: 0.5; cursor: not-allowed; }
-        .no-match { text-align: center; padding: 60px 30px; color: #999; font-size: 1.2em; }
-        .footer { background: #f8f9ff; padding: 20px 30px; text-align: center; color: #666;
-                  font-size: 0.95em; border-top: 1px solid #e0e0e0; }
-        @media (max-width: 600px) { .header h1 { font-size: 1.8em; } .content { padding: 20px; } }
+        .source-title { background: rgba(255,255,255,0.03); border-left: 4px solid rgba(102,126,234,0.5);
+                        padding: 16px 20px; margin-bottom: 16px; border-radius: 8px;
+                        font-weight: 600; color: #e0dffc; }
+        .question-item { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06);
+                         border-radius: 14px; padding: 24px; margin-bottom: 18px;
+                         transition: all 0.25s ease; }
+        .question-item:hover { border-color: rgba(102,126,234,0.3);
+                               box-shadow: 0 8px 26px rgba(102,126,234,0.08);
+                               transform: translateY(-2px); background: rgba(255,255,255,0.05); }
+        .question-text { color: #e0dffc; font-size: 1em; line-height: 1.7; word-break: break-word; }
+        .question-meta { font-size: 0.9em; color: rgba(165,180,252,0.7); margin-top: 10px; font-weight: 500; }
+        .button-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+        .button { display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+                  padding: 12px 20px; border-radius: 10px; font-weight: 600; font-size: 0.9em;
+                  text-decoration: none; transition: all 0.25s ease;
+                  position: relative; overflow: hidden; }
+        .button::after { content: ''; position: absolute; inset: 0;
+                         background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, transparent 50%);
+                         pointer-events: none; }
+        .button-primary { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; }
+        .button-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 22px rgba(102,126,234,0.3); }
+        .button-secondary { background: rgba(255,255,255,0.06); color: #c4b5fd; border: 1px solid rgba(255,255,255,0.08); }
+        .button-secondary:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.15); }
+        .disabled { opacity: 0.4; cursor: not-allowed; pointer-events: none; }
+        .no-match { text-align: center; padding: 60px 30px; color: rgba(255,255,255,0.3); font-size: 1.2em; }
+        .footer { background: rgba(255,255,255,0.02); padding: 20px 30px; text-align: center;
+                  color: rgba(255,255,255,0.3); font-size: 0.9em;
+                  border-top: 1px solid rgba(255,255,255,0.04); }
+        @media (max-width: 600px) { body { padding: 16px 12px; } .header { padding: 32px 20px; }
+                .header h1 { font-size: 1.7em; } .content { padding: 20px; }
+                .button-row { flex-direction: column; } .button { width: 100%; } }
     """
 
     html_content = f"""<!DOCTYPE html>
