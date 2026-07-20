@@ -431,25 +431,25 @@ CRITICAL RULES:
     ts  = datetime.now().strftime("%Y%m%d_%H%M%S")
     out = OUTPUT_DIR_REPORTS / f"report_{ts}.txt"
     out.write_text(result, encoding="utf-8")
-    ok(f"Report saved → {out}")
+    ok(f"Report saved > {out}")
 
     # Generate interactive HTML report
     print()
     html_path = generate_html_report(result, pdfs, OUTPUT_DIR_HTML, ts, syllabus)
-    ok(f"Interactive HTML saved → {html_path}")
+    ok(f"Interactive HTML saved > {html_path}")
     if HAS_COLOR:
-        print(f"  {SKY}> Open this file in your browser to view clickable links{RESET}")
+        print(f"  {INDIGO}> Open this file in your browser to view clickable links{RESET}")
 
     print()
     divider()
     if HAS_COLOR:
-        print(f"\n  {Style.BRIGHT}{LAVENDER}RESULTS{RESET}\n")
+        print(f"\n  {Style.BRIGHT}{PINK}RESULTS{RESET}\n")
     else:
         print("\n  RESULTS\n")
 
     for line in result.splitlines():
         if line.strip():
-            col = MINT if HAS_COLOR else ""
+            col = INDIGO if HAS_COLOR else ""
             rst = RESET if HAS_COLOR else ""
             print(f"  {col}{line}{rst}")
         else:
