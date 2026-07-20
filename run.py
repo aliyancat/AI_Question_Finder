@@ -118,30 +118,42 @@ def generate_html_report(result, pdfs, output_dir, timestamp, syllabus):
     <title>Past Paper Questions</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; 
-               background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        body { font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+               background: #FFF8F0;
+               background-image: radial-gradient(circle at 10% 20%, #D8B4FE22 0%, transparent 40%),
+                                 radial-gradient(circle at 90% 80%, #BAE6FD22 0%, transparent 40%),
+                                 radial-gradient(circle at 50% 50%, #FDE68A11 0%, transparent 50%);
                min-height: 100vh; padding: 40px 20px; }
-        .container { max-width: 900px; margin: 0 auto; background: white; border-radius: 12px;
-                     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3); }
-        .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;
-                  padding: 40px 30px; text-align: center; }
-        .header h1 { font-size: 2.5em; margin-bottom: 10px; }
-        .content { padding: 40px 30px; }
-        .question-item { background: #ffffff; border: 1px solid #e0e0e0; border-radius: 8px;
-                        padding: 15px 20px; margin-bottom: 12px; transition: all 0.3s ease; }
-        .question-item:hover { border-color: #667eea; box-shadow: 0 4px 12px rgba(102, 126, 234, 0.15); 
-                              transform: translateY(-2px); }
+        .container { max-width: 900px; margin: 0 auto; background: #FFFFFF;
+                     border: 4px solid #1F2937; border-radius: 28px;
+                     box-shadow: 8px 8px 0 #1F2937; overflow: hidden; }
+        .header { background: #FDE68A; border-bottom: 4px solid #1F2937;
+                  padding: 44px 30px; text-align: center; position: relative; }
+        .header h1 { font-size: 2.4em; color: #1F2937; font-weight: 800; letter-spacing: -0.5px; }
+        .header p { color: #6B7280; margin-top: 8px; font-weight: 600; }
+        .badge { display: inline-block; background: #FF6B4A; color: #FFF; padding: 4px 14px;
+                 border-radius: 999px; font-size: 0.75em; font-weight: 700; margin-bottom: 14px;
+                 border: 2px solid #1F2937; }
+        .content { padding: 36px 30px; }
+        .question-item { background: #FDF2F8; border: 3px solid #1F2937; border-radius: 18px;
+                        padding: 18px 22px; margin-bottom: 16px; transition: transform 0.15s ease, box-shadow 0.15s ease;
+                        box-shadow: 4px 4px 0 #1F2937; }
+        .question-item:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 #1F2937; }
         .question-item a { text-decoration: none; color: inherit; display: block; }
-        .question-text { color: #333; font-size: 1em; line-height: 1.6; }
-        .question-meta { font-size: 0.9em; color: #667eea; margin-top: 8px; }
-        .no-match { text-align: center; padding: 60px 30px; color: #999; }
-        .footer { background: #f8f9ff; padding: 20px 30px; text-align: center; color: #666; }
+        .question-text { color: #1F2937; font-size: 1.02em; line-height: 1.6; font-weight: 600; }
+        .question-meta { font-size: 0.85em; color: #7C3AED; margin-top: 10px; font-weight: 700;
+                         display: inline-block; background: #EDE9FE; padding: 3px 10px;
+                         border-radius: 999px; border: 2px solid #1F2937; }
+        .no-match { text-align: center; padding: 60px 30px; color: #6B7280; font-size: 1.1em; font-weight: 600; }
+        .footer { background: #BAE6FD; border-top: 4px solid #1F2937; padding: 20px 30px;
+                  text-align: center; color: #1F2937; font-weight: 700; }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <h1>📄 Past Paper Questions</h1>
+            <span class="badge">📄 PAPER QUESTIONS</span>
+            <h1>Past Paper Questions</h1>
             <p>Click any question to open the PDF</p>
         </div>
         <div class="content">
@@ -196,7 +208,7 @@ def generate_html_report(result, pdfs, output_dir, timestamp, syllabus):
     return html_path
 
 def err(msg):
-    col = (Fore.RED + Style.BRIGHT) if HAS_COLOR else ""
+    col = (CORAL + Style.BRIGHT) if HAS_COLOR else ""
     rst = Style.RESET_ALL if HAS_COLOR else ""
     print(f"  {col}✘ {msg}{rst}")
     sys.exit(1)
