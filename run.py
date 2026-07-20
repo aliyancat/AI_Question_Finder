@@ -260,7 +260,7 @@ def main():
     # Select past papers folder
     divider()
     if HAS_COLOR:
-        print(f"\n  {Style.BRIGHT}Select your past papers folder from the list below:{Style.RESET_ALL}\n")
+        print(f"\n  {Style.BRIGHT}{GRAPE}Select your past papers folder from the list below:{RESET}\n")
     else:
         print("\n  Select your past papers folder from the list below:\n")
 
@@ -270,7 +270,9 @@ def main():
         err("No folders found in the current directory.")
 
     for i, d in enumerate(dirs, 1):
-        print(f"  {i}. {d.name}")
+        num = (SUNFLOWER + Style.BRIGHT) if HAS_COLOR else ""
+        rst = RESET if HAS_COLOR else ""
+        print(f"  {num}{i}.{rst} {d.name}")
 
     print()
     while True:
@@ -298,7 +300,7 @@ def main():
     # Syllabus
     divider()
     if HAS_COLOR:
-        print(f"\n  {Style.BRIGHT}Paste your syllabus below.{Style.RESET_ALL}  {Fore.WHITE}{Style.DIM}Press Enter on a blank line when done.{Style.RESET_ALL}\n")
+        print(f"\n  {Style.BRIGHT}{GRAPE}Paste your syllabus below.{RESET}  {Style.DIM}{INK}Press Enter on a blank line when done.{RESET}\n")
     else:
         print("\n  Paste your syllabus below. Press Enter on a blank line when done.\n")
 
@@ -326,8 +328,8 @@ def main():
     step(f"Reading {len(pdfs)} PDF(s)...\n")
     papers_text = ""
     for pdf in pdfs:
-        col = (Fore.CYAN + Style.DIM) if HAS_COLOR else ""
-        rst = Style.RESET_ALL if HAS_COLOR else ""
+        col = (SKY + Style.DIM) if HAS_COLOR else ""
+        rst = RESET if HAS_COLOR else ""
         print(f"    {col}↳ {pdf.name}{rst}")
         doc  = fitz.open(str(pdf))
         papers_text += f"\n\n=== {pdf.stem} ===\n"
