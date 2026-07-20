@@ -50,15 +50,17 @@ OUTPUT_DIR_PDFS.mkdir(exist_ok=True)
 OUTPUT_DIR_HTML.mkdir(exist_ok=True)
 OUTPUT_DIR_REPORTS.mkdir(exist_ok=True)
 
-# ── Pastel palette (truecolor) ──────────────────────────────
+# ── Pastel palette (truecolor) — matches design-style-prompt.md ──
+INDIGO   = "\033[38;2;99;102;241m"   # brand indigo #6366F1
+PINK     = "\033[38;2;236;72;153m"   # brand pink #EC4899
 LAVENDER = "\033[38;2;168;85;247m"   # vivid lavender (readable)
 SKY      = "\033[38;2;14;165;233m"   # vivid sky blue
-SUNFLOWER= "\033[38;2;234;179;8m"     # warm yellow
-PEACH    = "\033[38;2;251;146;60m"    # peach
-CORAL    = "\033[38;2;239;68;68m"     # coral red
-MINT     = "\033[38;2;16;185;129m"   # mint green
-GRAPE    = "\033[38;2;124;58;237m"    # grape purple
-INK      = "\033[38;2;63;63;70m"      # soft ink (dark)
+SUNFLOWER= "\033[38;2;234;179;8m"     # warm yellow #FDE68A-ish
+PEACH    = "\033[38;2;251;146;60m"    # peach #FDBA74
+CORAL    = "\033[38;2;255;107;74m"    # coral #FF6B4A
+MINT     = "\033[38;2;22;163;74m"     # mint green (readable)
+INK      = "\033[38;2;17;17;17m"      # ink black #111111
+GRAY     = "\033[38;2;75;85;99m"      # charcoal gray #4B5563
 RESET    = "\033[0m"
 
 def clear():
