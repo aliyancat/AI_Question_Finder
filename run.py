@@ -77,11 +77,11 @@ def print_banner():
 
 def print_info_box():
     msg = "  map past paper questions to your syllabus  "
-    border = "━" * len(msg)
+    border = "=" * len(msg)
     if HAS_COLOR:
-        print(SKY + "  ┏" + border + "┓" + RESET)
-        print(SKY + "  ┃" + RESET + Style.BRIGHT + SUNFLOWER + msg + RESET + SKY + "┃" + RESET)
-        print(SKY + "  ┗" + border + "┛" + RESET)
+        print(SKY + "  +" + border + "+" + RESET)
+        print(SKY + "  |" + RESET + Style.BRIGHT + SUNFLOWER + msg + RESET + SKY + "|" + RESET)
+        print(SKY + "  +" + border + "+" + RESET)
     else:
         print("  +" + border + "+")
         print("  |" + msg + "|")
