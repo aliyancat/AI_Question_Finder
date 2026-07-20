@@ -4,6 +4,13 @@ import time
 from pathlib import Path
 from datetime import datetime
 
+# Ensure UTF-8 output so pastel/box-drawing characters render correctly
+try:
+    sys.stdout.reconfigure(encoding="utf-8")
+    sys.stderr.reconfigure(encoding="utf-8")
+except Exception:
+    pass
+
 try:
     import fitz
 except ImportError:
