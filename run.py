@@ -352,7 +352,7 @@ def main():
     # Syllabus
     divider()
     if HAS_COLOR:
-        print(f"\n  {Style.BRIGHT}{GRAPE}Paste your syllabus below.{RESET}  {Style.DIM}{INK}Press Enter on a blank line when done.{RESET}\n")
+        print(f"\n  {Style.BRIGHT}{INDIGO}Paste your syllabus below.{RESET}  {Style.DIM}{GRAY}Press Enter on a blank line when done.{RESET}\n")
     else:
         print("\n  Paste your syllabus below. Press Enter on a blank line when done.\n")
 
@@ -380,7 +380,7 @@ def main():
     step(f"Reading {len(pdfs)} PDF(s)...\n")
     papers_text = ""
     for pdf in pdfs:
-        col = (SKY + Style.DIM) if HAS_COLOR else ""
+        col = (LAVENDER + Style.DIM) if HAS_COLOR else ""
         rst = RESET if HAS_COLOR else ""
         print(f"    {col}> {pdf.name}{rst}")
         doc  = fitz.open(str(pdf))
