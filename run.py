@@ -282,8 +282,8 @@ def sanitize_filename(text, max_length=100):
     return filename
 
 def footer(pdf_count):
-    dim = (Style.DIM + INK) if HAS_COLOR else ""
-    hi  = (GRAPE + Style.BRIGHT) if HAS_COLOR else ""
+    dim = (Style.DIM + GRAY) if HAS_COLOR else ""
+    hi  = (INDIGO + Style.BRIGHT) if HAS_COLOR else ""
     rst = Style.RESET_ALL if HAS_COLOR else ""
     print()
     divider()
@@ -312,7 +312,7 @@ def main():
     # Select past papers folder
     divider()
     if HAS_COLOR:
-        print(f"\n  {Style.BRIGHT}{GRAPE}Select your past papers folder from the list below:{RESET}\n")
+        print(f"\n  {Style.BRIGHT}{INDIGO}Select your past papers folder from the list below:{RESET}\n")
     else:
         print("\n  Select your past papers folder from the list below:\n")
 
