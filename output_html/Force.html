@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Past Paper Questions</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+               background: #0a0a1a; min-height: 100vh; padding: 40px 20px;
+               position: relative; overflow-x: hidden; }
+        body::before { content: ''; position: fixed; top: -50%; left: -50%; width: 200%; height: 200%;
+               background: radial-gradient(ellipse at 20% 50%, rgba(102,126,234,0.12) 0%, transparent 50%),
+                           radial-gradient(ellipse at 80% 20%, rgba(118,75,162,0.10) 0%, transparent 50%),
+                           radial-gradient(ellipse at 50% 80%, rgba(102,126,234,0.06) 0%, transparent 50%);
+               pointer-events: none; z-index: 0;
+               animation: ambientGlow 15s ease-in-out infinite alternate; }
+        @keyframes ambientGlow { 0% { transform: translate(0,0) rotate(0deg); } 100% { transform: translate(2%,1%) rotate(3deg); } }
+        .container { max-width: 900px; margin: 0 auto;
+               background: rgba(255,255,255,0.05); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
+               border-radius: 20px; box-shadow: 0 8px 32px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.08);
+               overflow: hidden; border: 1px solid rgba(255,255,255,0.06);
+               position: relative; z-index: 1;
+               animation: fadeSlideUp 0.6s ease-out; }
+        @keyframes fadeSlideUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        .header { background: linear-gradient(135deg, rgba(102,126,234,0.25) 0%, rgba(118,75,162,0.25) 100%);
+                  color: white; padding: 48px 36px; text-align: center;
+                  border-bottom: 1px solid rgba(255,255,255,0.06); }
+        .header h1 { font-size: 2.4em; font-weight: 800; letter-spacing: -0.03em; margin-bottom: 10px;
+                     background: linear-gradient(135deg, #fff 0%, #c4b5fd 100%); -webkit-background-clip: text;
+                     -webkit-text-fill-color: transparent; background-clip: text; }
+        .header p { opacity: 0.7; font-size: 1.05em; font-weight: 400; color: #c4b5fd; }
+        .content { padding: 40px 30px; }
+        .section { margin-bottom: 40px; }
+        .source-title { background: rgba(255,255,255,0.03); border-left: 4px solid rgba(102,126,234,0.5);
+                        padding: 16px 20px; margin-bottom: 16px; border-radius: 8px;
+                        font-weight: 600; color: #e0dffc; }
+        .question-item { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06);
+                         border-radius: 14px; padding: 24px; margin-bottom: 18px;
+                         transition: all 0.25s ease; }
+        .question-item:hover { border-color: rgba(102,126,234,0.3);
+                               box-shadow: 0 8px 26px rgba(102,126,234,0.08);
+                               transform: translateY(-2px); background: rgba(255,255,255,0.05); }
+        .question-text { color: #e0dffc; font-size: 1em; line-height: 1.7; word-break: break-word; }
+        .question-meta { font-size: 0.9em; color: rgba(165,180,252,0.7); margin-top: 10px; font-weight: 500; }
+        .button-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+        .button { display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+                  padding: 12px 20px; border-radius: 10px; font-weight: 600; font-size: 0.9em;
+                  text-decoration: none; transition: all 0.25s ease;
+                  position: relative; overflow: hidden; }
+        .button::after { content: ''; position: absolute; inset: 0;
+                         background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, transparent 50%);
+                         pointer-events: none; }
+        .button-primary { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; }
+        .button-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 22px rgba(102,126,234,0.3); }
+        .button-secondary { background: rgba(255,255,255,0.06); color: #c4b5fd; border: 1px solid rgba(255,255,255,0.08); }
+        .button-secondary:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.15); }
+        .disabled { opacity: 0.4; cursor: not-allowed; pointer-events: none; }
+        .no-match { text-align: center; padding: 60px 30px; color: rgba(255,255,255,0.3); font-size: 1.2em; }
+        .footer { background: rgba(255,255,255,0.02); padding: 20px 30px; text-align: center;
+                  color: rgba(255,255,255,0.3); font-size: 0.9em;
+                  border-top: 1px solid rgba(255,255,255,0.04); }
+        @media (max-width: 600px) { body { padding: 16px 12px; } .header { padding: 32px 20px; }
+                .header h1 { font-size: 1.7em; } .content { padding: 20px; }
+                .button-row { flex-direction: column; } .button { width: 100%; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Past Paper Questions</h1>
+            <p>Click a question to open the PDF, then check the marking scheme</p>
+        </div>
+        <div class="content">
+<div class="section"><div class="source-title">From june-2019 | Page 2:</div>
+            <div class="question-item">
+                <div class="question-text">Q1 (a): The work done to bring a car to rest is given by the equation</div>
+                <div class="question-meta">📍 june-2019.pdf — Page 2</div>
+                <div class="button-row">
+                    <a class="button button-primary" href="/view/past_papers_mariya_edexcel_physics_p1/june-2019.pdf#page=2" target="_blank">Open question paper</a>
+                    <a class="button button-secondary" href="/view/past_papers_mariya_edexcel_physics_p1/june-2019-ms.pdf#page=5" target="_blank">Open marking scheme</a>
+                </div>
+            </div>
+</div><div class="section"><div class="source-title">From june-2019 | Page 2:</div>
+            <div class="question-item">
+                <div class="question-text">Q1 (b): Before the car brakes it has kinetic energy.</div>
+                <div class="question-meta">📍 june-2019.pdf — Page 2</div>
+                <div class="button-row">
+                    <a class="button button-primary" href="/view/past_papers_mariya_edexcel_physics_p1/june-2019.pdf#page=2" target="_blank">Open question paper</a>
+                    <a class="button button-secondary" href="/view/past_papers_mariya_edexcel_physics_p1/june-2019-ms.pdf#page=5" target="_blank">Open marking scheme</a>
+                </div>
+            </div>
+</div><div class="section"><div class="source-title">From june-2019 | Page 3:</div>
+            <div class="question-item">
+                <div class="question-text">Q1 (c): The graph in Figure 1 shows how the braking distance, d, of a car depends on the velocity, v, of the car when the brakes are first applied.</div>
+                <div class="question-meta">📍 june-2019.pdf — Page 3</div>
+                <div class="button-row">
+                    <a class="button button-primary" href="/view/past_papers_mariya_edexcel_physics_p1/june-2019.pdf#page=3" target="_blank">Open question paper</a>
+                    <a class="button button-secondary" href="/view/past_papers_mariya_edexcel_physics_p1/june-2019-ms.pdf#page=5" target="_blank">Open marking scheme</a>
+                </div>
+            </div>
+</div><div class="section"><div class="source-title">From june-2019 | Page 12:</div>
+            <div class="question-item">
+                <div class="question-text">Q5 (a): A student investigates how the mass of the trolley affects the maximum vertical height, h, reached by the trolley.</div>
+                <div class="question-meta">📍 june-2019.pdf — Page 12</div>
+                <div class="button-row">
+                    <a class="button button-primary" href="/view/past_papers_mariya_edexcel_physics_p1/june-2019.pdf#page=12" target="_blank">Open question paper</a>
+                    <a class="button button-secondary" href="/view/past_papers_mariya_edexcel_physics_p1/june-2019-ms.pdf#page=18" target="_blank">Open marking scheme</a>
+                </div>
+            </div>
+</div><div class="section"><div class="source-title">From june-2019 | Page 13:</div>
+            <div class="question-item">
+                <div class="question-text">Q5 (b): The student states that the energy transferred by the spring is the same each time it is used.</div>
+                <div class="question-meta">📍 june-2019.pdf — Page 13</div>
+                <div class="button-row">
+                    <a class="button button-primary" href="/view/past_papers_mariya_edexcel_physics_p1/june-2019.pdf#page=13" target="_blank">Open question paper</a>
+                    <a class="button button-secondary" href="/view/past_papers_mariya_edexcel_physics_p1/june-2019-ms.pdf#page=18" target="_blank">Open marking scheme</a>
+                </div>
+            </div>
+</div><div class="section"><div class="source-title">From june-2019 | Page 21:</div>
+            <div class="question-item">
+                <div class="question-text">Q7 (a): The force that keeps an object moving in a circular path is known as the</div>
+                <div class="question-meta">📍 june-2019.pdf — Page 21</div>
+                <div class="button-row">
+                    <a class="button button-primary" href="/view/past_papers_mariya_edexcel_physics_p1/june-2019.pdf#page=21" target="_blank">Open question paper</a>
+                    <a class="button button-secondary" href="/view/past_papers_mariya_edexcel_physics_p1/june-2019-ms.pdf#page=10" target="_blank">Open marking scheme</a>
+                </div>
+            </div>
+</div><div class="section"><div class="source-title">From june-2019 | Page 21:</div>
+            <div class="question-item">
+                <div class="question-text">Q7 (b) (i): Draw an arrow on Figure 11 to show the direction of the force that keeps the object moving in a circular path.</div>
+                <div class="question-meta">📍 june-2019.pdf — Page 21</div>
+                <div class="button-row">
+                    <a class="button button-primary" href="/view/past_papers_mariya_edexcel_physics_p1/june-2019.pdf#page=21" target="_blank">Open question paper</a>
+                    <a class="button button-secondary" href="/view/past_papers_mariya_edexcel_physics_p1/june-2019-ms.pdf#page=10" target="_blank">Open marking scheme</a>
+                </div>
+            </div>
+</div><div class="section"><div class="source-title">From june-2019 | Page 21:</div>
+            <div class="question-item">
+                <div class="question-text">Q7 (b) (ii): The object in Figure 11 is moving at constant speed.</div>
+                <div class="question-meta">📍 june-2019.pdf — Page 21</div>
+                <div class="button-row">
+                    <a class="button button-primary" href="/view/past_papers_mariya_edexcel_physics_p1/june-2019.pdf#page=21" target="_blank">Open question paper</a>
+                    <a class="button button-secondary" href="/view/past_papers_mariya_edexcel_physics_p1/june-2019-ms.pdf#page=10" target="_blank">Open marking scheme</a>
+                </div>
+            </div>
+</div><div class="section"><div class="source-title">From june-2019 | Page 22:</div>
+            <div class="question-item">
+                <div class="question-text">Q7 (c) (i): Calculate the distance from P to Q.</div>
+                <div class="question-meta">📍 june-2019.pdf — Page 22</div>
+                <div class="button-row">
+                    <a class="button button-primary" href="/view/past_papers_mariya_edexcel_physics_p1/june-2019.pdf#page=22" target="_blank">Open question paper</a>
+                    <a class="button button-secondary" href="/view/past_papers_mariya_edexcel_physics_p1/june-2019-ms.pdf#page=10" target="_blank">Open marking scheme</a>
+                </div>
+            </div>
+</div><div class="section"><div class="source-title">From june-2019 | Page 23:</div>
+            <div class="question-item">
+                <div class="question-text">Q7 (c) (ii): Calculate the time taken for the skier to travel from P to Q.</div>
+                <div class="question-meta">📍 june-2019.pdf — Page 23</div>
+                <div class="button-row">
+                    <a class="button button-primary" href="/view/past_papers_mariya_edexcel_physics_p1/june-2019.pdf#page=23" target="_blank">Open question paper</a>
+                    <a class="button button-secondary" href="/view/past_papers_mariya_edexcel_physics_p1/june-2019-ms.pdf#page=10" target="_blank">Open marking scheme</a>
+                </div>
+            </div>
+</div><div class="section"><div class="source-title">From june-2020 | Page 4:</div>
+            <div class="question-item">
+                <div class="question-text">Q2 (a): Describe an energy transfer that occurs when the student lifts the toy car from the bench and places the toy car at the top of the slope.</div>
+                <div class="question-meta">📍 june-2020.pdf — Page 4</div>
+                <div class="button-row">
+                    <a class="button button-primary" href="/view/past_papers_mariya_edexcel_physics_p1/june-2020.pdf#page=4" target="_blank">Open question paper</a>
+                    <a class="button button-secondary" href="/view/past_papers_mariya_edexcel_physics_p1/june-2020-ms.pdf#page=6" target="_blank">Open marking scheme</a>
+                </div>
+            </div>
+</div><div class="section"><div class="source-title">From june-2020 | Page 6:</div>
+            <div class="question-item">
+                <div class="question-text">Q3 (a): Which of these is a vector?</div>
+                <div class="question-meta">📍 june-2020.pdf — Page 6</div>
+                <div class="button-row">
+                    <a class="button button-primary" href="/view/past_papers_mariya_edexcel_physics_p1/june-2020.pdf#page=6" target="_blank">Open question paper</a>
+                    <a class="button button-secondary" href="/view/past_papers_mariya_edexcel_physics_p1/june-2020-ms.pdf#page=9" target="_blank">Open marking scheme</a>
+                </div>
+            </div>
+</div><div class="section"><div class="source-title">From june-2020 | Page 6:</div>
+            <div class="question-item">
+                <div class="question-text">Q3 (b) (i): State the equation that relates acceleration to change in velocity and time taken.</div>
+                <div class="question-meta">📍 june-2020.pdf — Page 6</div>
+                <div class="button-row">
+                    <a class="button button-primary" href="/view/past_papers_mariya_edexcel_physics_p1/june-2020.pdf#page=6" target="_blank">Open question paper</a>
+                    <a class="button button-secondary" href="/view/past_papers_mariya_edexcel_physics_p1/june-2020-ms.pdf#page=9" target="_blank">Open marking scheme</a>
+                </div>
+            </div>
+</div><div class="section"><div class="source-title">From june-2020 | Page 6:</div>
+            <div class="question-item">
+                <div class="question-text">Q3 (b) (ii): A van accelerates from a velocity of 2 m / s to a velocity of 20 m / s in 12 s.</div>
+                <div class="question-meta">📍 june-2020.pdf — Page 6</div>
+                <div class="button-row">
+                    <a class="button button-primary" href="/view/past_papers_mariya_edexcel_physics_p1/june-2020.pdf#page=6" target="_blank">Open question paper</a>
+                    <a class="button button-secondary" href="/view/past_papers_mariya_edexcel_physics_p1/june-2020-ms.pdf#page=9" target="_blank">Open marking scheme</a>
+                </div>
+            </div>
+</div><div class="section"><div class="source-title">From june-2020 | Page 21:</div>
+            <div class="question-item">
+                <div class="question-text">Q9 (a) (i): The rocket has a mass of 5.5 × 105 kg and is travelling to the right at 14 km / s.</div>
+                <div class="question-meta">📍 june-2020.pdf — Page 21</div>
+                <div class="button-row">
+                    <a class="button button-primary" href="/view/past_papers_mariya_edexcel_physics_p1/june-2020.pdf#page=21" target="_blank">Open question paper</a>
+                    <a class="button button-secondary" href="/view/past_papers_mariya_edexcel_physics_p1/june-2020-ms.pdf#page=24" target="_blank">Open marking scheme</a>
+                </div>
+            </div>
+</div><div class="section"><div class="source-title">From june-2020 | Page 21:</div>
+            <div class="question-item">
+                <div class="question-text">Q9 (a) (ii): The asteroid has a momentum of 7.5 × 1010 kg m / s and a mass of 8.0 × 106 kg.</div>
+                <div class="question-meta">📍 june-2020.pdf — Page 21</div>
+                <div class="button-row">
+                    <a class="button button-primary" href="/view/past_papers_mariya_edexcel_physics_p1/june-2020.pdf#page=21" target="_blank">Open question paper</a>
+                    <a class="button button-secondary" href="/view/past_papers_mariya_edexcel_physics_p1/june-2020-ms.pdf#page=24" target="_blank">Open marking scheme</a>
+                </div>
+            </div>
+</div><div class="section"><div class="source-title">From june-2020 | Page 22:</div>
+            <div class="question-item">
+                <div class="question-text">Q9 (b): Explain how the student could investigate the effect of a crumple zone on the average force exerted during the collision.</div>
+                <div class="question-meta">📍 june-2020.pdf — Page 22</div>
+                <div class="button-row">
+                    <a class="button button-primary" href="/view/past_papers_mariya_edexcel_physics_p1/june-2020.pdf#page=22" target="_blank">Open question paper</a>
+                    <a class="button button-secondary" href="/view/past_papers_mariya_edexcel_physics_p1/june-2020-ms.pdf#page=25" target="_blank">Open marking scheme</a>
+                </div>
+            </div>
+</div><div class="section"><div class="source-title">From june-2020 | Page 24:</div>
+            <div class="question-item">
+                <div class="question-text">Q9 (c): Newton’s third law, when applied to the collision of the rocket and the asteroid as shown in Figure 12, can be stated as follows:</div>
+                <div class="question-meta">📍 june-2020.pdf — Page 24</div>
+                <div class="button-row">
+                    <a class="button button-primary" href="/view/past_papers_mariya_edexcel_physics_p1/june-2020.pdf#page=24" target="_blank">Open question paper</a>
+                    <a class="button button-secondary" href="/view/past_papers_mariya_edexcel_physics_p1/june-2020-ms.pdf#page=27" target="_blank">Open marking scheme</a>
+                </div>
+            </div>
+</div><div class="section"><div class="source-title">From june-2021 | Page 20:</div>
+            <div class="question-item">
+                <div class="question-text">Q6 (c): The force that the rocket engines produce remains constant during the first few seconds after take-off.</div>
+                <div class="question-meta">📍 june-2021.pdf — Page 20</div>
+                <div class="button-row">
+                    <a class="button button-primary" href="/view/past_papers_mariya_edexcel_physics_p1/june-2021.pdf#page=20" target="_blank">Open question paper</a>
+                    <a class="button button-secondary" href="/view/past_papers_mariya_edexcel_physics_p1/june-2021-ms.pdf#page=17" target="_blank">Open marking scheme</a>
+                </div>
+            </div>
+</div><div class="section"><div class="source-title">From june-2021 | Page 22:</div>
+            <div class="question-item">
+                <div class="question-text">Q7 (a): The ball is released and allowed to fall to the ground.</div>
+                <div class="question-meta">📍 june-2021.pdf — Page 22</div>
+                <div class="button-row">
+                    <a class="button button-primary" href="/view/past_papers_mariya_edexcel_physics_p1/june-2021.pdf#page=22" target="_blank">Open question paper</a>
+                    <a class="button button-secondary" href="/view/past_papers_mariya_edexcel_physics_p1/june-2021-ms.pdf#page=18" target="_blank">Open marking scheme</a>
+                </div>
+            </div>
+</div><div class="section"><div class="source-title">From june-2021 | Page 24:</div>
+            <div class="question-item">
+                <div class="question-text">Q7 (c) (i): The momentum of the box just before it hits the floor is 8.7 kg m/s.</div>
+                <div class="question-meta">📍 june-2021.pdf — Page 24</div>
+                <div class="button-row">
+                    <a class="button button-primary" href="/view/past_papers_mariya_edexcel_physics_p1/june-2021.pdf#page=24" target="_blank">Open question paper</a>
+                    <a class="button button-secondary" href="/view/past_papers_mariya_edexcel_physics_p1/june-2021-ms.pdf#page=18" target="_blank">Open marking scheme</a>
+                </div>
+            </div>
+</div><div class="section"><div class="source-title">From june-2021 | Page 24:</div>
+            <div class="question-item">
+                <div class="question-text">Q7 (c) (ii): State the magnitude and direction of the force exerted by the box on the floor.</div>
+                <div class="question-meta">📍 june-2021.pdf — Page 24</div>
+                <div class="button-row">
+                    <a class="button button-primary" href="/view/past_papers_mariya_edexcel_physics_p1/june-2021.pdf#page=24" target="_blank">Open question paper</a>
+                    <a class="button button-secondary" href="/view/past_papers_mariya_edexcel_physics_p1/june-2021-ms.pdf#page=18" target="_blank">Open marking scheme</a>
+                </div>
+            </div>
+</div><div class="section"><div class="source-title">From june-2021 | Page 25:</div>
+            <div class="question-item">
+                <div class="question-text">Q7 (d): At S the momentum of the ball is 0.40 kg m/s.</div>
+                <div class="question-meta">📍 june-2021.pdf — Page 25</div>
+                <div class="button-row">
+                    <a class="button button-primary" href="/view/past_papers_mariya_edexcel_physics_p1/june-2021.pdf#page=25" target="_blank">Open question paper</a>
+                    <a class="button button-secondary" href="/view/past_papers_mariya_edexcel_physics_p1/june-2021-ms.pdf#page=18" target="_blank">Open marking scheme</a>
+                </div>
+            </div>
+</div><div class="section"><div class="source-title">From june-2021 | Page 27:</div>
+            <div class="question-item">
+                <div class="question-text">Q8 (c): Explain why Vesta is accelerating even when it is travelling at a constant speed.</div>
+                <div class="question-meta">📍 june-2021.pdf — Page 27</div>
+                <div class="button-row">
+                    <a class="button button-primary" href="/view/past_papers_mariya_edexcel_physics_p1/june-2021.pdf#page=27" target="_blank">Open question paper</a>
+                    <a class="button button-secondary" href="/view/past_papers_mariya_edexcel_physics_p1/june-2021-ms.pdf#page=21" target="_blank">Open marking scheme</a>
+                </div>
+            </div>
+</div><div class="section"><div class="source-title">From june-2022 | Page 8:</div>
+            <div class="question-item">
+                <div class="question-text">Q3 (a) (i): The sign tells drivers to drive at a slower speed in wet weather.</div>
+                <div class="question-meta">📍 june-2022.pdf — Page 8</div>
+                <div class="button-row">
+                    <a class="button button-primary" href="/view/past_papers_mariya_edexcel_physics_p1/june-2022.pdf#page=8" target="_blank">Open question paper</a>
+                    <a class="button button-secondary" href="/view/past_papers_mariya_edexcel_physics_p1/june-2022-ms.pdf#page=7" target="_blank">Open marking scheme</a>
+                </div>
+            </div>
+</div><div class="section"><div class="source-title">From june-2022 | Page 14:</div>
+            <div class="question-item">
+                <div class="question-text">Q5 (a) (i): An aircraft starts from rest and accelerates along the runway for 36 s to reach take‑off velocity.</div>
+                <div class="question-meta">📍 june-2022.pdf — Page 14</div>
+                <div class="button-row">
+                    <a class="button button-primary" href="/view/past_papers_mariya_edexcel_physics_p1/june-2022.pdf#page=14" target="_blank">Open question paper</a>
+                    <a class="button button-secondary" href="/view/past_papers_mariya_edexcel_physics_p1/june-2022-ms.pdf#page=16" target="_blank">Open marking scheme</a>
+                </div>
+            </div>
+</div><div class="section"><div class="source-title">From june-2022 | Page 14:</div>
+            <div class="question-item">
+                <div class="question-text">Q5 (a) (ii): Calculate the distance the aircraft travels along the runway before take‑off.</div>
+                <div class="question-meta">📍 june-2022.pdf — Page 14</div>
+                <div class="button-row">
+                    <a class="button button-primary" href="/view/past_papers_mariya_edexcel_physics_p1/june-2022.pdf#page=14" target="_blank">Open question paper</a>
+                    <a class="button button-secondary" href="/view/past_papers_mariya_edexcel_physics_p1/june-2022-ms.pdf#page=16" target="_blank">Open marking scheme</a>
+                </div>
+            </div>
+</div><div class="section"><div class="source-title">From june-2022 | Page 21:</div>
+            <div class="question-item">
+                <div class="question-text">Q7 (a): Which of these is a unit of momentum?</div>
+                <div class="question-meta">📍 june-2022.pdf — Page 21</div>
+                <div class="button-row">
+                    <a class="button button-primary" href="/view/past_papers_mariya_edexcel_physics_p1/june-2022.pdf#page=21" target="_blank">Open question paper</a>
+                    <a class="button button-secondary" href="/view/past_papers_mariya_edexcel_physics_p1/june-2022-ms.pdf#page=22" target="_blank">Open marking scheme</a>
+                </div>
+            </div>
+</div><div class="section"><div class="source-title">From june-2022 | Page 21:</div>
+            <div class="question-item">
+                <div class="question-text">Q7 (b) (i): Describe an investigation the students could carry out to show that momentum is conserved when these two trolleys collide.</div>
+                <div class="question-meta">📍 june-2022.pdf — Page 21</div>
+                <div class="button-row">
+                    <a class="button button-primary" href="/view/past_papers_mariya_edexcel_physics_p1/june-2022.pdf#page=21" target="_blank">Open question paper</a>
+                    <a class="button button-secondary" href="/view/past_papers_mariya_edexcel_physics_p1/june-2022-ms.pdf#page=22" target="_blank">Open marking scheme</a>
+                </div>
+            </div>
+</div><div class="section"><div class="source-title">From june-2022 | Page 22:</div>
+            <div class="question-item">
+                <div class="question-text">Q7 (b) (ii): Give a reason for the runway being at a slope.</div>
+                <div class="question-meta">📍 june-2022.pdf — Page 22</div>
+                <div class="button-row">
+                    <a class="button button-primary" href="/view/past_papers_mariya_edexcel_physics_p1/june-2022.pdf#page=22" target="_blank">Open question paper</a>
+                    <a class="button button-secondary" href="/view/past_papers_mariya_edexcel_physics_p1/june-2022-ms.pdf#page=22" target="_blank">Open marking scheme</a>
+                </div>
+            </div>
+</div><div class="section"><div class="source-title">From june-2022 | Page 22:</div>
+            <div class="question-item">
+                <div class="question-text">Q7 (c) (i): Calculate the average force exerted by the ball on the racket.</div>
+                <div class="question-meta">📍 june-2022.pdf — Page 22</div>
+                <div class="button-row">
+                    <a class="button button-primary" href="/view/past_papers_mariya_edexcel_physics_p1/june-2022.pdf#page=22" target="_blank">Open question paper</a>
+                    <a class="button button-secondary" href="/view/past_papers_mariya_edexcel_physics_p1/june-2022-ms.pdf#page=22" target="_blank">Open marking scheme</a>
+                </div>
+            </div>
+</div><div class="section"><div class="source-title">From june-2022 | Page 23:</div>
+            <div class="question-item">
+                <div class="question-text">Q7 (c) (ii): Describe how Newton’s Third Law of Motion applies to the collision between the racket and the ball.</div>
+                <div class="question-meta">📍 june-2022.pdf — Page 23</div>
+                <div class="button-row">
+                    <a class="button button-primary" href="/view/past_papers_mariya_edexcel_physics_p1/june-2022.pdf#page=23" target="_blank">Open question paper</a>
+                    <a class="button button-secondary" href="/view/past_papers_mariya_edexcel_physics_p1/june-2022-ms.pdf#page=22" target="_blank">Open marking scheme</a>
+                </div>
+            </div>
+</div><div class="section"><div class="source-title">From june-2023 | Page 4:</div>
+            <div class="question-item">
+                <div class="question-text">Q2 (a): Which of these is a scalar quantity?</div>
+                <div class="question-meta">📍 june-2023.pdf — Page 4</div>
+                <div class="button-row">
+                    <a class="button button-primary" href="/view/past_papers_mariya_edexcel_physics_p1/june-2023.pdf#page=4" target="_blank">Open question paper</a>
+                    <a class="button button-secondary" href="/view/past_papers_mariya_edexcel_physics_p1/june-2023-ms.pdf#page=7" target="_blank">Open marking scheme</a>
+                </div>
+            </div>
+</div><div class="section"><div class="source-title">From june-2023 | Page 5:</div>
+            <div class="question-item">
+                <div class="question-text">Q2 (b) (i): Describe an investigation to show how the speed of the falling stack of cupcake cases depends on the number of cupcake cases in the stack.</div>
+                <div class="question-meta">📍 june-2023.pdf — Page 5</div>
+                <div class="button-row">
+                    <a class="button button-primary" href="/view/past_papers_mariya_edexcel_physics_p1/june-2023.pdf#page=5" target="_blank">Open question paper</a>
+                    <a class="button button-secondary" href="/view/past_papers_mariya_edexcel_physics_p1/june-2023-ms.pdf#page=7" target="_blank">Open marking scheme</a>
+                </div>
+            </div>
+</div><div class="section"><div class="source-title">From june-2023 | Page 5:</div>
+            <div class="question-item">
+                <div class="question-text">Q2 (b) (ii): A stack of cupcake cases has a mass of 0.005 kg.</div>
+                <div class="question-meta">📍 june-2023.pdf — Page 5</div>
+                <div class="button-row">
+                    <a class="button button-primary" href="/view/past_papers_mariya_edexcel_physics_p1/june-2023.pdf#page=5" target="_blank">Open question paper</a>
+                    <a class="button button-secondary" href="/view/past_papers_mariya_edexcel_physics_p1/june-2023-ms.pdf#page=7" target="_blank">Open marking scheme</a>
+                </div>
+            </div>
+</div><div class="section"><div class="source-title">From june-2023 | Page 6:</div>
+            <div class="question-item">
+                <div class="question-text">Q2 (b) (iii): Draw an arrow on Figure 4 to show the force due to air resistance on the cupcake case.</div>
+                <div class="question-meta">📍 june-2023.pdf — Page 6</div>
+                <div class="button-row">
+                    <a class="button button-primary" href="/view/past_papers_mariya_edexcel_physics_p1/june-2023.pdf#page=6" target="_blank">Open question paper</a>
+                    <a class="button button-secondary" href="/view/past_papers_mariya_edexcel_physics_p1/june-2023-ms.pdf#page=7" target="_blank">Open marking scheme</a>
+                </div>
+            </div>
+</div><div class="section"><div class="source-title">From june-2023 | Page 6:</div>
+            <div class="question-item">
+                <div class="question-text">Q2 (b) (iv): State the value of the acceleration of the cupcake case when it is falling at a constant velocity.</div>
+                <div class="question-meta">📍 june-2023.pdf — Page 6</div>
+                <div class="button-row">
+                    <a class="button button-primary" href="/view/past_papers_mariya_edexcel_physics_p1/june-2023.pdf#page=6" target="_blank">Open question paper</a>
+                    <a class="button button-secondary" href="/view/past_papers_mariya_edexcel_physics_p1/june-2023-ms.pdf#page=8" target="_blank">Open marking scheme</a>
+                </div>
+            </div>
+</div><div class="section"><div class="source-title">From june-2023 | Page 7:</div>
+            <div class="question-item">
+                <div class="question-text">Q3 (a) (i): The football gains 11 J of gravitational potential energy as it moves from the ground to the wall.</div>
+                <div class="question-meta">📍 june-2023.pdf — Page 7</div>
+                <div class="button-row">
+                    <a class="button button-primary" href="/view/past_papers_mariya_edexcel_physics_p1/june-2023.pdf#page=7" target="_blank">Open question paper</a>
+                    <a class="button button-secondary" href="/view/past_papers_mariya_edexcel_physics_p1/june-2023-ms.pdf#page=9" target="_blank">Open marking scheme</a>
+                </div>
+            </div>
+</div><div class="section"><div class="source-title">From june-2023 | Page 7:</div>
+            <div class="question-item">
+                <div class="question-text">Q3 (a) (ii): Calculate the kinetic energy of the football when it is moving at a velocity of 12 m / s.</div>
+                <div class="question-meta">📍 june-2023.pdf — Page 7</div>
+                <div class="button-row">
+                    <a class="button button-primary" href="/view/past_papers_mariya_edexcel_physics_p1/june-2023.pdf#page=7" target="_blank">Open question paper</a>
+                    <a class="button button-secondary" href="/view/past_papers_mariya_edexcel_physics_p1/june-2023-ms.pdf#page=10" target="_blank">Open marking scheme</a>
+                </div>
+            </div>
+</div><div class="section"><div class="source-title">From june-2023 | Page 8:</div>
+            <div class="question-item">
+                <div class="question-text">Q3 (a) (iii): Describe the energy transfers that happen when the ball hits the wall.</div>
+                <div class="question-meta">📍 june-2023.pdf — Page 8</div>
+                <div class="button-row">
+                    <a class="button button-primary" href="/view/past_papers_mariya_edexcel_physics_p1/june-2023.pdf#page=8" target="_blank">Open question paper</a>
+                    <a class="button button-secondary" href="/view/past_papers_mariya_edexcel_physics_p1/june-2023-ms.pdf#page=9" target="_blank">Open marking scheme</a>
+                </div>
+            </div>
+</div><div class="section"><div class="source-title">From june-2023 | Page 8:</div>
+            <div class="question-item">
+                <div class="question-text">Q3 (b): Calculate the distance the stone has fallen when its velocity has reached 17 m / s.</div>
+                <div class="question-meta">📍 june-2023.pdf — Page 8</div>
+                <div class="button-row">
+                    <a class="button button-primary" href="/view/past_papers_mariya_edexcel_physics_p1/june-2023.pdf#page=8" target="_blank">Open question paper</a>
+                    <a class="button button-secondary" href="/view/past_papers_mariya_edexcel_physics_p1/june-2023-ms.pdf#page=11" target="_blank">Open marking scheme</a>
+                </div>
+            </div>
+</div><div class="section"><div class="source-title">From june-2023 | Page 24:</div>
+            <div class="question-item">
+                <div class="question-text">Q9 (a): An atom of mass 6.6 × 10–26 kg is moving with a velocity of 480 m / s.</div>
+                <div class="question-meta">📍 june-2023.pdf — Page 24</div>
+                <div class="button-row">
+                    <a class="button button-primary" href="/view/past_papers_mariya_edexcel_physics_p1/june-2023.pdf#page=24" target="_blank">Open question paper</a>
+                    <a class="button button-secondary" href="/view/past_papers_mariya_edexcel_physics_p1/june-2023-ms.pdf#page=6" target="_blank">Open marking scheme</a>
+                </div>
+            </div>
+</div><div class="section"><div class="source-title">From june-2023 | Page 24:</div>
+            <div class="question-item">
+                <div class="question-text">Q9 (b): Calculate the force exerted on the ball by the wall.</div>
+                <div class="question-meta">📍 june-2023.pdf — Page 24</div>
+                <div class="button-row">
+                    <a class="button button-primary" href="/view/past_papers_mariya_edexcel_physics_p1/june-2023.pdf#page=24" target="_blank">Open question paper</a>
+                    <a class="button button-secondary" href="/view/past_papers_mariya_edexcel_physics_p1/june-2023-ms.pdf#page=6" target="_blank">Open marking scheme</a>
+                </div>
+            </div>
+</div><div class="section"><div class="source-title">From june-2023 | Page 25:</div>
+            <div class="question-item">
+                <div class="question-text">Q9 (c): Describe a procedure the student could use to investigate how the acceleration of the trolley depends on the force applied to the trolley.</div>
+                <div class="question-meta">📍 june-2023.pdf — Page 25</div>
+                <div class="button-row">
+                    <a class="button button-primary" href="/view/past_papers_mariya_edexcel_physics_p1/june-2023.pdf#page=25" target="_blank">Open question paper</a>
+                    <a class="button button-secondary" href="/view/past_papers_mariya_edexcel_physics_p1/june-2023-ms.pdf#page=6" target="_blank">Open marking scheme</a>
+                </div>
+            </div>
+</div><div class="section"><div class="source-title">From june-2024 | Page 4:</div>
+            <div class="question-item">
+                <div class="question-text">Q2 (a): The gravitational potential energy of the person decreases by 980 J.</div>
+                <div class="question-meta">📍 june-2024.pdf — Page 4</div>
+                <div class="button-row">
+                    <a class="button button-primary" href="/view/past_papers_mariya_edexcel_physics_p1/june-2024.pdf#page=4" target="_blank">Open question paper</a>
+                    <a class="button button-secondary" href="/view/past_papers_mariya_edexcel_physics_p1/june-2024-ms.pdf#page=6" target="_blank">Open marking scheme</a>
+                </div>
+            </div>
+</div><div class="section"><div class="source-title">From june-2024 | Page 5:</div>
+            <div class="question-item">
+                <div class="question-text">Q2 (b): The kinetic energy, KE, of the person at Q is 950 J.</div>
+                <div class="question-meta">📍 june-2024.pdf — Page 5</div>
+                <div class="button-row">
+                    <a class="button button-primary" href="/view/past_papers_mariya_edexcel_physics_p1/june-2024.pdf#page=5" target="_blank">Open question paper</a>
+                    <a class="button button-secondary" href="/view/past_papers_mariya_edexcel_physics_p1/june-2024-ms.pdf#page=7" target="_blank">Open marking scheme</a>
+                </div>
+            </div>
+</div><div class="section"><div class="source-title">From june-2024 | Page 9:</div>
+            <div class="question-item">
+                <div class="question-text">Q3 (b) (i): Calculate the time taken for this acceleration.</div>
+                <div class="question-meta">📍 june-2024.pdf — Page 9</div>
+                <div class="button-row">
+                    <a class="button button-primary" href="/view/past_papers_mariya_edexcel_physics_p1/june-2024.pdf#page=9" target="_blank">Open question paper</a>
+                    <a class="button button-secondary" href="/view/past_papers_mariya_edexcel_physics_p1/june-2024-ms.pdf#page=4" target="_blank">Open marking scheme</a>
+                </div>
+            </div>
+</div><div class="section"><div class="source-title">From june-2024 | Page 9:</div>
+            <div class="question-item">
+                <div class="question-text">Q3 (b) (ii): Calculate the distance the motorcycle travels as it slows down to a stop.</div>
+                <div class="question-meta">📍 june-2024.pdf — Page 9</div>
+                <div class="button-row">
+                    <a class="button button-primary" href="/view/past_papers_mariya_edexcel_physics_p1/june-2024.pdf#page=9" target="_blank">Open question paper</a>
+                    <a class="button button-secondary" href="/view/past_papers_mariya_edexcel_physics_p1/june-2024-ms.pdf#page=4" target="_blank">Open marking scheme</a>
+                </div>
+            </div>
+</div><div class="section"><div class="source-title">From june-2024 | Page 10:</div>
+            <div class="question-item">
+                <div class="question-text">Q3 (c): Explain one factor, other than the time of the collision, that would affect the force on the car in the collision.</div>
+                <div class="question-meta">📍 june-2024.pdf — Page 10</div>
+                <div class="button-row">
+                    <a class="button button-primary" href="/view/past_papers_mariya_edexcel_physics_p1/june-2024.pdf#page=10" target="_blank">Open question paper</a>
+                    <a class="button button-secondary" href="/view/past_papers_mariya_edexcel_physics_p1/june-2024-ms.pdf#page=11" target="_blank">Open marking scheme</a>
+                </div>
+            </div>
+</div><div class="section"><div class="source-title">From june-2024 | Page 27:</div>
+            <div class="question-item">
+                <div class="question-text">Q9 (a) (i): Which arrow in Figure 13 shows the direction of the centripetal force on the ball?</div>
+                <div class="question-meta">📍 june-2024.pdf — Page 27</div>
+                <div class="button-row">
+                    <a class="button button-primary" href="/view/past_papers_mariya_edexcel_physics_p1/june-2024.pdf#page=27" target="_blank">Open question paper</a>
+                    <a class="button button-secondary" href="/view/past_papers_mariya_edexcel_physics_p1/june-2024-ms.pdf#page=26" target="_blank">Open marking scheme</a>
+                </div>
+            </div>
+</div><div class="section"><div class="source-title">From june-2024 | Page 27:</div>
+            <div class="question-item">
+                <div class="question-text">Q9 (a) (ii): The ball is moving at constant speed. Give one reason why the velocity of the ball is continuously changing.</div>
+                <div class="question-meta">📍 june-2024.pdf — Page 27</div>
+                <div class="button-row">
+                    <a class="button button-primary" href="/view/past_papers_mariya_edexcel_physics_p1/june-2024.pdf#page=27" target="_blank">Open question paper</a>
+                    <a class="button button-secondary" href="/view/past_papers_mariya_edexcel_physics_p1/june-2024-ms.pdf#page=26" target="_blank">Open marking scheme</a>
+                </div>
+            </div>
+</div><div class="section"><div class="source-title">From june-2024 | Page 28:</div>
+            <div class="question-item">
+                <div class="question-text">Q9 (b): Calculate the time taken for the gymnast to come to rest.</div>
+                <div class="question-meta">📍 june-2024.pdf — Page 28</div>
+                <div class="button-row">
+                    <a class="button button-primary" href="/view/past_papers_mariya_edexcel_physics_p1/june-2024.pdf#page=28" target="_blank">Open question paper</a>
+                    <a class="button button-secondary" href="/view/past_papers_mariya_edexcel_physics_p1/june-2024-ms.pdf#page=26" target="_blank">Open marking scheme</a>
+                </div>
+            </div>
+</div><div class="section"><div class="source-title">From june-2024 | Page 29:</div>
+            <div class="question-item">
+                <div class="question-text">Q9 (c): Explain how momentum and energy are both conserved in this collision.</div>
+                <div class="question-meta">📍 june-2024.pdf — Page 29</div>
+                <div class="button-row">
+                    <a class="button button-primary" href="/view/past_papers_mariya_edexcel_physics_p1/june-2024.pdf#page=29" target="_blank">Open question paper</a>
+                    <a class="button button-secondary" href="/view/past_papers_mariya_edexcel_physics_p1/june-2024-ms.pdf#page=26" target="_blank">Open marking scheme</a>
+                </div>
+            </div>
+</div>
+        </div>
+        <div class="footer">
+            Generated by PaperCode | Open questions and marking schemes locally
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,212 @@
+From june-2019 | Page 2:
+- Q1 (a): The work done to bring a car to rest is given by the equation
+work done = braking force × braking distance
+Which of these graphs is correct for the car if a constant braking force is applied?
+From june-2019 | Page 2:
+- Q1 (b): Before the car brakes it has kinetic energy.
+The kinetic energy decreases as it brakes.
+State what happens to the kinetic energy during braking.
+From june-2019 | Page 3:
+- Q1 (c): The graph in Figure 1 shows how the braking distance, d, of a car depends on the velocity, v, of the car when the brakes are first applied.
+An equation relating braking distance, d, to velocity, v, is
+d = v
+C
+2
+where C is a constant.
+Use the equation and data from the graph in Figure 1 to calculate a value for C.
+Give a unit for C.
+From june-2019 | Page 12:
+- Q5 (a): A student investigates how the mass of the trolley affects the maximum vertical height, h, reached by the trolley.
+State the measurements the student should make to complete the investigation.
+You should make use of the equipment shown in Figure 5 and any other equipment that is needed.
+From june-2019 | Page 13:
+- Q5 (b): The student states that the energy transferred by the spring is the same each time it is used.
+Use data from any two points on the graph in Figure 6 to support this statement.
+From june-2019 | Page 21:
+- Q7 (a): The force that keeps an object moving in a circular path is known as the
+From june-2019 | Page 21:
+- Q7 (b) (i): Draw an arrow on Figure 11 to show the direction of the force that keeps the object moving in a circular path.
+From june-2019 | Page 21:
+- Q7 (b) (ii): The object in Figure 11 is moving at constant speed.
+Explain why it is not moving with constant velocity.
+From june-2019 | Page 22:
+- Q7 (c) (i): Calculate the distance from P to Q.
+Use an equation selected from the list of equations at the end of this paper.
+From june-2019 | Page 23:
+- Q7 (c) (ii): Calculate the time taken for the skier to travel from P to Q.
+From june-2020 | Page 4:
+- Q2 (a): Describe an energy transfer that occurs when the student lifts the toy car from the bench and places the toy car at the top of the slope.
+From june-2020 | Page 6:
+- Q3 (a): Which of these is a vector?
+From june-2020 | Page 6:
+- Q3 (b) (i): State the equation that relates acceleration to change in velocity and time taken.
+From june-2020 | Page 6:
+- Q3 (b) (ii): A van accelerates from a velocity of 2 m / s to a velocity of 20 m / s in 12 s.
+Calculate the acceleration of the van.
+From june-2020 | Page 21:
+- Q9 (a) (i): The rocket has a mass of 5.5 × 105 kg and is travelling to the right at 14 km / s.
+Which of these is a correct calculation of the momentum of the rocket in kg m / s?
+Use the equation
+p = m × v
+From june-2020 | Page 21:
+- Q9 (a) (ii): The asteroid has a momentum of 7.5 × 1010 kg m / s and a mass of 8.0 × 106 kg.
+Calculate the speed of the asteroid.
+From june-2020 | Page 22:
+- Q9 (b): Explain how the student could investigate the effect of a crumple zone on the average force exerted during the collision.
+Your explanation should include:
+• how to determine the force (you may wish to refer to an equation from the list of equations at the end of this paper)
+• how the effect of crumple zones may be shown in the investigation
+• precautions that may be necessary to achieve accurate results.
+From june-2020 | Page 24:
+- Q9 (c): Newton’s third law, when applied to the collision of the rocket and the asteroid as shown in Figure 12, can be stated as follows:
+The force exerted by the rocket on the asteroid is equal and opposite to the force exerted by the asteroid on the rocket.
+Explain how this statement links to the conservation of momentum in the collision.
+From june-2021 | Page 20:
+- Q6 (c): The force that the rocket engines produce remains constant during the first few seconds after take-off.
+Explain what happens to the acceleration during the first few seconds.
+From june-2021 | Page 22:
+- Q7 (a): The ball is released and allowed to fall to the ground.
+The height h is 1.4 m.
+Calculate the time, t, for the ball to reach the ground.
+Use the equation
+t
+h
+g
+2
+2
+=
+g = 10 m/s2
+From june-2021 | Page 24:
+- Q7 (c) (i): The momentum of the box just before it hits the floor is 8.7 kg m/s.
+The box comes to rest 0.35 s after it first hits the floor.
+Calculate the magnitude of the force exerted by the floor on the box.
+Use an equation selected from the list of equations at the end of this paper.
+From june-2021 | Page 24:
+- Q7 (c) (ii): State the magnitude and direction of the force exerted by the box on the floor.
+From june-2021 | Page 25:
+- Q7 (d): At S the momentum of the ball is 0.40 kg m/s.
+Calculate the mass of the ball.
+Acceleration due to gravity, g, = 10 m / s2
+From june-2021 | Page 27:
+- Q8 (c): Explain why Vesta is accelerating even when it is travelling at a constant speed.
+From june-2022 | Page 8:
+- Q3 (a) (i): The sign tells drivers to drive at a slower speed in wet weather.
+Explain why it is safer for drivers to drive at a slower speed in wet weather.
+From june-2022 | Page 14:
+- Q5 (a) (i): An aircraft starts from rest and accelerates along the runway for 36 s to reach take‑off velocity.
+Take‑off velocity for this aircraft is 82 m/s.
+Show that the acceleration of the aircraft along the runway is about 2 m/s2 .
+Assume the acceleration is constant.
+From june-2022 | Page 14:
+- Q5 (a) (ii): Calculate the distance the aircraft travels along the runway before take‑off.
+Use the equation
+v2 – u2 = 2ax
+From june-2022 | Page 21:
+- Q7 (a): Which of these is a unit of momentum?
+From june-2022 | Page 21:
+- Q7 (b) (i): Describe an investigation the students could carry out to show that momentum is conserved when these two trolleys collide.
+You may add to the diagram to help with your answer.
+From june-2022 | Page 22:
+- Q7 (b) (ii): Give a reason for the runway being at a slope.
+From june-2022 | Page 22:
+- Q7 (c) (i): Calculate the average force exerted by the ball on the racket.
+Use the equation
+F
+mv
+mu
+t
+=
+−
+From june-2022 | Page 23:
+- Q7 (c) (ii): Describe how Newton’s Third Law of Motion applies to the collision between the racket and the ball.
+From june-2023 | Page 4:
+- Q2 (a): Which of these is a scalar quantity?
+From june-2023 | Page 5:
+- Q2 (b) (i): Describe an investigation to show how the speed of the falling stack of cupcake cases depends on the number of cupcake cases in the stack.
+From june-2023 | Page 5:
+- Q2 (b) (ii): A stack of cupcake cases has a mass of 0.005 kg.
+Calculate the weight, in newtons, of the stack of cupcake cases.
+Gravitational field strength = 10 N / kg
+Use the equation
+W = mg
+From june-2023 | Page 6:
+- Q2 (b) (iii): Draw an arrow on Figure 4 to show the force due to air resistance on the cupcake case.
+From june-2023 | Page 6:
+- Q2 (b) (iv): State the value of the acceleration of the cupcake case when it is falling at a constant velocity.
+From june-2023 | Page 7:
+- Q3 (a) (i): The football gains 11 J of gravitational potential energy as it moves from the ground to the wall.
+Calculate the height at which the ball hits the wall.
+Gravitational field strength = 10 N / kg
+Use the equation
+∆GPE = m × g × ∆h
+From june-2023 | Page 7:
+- Q3 (a) (ii): Calculate the kinetic energy of the football when it is moving at a velocity of 12 m / s.
+Use the equation
+KE = 1
+2 × m × v2
+From june-2023 | Page 8:
+- Q3 (a) (iii): Describe the energy transfers that happen when the ball hits the wall.
+From june-2023 | Page 8:
+- Q3 (b): Calculate the distance the stone has fallen when its velocity has reached 17 m / s.
+From june-2023 | Page 24:
+- Q9 (a): An atom of mass 6.6 × 10–26 kg is moving with a velocity of 480 m / s.
+Calculate the momentum of the atom.
+From june-2023 | Page 24:
+- Q9 (b): Calculate the force exerted on the ball by the wall.
+Use an equation selected from the list of equations at the end of the paper.
+From june-2023 | Page 25:
+- Q9 (c): Describe a procedure the student could use to investigate how the acceleration of the trolley depends on the force applied to the trolley.
+You may add to the diagram in Figure 19 to help your answer.
+From june-2024 | Page 4:
+- Q2 (a): The gravitational potential energy of the person decreases by 980 J.
+The mass of the person is 35 kg.
+Calculate h, the height of the ramp.
+Use g = 10 N/kg.
+Use the equation
+change in gravitational potential energy = m
+g
+h
+×
+×
+From june-2024 | Page 5:
+- Q2 (b): The kinetic energy, KE, of the person at Q is 950 J.
+The mass of the person is 35 kg.
+Calculate the velocity of the person at Q.
+Use the equation
+v
+KE
+m
+2
+2
+=
+From june-2024 | Page 9:
+- Q3 (b) (i): Calculate the time taken for this acceleration.
+Use the equation
+time taken = change in velocity
+acceleration
+From june-2024 | Page 9:
+- Q3 (b) (ii): Calculate the distance the motorcycle travels as it slows down to a stop.
+Use the equation
+v
+u
+a
+x
+2
+2
+2
+=
+From june-2024 | Page 10:
+- Q3 (c): Explain one factor, other than the time of the collision, that would affect the force on the car in the collision.
+Your explanation should refer to an equation in the Equation Booklet.
+From june-2024 | Page 27:
+- Q9 (a) (i): Which arrow in Figure 13 shows the direction of the centripetal force on the ball?
+From june-2024 | Page 27:
+- Q9 (a) (ii): The ball is moving at constant speed. Give one reason why the velocity of the ball is continuously changing.
+From june-2024 | Page 28:
+- Q9 (b): Calculate the time taken for the gymnast to come to rest.
+Give your answer to an appropriate number of significant figures.
+Use the equation
+force = change in momentum
+time
+From june-2024 | Page 29:
+- Q9 (c): Explain how momentum and energy are both conserved in this collision.
