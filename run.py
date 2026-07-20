@@ -43,40 +43,38 @@ OUTPUT_DIR_PDFS.mkdir(exist_ok=True)
 OUTPUT_DIR_HTML.mkdir(exist_ok=True)
 OUTPUT_DIR_REPORTS.mkdir(exist_ok=True)
 
-CORAL  = "\033[38;2;210;100;80m"
-CORAL2 = "\033[38;2;240;140;110m"
-DARK   = "\033[38;2;80;40;30m"
-RESET  = "\033[0m"
+# ── Pastel palette (truecolor) ──────────────────────────────
+LAVENDER = "\033[38;2;168;85;247m"   # vivid lavender (readable)
+SKY      = "\033[38;2;14;165;233m"   # vivid sky blue
+SUNFLOWER= "\033[38;2;234;179;8m"     # warm yellow
+PEACH    = "\033[38;2;251;146;60m"    # peach
+CORAL    = "\033[38;2;239;68;68m"     # coral red
+MINT     = "\033[38;2;16;185;129m"   # mint green
+GRAPE    = "\033[38;2;124;58;237m"    # grape purple
+INK      = "\033[38;2;63;63;70m"      # soft ink (dark)
+RESET    = "\033[0m"
 
 def clear():
     os.system("cls" if os.name == "nt" else "clear")
 
 def print_banner():
     if HAS_FIG:
-        code  = pyfiglet.figlet_format("ALIYAN CODE",  font="larry3d")
+        code  = pyfiglet.figlet_format("PaperCode", font="small")
     else:
-        code  = "  ALIYAN CODE\n"
-
-    def render_3d(text):
-        lines = text.splitlines()
-        for line in lines:
-            print(DARK + "   " + line + RESET)
-        rows = len(lines)
-        print(f"\033[{rows}A", end="")
-        for line in lines:
-            print(CORAL + line + RESET)
+        code  = "  PaperCode\n"
 
     print()
-    render_3d(code)
+    for line in code.splitlines():
+        print(LAVENDER + "  " + line + RESET)
     print()
 
 def print_info_box():
-    msg = "  *  PaperCode — map past paper questions to your syllabus  "
-    border = "─" * len(msg)
+    msg = "  map past paper questions to your syllabus  "
+    border = "━" * len(msg)
     if HAS_COLOR:
-        print(Fore.YELLOW + "  ┌" + border + "┐" + Style.RESET_ALL)
-        print(Fore.YELLOW + "  │" + Style.RESET_ALL + Style.BRIGHT + msg + Style.RESET_ALL + Fore.YELLOW + "│" + Style.RESET_ALL)
-        print(Fore.YELLOW + "  └" + border + "┘" + Style.RESET_ALL)
+        print(SKY + "  ┏" + border + "┓" + RESET)
+        print(SKY + "  ┃" + RESET + Style.BRIGHT + SUNFLOWER + msg + RESET + SKY + "┃" + RESET)
+        print(SKY + "  ┗" + border + "┛" + RESET)
     else:
         print("  +" + border + "+")
         print("  |" + msg + "|")
@@ -85,10 +83,10 @@ def print_info_box():
 
 def print_tips():
     if HAS_COLOR:
-        print(f"  {Style.BRIGHT}Tips for getting started:{Style.RESET_ALL}")
-        print(f"  {Fore.WHITE}1. Select your past papers folder from the list when prompted.{Style.RESET_ALL}")
-        print(f"  {Fore.WHITE}2. Paste your syllabus when prompted — be as detailed as possible.{Style.RESET_ALL}")
-        print(f"  {Fore.WHITE}3. Your report will be saved to  output/  when done.{Style.RESET_ALL}")
+        print(f"  {Style.BRIGHT}{GRAPE}Tips for getting started:{RESET}")
+        print(f"  {MINT}1.{RESET} Select your past papers folder from the list when prompted.")
+        print(f"  {MINT}2.{RESET} Paste your syllabus when prompted — be as detailed as possible.")
+        print(f"  {MINT}3.{RESET} Your report will be saved to  output/  when done.")
     else:
         print("  Tips for getting started:")
         print("  1. Select your past papers folder from the list when prompted.")
@@ -97,15 +95,15 @@ def print_tips():
     print()
 
 def divider():
-    line = "  " + "─" * 62
-    print((Fore.WHITE + Style.DIM + line + Style.RESET_ALL) if HAS_COLOR else line)
+    line = "  " + "•" * 62
+    print((Style.DIM + line + Style.RESET_ALL) if HAS_COLOR else line)
 
 def step(msg):
-    sym = (CORAL + "◆ " + RESET) if HAS_COLOR else "* "
+    sym = (PEACH + "▸ " + RESET) if HAS_COLOR else "* "
     print(f"  {sym}{msg}")
 
 def ok(msg):
-    col = (Fore.GREEN + Style.BRIGHT) if HAS_COLOR else ""
+    col = (MINT + Style.BRIGHT) if HAS_COLOR else ""
     rst = Style.RESET_ALL if HAS_COLOR else ""
     print(f"  {col}✔ {msg}{rst}")
 
