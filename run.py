@@ -92,7 +92,7 @@ def print_tips():
     if HAS_COLOR:
         print(f"  {Style.BRIGHT}{GRAPE}Tips for getting started:{RESET}")
         print(f"  {MINT}1.{RESET} Select your past papers folder from the list when prompted.")
-        print(f"  {MINT}2.{RESET} Paste your syllabus when prompted — be as detailed as possible.")
+        print(f"  {MINT}2.{RESET} Paste your syllabus when prompted - be as detailed as possible.")
         print(f"  {MINT}3.{RESET} Your report will be saved to  output/  when done.")
     else:
         print("  Tips for getting started:")
@@ -102,17 +102,17 @@ def print_tips():
     print()
 
 def divider():
-    line = "  " + "•" * 62
+    line = "  " + "-" * 62
     print((Style.DIM + line + Style.RESET_ALL) if HAS_COLOR else line)
 
 def step(msg):
-    sym = (PEACH + "▸ " + RESET) if HAS_COLOR else "* "
+    sym = (PEACH + "> " + RESET) if HAS_COLOR else "* "
     print(f"  {sym}{msg}")
 
 def ok(msg):
     col = (MINT + Style.BRIGHT) if HAS_COLOR else ""
     rst = Style.RESET_ALL if HAS_COLOR else ""
-    print(f"  {col}✔ {msg}{rst}")
+    print(f"  {col}[OK] {msg}{rst}")
 
 def generate_html_report(result, pdfs, output_dir, timestamp, syllabus):
     """Generate an interactive HTML report with clickable PDF links."""
@@ -217,7 +217,7 @@ def generate_html_report(result, pdfs, output_dir, timestamp, syllabus):
 def err(msg):
     col = (CORAL + Style.BRIGHT) if HAS_COLOR else ""
     rst = Style.RESET_ALL if HAS_COLOR else ""
-    print(f"  {col}✘ {msg}{rst}")
+    print(f"  {col}[ERROR] {msg}{rst}")
     sys.exit(1)
 
 def sanitize_filename(text, max_length=100):
@@ -337,7 +337,7 @@ def main():
     for pdf in pdfs:
         col = (SKY + Style.DIM) if HAS_COLOR else ""
         rst = RESET if HAS_COLOR else ""
-        print(f"    {col}↳ {pdf.name}{rst}")
+        print(f"    {col}> {pdf.name}{rst}")
         doc  = fitz.open(str(pdf))
         papers_text += f"\n\n=== {pdf.stem} ===\n"
         for page_num, page in enumerate(doc, 1):
@@ -393,7 +393,7 @@ CRITICAL RULES:
     html_path = generate_html_report(result, pdfs, OUTPUT_DIR_HTML, ts, syllabus)
     ok(f"Interactive HTML saved → {html_path}")
     if HAS_COLOR:
-        print(f"  {SKY}→ Open this file in your browser to view clickable links{RESET}")
+        print(f"  {SKY}> Open this file in your browser to view clickable links{RESET}")
 
     print()
     divider()
