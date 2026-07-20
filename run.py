@@ -92,23 +92,23 @@ def print_info_box():
 
 def print_tips():
     if HAS_COLOR:
-        print(f"  {Style.BRIGHT}{GRAPE}Tips for getting started:{RESET}")
-        print(f"  {MINT}1.{RESET} Select your past papers folder from the list when prompted.")
-        print(f"  {MINT}2.{RESET} Paste your syllabus when prompted - be as detailed as possible.")
-        print(f"  {MINT}3.{RESET} Your report will be saved to  output/  when done.")
+        print(f"  {Style.BRIGHT}{INDIGO}Tips for getting started:{RESET}")
+        print(f"  {PINK}1.{RESET} Select your past papers folder from the list when prompted.")
+        print(f"  {PINK}2.{RESET} Paste your syllabus when prompted - be as detailed as possible.")
+        print(f"  {PINK}3.{RESET} Your report will be saved to  output/  when done.")
     else:
         print("  Tips for getting started:")
         print("  1. Select your past papers folder from the list when prompted.")
-        print("  2. Paste your syllabus when prompted — be as detailed as possible.")
+        print("  2. Paste your syllabus when prompted - be as detailed as possible.")
         print("  3. Your report will be saved to  output/  when done.")
     print()
 
 def divider():
     line = "  " + "-" * 62
-    print((Style.DIM + line + Style.RESET_ALL) if HAS_COLOR else line)
+    print((Style.DIM + INK + line + RESET) if HAS_COLOR else line)
 
 def step(msg):
-    sym = (PEACH + "> " + RESET) if HAS_COLOR else "* "
+    sym = (CORAL + "> " + RESET) if HAS_COLOR else "* "
     print(f"  {sym}{msg}")
 
 def ok(msg):
