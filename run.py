@@ -230,12 +230,12 @@ def sanitize_filename(text, max_length=100):
     return filename
 
 def footer(pdf_count):
-    col = (Fore.WHITE + Style.DIM) if HAS_COLOR else ""
-    hi  = (Fore.CYAN + Style.BRIGHT) if HAS_COLOR else ""
+    dim = (Style.DIM + INK) if HAS_COLOR else ""
+    hi  = (GRAPE + Style.BRIGHT) if HAS_COLOR else ""
     rst = Style.RESET_ALL if HAS_COLOR else ""
     print()
     divider()
-    print(f"  {col}papers/{rst}  {hi}{pdf_count} PDF(s){rst}   {col}model/{rst}  {hi}llama-3.3-70b{rst}")
+    print(f"  {dim}papers/{rst}  {hi}{pdf_count} PDF(s){rst}   {dim}model/{rst}  {hi}llama-3.3-70b{rst}")
     divider()
 
 def main():
