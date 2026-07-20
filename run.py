@@ -117,50 +117,88 @@ def ok(msg):
 def generate_html_report(result, pdfs, output_dir, timestamp, syllabus):
     """Generate an interactive HTML report with clickable PDF links."""
     
+    # Pastel card colors to rotate through
+    pastel_cards = ["#FDE68A", "#D8B4FE", "#BAE6FD", "#86EFAC", "#FDBA74", "#FBCFE8"]
+    pastel_metas = ["#E0E7FF", "#E9D8FD", "#DBEAFE", "#D1FAE5", "#FFEDD5", "#FCE7F3"]
+
     html_content = """<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Past Paper Questions</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --bg-cream: #FFFEF5;
+            --ink: #111111;
+            --text-gray: #4B5563;
+            --brand-indigo: #6366F1;
+            --brand-pink: #EC4899;
+            --pastel-yellow: #FDE68A;
+            --pastel-lavender: #D8B4FE;
+            --pastel-blue: #BAE6FD;
+            --pastel-mint: #86EFAC;
+            --pastel-peach: #FDBA74;
+            --pastel-coral: #FF6B4A;
+            --pastel-pink: #FBCFE8;
+            --border-w: 2px;
+            --radius-card: 16px;
+            --radius-pill: 999px;
+            --shadow-hard: 4px 4px 0px var(--ink);
+            --shadow-hard-hover: 2px 2px 0px var(--ink);
+        }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-               background: #FFF8F0;
-               background-image: radial-gradient(circle at 10% 20%, #D8B4FE22 0%, transparent 40%),
-                                 radial-gradient(circle at 90% 80%, #BAE6FD22 0%, transparent 40%),
-                                 radial-gradient(circle at 50% 50%, #FDE68A11 0%, transparent 50%);
-               min-height: 100vh; padding: 40px 20px; }
+        body { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+               background: var(--bg-cream); color: var(--ink); min-height: 100vh; padding: 40px 20px;
+               position: relative; overflow-x: hidden; }
+        /* Decorative background blobs */
+        .blob { position: fixed; border-radius: 50%; z-index: 0; pointer-events: none; }
+        .blob-1 { width: 320px; height: 320px; background: var(--pastel-yellow); top: -80px; left: -100px; opacity: 0.5; }
+        .blob-2 { width: 260px; height: 260px; background: var(--pastel-lavender); bottom: -60px; right: -80px; opacity: 0.45; }
+        .blob-3 { width: 180px; height: 180px; background: var(--pastel-blue); top: 40%; right: 5%; opacity: 0.3; }
+        .tilt-square { position: fixed; z-index: 0; pointer-events: none; border: 2px solid var(--ink); }
+        .tilt-1 { width: 80px; height: 80px; background: var(--pastel-pink); top: 15%; right: 8%; transform: rotate(15deg); opacity: 0.6; }
+        .tilt-2 { width: 60px; height: 60px; background: var(--pastel-mint); bottom: 20%; left: 6%; transform: rotate(-12deg); opacity: 0.6; }
         .container { max-width: 900px; margin: 0 auto; background: #FFFFFF;
-                     border: 4px solid #1F2937; border-radius: 28px;
-                     box-shadow: 8px 8px 0 #1F2937; overflow: hidden; }
-        .header { background: #FDE68A; border-bottom: 4px solid #1F2937;
-                  padding: 44px 30px; text-align: center; position: relative; }
-        .header h1 { font-size: 2.4em; color: #1F2937; font-weight: 800; letter-spacing: -0.5px; }
-        .header p { color: #6B7280; margin-top: 8px; font-weight: 600; }
-        .badge { display: inline-block; background: #FF6B4A; color: #FFF; padding: 4px 14px;
-                 border-radius: 999px; font-size: 0.75em; font-weight: 700; margin-bottom: 14px;
-                 border: 2px solid #1F2937; }
+                     border: 3px solid var(--ink); border-radius: 24px;
+                     box-shadow: 8px 8px 0px var(--ink); overflow: hidden; position: relative; z-index: 1; }
+        .header { background: var(--pastel-yellow); border-bottom: 3px solid var(--ink);
+                  padding: 48px 30px; text-align: center; }
+        .badge-pill { display: inline-block; background: var(--brand-pink); color: #FFF; padding: 6px 18px;
+                      border-radius: var(--radius-pill); font-size: 0.72em; font-weight: 700; letter-spacing: 1px;
+                      text-transform: uppercase; margin-bottom: 18px; border: 2px solid var(--ink);
+                      box-shadow: 2px 2px 0px var(--ink); }
+        .header h1 { font-size: 2.6em; color: var(--ink); font-weight: 900; letter-spacing: -1px; line-height: 1.1; }
+        .header h1 .accent { color: var(--brand-indigo); }
+        .header p { color: var(--text-gray); margin-top: 12px; font-weight: 600; font-size: 1.05em; }
         .content { padding: 36px 30px; }
-        .question-item { background: #FDF2F8; border: 3px solid #1F2937; border-radius: 18px;
-                        padding: 18px 22px; margin-bottom: 16px; transition: transform 0.15s ease, box-shadow 0.15s ease;
-                        box-shadow: 4px 4px 0 #1F2937; }
-        .question-item:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 #1F2937; }
+        .question-item { border: 2px solid var(--ink); border-radius: var(--radius-card);
+                        padding: 20px 24px; margin-bottom: 18px; transition: transform 0.12s ease, box-shadow 0.12s ease;
+                        box-shadow: var(--shadow-hard); }
+        .question-item:hover { transform: translate(2px, 2px); box-shadow: var(--shadow-hard-hover); }
         .question-item a { text-decoration: none; color: inherit; display: block; }
-        .question-text { color: #1F2937; font-size: 1.02em; line-height: 1.6; font-weight: 600; }
-        .question-meta { font-size: 0.85em; color: #7C3AED; margin-top: 10px; font-weight: 700;
-                         display: inline-block; background: #EDE9FE; padding: 3px 10px;
-                         border-radius: 999px; border: 2px solid #1F2937; }
-        .no-match { text-align: center; padding: 60px 30px; color: #6B7280; font-size: 1.1em; font-weight: 600; }
-        .footer { background: #BAE6FD; border-top: 4px solid #1F2937; padding: 20px 30px;
-                  text-align: center; color: #1F2937; font-weight: 700; }
+        .question-text { color: var(--ink); font-size: 1.05em; line-height: 1.6; font-weight: 600; }
+        .question-meta { font-size: 0.82em; color: var(--brand-indigo); margin-top: 12px; font-weight: 700;
+                         display: inline-block; padding: 4px 14px; border-radius: var(--radius-pill);
+                         border: 2px solid var(--ink); box-shadow: 1px 1px 0px var(--ink); }
+        .no-match { text-align: center; padding: 70px 30px; color: var(--text-gray); font-size: 1.15em; font-weight: 600; }
+        .footer { background: var(--pastel-blue); border-top: 3px solid var(--ink); padding: 22px 30px;
+                  text-align: center; color: var(--ink); font-weight: 700; font-size: 0.9em; }
+        .footer .heart { color: var(--brand-pink); }
     </style>
 </head>
 <body>
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+    <div class="tilt-square tilt-1"></div>
+    <div class="tilt-square tilt-2"></div>
     <div class="container">
         <div class="header">
-            <span class="badge">📄 PAPER QUESTIONS</span>
-            <h1>Past Paper Questions</h1>
+            <span class="badge-pill">&#128202; Paper Questions</span>
+            <h1>Past Paper <span class="accent">Questions</span></h1>
             <p>Click any question to open the PDF</p>
         </div>
         <div class="content">
@@ -169,6 +207,7 @@ def generate_html_report(result, pdfs, output_dir, timestamp, syllabus):
     if "No questions match" in result:
         html_content += '<div class="no-match">No questions match the syllabus.</div>'
     else:
+        card_idx = 0
         for line in result.splitlines():
             line = line.strip()
             if not line:
@@ -187,21 +226,25 @@ def generate_html_report(result, pdfs, output_dir, timestamp, syllabus):
                         pdf_path = pdf
                         break
                 
+                card_bg = pastel_cards[card_idx % len(pastel_cards)]
+                meta_bg = pastel_metas[card_idx % len(pastel_metas)]
+                card_idx += 1
+                
                 if pdf_path:
                     file_link = f"file:///{pdf_path.absolute()}#page=1"
-                    html_content += f'''<div class="question-item">
+                    html_content += f'''<div class="question-item" style="background:{card_bg};">
                         <a href="{file_link}" title="Open {pdf_path.name}">
                             <div class="question-text">{question_text}</div>
-                            <div class="question-meta">📍 {pdf_path.name}</div>
+                            <div class="question-meta" style="background:{meta_bg};">&#128205; {pdf_path.name}</div>
                         </a>
                     </div>
 '''
                 else:
-                    html_content += f'<div class="question-item"><div class="question-text">{line}</div></div>\n'
+                    html_content += f'<div class="question-item" style="background:{card_bg};"><div class="question-text">{line}</div></div>\n'
     
     html_content += """        </div>
         <div class="footer">
-            Generated by PaperCode | Click questions to open PDFs
+            Generated by PaperCode <span class="heart">&#10084;</span> Click questions to open PDFs
         </div>
     </div>
 </body>
