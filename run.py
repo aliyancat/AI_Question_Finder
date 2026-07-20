@@ -74,16 +74,16 @@ def print_banner():
 
     print()
     for line in code.splitlines():
-        print(LAVENDER + "  " + line + RESET)
+        print(INDIGO + "  " + line + RESET)
     print()
 
 def print_info_box():
     msg = "  map past paper questions to your syllabus  "
     border = "=" * len(msg)
     if HAS_COLOR:
-        print(SKY + "  +" + border + "+" + RESET)
-        print(SKY + "  |" + RESET + Style.BRIGHT + SUNFLOWER + msg + RESET + SKY + "|" + RESET)
-        print(SKY + "  +" + border + "+" + RESET)
+        print(INK + "  +" + border + "+" + RESET)
+        print(INK + "  |" + RESET + Style.BRIGHT + PINK + msg + RESET + INK + "|" + RESET)
+        print(INK + "  +" + border + "+" + RESET)
     else:
         print("  +" + border + "+")
         print("  |" + msg + "|")
