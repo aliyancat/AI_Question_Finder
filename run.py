@@ -384,19 +384,19 @@ CRITICAL RULES:
     html_path = generate_html_report(result, pdfs, OUTPUT_DIR_HTML, ts, syllabus)
     ok(f"Interactive HTML saved → {html_path}")
     if HAS_COLOR:
-        print(f"  {Fore.CYAN}→ Open this file in your browser to view clickable links{Style.RESET_ALL}")
+        print(f"  {SKY}→ Open this file in your browser to view clickable links{RESET}")
 
     print()
     divider()
     if HAS_COLOR:
-        print(f"\n  {Style.BRIGHT}RESULTS{Style.RESET_ALL}\n")
+        print(f"\n  {Style.BRIGHT}{LAVENDER}RESULTS{RESET}\n")
     else:
         print("\n  RESULTS\n")
 
     for line in result.splitlines():
         if line.strip():
-            col = Fore.GREEN if HAS_COLOR else ""
-            rst = Style.RESET_ALL if HAS_COLOR else ""
+            col = MINT if HAS_COLOR else ""
+            rst = RESET if HAS_COLOR else ""
             print(f"  {col}{line}{rst}")
         else:
             print()
