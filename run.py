@@ -118,10 +118,27 @@ def ok(msg):
 
 def generate_html_report(result, pdfs, output_dir, timestamp, syllabus):
     """Generate an interactive HTML report with clickable PDF links."""
-    
-    # Pastel card colors to rotate through
-    pastel_cards = ["#FDE68A", "#D8B4FE", "#BAE6FD", "#86EFAC", "#FDBA74", "#FBCFE8"]
-    pastel_metas = ["#E0E7FF", "#E9D8FD", "#DBEAFE", "#D1FAE5", "#FFEDD5", "#FCE7F3"]
+
+    # Pastel card backgrounds to rotate through (design system palette)
+    pastel_cards = ["#FFFFFF", "#FDE68A", "#FFFFFF", "#D8B4FE", "#FFFFFF", "#BAE6FD", "#FFFFFF", "#86EFAC"]
+    # Icon chip colors (rounded square on left of each card)
+    chip_colors  = ["#FDE68A", "#D8B4FE", "#BAE6FD", "#86EFAC", "#FDBA74", "#FBCFE8", "#FF6B4A", "#E0E7FF"]
+    # Status pill: background + text color pairs
+    status_colors = [
+        ("#DCFCE7", "#16A34A"),  # success/matched
+        ("#E0E7FF", "#4F46E5"),  # info
+        ("#D1FAE5", "#059669"),  # verified
+        ("#FFEDD5", "#EA580C"),  # warning
+    ]
+    status_labels = ["Matched", "Info", "Verified", "Matched"]
+    # Trust badge strip colors
+    trust_badges = [
+        ("#FDE68A", "&#128221;", "Syllabus Mapped"),
+        ("#D8B4FE", "&#129504;", "AI Powered"),
+        ("#BAE6FD", "&#128202;", "Past Papers"),
+        ("#86EFAC", "&#9989;", "Verified"),
+        ("#FDBA74", "&#128218;", "Click to Open"),
+    ]
 
     html_content = """<!DOCTYPE html>
 <html lang="en">
@@ -130,7 +147,7 @@ def generate_html_report(result, pdfs, output_dir, timestamp, syllabus):
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Past Paper Questions</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg-cream: #FFFEF5;
@@ -139,6 +156,7 @@ def generate_html_report(result, pdfs, output_dir, timestamp, syllabus):
             --brand-indigo: #6366F1;
             --brand-pink: #EC4899;
             --pastel-yellow: #FDE68A;
+            --butter-yellow: #FFF3B0;
             --pastel-lavender: #D8B4FE;
             --pastel-blue: #BAE6FD;
             --pastel-mint: #86EFAC;
@@ -150,45 +168,97 @@ def generate_html_report(result, pdfs, output_dir, timestamp, syllabus):
             --radius-pill: 999px;
             --shadow-hard: 4px 4px 0px var(--ink);
             --shadow-hard-hover: 2px 2px 0px var(--ink);
+            --shadow-lift: 6px 6px 0px var(--ink);
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-               background: var(--bg-cream); color: var(--ink); min-height: 100vh; padding: 40px 20px;
+               background: var(--bg-cream); color: var(--ink); min-height: 100vh; padding: 0;
                position: relative; overflow-x: hidden; }
-        /* Decorative background blobs */
+
+        /* ── Decorative background shapes (Memphis-inspired) ── */
         .blob { position: fixed; border-radius: 50%; z-index: 0; pointer-events: none; }
-        .blob-1 { width: 320px; height: 320px; background: var(--pastel-yellow); top: -80px; left: -100px; opacity: 0.5; }
-        .blob-2 { width: 260px; height: 260px; background: var(--pastel-lavender); bottom: -60px; right: -80px; opacity: 0.45; }
-        .blob-3 { width: 180px; height: 180px; background: var(--pastel-blue); top: 40%; right: 5%; opacity: 0.3; }
-        .tilt-square { position: fixed; z-index: 0; pointer-events: none; border: 2px solid var(--ink); }
-        .tilt-1 { width: 80px; height: 80px; background: var(--pastel-pink); top: 15%; right: 8%; transform: rotate(15deg); opacity: 0.6; }
-        .tilt-2 { width: 60px; height: 60px; background: var(--pastel-mint); bottom: 20%; left: 6%; transform: rotate(-12deg); opacity: 0.6; }
-        .container { max-width: 900px; margin: 0 auto; background: #FFFFFF;
-                     border: 3px solid var(--ink); border-radius: 24px;
-                     box-shadow: 8px 8px 0px var(--ink); overflow: hidden; position: relative; z-index: 1; }
-        .header { background: var(--pastel-yellow); border-bottom: 3px solid var(--ink);
-                  padding: 48px 30px; text-align: center; }
-        .badge-pill { display: inline-block; background: var(--brand-pink); color: #FFF; padding: 6px 18px;
-                      border-radius: var(--radius-pill); font-size: 0.72em; font-weight: 700; letter-spacing: 1px;
-                      text-transform: uppercase; margin-bottom: 18px; border: 2px solid var(--ink);
-                      box-shadow: 2px 2px 0px var(--ink); }
-        .header h1 { font-size: 2.6em; color: var(--ink); font-weight: 900; letter-spacing: -1px; line-height: 1.1; }
-        .header h1 .accent { color: var(--brand-indigo); }
-        .header p { color: var(--text-gray); margin-top: 12px; font-weight: 600; font-size: 1.05em; }
-        .content { padding: 36px 30px; }
-        .question-item { border: 2px solid var(--ink); border-radius: var(--radius-card);
-                        padding: 20px 24px; margin-bottom: 18px; transition: transform 0.12s ease, box-shadow 0.12s ease;
-                        box-shadow: var(--shadow-hard); }
-        .question-item:hover { transform: translate(2px, 2px); box-shadow: var(--shadow-hard-hover); }
-        .question-item a { text-decoration: none; color: inherit; display: block; }
-        .question-text { color: var(--ink); font-size: 1.05em; line-height: 1.6; font-weight: 600; }
-        .question-meta { font-size: 0.82em; color: var(--brand-indigo); margin-top: 12px; font-weight: 700;
-                         display: inline-block; padding: 4px 14px; border-radius: var(--radius-pill);
-                         border: 2px solid var(--ink); box-shadow: 1px 1px 0px var(--ink); }
+        .blob-1 { width: 340px; height: 340px; background: var(--butter-yellow); top: -100px; left: -120px; opacity: 0.6; }
+        .blob-2 { width: 280px; height: 280px; background: var(--pastel-lavender); bottom: -80px; right: -100px; opacity: 0.5; }
+        .blob-3 { width: 200px; height: 200px; background: var(--pastel-blue); top: 45%; right: 3%; opacity: 0.35; }
+        .tilt-square { position: fixed; z-index: 0; pointer-events: none; }
+        .tilt-1 { width: 90px; height: 90px; background: var(--pastel-pink); border: 2px solid var(--ink);
+                  top: 12%; right: 6%; transform: rotate(15deg); opacity: 0.7; }
+        .tilt-2 { width: 70px; height: 70px; background: var(--pastel-mint); border: 2px solid var(--ink);
+                  bottom: 15%; left: 4%; transform: rotate(-12deg); opacity: 0.7; }
+
+        /* ── Navbar ── */
+        .navbar { max-width: 900px; margin: 0 auto; padding: 24px 20px; display: flex;
+                  align-items: center; justify-content: space-between; position: relative; z-index: 2; }
+        .logo { display: flex; align-items: center; gap: 12px; }
+        .logo-icon { width: 44px; height: 44px; background: var(--brand-indigo); border: 2px solid var(--ink);
+                      border-radius: 12px; display: flex; align-items: center; justify-content: center;
+                      font-size: 22px; box-shadow: 2px 2px 0px var(--ink); }
+        .logo-text { display: flex; flex-direction: column; }
+        .logo-word { font-weight: 800; font-size: 1.2em; color: var(--ink); line-height: 1; }
+        .logo-tag { font-size: 0.72em; color: var(--brand-indigo); font-style: italic; font-weight: 500; }
+        .nav-cta { background: #16A34A; color: #FFF; border: 2px solid var(--ink); border-radius: var(--radius-pill);
+                   padding: 8px 20px; font-weight: 700; font-size: 0.85em; box-shadow: var(--shadow-hard);
+                   transition: transform 0.12s ease, box-shadow 0.12s ease; cursor: pointer; text-decoration: none;
+                   display: inline-flex; align-items: center; gap: 6px; }
+        .nav-cta:hover { transform: translate(2px, 2px); box-shadow: var(--shadow-hard-hover); }
+
+        /* ── Hero section ── */
+        .hero { max-width: 900px; margin: 0 auto; padding: 20px 20px 40px; text-align: center; position: relative; z-index: 2; }
+        .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: var(--pastel-yellow);
+                      border: 2px solid var(--ink); border-radius: var(--radius-pill); padding: 6px 16px;
+                      font-size: 0.8em; font-weight: 700; margin-bottom: 24px; box-shadow: 2px 2px 0px var(--ink); }
+        .hero-badge .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--brand-pink); }
+        .hero h1 { font-size: 3em; color: var(--ink); font-weight: 900; letter-spacing: -1.5px; line-height: 1.1;
+                   margin-bottom: 16px; }
+        .hero h1 .accent { color: var(--brand-indigo); }
+        .hero h1 .highlight-box { background: var(--pastel-yellow); border: 2px solid var(--ink);
+                                   border-radius: 10px; padding: 2px 14px; display: inline-block;
+                                   transform: rotate(-2deg); box-shadow: 2px 2px 0px var(--ink); }
+        .hero h1 .highlight-box .pink-text { color: var(--brand-pink); font-weight: 900; }
+        .hero p { color: var(--text-gray); font-size: 1.1em; font-weight: 500; max-width: 560px;
+                  margin: 0 auto; line-height: 1.6; }
+
+        /* ── Trust badge strip ── */
+        .trust-strip { max-width: 900px; margin: 0 auto 32px; padding: 16px 20px; position: relative; z-index: 2;
+                       display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;
+                       border-top: 2px solid var(--ink); border-bottom: 2px solid var(--ink); }
+        .trust-pill { display: inline-flex; align-items: center; gap: 6px; border: 2px solid var(--ink);
+                      border-radius: var(--radius-pill); padding: 5px 14px; font-size: 0.78em; font-weight: 700;
+                      box-shadow: 1px 1px 0px var(--ink); }
+
+        /* ── Content cards ── */
+        .content { max-width: 900px; margin: 0 auto; padding: 0 20px 40px; position: relative; z-index: 2; }
+        .card { border: 2px solid var(--ink); border-radius: var(--radius-card); padding: 20px 24px;
+                margin-bottom: 16px; box-shadow: var(--shadow-hard);
+                transition: transform 0.15s ease, box-shadow 0.15s ease; }
+        .card:hover { transform: translate(-2px, -2px) scale(1.02); box-shadow: var(--shadow-lift); }
+        .card a { text-decoration: none; color: inherit; display: flex; align-items: flex-start; gap: 16px; }
+        .icon-chip { width: 48px; height: 48px; min-width: 48px; border: 2px solid var(--ink); border-radius: 12px;
+                     display: flex; align-items: center; justify-content: center; font-size: 24px;
+                     box-shadow: 2px 2px 0px var(--ink); }
+        .card-body { flex: 1; }
+        .card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
+        .card-title { color: var(--ink); font-size: 1.02em; line-height: 1.5; font-weight: 700; }
+        .status-pill { font-size: 0.72em; font-weight: 700; padding: 4px 12px; border-radius: var(--radius-pill);
+                       border: 2px solid var(--ink); white-space: nowrap; box-shadow: 1px 1px 0px var(--ink); }
+        .card-meta { font-size: 0.8em; color: var(--text-gray); margin-top: 10px; font-weight: 500;
+                     display: flex; align-items: center; gap: 6px; }
+        .card-meta .sep { color: var(--ink); opacity: 0.3; }
+
         .no-match { text-align: center; padding: 70px 30px; color: var(--text-gray); font-size: 1.15em; font-weight: 600; }
-        .footer { background: var(--pastel-blue); border-top: 3px solid var(--ink); padding: 22px 30px;
-                  text-align: center; color: var(--ink); font-weight: 700; font-size: 0.9em; }
+
+        /* ── Footer ── */
+        .footer { max-width: 900px; margin: 0 auto 40px; padding: 22px 30px; background: var(--pastel-blue);
+                  border: 2px solid var(--ink); border-radius: var(--radius-card); box-shadow: var(--shadow-hard);
+                  text-align: center; color: var(--ink); font-weight: 700; font-size: 0.9em;
+                  position: relative; z-index: 2; }
         .footer .heart { color: var(--brand-pink); }
+
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 2em; }
+            .card a { flex-direction: column; gap: 12px; }
+            .icon-chip { width: 40px; height: 40px; min-width: 40px; font-size: 20px; }
+        }
     </style>
 </head>
 <body>
@@ -197,15 +267,40 @@ def generate_html_report(result, pdfs, output_dir, timestamp, syllabus):
     <div class="blob blob-3"></div>
     <div class="tilt-square tilt-1"></div>
     <div class="tilt-square tilt-2"></div>
-    <div class="container">
-        <div class="header">
-            <span class="badge-pill">&#128202; Paper Questions</span>
-            <h1>Past Paper <span class="accent">Questions</span></h1>
-            <p>Click any question to open the PDF</p>
+
+    <nav class="navbar">
+        <div class="logo">
+            <div class="logo-icon">&#128209;</div>
+            <div class="logo-text">
+                <span class="logo-word">PaperCode</span>
+                <span class="logo-tag">find your questions</span>
+            </div>
         </div>
-        <div class="content">
+        <a class="nav-cta" href="javascript:window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'})">
+            View Results &#8595;
+        </a>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-badge">
+            <span class="dot"></span>
+            AI-Powered Syllabus Matching
+        </div>
+        <h1>
+            Past Paper <span class="accent">Questions</span><br>
+            <span class="highlight-box"><span class="pink-text">Matched</span></span> to Your Syllabus
+        </h1>
+        <p>Every question below has been mapped to your syllabus by AI. Click any card to open the original PDF.</p>
+    </section>
+
+    <div class="trust-strip">
 """
-    
+
+    # Build trust badge pills
+    for bg, icon, label in trust_badges:
+        html_content += f'        <span class="trust-pill" style="background:{bg};">{icon} {label}</span>\n'
+    html_content += '    </div>\n\n    <div class="content">\n'
+
     if "No questions match" in result:
         html_content += '<div class="no-match">No questions match the syllabus.</div>'
     else:
@@ -214,40 +309,58 @@ def generate_html_report(result, pdfs, output_dir, timestamp, syllabus):
             line = line.strip()
             if not line:
                 continue
-            
-            # Parse line and create clickable link
+
             parts = line.split(" - ")
             if len(parts) >= 2:
                 pdf_name = parts[0].strip()
                 question_text = " - ".join(parts[1:])
-                
-                # Find matching PDF
+
                 pdf_path = None
                 for pdf in pdfs:
                     if pdf.stem.lower() in pdf_name.lower():
                         pdf_path = pdf
                         break
-                
+
                 card_bg = pastel_cards[card_idx % len(pastel_cards)]
-                meta_bg = pastel_metas[card_idx % len(pastel_metas)]
+                chip_bg = chip_colors[card_idx % len(chip_colors)]
+                status_bg, status_text_col = status_colors[card_idx % len(status_colors)]
+                status_label = status_labels[card_idx % len(status_labels)]
                 card_idx += 1
-                
+
                 if pdf_path:
                     file_link = f"file:///{pdf_path.absolute()}#page=1"
-                    html_content += f'''<div class="question-item" style="background:{card_bg};">
-                        <a href="{file_link}" title="Open {pdf_path.name}">
-                            <div class="question-text">{question_text}</div>
-                            <div class="question-meta" style="background:{meta_bg};">&#128205; {pdf_path.name}</div>
-                        </a>
+                    html_content += f'''        <div class="card" style="background:{card_bg};">
+            <a href="{file_link}" title="Open {pdf_path.name}">
+                <div class="icon-chip" style="background:{chip_bg};">&#128196;</div>
+                <div class="card-body">
+                    <div class="card-top">
+                        <div class="card-title">{question_text}</div>
+                        <span class="status-pill" style="background:{status_bg};color:{status_text_col};">{status_label}</span>
                     </div>
+                    <div class="card-meta">
+                        <span>&#128205; {pdf_path.name}</span>
+                        <span class="sep">&bull;</span>
+                        <span>&#128279; Click to open PDF</span>
+                    </div>
+                </div>
+            </a>
+        </div>
 '''
                 else:
-                    html_content += f'<div class="question-item" style="background:{card_bg};"><div class="question-text">{line}</div></div>\n'
-    
-    html_content += """        </div>
-        <div class="footer">
-            Generated by PaperCode <span class="heart">&#10084;</span> Click questions to open PDFs
+                    html_content += f'''        <div class="card" style="background:{card_bg};">
+            <div class="icon-chip" style="background:{chip_bg};">&#128196;</div>
+            <div class="card-body">
+                <div class="card-top">
+                    <div class="card-title">{line}</div>
+                    <span class="status-pill" style="background:{status_bg};color:{status_text_col};">{status_label}</span>
+                </div>
+            </div>
         </div>
+'''
+
+    html_content += """    </div>
+    <div class="footer">
+        Generated by PaperCode <span class="heart">&#10084;</span> Click any card to open the PDF
     </div>
 </body>
 </html>
