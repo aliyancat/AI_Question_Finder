@@ -124,64 +124,71 @@ def find_page_in_ms(ms_path, q_num):
 def generate_html_report(result, question_pdfs, all_pdfs, output_dir, base_name):
     """Generate an interactive HTML report with clickable PDF links."""
     css = """
+        :root {
+            --bg-cream: #FFFEF5; --ink: #111111; --text-gray: #4B5563;
+            --brand-indigo: #6366F1; --brand-pink: #EC4899;
+            --pastel-yellow: #FDE68A; --butter-yellow: #FFF3B0;
+            --pastel-lavender: #D8B4FE; --pastel-blue: #BAE6FD;
+            --pastel-mint: #86EFAC; --pastel-peach: #FDBA74;
+            --pastel-coral: #FF6B4A; --pastel-pink: #FBCFE8;
+            --radius-card: 16px; --radius-pill: 999px;
+            --shadow-hard: 4px 4px 0px var(--ink);
+            --shadow-hard-hover: 2px 2px 0px var(--ink);
+            --shadow-lift: 6px 6px 0px var(--ink);
+        }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-               background: #0a0a1a; min-height: 100vh; padding: 40px 20px;
+        body { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+               background: var(--bg-cream); color: var(--ink); min-height: 100vh; padding: 0;
                position: relative; overflow-x: hidden; }
-        body::before { content: ''; position: fixed; top: -50%; left: -50%; width: 200%; height: 200%;
-               background: radial-gradient(ellipse at 20% 50%, rgba(102,126,234,0.12) 0%, transparent 50%),
-                           radial-gradient(ellipse at 80% 20%, rgba(118,75,162,0.10) 0%, transparent 50%),
-                           radial-gradient(ellipse at 50% 80%, rgba(102,126,234,0.06) 0%, transparent 50%);
-               pointer-events: none; z-index: 0;
-               animation: ambientGlow 15s ease-in-out infinite alternate; }
-        @keyframes ambientGlow { 0% { transform: translate(0,0) rotate(0deg); } 100% { transform: translate(2%,1%) rotate(3deg); } }
-        .container { max-width: 900px; margin: 0 auto;
-               background: rgba(255,255,255,0.05); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
-               border-radius: 20px; box-shadow: 0 8px 32px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.08);
-               overflow: hidden; border: 1px solid rgba(255,255,255,0.06);
-               position: relative; z-index: 1;
-               animation: fadeSlideUp 0.6s ease-out; }
-        @keyframes fadeSlideUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-        .header { background: linear-gradient(135deg, rgba(102,126,234,0.25) 0%, rgba(118,75,162,0.25) 100%);
-                  color: white; padding: 48px 36px; text-align: center;
-                  border-bottom: 1px solid rgba(255,255,255,0.06); }
-        .header h1 { font-size: 2.4em; font-weight: 800; letter-spacing: -0.03em; margin-bottom: 10px;
-                     background: linear-gradient(135deg, #fff 0%, #c4b5fd 100%); -webkit-background-clip: text;
-                     -webkit-text-fill-color: transparent; background-clip: text; }
-        .header p { opacity: 0.7; font-size: 1.05em; font-weight: 400; color: #c4b5fd; }
-        .content { padding: 40px 30px; }
-        .section { margin-bottom: 40px; }
-        .source-title { background: rgba(255,255,255,0.03); border-left: 4px solid rgba(102,126,234,0.5);
-                        padding: 16px 20px; margin-bottom: 16px; border-radius: 8px;
-                        font-weight: 600; color: #e0dffc; }
-        .question-item { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06);
-                         border-radius: 14px; padding: 24px; margin-bottom: 18px;
-                         transition: all 0.25s ease; }
-        .question-item:hover { border-color: rgba(102,126,234,0.3);
-                               box-shadow: 0 8px 26px rgba(102,126,234,0.08);
-                               transform: translateY(-2px); background: rgba(255,255,255,0.05); }
-        .question-text { color: #e0dffc; font-size: 1em; line-height: 1.7; word-break: break-word; }
-        .question-meta { font-size: 0.9em; color: rgba(165,180,252,0.7); margin-top: 10px; font-weight: 500; }
+        .blob { position: fixed; border-radius: 50%; z-index: 0; pointer-events: none; }
+        .blob-1 { width: 340px; height: 340px; background: var(--butter-yellow); top: -100px; left: -120px; opacity: 0.6; }
+        .blob-2 { width: 280px; height: 280px; background: var(--pastel-lavender); bottom: -80px; right: -100px; opacity: 0.5; }
+        .blob-3 { width: 200px; height: 200px; background: var(--pastel-blue); top: 45%; right: 3%; opacity: 0.35; }
+        .tilt-square { position: fixed; z-index: 0; pointer-events: none; }
+        .tilt-1 { width: 90px; height: 90px; background: var(--pastel-pink); border: 2px solid var(--ink); top: 12%; right: 6%; transform: rotate(15deg); opacity: 0.7; }
+        .tilt-2 { width: 70px; height: 70px; background: var(--pastel-mint); border: 2px solid var(--ink); bottom: 15%; left: 4%; transform: rotate(-12deg); opacity: 0.7; }
+        .navbar { max-width: 900px; margin: 0 auto; padding: 24px 20px; display: flex; align-items: center; justify-content: space-between; position: relative; z-index: 2; }
+        .logo { display: flex; align-items: center; gap: 12px; }
+        .logo-icon { width: 44px; height: 44px; background: var(--brand-indigo); border: 2px solid var(--ink); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 22px; box-shadow: 2px 2px 0px var(--ink); }
+        .logo-word { font-weight: 800; font-size: 1.2em; color: var(--ink); line-height: 1; }
+        .logo-tag { font-size: 0.72em; color: var(--brand-indigo); font-style: italic; font-weight: 500; }
+        .hero { max-width: 900px; margin: 0 auto; padding: 10px 20px 30px; text-align: center; position: relative; z-index: 2; }
+        .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: var(--pastel-yellow); border: 2px solid var(--ink); border-radius: var(--radius-pill); padding: 6px 16px; font-size: 0.8em; font-weight: 700; margin-bottom: 20px; box-shadow: 2px 2px 0px var(--ink); }
+        .hero-badge .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--brand-pink); }
+        .hero h1 { font-size: 2.6em; color: var(--ink); font-weight: 900; letter-spacing: -1.5px; line-height: 1.1; margin-bottom: 14px; }
+        .hero h1 .accent { color: var(--brand-indigo); }
+        .hero h1 .highlight-box { background: var(--pastel-yellow); border: 2px solid var(--ink); border-radius: 10px; padding: 2px 14px; display: inline-block; transform: rotate(-2deg); box-shadow: 2px 2px 0px var(--ink); }
+        .hero h1 .highlight-box .pink-text { color: var(--brand-pink); font-weight: 900; }
+        .hero p { color: var(--text-gray); font-size: 1.05em; font-weight: 500; max-width: 560px; margin: 0 auto; line-height: 1.6; }
+        .content { max-width: 900px; margin: 0 auto; padding: 0 20px 40px; position: relative; z-index: 2; }
+        .section { margin-bottom: 32px; }
+        .source-title { background: var(--pastel-blue); border: 2px solid var(--ink); border-radius: var(--radius-pill);
+                        padding: 8px 20px; margin-bottom: 16px; font-weight: 700; color: var(--ink);
+                        display: inline-block; box-shadow: 2px 2px 0px var(--ink); }
+        .question-item { background: #FFFFFF; border: 2px solid var(--ink); border-radius: var(--radius-card);
+                         padding: 24px; margin-bottom: 18px; box-shadow: var(--shadow-hard);
+                         transition: transform 0.15s ease, box-shadow 0.15s ease; }
+        .question-item:hover { transform: translate(-2px, -2px); box-shadow: var(--shadow-lift); }
+        .question-text { color: var(--ink); font-size: 1em; line-height: 1.7; word-break: break-word; font-weight: 600; }
+        .question-meta { font-size: 0.9em; color: var(--brand-indigo); margin-top: 10px; font-weight: 600;
+                         display: inline-block; background: var(--pastel-blue); border: 2px solid var(--ink);
+                         border-radius: var(--radius-pill); padding: 3px 12px; box-shadow: 1px 1px 0px var(--ink); }
         .button-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
         .button { display: inline-flex; align-items: center; justify-content: center; gap: 6px;
-                  padding: 12px 20px; border-radius: 10px; font-weight: 600; font-size: 0.9em;
-                  text-decoration: none; transition: all 0.25s ease;
-                  position: relative; overflow: hidden; }
-        .button::after { content: ''; position: absolute; inset: 0;
-                         background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, transparent 50%);
-                         pointer-events: none; }
-        .button-primary { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; }
-        .button-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 22px rgba(102,126,234,0.3); }
-        .button-secondary { background: rgba(255,255,255,0.06); color: #c4b5fd; border: 1px solid rgba(255,255,255,0.08); }
-        .button-secondary:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.15); }
+                  padding: 12px 20px; border: 2px solid var(--ink); border-radius: var(--radius-pill);
+                  font-weight: 700; font-size: 0.88em; text-decoration: none;
+                  transition: transform 0.12s ease, box-shadow 0.12s ease; box-shadow: var(--shadow-hard); }
+        .button:hover { transform: translate(2px, 2px); box-shadow: var(--shadow-hard-hover); }
+        .button-primary { background: var(--brand-indigo); color: white; }
+        .button-secondary { background: var(--pastel-mint); color: var(--ink); }
         .disabled { opacity: 0.4; cursor: not-allowed; pointer-events: none; }
-        .no-match { text-align: center; padding: 60px 30px; color: rgba(255,255,255,0.3); font-size: 1.2em; }
-        .footer { background: rgba(255,255,255,0.02); padding: 20px 30px; text-align: center;
-                  color: rgba(255,255,255,0.3); font-size: 0.9em;
-                  border-top: 1px solid rgba(255,255,255,0.04); }
-        @media (max-width: 600px) { body { padding: 16px 12px; } .header { padding: 32px 20px; }
-                .header h1 { font-size: 1.7em; } .content { padding: 20px; }
-                .button-row { flex-direction: column; } .button { width: 100%; } }
+        .no-match { text-align: center; padding: 60px 30px; color: var(--text-gray); font-size: 1.2em; font-weight: 600; }
+        .footer { max-width: 900px; margin: 0 auto 40px; padding: 22px 30px; background: var(--pastel-blue);
+                  border: 2px solid var(--ink); border-radius: var(--radius-card); box-shadow: var(--shadow-hard);
+                  text-align: center; color: var(--ink); font-weight: 700; font-size: 0.9em;
+                  position: relative; z-index: 2; }
+        .footer .heart { color: var(--brand-pink); }
+        @media (max-width: 600px) { .hero h1 { font-size: 1.8em; } .button-row { flex-direction: column; } .button { width: 100%; } }
     """
 
     html_content = f"""<!DOCTYPE html>
@@ -192,16 +199,36 @@ def generate_html_report(result, question_pdfs, all_pdfs, output_dir, base_name)
     <title>Past Paper Questions</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>{css}</style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>Past Paper Questions</h1>
-            <p>Click a question to open the PDF, then check the marking scheme</p>
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+    <div class="tilt-square tilt-1"></div>
+    <div class="tilt-square tilt-2"></div>
+    <nav class="navbar">
+        <div class="logo">
+            <div class="logo-icon">&#128209;</div>
+            <div>
+                <div class="logo-word">PaperCode</div>
+                <div class="logo-tag">find your questions</div>
+            </div>
         </div>
-        <div class="content">
+    </nav>
+    <section class="hero">
+        <div class="hero-badge">
+            <span class="dot"></span>
+            AI-Powered Syllabus Matching
+        </div>
+        <h1>
+            Past Paper <span class="accent">Questions</span><br>
+            <span class="highlight-box"><span class="pink-text">Matched</span></span> to Your Syllabus
+        </h1>
+        <p>Click a question to open the PDF, then check the marking scheme.</p>
+    </section>
+    <div class="content">
 """
 
     if "No questions match" in result:
