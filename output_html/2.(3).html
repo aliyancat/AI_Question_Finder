@@ -4,168 +4,105 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Past Paper Questions</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            padding: 40px 20px;
-        }
-        
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            overflow: hidden;
-        }
-        
-        .header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 40px 30px;
-            text-align: center;
-        }
-        
-        .header h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-            font-weight: 700;
-        }
-        
-        .header p {
-            font-size: 1.1em;
-            opacity: 0.9;
-        }
-        
-        .content {
-            padding: 40px 30px;
-        }
-        
-        .section {
-            margin-bottom: 40px;
-        }
-        
-        .source-title {
-            background: #f8f9ff;
-            border-left: 4px solid #667eea;
-            padding: 15px 20px;
-            margin-bottom: 15px;
-            border-radius: 4px;
-            font-weight: 600;
-            color: #333;
-        }
-        
-        .question-item {
-            background: #ffffff;
-            border: 1px solid #e0e0e0;
-            border-radius: 12px;
-            padding: 22px 24px;
-            margin-bottom: 18px;
-            transition: all 0.25s ease;
-        }
-        
-        .question-item:hover {
-            border-color: #667eea;
-            box-shadow: 0 8px 26px rgba(102, 126, 234, 0.12);
-            transform: translateY(-2px);
-        }
-        
-        .question-text {
-            color: #212121;
-            font-size: 1em;
-            line-height: 1.7;
-            word-break: break-word;
-        }
-        
-        .question-meta {
-            font-size: 0.95em;
-            color: #667eea;
-            margin-top: 10px;
-            font-weight: 600;
-        }
-        
-        .button-row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin-top: 18px;
-        }
-        
-        .button {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 12px 18px;
-            border-radius: 999px;
-            font-weight: 700;
-            text-decoration: none;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-        
-        .button-primary {
-            background: #667eea;
-            color: white;
-        }
-        
-        .button-secondary {
-            background: #f5f7ff;
-            color: #333;
-            border: 1px solid #dbe3ff;
-        }
-        
-        .button:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 8px 22px rgba(102, 126, 234, 0.15);
-        }
-        
-        .disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-        }
-        
-        .no-match {
-            text-align: center;
-            padding: 60px 30px;
-            color: #999;
-            font-size: 1.2em;
-        }
-        
-        .footer {
-            background: #f8f9ff;
-            padding: 20px 30px;
-            text-align: center;
-            color: #666;
-            font-size: 0.95em;
-            border-top: 1px solid #e0e0e0;
-        }
-        
-        @media (max-width: 600px) {
-            .header h1 {
-                font-size: 1.8em;
-            }
-            
-            .content {
-                padding: 20px;
-            }
-        }
-    </style>
+    :root {
+        --bg-cream: #FFFEF5; --ink: #111111; --text-gray: #4B5563;
+        --brand-indigo: #6366F1; --brand-pink: #EC4899;
+        --pastel-yellow: #FDE68A; --butter-yellow: #FFF3B0;
+        --pastel-lavender: #D8B4FE; --pastel-blue: #BAE6FD;
+        --pastel-mint: #86EFAC; --pastel-peach: #FDBA74;
+        --pastel-coral: #FF6B4A; --pastel-pink: #FBCFE8;
+        --radius-card: 16px; --radius-pill: 999px;
+        --shadow-hard: 4px 4px 0px var(--ink);
+        --shadow-hard-hover: 2px 2px 0px var(--ink);
+        --shadow-lift: 6px 6px 0px var(--ink);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+           background: var(--bg-cream); color: var(--ink); min-height: 100vh; padding: 0;
+           position: relative; overflow-x: hidden; }
+    .blob { position: fixed; border-radius: 50%; z-index: 0; pointer-events: none; }
+    .blob-1 { width: 340px; height: 340px; background: var(--butter-yellow); top: -100px; left: -120px; opacity: 0.6; }
+    .blob-2 { width: 280px; height: 280px; background: var(--pastel-lavender); bottom: -80px; right: -100px; opacity: 0.5; }
+    .blob-3 { width: 200px; height: 200px; background: var(--pastel-blue); top: 45%; right: 3%; opacity: 0.35; }
+    .tilt-square { position: fixed; z-index: 0; pointer-events: none; }
+    .tilt-1 { width: 90px; height: 90px; background: var(--pastel-pink); border: 2px solid var(--ink); top: 12%; right: 6%; transform: rotate(15deg); opacity: 0.7; }
+    .tilt-2 { width: 70px; height: 70px; background: var(--pastel-mint); border: 2px solid var(--ink); bottom: 15%; left: 4%; transform: rotate(-12deg); opacity: 0.7; }
+    .navbar { max-width: 900px; margin: 0 auto; padding: 24px 20px; display: flex; align-items: center; justify-content: space-between; position: relative; z-index: 2; }
+    .logo { display: flex; align-items: center; gap: 12px; }
+    .logo-icon { width: 44px; height: 44px; background: var(--brand-indigo); border: 2px solid var(--ink); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 22px; box-shadow: 2px 2px 0px var(--ink); }
+    .logo-word { font-weight: 800; font-size: 1.2em; color: var(--ink); line-height: 1; }
+    .logo-tag { font-size: 0.72em; color: var(--brand-indigo); font-style: italic; font-weight: 500; }
+    .hero { max-width: 900px; margin: 0 auto; padding: 10px 20px 30px; text-align: center; position: relative; z-index: 2; }
+    .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: var(--pastel-yellow); border: 2px solid var(--ink); border-radius: var(--radius-pill); padding: 6px 16px; font-size: 0.8em; font-weight: 700; margin-bottom: 20px; box-shadow: 2px 2px 0px var(--ink); }
+    .hero-badge .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--brand-pink); }
+    .hero h1 { font-size: 2.6em; color: var(--ink); font-weight: 900; letter-spacing: -1.5px; line-height: 1.1; margin-bottom: 14px; }
+    .hero h1 .accent { color: var(--brand-indigo); }
+    .hero h1 .highlight-box { background: var(--pastel-yellow); border: 2px solid var(--ink); border-radius: 10px; padding: 2px 14px; display: inline-block; transform: rotate(-2deg); box-shadow: 2px 2px 0px var(--ink); }
+    .hero h1 .highlight-box .pink-text { color: var(--brand-pink); font-weight: 900; }
+    .hero p { color: var(--text-gray); font-size: 1.05em; font-weight: 500; max-width: 560px; margin: 0 auto; line-height: 1.6; }
+    .content { max-width: 900px; margin: 0 auto; padding: 0 20px 40px; position: relative; z-index: 2; }
+    .section { margin-bottom: 32px; }
+    .source-title { background: var(--pastel-blue); border: 2px solid var(--ink); border-radius: var(--radius-pill);
+                    padding: 8px 20px; margin-bottom: 16px; font-weight: 700; color: var(--ink);
+                    display: inline-block; box-shadow: 2px 2px 0px var(--ink); }
+    .question-item { background: #FFFFFF; border: 2px solid var(--ink); border-radius: var(--radius-card);
+                     padding: 24px; margin-bottom: 18px; box-shadow: var(--shadow-hard);
+                     transition: transform 0.15s ease, box-shadow 0.15s ease; }
+    .question-item:hover { transform: translate(-2px, -2px); box-shadow: var(--shadow-lift); }
+    .question-text { color: var(--ink); font-size: 1em; line-height: 1.7; word-break: break-word; font-weight: 600; }
+    .question-meta { font-size: 0.9em; color: var(--brand-indigo); margin-top: 10px; font-weight: 600;
+                     display: inline-block; background: var(--pastel-blue); border: 2px solid var(--ink);
+                     border-radius: var(--radius-pill); padding: 3px 12px; box-shadow: 1px 1px 0px var(--ink); }
+    .button-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+    .button { display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+              padding: 12px 20px; border: 2px solid var(--ink); border-radius: var(--radius-pill);
+              font-weight: 700; font-size: 0.88em; text-decoration: none;
+              transition: transform 0.12s ease, box-shadow 0.12s ease; box-shadow: var(--shadow-hard); }
+    .button:hover { transform: translate(2px, 2px); box-shadow: var(--shadow-hard-hover); }
+    .button-primary { background: var(--brand-indigo); color: white; }
+    .button-secondary { background: var(--pastel-mint); color: var(--ink); }
+    .disabled { opacity: 0.4; cursor: not-allowed; pointer-events: none; }
+    .no-match { text-align: center; padding: 60px 30px; color: var(--text-gray); font-size: 1.2em; font-weight: 600; }
+    .footer { max-width: 900px; margin: 0 auto 40px; padding: 22px 30px; background: var(--pastel-blue);
+              border: 2px solid var(--ink); border-radius: var(--radius-card); box-shadow: var(--shadow-hard);
+              text-align: center; color: var(--ink); font-weight: 700; font-size: 0.9em;
+              position: relative; z-index: 2; }
+    .footer .heart { color: var(--brand-pink); }
+    @media (max-width: 600px) { .hero h1 { font-size: 1.8em; } .button-row { flex-direction: column; } .button { width: 100%; } }
+</style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>📄 Past Paper Questions</h1>
-            <p>Click a question to open the PDF; use the second button for marking schemes.</p>
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+    <div class="tilt-square tilt-1"></div>
+    <div class="tilt-square tilt-2"></div>
+    <nav class="navbar">
+        <div class="logo">
+            <div class="logo-icon">&#128209;</div>
+            <div>
+                <div class="logo-word">PaperCode</div>
+                <div class="logo-tag">find your questions</div>
+            </div>
         </div>
-        
-        <div class="content">
+    </nav>
+    <section class="hero">
+        <div class="hero-badge">
+            <span class="dot"></span>
+            AI-Powered Syllabus Matching
+        </div>
+        <h1>
+            Past Paper <span class="accent">Questions</span><br>
+            <span class="highlight-box"><span class="pink-text">Matched</span></span> to Your Syllabus
+        </h1>
+        <p>Click a question to open the PDF, then check the marking scheme.</p>
+    </section>
+    <div class="content">
+
 <div class="section"><div class="source-title">From june-2021-dec | Page 3:</div>
                 <div class="question-item">
                     <div class="question-text">Q1(c): Figure 1 shows a programming construct in a flowchart. Identify the name of the programming construct.</div>
@@ -173,563 +110,10 @@
                     <div class="button-row">
                         <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2021-Dec.pdf#page=3" target="_blank">Open question paper</a>
                         <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2021-Dec-ms.pdf#page=4" target="_blank">Open marking scheme</a>
-                    </div>
-                </div>
 
-                <div class="question-item">
-                    <div class="question-text">Q1(d): Open Q01d in the code editor. The program inputs two numbers, compares them and outputs a suitable message. There are three errors in the code. Amend the code to correct the errors. Save your amended code as Q01dFINISHED with the correct file extension for the programming language.</div>
-                    <div class="question-meta">📍 June-2021-Dec.pdf — Page 3</div>
-                    <div class="button-row">
-                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2021-Dec.pdf#page=3" target="_blank">Open question paper</a>
-                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2021-Dec-ms.pdf#page=4" target="_blank">Open marking scheme</a>
-                    </div>
-                </div>
-</div><div class="section"><div class="source-title">From june-2021-dec | Page 4:</div>
-                <div class="question-item">
-                    <div class="question-text">Q1(e): A program is needed to calculate and print a multiplication table for a number that is input by the user. Figure 2 shows the display when the number 2 is input. Open Q01e in the code editor. Write the program. You must use the structure given in the file Q01e to complete the program. Do not add any further functionality. Save your code as Q01eFINISHED with the correct file extension for the programming language.</div>
-                    <div class="question-meta">📍 June-2021-Dec.pdf — Page 4</div>
-                    <div class="button-row">
-                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2021-Dec.pdf#page=4" target="_blank">Open question paper</a>
-                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2021-Dec-ms.pdf#page=4" target="_blank">Open marking scheme</a>
-                    </div>
-                </div>
-</div><div class="section"><div class="source-title">From june-2021-dec | Page 5:</div>
-                <div class="question-item">
-                    <div class="question-text">Q2(a): Estelle’s friend has given her a partially completed program to carry out a binary search. This pseudocode contains the logic required to complete the program. Open file Q02a in the code editor. Amend the code to complete the program. You must use the structure given in Q02a to write the program. Do not add any further functionality. Save your code as Q02aFINISHED with the correct file extension for the programming language.</div>
-                    <div class="question-meta">📍 June-2021-Dec.pdf — Page 5</div>
-                    <div class="button-row">
-                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2021-Dec.pdf#page=5" target="_blank">Open question paper</a>
-                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2021-Dec-ms.pdf#page=5" target="_blank">Open marking scheme</a>
-                    </div>
-                </div>
-</div><div class="section"><div class="source-title">From june-2021-dec | Page 6:</div>
-                <div class="question-item">
-                    <div class="question-text">Q2(b): Figure 3 shows an array of names. Explain why a binary search algorithm would not find 'Juan' in the array.</div>
-                    <div class="question-meta">📍 June-2021-Dec.pdf — Page 6</div>
-                    <div class="button-row">
-                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2021-Dec.pdf#page=6" target="_blank">Open question paper</a>
-                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2021-Dec-ms.pdf#page=5" target="_blank">Open marking scheme</a>
-                    </div>
-                </div>
-</div><div class="section"><div class="source-title">From june-2021-dec | Page 7:</div>
-                <div class="question-item">
-                    <div class="question-text">Q2(c): A merge sort algorithm can be used to sort a list into ascending order. The list 9, 1, 7, 6, 3, 5, 2, 8 needs to be sorted. Complete the merge sort using the space provided.</div>
-                    <div class="question-meta">📍 June-2021-Dec.pdf — Page 7</div>
-                    <div class="button-row">
-                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2021-Dec.pdf#page=7" target="_blank">Open question paper</a>
-                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2021-Dec-ms.pdf#page=5" target="_blank">Open marking scheme</a>
-                    </div>
-                </div>
-</div><div class="section"><div class="source-title">From june-2021-dec | Page 8:</div>
-                <div class="question-item">
-                    <div class="question-text">Q3(a)(i): Identify the name of a local variable.</div>
-                    <div class="question-meta">📍 June-2021-Dec.pdf — Page 8</div>
-                    <div class="button-row">
-                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2021-Dec.pdf#page=8" target="_blank">Open question paper</a>
-                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2021-Dec-ms.pdf#page=6" target="_blank">Open marking scheme</a>
-                    </div>
-                </div>
-
-                <div class="question-item">
-                    <div class="question-text">Q3(a)(ii): Identify the name of a data structure.</div>
-                    <div class="question-meta">📍 June-2021-Dec.pdf — Page 8</div>
-                    <div class="button-row">
-                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2021-Dec.pdf#page=8" target="_blank">Open question paper</a>
-                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2021-Dec-ms.pdf#page=6" target="_blank">Open marking scheme</a>
-                    </div>
-                </div>
-
-                <div class="question-item">
-                    <div class="question-text">Q3(a)(iii): Identify the name of a built-in subprogram.</div>
-                    <div class="question-meta">📍 June-2021-Dec.pdf — Page 8</div>
-                    <div class="button-row">
-                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2021-Dec.pdf#page=8" target="_blank">Open question paper</a>
-                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2021-Dec-ms.pdf#page=6" target="_blank">Open marking scheme</a>
-                    </div>
-                </div>
-
-                <div class="question-item">
-                    <div class="question-text">Q3(a)(iv): Identify the name of a user-written function.</div>
-                    <div class="question-meta">📍 June-2021-Dec.pdf — Page 8</div>
-                    <div class="button-row">
-                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2021-Dec.pdf#page=8" target="_blank">Open question paper</a>
-                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2021-Dec-ms.pdf#page=6" target="_blank">Open marking scheme</a>
-                    </div>
-                </div>
-
-                <div class="question-item">
-                    <div class="question-text">Q3(a)(v): Identify the name of a parameter.</div>
-                    <div class="question-meta">📍 June-2021-Dec.pdf — Page 8</div>
-                    <div class="button-row">
-                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2021-Dec.pdf#page=8" target="_blank">Open question paper</a>
-                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2021-Dec-ms.pdf#page=6" target="_blank">Open marking scheme</a>
-                    </div>
-                </div>
-</div><div class="section"><div class="source-title">From june-2021-dec | Page 9:</div>
-                <div class="question-item">
-                    <div class="question-text">Q3(b): Explain one reason why parameters are used to pass data into subprograms.</div>
-                    <div class="question-meta">📍 June-2021-Dec.pdf — Page 9</div>
-                    <div class="button-row">
-                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2021-Dec.pdf#page=9" target="_blank">Open question paper</a>
-                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2021-Dec-ms.pdf#page=6" target="_blank">Open marking scheme</a>
-                    </div>
-                </div>
-
-                <div class="question-item">
-                    <div class="question-text">Q3(c): A leap year is a year that has 366 days rather than 365 days. A leap year usually occurs every four years. A year that is a leap year: • can be exactly divided by 400 Or • can be exactly divided by 4, but not exactly divided by 100. These years are leap years: 2000, 2012 and 2020. These years are not leap years: 1700, 1900 and 2021. A program is needed that will accept the input of a year and output whether it is a leap year or not. Open Q03c in the code editor. Write the program. You must use the structure given in Q03c. Do not add any further functionality. Save your code as Q03cFINISHED with the correct file extension for the programming language.</div>
-                    <div class="question-meta">📍 June-2021-Dec.pdf — Page 9</div>
-                    <div class="button-row">
-                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2021-Dec.pdf#page=9" target="_blank">Open question paper</a>
-                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2021-Dec-ms.pdf#page=6" target="_blank">Open marking scheme</a>
-                    </div>
-                </div>
-</div><div class="section"><div class="source-title">From june-2021-dec | Page 10:</div>
-                <div class="question-item">
-                    <div class="question-text">Q4(a): A program is needed to convert an 8-bit binary number into denary. The program must: • receive the input of a binary pattern and validate that it has exactly eight characters (there is no need to validate that it only contains 0s and 1s) • request the input again if the binary pattern does not have exactly eight characters • when a valid binary pattern is input: • convert the binary pattern into its denary equivalent • print a message that contains the binary pattern and its denary equivalent • include a comment to explain how the conversion process works. Open Q04a in the code editor. Write a program to implement these requirements. You must use the structure given in Q04a to write the program. Do not add any further functionality. Save your code as Q04aFINISHED with the correct file extension for the programming language.</div>
-                    <div class="question-meta">📍 June-2021-Dec.pdf — Page 10</div>
-                    <div class="button-row">
-                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2021-Dec.pdf#page=10" target="_blank">Open question paper</a>
-                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2021-Dec-ms.pdf#page=7" target="_blank">Open marking scheme</a>
-                    </div>
-                </div>
-</div><div class="section"><div class="source-title">From june-2021-dec | Page 12:</div>
-                <div class="question-item">
-                    <div class="question-text">Q5: Ann likes to create programs. Open Q05 in the code editor. It contains an array of words. Ann wants the program to: • accept the input of a word, or the number 1 to exit. No validation of the input is required • display all the words in the array that have the same first letter as the word that has been input • calculate and display the number of words in the array that begin with the same letter as the word that has been input • display all the words in the array that contain the word that has been input • calculate and display • the number of words in the array that contain the word that has been input • the number of letters in the longest word that contains the word that has been input • the number of letters in the shortest word that contains the word that has been input • display • the longest word that contains the word that has been input • the shortest word that contains the word that has been input • repeat until the user inputs the number 1 to exit the program. Write the code for the program. Your program should function correctly even if the number of words in the array is changed. Save your code as Q05FINISHED with the correct file extension for the programming language.</div>
-                    <div class="question-meta">📍 June-2021-Dec.pdf — Page 12</div>
-                    <div class="button-row">
-                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2021-Dec.pdf#page=12" target="_blank">Open question paper</a>
-                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2021-Dec-ms.pdf#page=2" target="_blank">Open marking scheme</a>
-                    </div>
-                </div>
-</div><div class="section"><div class="source-title">From june-2022 | Page 2:</div>
-                <div class="question-item">
-                    <div class="question-text">Q1(a): Identify the description of a variable in a computer program.</div>
-                    <div class="question-meta">📍 June-2022.pdf — Page 2</div>
-                    <div class="button-row">
-                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2022.pdf#page=2" target="_blank">Open question paper</a>
-                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2022-ms.pdf#page=4" target="_blank">Open marking scheme</a>
-                    </div>
-                </div>
-</div><div class="section"><div class="source-title">From june-2022 | Page 3:</div>
-                <div class="question-item">
-                    <div class="question-text">Q1(f): Open Q01f in the code editor. The program should allow the input of the length of the side of a square and output the area of the square. There are three errors in the code. Amend the code to correct the errors. Save your amended code as Q01fFINISHED with the correct file extension for the programming language.</div>
-                    <div class="question-meta">📍 June-2022.pdf — Page 3</div>
-                    <div class="button-row">
-                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2022.pdf#page=3" target="_blank">Open question paper</a>
-                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2022-ms.pdf#page=4" target="_blank">Open marking scheme</a>
-                    </div>
-                </div>
-
-                <div class="question-item">
-                    <div class="question-text">Q1(g): A program is needed that will accept the input of a letter and compare it with a stored letter. It will check whether the letter comes earlier in the alphabet, later in the alphabet or is the same letter as the stored letter. It will output the letter and the stored letter with an appropriate message. Open Q01g in the code editor. Amend the code to complete the if statement used to produce the output. You must use the structure given in Q01g to complete the program. Do not add any further functionality. Save your code as Q01gFINISHED with the correct file extension for the programming language.</div>
-                    <div class="question-meta">📍 June-2022.pdf — Page 3</div>
-                    <div class="button-row">
-                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2022.pdf#page=3" target="_blank">Open question paper</a>
-                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2022-ms.pdf#page=4" target="_blank">Open marking scheme</a>
-                    </div>
-                </div>
-</div><div class="section"><div class="source-title">From june-2022 | Page 5:</div>
-                <div class="question-item">
-                    <div class="question-text">Q2(a)(i): Identify a line number where selection starts.</div>
-                    <div class="question-meta">📍 June-2022.pdf — Page 5</div>
-                    <div class="button-row">
-                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2022.pdf#page=5" target="_blank">Open question paper</a>
-                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2022-ms.pdf#page=5" target="_blank">Open marking scheme</a>
-                    </div>
-                </div>
-
-                <div class="question-item">
-                    <div class="question-text">Q2(a)(ii): Identify the line number where iteration starts.</div>
-                    <div class="question-meta">📍 June-2022.pdf — Page 5</div>
-                    <div class="button-row">
-                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2022.pdf#page=5" target="_blank">Open question paper</a>
-                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2022-ms.pdf#page=5" target="_blank">Open marking scheme</a>
-                    </div>
-                </div>
-
-                <div class="question-item">
-                    <div class="question-text">Q2(a)(iv): Identify the name of a local variable.</div>
-                    <div class="question-meta">📍 June-2022.pdf — Page 5</div>
-                    <div class="button-row">
-                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2022.pdf#page=5" target="_blank">Open question paper</a>
-                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2022-ms.pdf#page=5" target="_blank">Open marking scheme</a>
-                    </div>
-                </div>
-
-                <div class="question-item">
-                    <div class="question-text">Q2(a)(v): Identify the name of a parameter.</div>
-                    <div class="question-meta">📍 June-2022.pdf — Page 5</div>
-                    <div class="button-row">
-                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2022.pdf#page=5" target="_blank">Open question paper</a>
-                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2022-ms.pdf#page=5" target="_blank">Open marking scheme</a>
-                    </div>
-                </div>
-
-                <div class="question-item">
-                    <div class="question-text">Q2(b): Write a program to implement the logic in the pseudocode. Open Q02b in the code editor. Write the program. You must use the structure given in Q02b to complete the program. Do not add any further functionality. Save your code as Q02bFINISHED with the correct file extension for the programming language.</div>
-                    <div class="question-meta">📍 June-2022.pdf — Page 5</div>
-                    <div class="button-row">
-                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2022.pdf#page=5" target="_blank">Open question paper</a>
-                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2022-ms.pdf#page=5" target="_blank">Open marking scheme</a>
-                    </div>
-                </div>
-</div><div class="section"><div class="source-title">From june-2022 | Page 6:</div>
-                <div class="question-item">
-                    <div class="question-text">Q3: Manjit sells copies of a science textbook to schools. She needs a program to process textbook orders. It must: • accept the input of the number of textbooks required • generate the price per textbook • generate the total cost of the order • display the price per textbook and the total cost of the order. The price of one textbook depends on the number ordered: Quantity 1–5 Price per textbook £20.00, 6–9 £15.00, 10 or more £12.00. Open Q03 in the code editor. Write the program. You must use the structure given in Q03 to complete the program. Do not add any further functionality. Save your code as Q03FINISHED with the correct file extension for the programming language.</div>
-                    <div class="question-meta">📍 June-2022.pdf — Page 6</div>
-                    <div class="button-row">
-                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2022.pdf#page=6" target="_blank">Open question paper</a>
-                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2022-ms.pdf#page=5" target="_blank">Open marking scheme</a>
-                    </div>
-                </div>
-</div><div class="section"><div class="source-title">From june-2022 | Page 10:</div>
-                <div class="question-item">
-                    <div class="question-text">Q5(a): She wants a program to check passwords stored in a file. The file passwords.txt contains the list of passwords. The program must: • check each password to ensure that: • the first character is an uppercase letter • if it is, that it also includes at least one digit (0–9) • if a password does not meet these requirements: • display the password • increment the number of incorrect passwords • display the total number of incorrect passwords after all the passwords have been checked. Open Q05a in the code editor. Write the program. You must use the structure given in Q05a to write the program. Do not add any further functionality. Save your code as Q05aFINISHED with the correct file extension for the programming language.</div>
-                    <div class="question-meta">📍 June-2022.pdf — Page 10</div>
-                    <div class="button-row">
-                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2022.pdf#page=10" target="_blank">Open question paper</a>
-                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2022-ms.pdf#page=5" target="_blank">Open marking scheme</a>
-                    </div>
-                </div>
-</div><div class="section"><div class="source-title">From june-2022 | Page 11:</div>
-                <div class="question-item">
-                    <div class="question-text">Q5(b)(i): Julia uses a bubble sort algorithm to sort the scores. Complete the table to show how the bubble sort algorithm will sort the scores.</div>
-                    <div class="question-meta">📍 June-2022.pdf — Page 11</div>
-                    <div class="button-row">
-                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2022.pdf#page=11" target="_blank">Open question paper</a>
-                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2022-ms.pdf#page=5" target="_blank">Open marking scheme</a>
-                    </div>
-                </div>
-</div><div class="section"><div class="source-title">From june-2022 | Page 12:</div>
-                <div class="question-item">
-                    <div class="question-text">Q5(c): Describe the steps a linear search algorithm takes to find a search item.</div>
-                    <div class="question-meta">📍 June-2022.pdf — Page 12</div>
-                    <div class="button-row">
-                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2022.pdf#page=12" target="_blank">Open question paper</a>
-                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2022-ms.pdf#page=5" target="_blank">Open marking scheme</a>
-                    </div>
-                </div>
-</div><div class="section"><div class="source-title">From june-2022 | Page 14:</div>
-                <div class="question-item">
-                    <div class="question-text">Q6: Carlos wants you to create a guess the animal game. Open Q06 in the code editor. The code contains an array of animals. It also contains a function that randomly selects an animal from the array. This is the secret word the user needs to guess. Carlos wants the program to: • generate the number of attempts the user has to guess the secret word. The maximum number of attempts is the length of the secret word +3. For example, the user has 8 attempts to guess when the secret word is tiger • keep track of letters from incorrect attempts that are in the secret word and those that are not. There should be no duplicated letters • display a message telling the user: • the number of letters in the secret word • how many attempts they have left • force the user to input a word that is the same length as the secret word • check whether the input word matches the secret word: • if the words match then a message that includes the secret word and the number of attempts taken to guess it is displayed • if the words do not match then: • letters from the attempt that appear in the secret word should be added to the correct letters store • letters from the attempt that do not appear in the secret word should be added to the wrong letters store • the contents of the correct and wrong letter stores are displayed • allow the user another attempt until they have guessed the word or have run out of attempts • display a message telling the user the game is over including the random word if the maximum attempts have been taken and the word has not been guessed. Your program should include at least two subprograms that you have written yourself. You must include comments in the code to explain the logic of your solution. Save your code as Q06FINISHED with the correct file extension for the programming language.</div>
-                    <div class="question-meta">📍 June-2022.pdf — Page 14</div>
-                    <div class="button-row">
-                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2022.pdf#page=14" target="_blank">Open question paper</a>
-                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2022-ms.pdf#page=2" target="_blank">Open marking scheme</a>
-                    </div>
-                </div>
-</div><div class="section"><div class="source-title">From june-2023 | Page 3:</div>
-                <div class="question-item">
-                    <div class="question-text">Q1(b)(ii): Identify a logical operator used in this program.</div>
-                    <div class="question-meta">📍 June-2023.pdf — Page 3</div>
-                    <div class="button-row">
-                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2023.pdf#page=3" target="_blank">Open question paper</a>
-                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2023-ms.pdf#page=4" target="_blank">Open marking scheme</a>
-                    </div>
-                </div>
-
-                <div class="question-item">
-                    <div class="question-text">Q1(b)(iii): Give the name of a global variable.</div>
-                    <div class="question-meta">📍 June-2023.pdf — Page 3</div>
-                    <div class="button-row">
-                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2023.pdf#page=3" target="_blank">Open question paper</a>
-                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2023-ms.pdf#page=4" target="_blank">Open marking scheme</a>
-                    </div>
-                </div>
-
-                <div class="question-item">
-                    <div class="question-text">Q1(b)(iv): Give the name of a constant.</div>
-                    <div class="question-meta">📍 June-2023.pdf — Page 3</div>
-                    <div class="button-row">
-                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2023.pdf#page=3" target="_blank">Open question paper</a>
-                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2023-ms.pdf#page=4" target="_blank">Open marking scheme</a>
-                    </div>
-                </div>
-
-                <div class="question-item">
-                    <div class="question-text">Q1(b)(v): Give the name of a parameter.</div>
-                    <div class="question-meta">📍 June-2023.pdf — Page 3</div>
-                    <div class="button-row">
-                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2023.pdf#page=3" target="_blank">Open question paper</a>
-                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2023-ms.pdf#page=4" target="_blank">Open marking scheme</a>
-                    </div>
-                </div>
-
-                <div class="question-item">
-                    <div class="question-text">Q1(c)(i): State the purpose of a constant.</div>
-                    <div class="question-meta">📍 June-2023.pdf — Page 3</div>
-                    <div class="button-row">
-                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2023.pdf#page=3" target="_blank">Open question paper</a>
-                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2023-ms.pdf#page=5" target="_blank">Open marking scheme</a>
-                    </div>
-                </div>
-
-                <div class="question-item">
-                    <div class="question-text">Q1(c)(ii): Give one benefit of using a constant.</div>
-                    <div class="question-meta">📍 June-2023.pdf — Page 3</div>
-                    <div class="button-row">
-                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2023.pdf#page=3" target="_blank">Open question paper</a>
-                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2023-ms.pdf#page=5" target="_blank">Open marking scheme</a>
-                    </div>
-                </div>
-</div><div class="section"><div class="source-title">From june-2023 | Page 4:</div>
-                <div class="question-item">
-                    <div class="question-text">Q2(a)(i): Give two reasons to use subprogram libraries when developing code.</div>
-                    <div class="question-meta">📍 June-2023.pdf — Page 4</div>
-                    <div class="button-row">
-                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2023.pdf#page=4" target="_blank">Open question paper</a>
-                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2023-ms.pdf#page=6" target="_blank">Open marking scheme</a>
-                    </div>
-                </div>
-
-                <div class="question-item">
-                    <div class="question-text">Q2(a)(ii): Identify which one of these must return a result.</div>
-                    <div class="question-meta">📍 June-2023.pdf — Page 4</div>
-                    <div class="button-row">
-                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2023.pdf#page=4" target="_blank">Open question paper</a>
-                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2023-ms.pdf#page=6" target="_blank">Open marking scheme</a>
-                    </div>
-                </div>
-
-                <div class="question-item">
-                    <div class="question-text">Q2(a)(iii): State what is meant by the term local variable.</div>
-                    <div class="question-meta">📍 June-2023.pdf — Page 4</div>
-                    <div class="button-row">
-                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2023.pdf#page=4" target="_blank">Open question paper</a>
-                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2023-ms.pdf#page=6" target="_blank">Open marking scheme</a>
-                    </div>
-                </div>
-</div><div class="section"><div class="source-title">From june-2023 | Page 5:</div>
-                <div class="question-item">
-                    <div class="question-text">Q2(b)(ii): The kitchen staff use a program to determine whether they have enough chips or how many more they need to order. Open Q02bii in the code editor. There are four errors in the code. Amend the code to correct the errors. Use this test data to help you find the errors. Save your amended code as Q02biiFINISHED with the correct file extension for the programming language.</div>
-                    <div class="question-meta">📍 June-2023.pdf — Page 5</div>
-                    <div class="button-row">
-                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2023.pdf#page=5" target="_blank">Open question paper</a>
-                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2023-ms.pdf#page=8" target="_blank">Open marking scheme</a>
-                    </div>
-                </div>
-</div><div class="section"><div class="source-title">From june-2023 | Page 6:</div>
-                <div class="question-item">
-                    <div class="question-text">Q3(b): An algorithm has been written to validate numbers entered by the user. Figure 2 shows the pseudocode for the algorithm. Complete the table to show the output for each set of inputs.</div>
-                    <div class="question-meta">📍 June-2023.pdf — Page 6</div>
-                    <div class="button-row">
-                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2023.pdf#page=6" target="_blank">Open question paper</a>
-                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2023-ms.pdf#page=9" target="_blank">Open marking scheme</a>
-                    </div>
-                </div>
-</div><div class="section"><div class="source-title">From june-2023 | Page 7:</div>
-                <div class="question-item">
-                    <div class="question-text">Q3(c): A program is required to calculate the result of raising one integer (the base) to the power of another (the exponent). Figure 3 shows a flowchart for the algorithm. The program has these requirements: • outputs meaningful error messages • outputs the final answer with the base and the exponent. Open Q03c in the code editor. Write a program to implement the logic in the flowchart. Do not add any further functionality. Save your code as Q03cFINISHED with the correct file extension for the programming language.</div>
-                    <div class="question-meta">📍 June-2023.pdf — Page 7</div>
-                    <div class="button-row">
-                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2023.pdf#page=7" target="_blank">Open question paper</a>
-                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2023-ms.pdf#page=10" target="_blank">Open marking scheme</a>
-                    </div>
-                </div>
-</div><div class="section"><div class="source-title">From june-2023 | Page 10:</div>
-                <div class="question-item">
-                    <div class="question-text">Q4(b): A program is needed to create a key for a database. A user enters a two‑letter word, a whole number and a decimal number. The program must ensure the word is only two characters long. The program must display an error message when the word is not two characters long. A key is generated from the whole number, the reversed word and the whole number part of the decimal number. Figure 4 shows the input values and a valid key. Open Q04b in the code editor. Write the program. Do not add any further functionality. Save your code as Q04bFINISHED with the correct file extension for the programming language.</div>
-                    <div class="question-meta">📍 June-2023.pdf — Page 10</div>
-                    <div class="button-row">
-                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2023.pdf#page=10" target="_blank">Open question paper</a>
-                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2023-ms.pdf#page=15" target="_blank">Open marking scheme</a>
-                    </div>
-                </div>
-</div><div class="section"><div class="source-title">From june-2023 | Page 11:</div>
-                <div class="question-item">
-                    <div class="question-text">Q5(a): A list of tuna species needs to be sorted into descending alphabetical order using a merge sort algorithm. Figure 5 shows the lists created at the end of the splitting process. It will require three passes to merge the lists into a single sorted list in descending order. Complete the merge sort using the space provided.</div>
-                    <div class="question-meta">📍 June-2023.pdf — Page 11</div>
-                    <div class="button-row">
-                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2023.pdf#page=11" target="_blank">Open question paper</a>
-                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2023-ms.pdf#page=19" target="_blank">Open marking scheme</a>
-                    </div>
-                </div>
-</div><div class="section"><div class="source-title">From june-2023 | Page 12:</div>
-                <div class="question-item">
-                    <div class="question-text">Q5(b): A bubble sort could be used to sort the list of tuna species into ascending order. Figure 6 shows an algorithm for a bubble sort. There is an error in the loop between line 9 and line 16. Complete the table to give the line number with an error and a corrected line of pseudocode.</div>
-                    <div class="question-meta">📍 June-2023.pdf — Page 12</div>
-                    <div class="button-row">
-                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2023.pdf#page=12" target="_blank">Open question paper</a>
-                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2023-ms.pdf#page=21" target="_blank">Open marking scheme</a>
-                    </div>
-                </div>
-</div><div class="section"><div class="source-title">From june-2023 | Page 13:</div>
-                <div class="question-item">
-                    <div class="question-text">Q5(c): The scientist is collecting and storing data about tuna. The data collected is: • species • length in centimetres • weight in kilograms • age in years. The data is stored in an array. The collected data needs to be written to a file named TunaData.txt. Each record stored in the file must have a code number in the first field. Code numbers must start at 101. Each field in a record should be separated by a comma. Figure 7 shows the contents of the file. Open Q05c in the code editor. Write the program. You must use the structure given in Q05c to write the program. Do not add any further functionality. Save your code as Q05cFINISHED with the correct file extension for the programming language.</div>
-                    <div class="question-meta">📍 June-2023.pdf — Page 13</div>
-                    <div class="button-row">
-                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2023.pdf#page=13" target="_blank">Open question paper</a>
-                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2023-ms.pdf#page=21" target="_blank">Open marking scheme</a>
-                    </div>
-                </div>
-</div><div class="section"><div class="source-title">From june-2023 | Page 14:</div>
-                <div class="question-item">
-                    <div class="question-text">Q6: An agricultural college has a herd of dairy cows. Data collected for the cows is stored in arrays. The data stored is: • the name of the breed • the ease of care rating for that breed (1 is highest and 3 is lowest) • the number of cows in the herd of that breed • the volume of milk per day for a cow of that breed. The college wants to present the data to farmers and to recommend the best breed of cows for them. The best breed has the highest care rating and the largest volume of milk per day for a cow of that breed. Open the file Q06 in the code editor. Write a program to: • calculate the daily volume of milk produced by each breed • add this daily volume to the data structure tbl_dailyVolume • display a message informing the user what each field holds, such as breed, rating, volume per cow, count and total volume • display the data for each breed • calculate and display the total volume of milk produced each day by the herd • find the recommended breed • display the recommended breed by name. Your program should function correctly even if the number of breeds represented in the data is changed. Save your amended code as Q06FINISHED with the correct file extension for the programming language.</div>
-                    <div class="question-meta">📍 June-2023.pdf — Page 14</div>
-                    <div class="button-row">
-                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2023.pdf#page=14" target="_blank">Open question paper</a>
-                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2023-ms.pdf#page=2" target="_blank">Open marking scheme</a>
-                    </div>
-                </div>
-</div><div class="section"><div class="source-title">From june-2024 | Page 2:</div>
-                <div class="question-item">
-                    <div class="question-text">Q1(b): Open Q01b in the code editor. A user enters a name and an age when the program executes. The program should display a welcome message when the user is less than 30 years of age. Amend the code to complete the program. Save your amended code as Q01bFINISHED with the correct file extension for the programming language.</div>
-                    <div class="question-meta">📍 June-2024.pdf — Page 2</div>
-                    <div class="button-row">
-                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2024.pdf#page=2" target="_blank">Open question paper</a>
-                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2024-ms.pdf#page=4" target="_blank">Open marking scheme</a>
-                    </div>
-                </div>
-</div><div class="section"><div class="source-title">From june-2024 | Page 3:</div>
-                <div class="question-item">
-                    <div class="question-text">Q1(c)(ii): Give the text of a line that creates and initialises a variable.</div>
-                    <div class="question-meta">📍 June-2024.pdf — Page 3</div>
-                    <div class="button-row">
-                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2024.pdf#page=3" target="_blank">Open question paper</a>
-                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2024-ms.pdf#page=4" target="_blank">Open marking scheme</a>
-                    </div>
-                </div>
-
-                <div class="question-item">
-                    <div class="question-text">Q1(c)(iii): Give the keyword that starts the selection used in the code.</div>
-                    <div class="question-meta">📍 June-2024.pdf — Page 3</div>
-                    <div class="button-row">
-                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2024.pdf#page=3" target="_blank">Open question paper</a>
-                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2024-ms.pdf#page=4" target="_blank">Open marking scheme</a>
-                    </div>
-                </div>
-
-                <div class="question-item">
-                    <div class="question-text">Q1(c)(iv): Give the logical operator used in the code.</div>
-                    <div class="question-meta">📍 June-2024.pdf — Page 3</div>
-                    <div class="button-row">
-                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2024.pdf#page=3" target="_blank">Open question paper</a>
-                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2024-ms.pdf#page=4" target="_blank">Open marking scheme</a>
-                    </div>
-                </div>
-</div><div class="section"><div class="source-title">From june-2024 | Page 4:</div>
-                <div class="question-item">
-                    <div class="question-text">Q2(a)(ii): A constant is a memory location whose value does not change during program execution. Give the name for a memory location whose value can change during program execution.</div>
-                    <div class="question-meta">📍 June-2024.pdf — Page 4</div>
-                    <div class="button-row">
-                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2024.pdf#page=4" target="_blank">Open question paper</a>
-                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2024-ms.pdf#page=13" target="_blank">Open marking scheme</a>
-                    </div>
-                </div>
-</div><div class="section"><div class="source-title">From june-2024 | Page 5:</div>
-                <div class="question-item">
-                    <div class="question-text">Q2(c): Open Q02c in the code editor. The program generates a random number for the width of a rectangle. The length of the rectangle is always 4. The program should calculate the perimeter of the rectangle. The program should display the width, the length and the perimeter of the rectangle. There are three errors in the code. Amend the code to correct the errors. Save your amended code as Q02cFINISHED with the correct file extension for the programming language.</div>
-                    <div class="question-meta">📍 June-2024.pdf — Page 5</div>
-                    <div class="button-row">
-                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2024.pdf#page=5" target="_blank">Open question paper</a>
-                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2024-ms.pdf#page=15" target="_blank">Open marking scheme</a>
-                    </div>
-                </div>
-</div><div class="section"><div class="source-title">From june-2024 | Page 6:</div>
-                <div class="question-item">
-                    <div class="question-text">Q3(a): The truth table shows the initial values for A and B. Complete the truth table to show the results of each operation.</div>
-                    <div class="question-meta">📍 June-2024.pdf — Page 6</div>
-                    <div class="button-row">
-                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2024.pdf#page=6" target="_blank">Open question paper</a>
-                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2024-ms.pdf#page=20" target="_blank">Open marking scheme</a>
-                    </div>
-                </div>
-
-                <div class="question-item">
-                    <div class="question-text">Q3(b): Figure 2 shows the intended output from a program that displays every other name in an array of star names. Open Q03b in the code editor. Amend the code to display every other name in the array of star names. Do not add any further functionality. Save your code as Q03bFINISHED with the correct file extension for the programming language.</div>
-                    <div class="question-meta">📍 June-2024.pdf — Page 6</div>
-                    <div class="button-row">
-                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2024.pdf#page=6" target="_blank">Open question paper</a>
-                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2024-ms.pdf#page=21" target="_blank">Open marking scheme</a>
-                    </div>
-                </div>
-</div><div class="section"><div class="source-title">From june-2024 | Page 7:</div>
-                <div class="question-item">
-                    <div class="question-text">Q3(c): A program validates a number input by the user. Figure 3 shows the output messages based on the inputted number. Open Q03c in the code editor. Amend the code to ensure the messages are generated correctly. Do not add any further functionality. Save your code as Q03cFINISHED with the correct file extension for the programming language.</div>
-                    <div class="question-meta">📍 June-2024.pdf — Page 7</div>
-                    <div class="button-row">
-                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2024.pdf#page=7" target="_blank">Open question paper</a>
-                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2024-ms.pdf#page=25" target="_blank">Open marking scheme</a>
-                    </div>
-                </div>
-</div><div class="section"><div class="source-title">From june-2024 | Page 8:</div>
-                <div class="question-item">
-                    <div class="question-text">Q4(a)(i): State where a global variable is created.</div>
-                    <div class="question-meta">📍 June-2024.pdf — Page 8</div>
-                    <div class="button-row">
-                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2024.pdf#page=8" target="_blank">Open question paper</a>
-                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2024-ms.pdf#page=30" target="_blank">Open marking scheme</a>
-                    </div>
-                </div>
-
-                <div class="question-item">
-                    <div class="question-text">Q4(a)(ii): State where a local variable is accessible.</div>
-                    <div class="question-meta">📍 June-2024.pdf — Page 8</div>
-                    <div class="button-row">
-                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2024.pdf#page=8" target="_blank">Open question paper</a>
-                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2024-ms.pdf#page=30" target="_blank">Open marking scheme</a>
-                    </div>
-                </div>
-</div><div class="section"><div class="source-title">From june-2024 | Page 9:</div>
-                <div class="question-item">
-                    <div class="question-text">Q4(b): An algorithm reports the range that an integer falls within. Explain the reason that the algorithm in Figure 4 is more efficient than the algorithm in Figure 5.</div>
-                    <div class="question-meta">📍 June-2024.pdf — Page 9</div>
-                    <div class="button-row">
-                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2024.pdf#page=9" target="_blank">Open question paper</a>
-                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2024-ms.pdf#page=30" target="_blank">Open marking scheme</a>
-                    </div>
-                </div>
-</div><div class="section"><div class="source-title">From june-2024 | Page 10:</div>
-                <div class="question-item">
-                    <div class="question-text">Q4(c): A program is required to create a new key. The program takes two inputs. The first input is a four‑character string. The second input is a whole number. The key is constructed by joining the first two characters from the string, the number and the final two characters from the string. When the user enters the four‑character string abcd and the integer 123, the program must construct and display the new key ab123cd. Open Q04c in the code editor. Amend the code to: • complete the subprogram to construct the new key • complete the call to the subprogram. Do not add any further functionality. Save your code as Q04cFINISHED with the correct file extension for the programming language.</div>
-                    <div class="question-meta">📍 June-2024.pdf — Page 10</div>
-                    <div class="button-row">
-                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2024.pdf#page=10" target="_blank">Open question paper</a>
-                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2024-ms.pdf#page=31" target="_blank">Open marking scheme</a>
-                    </div>
-                </div>
-</div><div class="section"><div class="source-title">From june-2024 | Page 13:</div>
-                <div class="question-item">
-                    <div class="question-text">Q5(a): Figure 6 shows an algorithm that determines whether the animal name inputted by the user is found. Explain one improvement to this algorithm that will reduce the number of variables required and will enable it to work with any number of animals.</div>
-                    <div class="question-meta">📍 June-2024.pdf — Page 13</div>
-                    <div class="button-row">
-                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2024.pdf#page=13" target="_blank">Open question paper</a>
-                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2024-ms.pdf#page=35" target="_blank">Open marking scheme</a>
-                    </div>
-                </div>
-
-                <div class="question-item">
-                    <div class="question-text">Q5(b): Binary search is a divide and conquer algorithm. Here is a list of data. A binary search is used to check whether the number 11 is in the list. The midpoint is calculated by adding the high index to the low index and integer dividing by 2. Complete the table to show the values for the high index, the low index and the midpoint on each pass of a binary search.</div>
-                    <div class="question-meta">📍 June-2024.pdf — Page 13</div>
-                    <div class="button-row">
-                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2024.pdf#page=13" target="_blank">Open question paper</a>
-                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2024-ms.pdf#page=35" target="_blank">Open marking scheme</a>
-                    </div>
-                </div>
-</div><div class="section"><div class="source-title">From june-2024 | Page 14:</div>
-                <div class="question-item">
-                    <div class="question-text">Q5(c): Figure 7 shows the Sales.txt file. It stores sales information. A program is required to calculate and display: • a subtotal for each line of sales • a grand total for all the sales in the file. Figure 8 shows the intended output from the program. Open Q05c in the code editor. Amend the code to produce the intended output. You must use the structure and variables given in Q05c to complete the program. Do not add any further functionality. Save your code as Q05cFINISHED with the correct file extension for the programming language.</div>
-                    <div class="question-meta">📍 June-2024.pdf — Page 14</div>
-                    <div class="button-row">
-                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2024.pdf#page=14" target="_blank">Open question paper</a>
-                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2024-ms.pdf#page=37" target="_blank">Open marking scheme</a>
-                    </div>
-                </div>
-</div><div class="section"><div class="source-title">From june-2024 | Page 15:</div>
-                <div class="question-item">
-                    <div class="question-text">Q6: A program stores pairs of words in a two‑dimensional array. Each word in a pair starts with a different letter. Each pair of words should be in alphabetical order, but some are not. The last pair in the array is an empty pair. The program must: • replace the final blank pair of words with the variables word1 and word2 • display the pair number of each pair, followed by each word in the pair, without punctuation • display the longer word in the pair, indented • display any pair found to be not in alphabetical order, in alphabetical order, indented, without punctuation. Open the file Q06 in the code editor. Write a program to produce the intended output. You must use the structure and variables given in Q06 to complete the program. Your program should function correctly even if the number of pairs in the array is changed. You should use techniques to make your code easy to read. Save your amended code as Q06FINISHED with the correct file extension for the programming language.</div>
-                    <div class="question-meta">📍 June-2024.pdf — Page 15</div>
-                    <div class="button-row">
-                        <a class="button button-primary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2024.pdf#page=15" target="_blank">Open question paper</a>
-                        <a class="button button-secondary" href="file:///C:/Users/pc/Desktop/AI_Question_Finder/past_papers_ella_compsci_p2/June-2024-ms.pdf#page=2" target="_blank">Open marking scheme</a>
-                    </div>
-                </div>
-</div>
-        </div>
-        
-        <div class="footer">
-            Generated by PaperCode | Open questions and marking schemes locally
-        </div>
+    </div>
+    <div class="footer">
+        Generated by PaperCode <span class="heart">&#10084;</span> Open questions and marking schemes locally
     </div>
 </body>
 </html>
