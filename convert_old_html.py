@@ -1,0 +1,195 @@
+"""
+Convert old purple-themed HTML reports in output_html/ to the new
+Playful Pastel Brutalism design system.
+"""
+
+import re
+from pathlib import Path
+
+BASE_DIR = Path(__file__).parent.resolve()
+OUTPUT_DIR = BASE_DIR / "output_html"
+
+# ── New CSS (matches web_gemini.py generate_html_report) ─────────────────────
+CSS = """
+    :root {
+        --bg-cream: #FFFEF5; --ink: #111111; --text-gray: #4B5563;
+        --brand-indigo: #6366F1; --brand-pink: #EC4899;
+        --pastel-yellow: #FDE68A; --butter-yellow: #FFF3B0;
+        --pastel-lavender: #D8B4FE; --pastel-blue: #BAE6FD;
+        --pastel-mint: #86EFAC; --pastel-peach: #FDBA74;
+        --pastel-coral: #FF6B4A; --pastel-pink: #FBCFE8;
+        --radius-card: 16px; --radius-pill: 999px;
+        --shadow-hard: 4px 4px 0px var(--ink);
+        --shadow-hard-hover: 2px 2px 0px var(--ink);
+        --shadow-lift: 6px 6px 0px var(--ink);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+           background: var(--bg-cream); color: var(--ink); min-height: 100vh; padding: 0;
+           position: relative; overflow-x: hidden; }
+    .blob { position: fixed; border-radius: 50%; z-index: 0; pointer-events: none; }
+    .blob-1 { width: 340px; height: 340px; background: var(--butter-yellow); top: -100px; left: -120px; opacity: 0.6; }
+    .blob-2 { width: 280px; height: 280px; background: var(--pastel-lavender); bottom: -80px; right: -100px; opacity: 0.5; }
+    .blob-3 { width: 200px; height: 200px; background: var(--pastel-blue); top: 45%; right: 3%; opacity: 0.35; }
+    .tilt-square { position: fixed; z-index: 0; pointer-events: none; }
+    .tilt-1 { width: 90px; height: 90px; background: var(--pastel-pink); border: 2px solid var(--ink); top: 12%; right: 6%; transform: rotate(15deg); opacity: 0.7; }
+    .tilt-2 { width: 70px; height: 70px; background: var(--pastel-mint); border: 2px solid var(--ink); bottom: 15%; left: 4%; transform: rotate(-12deg); opacity: 0.7; }
+    .navbar { max-width: 900px; margin: 0 auto; padding: 24px 20px; display: flex; align-items: center; justify-content: space-between; position: relative; z-index: 2; }
+    .logo { display: flex; align-items: center; gap: 12px; }
+    .logo-icon { width: 44px; height: 44px; background: var(--brand-indigo); border: 2px solid var(--ink); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 22px; box-shadow: 2px 2px 0px var(--ink); }
+    .logo-word { font-weight: 800; font-size: 1.2em; color: var(--ink); line-height: 1; }
+    .logo-tag { font-size: 0.72em; color: var(--brand-indigo); font-style: italic; font-weight: 500; }
+    .hero { max-width: 900px; margin: 0 auto; padding: 10px 20px 30px; text-align: center; position: relative; z-index: 2; }
+    .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: var(--pastel-yellow); border: 2px solid var(--ink); border-radius: var(--radius-pill); padding: 6px 16px; font-size: 0.8em; font-weight: 700; margin-bottom: 20px; box-shadow: 2px 2px 0px var(--ink); }
+    .hero-badge .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--brand-pink); }
+    .hero h1 { font-size: 2.6em; color: var(--ink); font-weight: 900; letter-spacing: -1.5px; line-height: 1.1; margin-bottom: 14px; }
+    .hero h1 .accent { color: var(--brand-indigo); }
+    .hero h1 .highlight-box { background: var(--pastel-yellow); border: 2px solid var(--ink); border-radius: 10px; padding: 2px 14px; display: inline-block; transform: rotate(-2deg); box-shadow: 2px 2px 0px var(--ink); }
+    .hero h1 .highlight-box .pink-text { color: var(--brand-pink); font-weight: 900; }
+    .hero p { color: var(--text-gray); font-size: 1.05em; font-weight: 500; max-width: 560px; margin: 0 auto; line-height: 1.6; }
+    .content { max-width: 900px; margin: 0 auto; padding: 0 20px 40px; position: relative; z-index: 2; }
+    .section { margin-bottom: 32px; }
+    .source-title { background: var(--pastel-blue); border: 2px solid var(--ink); border-radius: var(--radius-pill);
+                    padding: 8px 20px; margin-bottom: 16px; font-weight: 700; color: var(--ink);
+                    display: inline-block; box-shadow: 2px 2px 0px var(--ink); }
+    .question-item { background: #FFFFFF; border: 2px solid var(--ink); border-radius: var(--radius-card);
+                     padding: 24px; margin-bottom: 18px; box-shadow: var(--shadow-hard);
+                     transition: transform 0.15s ease, box-shadow 0.15s ease; }
+    .question-item:hover { transform: translate(-2px, -2px); box-shadow: var(--shadow-lift); }
+    .question-text { color: var(--ink); font-size: 1em; line-height: 1.7; word-break: break-word; font-weight: 600; }
+    .question-meta { font-size: 0.9em; color: var(--brand-indigo); margin-top: 10px; font-weight: 600;
+                     display: inline-block; background: var(--pastel-blue); border: 2px solid var(--ink);
+                     border-radius: var(--radius-pill); padding: 3px 12px; box-shadow: 1px 1px 0px var(--ink); }
+    .button-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+    .button { display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+              padding: 12px 20px; border: 2px solid var(--ink); border-radius: var(--radius-pill);
+              font-weight: 700; font-size: 0.88em; text-decoration: none;
+              transition: transform 0.12s ease, box-shadow 0.12s ease; box-shadow: var(--shadow-hard); }
+    .button:hover { transform: translate(2px, 2px); box-shadow: var(--shadow-hard-hover); }
+    .button-primary { background: var(--brand-indigo); color: white; }
+    .button-secondary { background: var(--pastel-mint); color: var(--ink); }
+    .disabled { opacity: 0.4; cursor: not-allowed; pointer-events: none; }
+    .no-match { text-align: center; padding: 60px 30px; color: var(--text-gray); font-size: 1.2em; font-weight: 600; }
+    .footer { max-width: 900px; margin: 0 auto 40px; padding: 22px 30px; background: var(--pastel-blue);
+              border: 2px solid var(--ink); border-radius: var(--radius-card); box-shadow: var(--shadow-hard);
+              text-align: center; color: var(--ink); font-weight: 700; font-size: 0.9em;
+              position: relative; z-index: 2; }
+    .footer .heart { color: var(--brand-pink); }
+    @media (max-width: 600px) { .hero h1 { font-size: 1.8em; } .button-row { flex-direction: column; } .button { width: 100%; } }
+"""
+
+HEAD = f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Past Paper Questions</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>{CSS}</style>
+</head>
+<body>
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+    <div class="tilt-square tilt-1"></div>
+    <div class="tilt-square tilt-2"></div>
+    <nav class="navbar">
+        <div class="logo">
+            <div class="logo-icon">&#128209;</div>
+            <div>
+                <div class="logo-word">PaperCode</div>
+                <div class="logo-tag">find your questions</div>
+            </div>
+        </div>
+    </nav>
+    <section class="hero">
+        <div class="hero-badge">
+            <span class="dot"></span>
+            AI-Powered Syllabus Matching
+        </div>
+        <h1>
+            Past Paper <span class="accent">Questions</span><br>
+            <span class="highlight-box"><span class="pink-text">Matched</span></span> to Your Syllabus
+        </h1>
+        <p>Click a question to open the PDF, then check the marking scheme.</p>
+    </section>
+    <div class="content">
+"""
+
+FOOT = """
+    </div>
+    <div class="footer">
+        Generated by PaperCode <span class="heart">&#10084;</span> Open questions and marking schemes locally
+    </div>
+</body>
+</html>
+"""
+
+
+def extract_content(html_text):
+    """Extract the inner content (sections + question items) from an old HTML file."""
+    # Find everything between <div class="content"> and the closing </div> that ends content
+    # The old format has: <div class="content"> ... </div> then footer
+    match = re.search(r'<div class="content">(.*?)\s*</div>\s*(?:<div class="footer">|</div>)', html_text, re.DOTALL)
+    if match:
+        return match.group(1).strip()
+
+    # Fallback: try to find content between content div and footer
+    match = re.search(r'<div class="content">(.*?)<div class="footer">', html_text, re.DOTALL)
+    if match:
+        return match.group(1).strip()
+
+    # Another fallback: just grab everything between content and footer
+    match = re.search(r'<div class="content">(.*?)(?:<div class="footer">|</body>)', html_text, re.DOTALL)
+    if match:
+        return match.group(1).strip()
+
+    return None
+
+
+def is_already_converted(html_text):
+    """Check if the HTML file already has the new design."""
+    return "pastel" in html_text.lower() or "--bg-cream" in html_text or "Poppins" in html_text
+
+
+def convert_file(filepath):
+    """Convert a single old HTML file to the new design."""
+    html_text = filepath.read_text(encoding="utf-8")
+
+    if is_already_converted(html_text):
+        return False  # Skip already converted
+
+    content = extract_content(html_text)
+    if content is None:
+        print(f"  [SKIP] Could not extract content from {filepath.name}")
+        return False
+
+    # Build new HTML
+    new_html = HEAD + "\n" + content + "\n" + FOOT
+    filepath.write_text(new_html, encoding="utf-8")
+    return True
+
+
+def main():
+    html_files = sorted(OUTPUT_DIR.glob("*.html"))
+    if not html_files:
+        print("No HTML files found in output_html/")
+        return
+
+    converted = 0
+    skipped = 0
+    for f in html_files:
+        if convert_file(f):
+            converted += 1
+            print(f"  [OK]   {f.name}")
+        else:
+            skipped += 1
+            print(f"  [SKIP] {f.name}")
+
+    print(f"\nDone! Converted: {converted}, Skipped: {skipped}")
+
+
+if __name__ == "__main__":
+    main()
